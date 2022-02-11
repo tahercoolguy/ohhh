@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1032891637271",
+    "project_id": "ohhh-a8b7f",
+    "storage_bucket": "ohhh-a8b7f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032891637271:android:231502c960ae27a0ca0652",
+        "android_client_info": {
+          "package_name": "com.saify.tech.ohhh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032891637271-vsu9gsoma3o63e195k31uba1kkuqc1bj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCobHt8LiAN1kqn84mS-R-80lDYytG8a8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032891637271-vsu9gsoma3o63e195k31uba1kkuqc1bj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
