@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.saify.tech.ohhh.Controller.AppController;
@@ -52,47 +54,46 @@ public class LoginActivity extends AppCompatActivity implements  Validator.Valid
     @OnClick(R.id.signInBtn)
     public void SignIn()
     {
-        try {
-            if (connectionDetector.isConnectingToInternet()) {
-                isValid();
-                if (o) {
-                    MultipartTypedOutput multipartTypedOutput = new MultipartTypedOutput();
-
-                    multipartTypedOutput.addPart("email",new TypedString(EmailET.getText().toString()));
-                    multipartTypedOutput.addPart("password",new TypedString(passwordET.getText().toString()));
-
-                    appController.paServices.SignUp(multipartTypedOutput, new Callback<SignUpDM>() {
-                        @Override
-                        public void success(SignUpDM signUpDM, Response response) {
-                            Intent intent=new Intent(LoginActivity.this,MainActivity.class);
-                            startActivity(intent);
-                        }
-
-                        @Override
-                        public void failure(RetrofitError error) {
-
-                        }
-                    });
-                }
-            } else
-                Helper.showToast(LoginActivity.this, getString(R.string.no_internet_connection));
-        }catch (Exception e)
-        {
-
-        }
 
     }
 
-    @OnClick(R.id.signUpBtn)
-    public void signUpBtn()
+    @NotEmpty
+    @BindView(R.id.signUpTxt)
+    TextView SignUpTxt;
+
+
+    @OnClick(R.id.signUpTxt)
+    public void signUpTxt()
     {
         Intent intent=new Intent(LoginActivity.this,SignUpActivity.class);
         startActivity(intent);
     }
 
-    @OnClick(R.id.guestBtn)
-    public void guestBtn()
-    {}
+    @NotEmpty
+    @BindView(R.id.to_facebook_login)
+    RelativeLayout To_Facebook_Login;
+
+    @NotEmpty
+    @BindView(R.id.to_google_login)
+    RelativeLayout To_Google_Login;
+
+    @OnClick(R.id.to_google_login)
+    public void To_Google_Login()
+    {
+
+    }
+
+    @OnClick(R.id.to_facebook_login)
+    public void To_Facebook_Login()
+    {
+
+    }
+
+
+//
+//    @OnClick(R.id.guestBtn)
+//    public void guestBtn()
+//    {}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

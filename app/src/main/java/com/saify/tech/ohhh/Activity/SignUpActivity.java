@@ -17,7 +17,9 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -89,49 +91,26 @@ public class SignUpActivity extends AppCompatActivity implements  Validator.Vali
     @BindView(R.id.emailET)
     EditText emailET;
 
+    @NotEmpty
+    @BindView(R.id.sign_up_Txt)
+    TextView sign_up_Txt;
 
-    @BindView(R.id.videoView)
-    VideoView videoView;
+    @NotEmpty
+    @BindView(R.id.sign_up_Btn)
+    Button signBtn;
 
-    @OnClick(R.id.guestBtn)
+
+    @OnClick(R.id.sign_up_Btn)
+    public void signupBtn()
+    {
+        startActivity(new Intent(SignUpActivity.this,VerifyActivity.class));
+    }
+
+
+    @OnClick(R.id.sign_up_Txt)
     public void signup()
     {
-//        startRecording();
-        try {
-            if (connectionDetector.isConnectingToInternet()) {
-                isValid();
-                if (o) {
-                    progress = dialogUtil.showProgressDialog(SignUpActivity.this,getString(R.string.please_wait));
-                    MultipartTypedOutput multipartTypedOutput = new MultipartTypedOutput();
-                    multipartTypedOutput.addPart("first_name",new TypedString(firstNameET.getText().toString()));
-                    multipartTypedOutput.addPart("last_name",new TypedString(""));
-                    multipartTypedOutput.addPart("email",new TypedString(emailET.getText().toString()));
-                    multipartTypedOutput.addPart("password",new TypedString(passwordET.getText().toString()));
-                    multipartTypedOutput.addPart("confirm_password",new TypedString(confirmPasswordET.getText().toString()));
-                    multipartTypedOutput.addPart("mobile_number",new TypedString(mobileET.getText().toString()));
-                    appController.paServices.SignUp(multipartTypedOutput, new Callback<SignUpDM>() {
-                        @Override
-                        public void success(SignUpDM signUpDM, Response response) {
-                            progress.dismiss();
-                            if(signUpDM.getStatus().equalsIgnoreCase("1")) {
-                                user_id = signUpDM.getResult().getId();
-                                startRecording();
-                            }else
-                                Helper.showToast(SignUpActivity.this,signUpDM.getMessage());
-                        }
-
-                        @Override
-                        public void failure(RetrofitError error) {
-                            Log.e("String",error.toString());
-                        }
-                    });
-                }
-            } else
-                Helper.showToast(SignUpActivity.this, getString(R.string.no_internet_connection));
-        }catch (Exception e)
-        {
-            Log.e("String",e.toString());
-        }
+        startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
     }
 
     @Override
