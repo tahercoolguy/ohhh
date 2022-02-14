@@ -110,7 +110,7 @@ public class SignUpActivity extends AppCompatActivity implements  Validator.Vali
     @OnClick(R.id.sign_up_Txt)
     public void signup()
     {
-        startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
+        startActivity(new Intent(SignUpActivity.this,My_Order_Activity.class));
     }
 
     @Override

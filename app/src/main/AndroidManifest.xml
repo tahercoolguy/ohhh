@@ -65,6 +65,14 @@
         <activity android:name=".Activity.SignUpActivity" />
         <activity android:name=".Activity.VerifyActivity" />
         <activity android:name=".Activity.Thank_You_Activity" />
+        <activity android:name=".Activity.My_Order_Activity" />
+        <activity android:name=".Activity.Change_Password_Activity" />
+        <activity android:name=".Activity.Edit_Profile_Activity" />
+        <activity android:name=".Activity.Saved_Address_Activity" />
+
+
+
+
 
     </application>
 

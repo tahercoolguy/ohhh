@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:elevation="3dp"
+        android:background="@drawable/rounded_rectangle_white_account"
+        android:orientation="horizontal"
+        android:layout_height="156dp">
+
+        <ImageView
+            android:id="@+id/pastries_Img"
+            android:layout_width="wrap_content"
+            android:src="@drawable/pastries_1"
+            android:layout_height="wrap_content">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pastries_txt"
+                android:layout_width="wrap_content"
+                android:text="Pastries"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:textSize="18sp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/code_pastries"
+                android:layout_width="wrap_content"
+                android:text="#162432"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="160dp"
+                 android:layout_height="wrap_content">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/price_Kwd_Txt"
+                android:layout_width="wrap_content"
+                android:text="10.000 KWD"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                 android:layout_height="wrap_content">
+
+            </TextView>
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@color/grey"
+                android:layout_height="18dp">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/items_count_Txt"
+                android:layout_width="wrap_content"
+                android:text="03 Items"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+
+            android:layout_height="wrap_content">
+
+
+
+            <Button
+                android:id="@+id/view_order_Btn"
+                android:layout_width="100dp"
+                android:layout_height="38dp"
+                android:layout_weight="2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rounded_corner_primary_colour"
+                android:gravity="center"
+                android:text="@string/rate"
+                android:textColor="@color/white"></Button>
+
+
+            <Button
+                android:id="@+id/order_cancel_btn"
+                 android:layout_width="100dp"
+                android:layout_height="38dp"
+                android:layout_weight="2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rounded_corner_whittte_colour"
+                android:gravity="center"
+                android:text="@string/re_order"
+                android:textColor="@color/colorPrimary"></Button>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

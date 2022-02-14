@@ -54,16 +54,43 @@
     <string name="i_didnot_receive_a_code">  I didn’t receive a code!</string>
     <string name="please_resend">Please resend</string>
     <string name="thank_you">Thank you!</string>
-    <string name="we_have_received_your_order">We have received your order
+    <string name="we_have_received_your_order">We have received your order</string>
      <string name="term_and_condition">Terms and Condition</string>
              <string name="termss">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum
 
 </string>
+    <string name="saved_address">Saved Address</string>
+    <string name="change_password">Change Password</string>
+    <string name="current_password">Current Password</string>
+    <string name="ppassword">Password</string>
+    <string name="cconfirm_password">Confirm Password</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="full_name">Full Name</string>
+    <string name="save">Save</string>
+
+    <string name="account">Account</string>
+    <string name="mohammad">Mohammed Al Kandari</string>
+    <string name="order_history">Order History</string>
+    <string name="push_notification">Push Notification</string>
+    <string name="refund_policy">Refund Policy</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="log_out">Logout</string>
+    <string name="my_order">My Order</string>
+    <string name="ongoing">Ongoing</string>
+    <string name="history">History</string>
+    <string name="view_order">View Order</string>
+    <string name="rate">Rate</string>
+    <string name="re_order">Re-order</string>
 
 
 
-</string>
+
+
+
+
+
 
 
 </resources>
