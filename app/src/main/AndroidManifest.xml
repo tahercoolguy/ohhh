@@ -69,6 +69,8 @@
         <activity android:name=".Activity.Change_Password_Activity" />
         <activity android:name=".Activity.Edit_Profile_Activity" />
         <activity android:name=".Activity.Saved_Address_Activity" />
+        <activity android:name=".Activity.Account_Activity" />
+
 
 
 

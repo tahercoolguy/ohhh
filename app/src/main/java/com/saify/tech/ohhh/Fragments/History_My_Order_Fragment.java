@@ -1,5 +1,6 @@
 package com.saify.tech.ohhh.Fragments;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -14,11 +15,24 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Activity.MainActivity;
+import com.saify.tech.ohhh.Adapter.HistoryDM_Adapter;
+import com.saify.tech.ohhh.Adapter.OrderDM_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.HistoryDM;
+import com.saify.tech.ohhh.DataModel.OrderDM;
+import com.saify.tech.ohhh.Helper.DialogUtil;
+import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
+import com.saify.tech.ohhh.Utils.RecyclerViewAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +43,15 @@ public class History_My_Order_Fragment extends Fragment {
 
     private View rootView;
     private Context context;
+
+
+
+
+
+    @NotEmpty
+    @BindView(R.id.history_Rcv)
+    RecyclerView history_Rcvv;
+
 
     @BindView(R.id.progress_bar)
     ProgressBar progress_bar;
@@ -57,11 +80,34 @@ public class History_My_Order_Fragment extends Fragment {
 //        ((MainActivity) context).setTitle(getString(R.string.home));
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.history_my_order_fragment_layout, container, false);
-            ButterKnife.bind(this,rootView);
+            ButterKnife.bind(this, rootView);
             idMapping();
 
             setClickListeners();
             setDetails();
+
+
+            ArrayList<HistoryDM> historyDMS = new ArrayList<>();
+
+            historyDMS.add(new HistoryDM("Pastries","#162432","10,000Kwd","03 Items",R.drawable.pastries_1,"29 Jan, 12:30"));
+            historyDMS.add(new HistoryDM("Pastries","#162432","10,000Kwd","03 Items",R.drawable.pastries_2,"29 Jan, 12:30"));
+            historyDMS.add(new HistoryDM("Pastries","#162432","10,000Kwd","03 Items",R.drawable.pastries_3,"29 Jan, 12:30"));
+
+            historyDMS.add(new HistoryDM("Pastries","#162432","10,000Kwd","03 Items",R.drawable.pastries_1,"29 Jan, 12:30"));
+            historyDMS.add(new HistoryDM("Pastries","#162432","10,000Kwd","03 Items",R.drawable.pastries_2,"29 Jan, 12:30"));
+            historyDMS.add(new HistoryDM("Pastries","#162432","10,000Kwd","03 Items",R.drawable.pastries_3,"29 Jan, 12:30"));
+
+//            HistoryRcv.setLayoutManager(new LinearLayoutManager(context));
+//            HistoryRcv.setAdapter(new HistoryDM_Adapter((context), historyDMS));
+
+//
+            HistoryDM_Adapter dm = new HistoryDM_Adapter(context,historyDMS);
+            LinearLayoutManager l = new LinearLayoutManager(context);
+            history_Rcvv.setLayoutManager(l);
+            history_Rcvv.setAdapter(dm);
+
+
+
         }
         return rootView;
     }
@@ -90,19 +136,15 @@ public class History_My_Order_Fragment extends Fragment {
         }, 1500);
 
 
-
-
     }
 
-    public void ShowProgress()
-    {
+    public void ShowProgress() {
         progress_bar.setVisibility(View.VISIBLE);
         txt_error.setVisibility(View.GONE);
         layout_parent.setVisibility(View.GONE);
     }
 
-    public void DismissProgress()
-    {
+    public void DismissProgress() {
         progress_bar.setVisibility(View.GONE);
         txt_error.setVisibility(View.GONE);
         layout_parent.setVisibility(View.VISIBLE);
@@ -112,6 +154,8 @@ public class History_My_Order_Fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+
+
     }
 
     @Override

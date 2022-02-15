@@ -3,15 +3,11 @@ package com.saify.tech.ohhh.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputEditText;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -19,6 +15,8 @@ import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Optional;
 import com.saify.tech.ohhh.Adapter.VPAdapter;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.HistoryDM;
+import com.saify.tech.ohhh.DataModel.OrderDM;
 import com.saify.tech.ohhh.Fragments.History_My_Order_Fragment;
 import com.saify.tech.ohhh.Fragments.Ongoing_My_Order_Fragment;
 import com.saify.tech.ohhh.Helper.DialogUtil;
@@ -27,14 +25,15 @@ import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
 import com.saify.tech.ohhh.Utils.Helper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class My_Order_Activity extends AppCompatActivity implements Validator.ValidationListener {
     AppController appController;
+
 
     Dialog progress;
     ConnectionDetector connectionDetector;
@@ -42,9 +41,7 @@ public class My_Order_Activity extends AppCompatActivity implements Validator.Va
     DialogUtil dialogUtil;
 
 
-    //    @NotEmpty
-//    @BindView(R.id.back_my_order)
-//    ImageView Order_Back;
+
     @Optional
     @NotEmpty
     @BindView(R.id.my_order_tab_layout)
@@ -79,10 +76,9 @@ public class My_Order_Activity extends AppCompatActivity implements Validator.Va
         tabLayout.setupWithViewPager(ViewPager);
 
 
-
         VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        vpAdapter.addFragment(new Ongoing_My_Order_Fragment(),getString(R.string.ongoing));
-        vpAdapter.addFragment(new History_My_Order_Fragment(),getString(R.string.history));
+        vpAdapter.addFragment(new Ongoing_My_Order_Fragment(), getString(R.string.ongoing));
+        vpAdapter.addFragment(new History_My_Order_Fragment(), getString(R.string.history));
         ViewPager.setAdapter(vpAdapter);
 
     }

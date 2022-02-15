@@ -14,11 +14,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Activity.MainActivity;
+import com.saify.tech.ohhh.Adapter.HistoryDM_Adapter;
+import com.saify.tech.ohhh.Adapter.OrderDM_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.HistoryDM;
+import com.saify.tech.ohhh.DataModel.OrderDM;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +38,10 @@ public class Ongoing_My_Order_Fragment extends Fragment {
 
     private View rootView;
     private Context context;
+
+
+    @BindView(R.id.ongoing_Rcv)
+    RecyclerView ongoingRcv;
 
     @BindView(R.id.progress_bar)
     ProgressBar progress_bar;
@@ -57,11 +70,35 @@ public class Ongoing_My_Order_Fragment extends Fragment {
 //        ((MainActivity) context).setTitle(getString(R.string.home));
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.ongoing_my_order_fragment_layout, container, false);
-            ButterKnife.bind(this,rootView);
+            ButterKnife.bind(this, rootView);
             idMapping();
 
             setClickListeners();
             setDetails();
+
+
+            ArrayList<OrderDM> orderDMS = new ArrayList<>();
+
+            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+
+//            OngoingRcv.setLayoutManager(new LinearLayoutManager((MainActivity) context));
+//            OngoingRcv.setAdapter(new OrderDM_Adapter(((MainActivity) context), orderDMS));
+
+
+              OrderDM_Adapter dm = new OrderDM_Adapter(context,orderDMS);
+              LinearLayoutManager l = new LinearLayoutManager(context);
+              ongoingRcv.setLayoutManager(l);
+              ongoingRcv.setAdapter(dm);
+
         }
         return rootView;
     }
@@ -90,19 +127,15 @@ public class Ongoing_My_Order_Fragment extends Fragment {
         }, 1500);
 
 
-
-
     }
 
-    public void ShowProgress()
-    {
+    public void ShowProgress() {
         progress_bar.setVisibility(View.VISIBLE);
         txt_error.setVisibility(View.GONE);
         layout_parent.setVisibility(View.GONE);
     }
 
-    public void DismissProgress()
-    {
+    public void DismissProgress() {
         progress_bar.setVisibility(View.GONE);
         txt_error.setVisibility(View.GONE);
         layout_parent.setVisibility(View.VISIBLE);
