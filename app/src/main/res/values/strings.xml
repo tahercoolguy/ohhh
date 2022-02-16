@@ -84,9 +84,14 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
     <string name="rate">Rate</string>
     <string name="re_order">Re-order</string>
 
+    <string name="deliver_to">Deliver</string>
+    <string name="khaitan">Khaitan, Block 8</string>
+    <string name="what_would_you_like"> What would you like</string>
 
+    <string name="shops">Shops</string>
 
-
+    <string name="find_for_food_or_restaurant">Find for food or restaurant...
+</string>
 
 
 

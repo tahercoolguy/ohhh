@@ -24,7 +24,7 @@ public class VerifyActivity extends AppCompatActivity {
 
     @OnClick(R.id.back_verification_otp_page_Img)
     public void BackVerify() {
-        startActivity(new Intent(VerifyActivity.this, SignUpActivity.class));
+        startActivity(new Intent(VerifyActivity.this, MainActivity.class));
 
     }
 

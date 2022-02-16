@@ -1,6 +1,7 @@
 package com.saify.tech.ohhh.Activity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -35,24 +36,24 @@ public class Edit_Profile_Activity extends AppCompatActivity implements  Validat
     User user;
     DialogUtil dialogUtil;
 
-    @NotEmpty
-     @BindView(R.id.back_edit_profile)
-    ImageView BackEditProfile;
-
-    @NotEmpty
-    @BindView(R.id.passwordET)
-    EditText Password;
-
-
-    @NotEmpty
-    @BindView(R.id.full_name_ET)
-    EditText FullName;
-
-
-
-    @NotEmpty
-    @BindView(R.id.save_Btn)
-    Button Save;
+//    @NotEmpty
+//     @BindView(R.id.back_edit_profile)
+//    ImageView back;
+//
+//    @NotEmpty
+//    @BindView(R.id.password1ET)
+//    EditText Password;
+//
+//
+//    @NotEmpty
+//    @BindView(R.id.full_name_ET)
+//    EditText FullName;
+//
+//
+//
+//    @NotEmpty
+//    @BindView(R.id.save_Btn)
+//    Button Save;
 
 
 
@@ -61,16 +62,16 @@ public class Edit_Profile_Activity extends AppCompatActivity implements  Validat
     @OnClick(R.id.back_edit_profile)
     public void Back()
     {
-//        Intent intent=new Intent(Change_Password_Activity.this,SignUpActivity.class);
-//        startActivity(intent);
+        startActivity(new Intent(Edit_Profile_Activity.this,Account_Activity.class));
+
     }
 
 
     @OnClick(R.id.save_Btn)
     public void SaveBtn()
     {
-//        Intent intent=new Intent(Change_Password_Activity.this,SignUpActivity.class);
-//        startActivity(intent);
+        startActivity(new Intent(Edit_Profile_Activity.this,Account_Activity.class));
+
     }
 
 
@@ -80,9 +81,7 @@ public class Edit_Profile_Activity extends AppCompatActivity implements  Validat
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_password);
-
-
+        setContentView(R.layout.activity_edit_profile);
         ButterKnife.bind(this);
         dialogUtil = new DialogUtil();
         appController = (AppController) getApplicationContext();

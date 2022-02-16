@@ -5,7 +5,6 @@ package com.saify.tech.ohhh.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Term_And_Condition_Activity extends AppCompatActivity{
+public class Refund_Policy_Activity extends AppCompatActivity{
 
 
     private User user;
@@ -28,7 +27,7 @@ public class Term_And_Condition_Activity extends AppCompatActivity{
 
     @OnClick(R.id.back_term_and_condition)
     public void Back_Term() {
-        startActivity(new Intent(Term_And_Condition_Activity.this,Account_Activity.class));
+        startActivity(new Intent(Refund_Policy_Activity.this,Account_Activity.class));
 
     }
 
@@ -36,7 +35,7 @@ public class Term_And_Condition_Activity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_term_and_condition);
+        setContentView(R.layout.activity_refund_policy);
         ButterKnife.bind(this);
         user = new User(this);
 

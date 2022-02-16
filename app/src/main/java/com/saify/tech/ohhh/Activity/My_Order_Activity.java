@@ -1,8 +1,10 @@
 package com.saify.tech.ohhh.Activity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -30,6 +32,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class My_Order_Activity extends AppCompatActivity implements Validator.ValidationListener {
     AppController appController;
@@ -52,11 +55,16 @@ public class My_Order_Activity extends AppCompatActivity implements Validator.Va
     @BindView(R.id.viewpager_my_order)
     androidx.viewpager.widget.ViewPager ViewPager;
 
+     @BindView(R.id.back_my_order)
+     ImageView back;
 
-//    @OnClick(R.id.back_my_order)
-//    public void OrderBack() {
-//
-//    }
+
+    @OnClick(R.id.back_my_order)
+    public void OrderBack() {
+
+        startActivity(new Intent(My_Order_Activity.this,Account_Activity.class));
+
+    }
 
 
     @Override

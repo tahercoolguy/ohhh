@@ -1,6 +1,8 @@
 package com.saify.tech.ohhh.Activity;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +37,7 @@ public class Account_Activity extends AppCompatActivity implements Validator.Val
     ConnectionDetector connectionDetector;
     User user;
     DialogUtil dialogUtil;
-
+Context context;
 
     @NotEmpty
     @BindView(R.id.edit_user_name_Img)
@@ -84,16 +86,18 @@ public class Account_Activity extends AppCompatActivity implements Validator.Val
 
     @OnClick(R.id.edit_user_name_Img)
     public void Edit_USer_Name() {
+        startActivity(new Intent(Account_Activity.this,Edit_Profile_Activity.class));
 
     }
 
     @OnClick(R.id.order_history_LL)
     public void Order() {
-
-    }
+        startActivity(new Intent(Account_Activity.this,My_Order_Activity.class));
+      }
 
     @OnClick(R.id.saved_address_LL)
     public void Saved() {
+        startActivity(new Intent(Account_Activity.this,Saved_Address_Activity.class));
 
     }
 
@@ -106,24 +110,30 @@ public class Account_Activity extends AppCompatActivity implements Validator.Val
 
     @OnClick(R.id.change_password_LL)
     public void ChangePassword() {
+        startActivity(new Intent(Account_Activity.this,Change_Password_Activity.class));
 
     }
 
 
     @OnClick(R.id.term_and_condition_LL)
     public void Term_condition() {
+        startActivity(new Intent(Account_Activity.this,Term_And_Condition_Activity.class));
+
 
     }
 
 
     @OnClick(R.id.refund_policy_LL)
     public void Refund_Policy() {
+        startActivity(new Intent(Account_Activity.this,Refund_Policy_Activity.class));
 
     }
 
 
     @OnClick(R.id.privacy_policy_LL)
     public void PrivacyPolicy() {
+
+        startActivity(new Intent(Account_Activity.this,Privacy_Policy_Activity.class));
 
     }
 
@@ -136,6 +146,7 @@ public class Account_Activity extends AppCompatActivity implements Validator.Val
 
     @OnClick(R.id.logout_LL)
     public void Log_Out() {
+        startActivity(new Intent(Account_Activity.this,LoginActivity.class));
 
     }
 
@@ -144,6 +155,8 @@ public class Account_Activity extends AppCompatActivity implements Validator.Val
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
+
+        context = ((MainActivity) context);
 
 
         ButterKnife.bind(this);

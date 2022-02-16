@@ -70,6 +70,11 @@
         <activity android:name=".Activity.Edit_Profile_Activity" />
         <activity android:name=".Activity.Saved_Address_Activity" />
         <activity android:name=".Activity.Account_Activity" />
+        <activity android:name=".Activity.Term_And_Condition_Activity" />
+        <activity android:name=".Activity.Privacy_Policy_Activity" />
+        <activity android:name=".Activity.Refund_Policy_Activity" />
+
+
 
 
 

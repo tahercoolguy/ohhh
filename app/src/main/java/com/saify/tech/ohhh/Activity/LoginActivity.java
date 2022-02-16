@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity implements  Validator.Valid
     @OnClick(R.id.signInBtn)
     public void SignIn()
     {
-
+            startActivity(new Intent(LoginActivity.this,MainActivity.class));
     }
 
     @NotEmpty

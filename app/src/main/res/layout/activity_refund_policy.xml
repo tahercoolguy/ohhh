@@ -27,17 +27,15 @@
         </ImageView>
 
 
-
-
         <TextView
             android:layout_width="wrap_content"
-            android:textSize="18dp"
-            android:textStyle="bold"
             android:layout_height="wrap_content"
-             android:gravity="center"
             android:layout_centerInParent="true"
-             android:textColor="@color/black"
-            android:text="@string/terms">
+            android:gravity="center"
+            android:text="@string/refund_policy"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold">
 
         </TextView>
 

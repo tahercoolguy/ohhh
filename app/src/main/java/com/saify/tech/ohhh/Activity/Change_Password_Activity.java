@@ -38,19 +38,21 @@ public class Change_Password_Activity extends AppCompatActivity implements  Vali
     User user;
     DialogUtil dialogUtil;
 
-    @NotEmpty
-     @BindView(R.id.current_passwordET)
-    EditText CurrentPassword;
-
-    @NotEmpty
-    @BindView(R.id.passwordET)
-    EditText Password;
-
-
-    @NotEmpty
-    @BindView(R.id.confirm_passwordET)
-    EditText ConfirmPassword;
-
+//    @NotEmpty
+//     @BindView(R.id.current_passwordET)
+//    EditText currentPassword;
+//
+//    @NotEmpty
+//    @BindView(R.id.passwordET)
+//    EditText password;
+//
+//
+//
+//
+//    @NotEmpty
+//    @BindView(R.id.confirm_passwordET)
+//    EditText confirmPassword;
+//
     @NotEmpty
     @BindView(R.id.done_Btn)
     Button Done;
@@ -61,14 +63,20 @@ public class Change_Password_Activity extends AppCompatActivity implements  Vali
 
 
 
+    @OnClick(R.id.back_change_password)
+    public void back()
+    {
+        startActivity(new Intent(Change_Password_Activity.this,Account_Activity.class));
+
+    }
 
 
 
     @OnClick(R.id.done_Btn)
     public void DoneBtn()
     {
-//        Intent intent=new Intent(Change_Password_Activity.this,SignUpActivity.class);
-//        startActivity(intent);
+        startActivity(new Intent(Change_Password_Activity.this,Account_Activity.class));
+
     }
 
 
