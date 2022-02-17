@@ -2,7 +2,6 @@ package com.saify.tech.ohhh.Fragments;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -21,11 +20,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Activity.MainActivity;
-import com.saify.tech.ohhh.Activity.Saved_Address_Activity;
-import com.saify.tech.ohhh.Adapter.Saved_Address_DM_Adapter;
 import com.saify.tech.ohhh.Adapter.Shopss_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
-import com.saify.tech.ohhh.DataModel.SavedAddressDM;
 import com.saify.tech.ohhh.DataModel.ShopssDM;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
@@ -98,19 +94,19 @@ public class Fragment_Shops extends Fragment {
 
         shopssDMS.add(new ShopssDM("4.5","(25+)","Dip n Dip","Free delivery",
                 "10-15 mins","","",R.drawable.ic_delivery_boy,
-                R.drawable.ic_time,"",R.drawable.ic_rating_star));
+                R.drawable.ic_time,"", R.drawable.home_cake_1, R.drawable.ic_rating_star));
 
         shopssDMS.add(new ShopssDM("4.5","(25+)","Dip n Dip","Free delivery",
                 "10-15 mins","","",R.drawable.ic_delivery_boy,
-                R.drawable.ic_time,"",R.drawable.ic_rating_star));
+                R.drawable.ic_time,"", R.drawable.home_cake_1, R.drawable.ic_rating_star));
 
         shopssDMS.add(new ShopssDM("4.5","(25+)","Dip n Dip","Free delivery",
                 "10-15 mins","","",R.drawable.ic_delivery_boy,
-                R.drawable.ic_time,"",R.drawable.ic_rating_star));
+                R.drawable.ic_time,"", R.drawable.home_cake_1, R.drawable.ic_rating_star));
 
         shopssDMS.add(new ShopssDM("4.5","(25+)","Dip n Dip","Free delivery",
                 "10-15 mins","","",R.drawable.ic_delivery_boy,
-                R.drawable.ic_time,"",R.drawable.ic_rating_star));
+                R.drawable.ic_time,"", R.drawable.home_cake_1, R.drawable.ic_rating_star));
 
 
 

@@ -90,12 +90,33 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
     <string name="shops">Shops</string>
 
-    <string name="find_for_food_or_restaurant">Find for food or restaurant...
-</string>
+    <string name="find_for_food_or_restaurant">Find for food or restaurant...</string>
+    <string name="cart">Cart</string>
+    <string name="checkout">Checkout</string>
+    <string name="dip_and_dip">    Dip N Dip</string>
+
+    <string name="address">Address</string>
+
+    <string name="select_delivery_address">Select Delivery Address</string>
+
+    <string name="work">Work </string>
+    <string name="change">Change</string>
+    <string name="select_delivery_time">Select Delivery Time</string>
+
+    <string name="now">Now</string>
+    <string name="customize">Customize</string>
+    <string name="proceed_to_payment">Proceed to payment</string>
+    <string name="place_order">Place order</string>
+    <string name="payment">Payment</string>
+    <string name="cash">Cash</string>
+    <string name="card">Card</string>
+    <string name="knet">Knet</string>
+    <string name="enter_coupon_code">Enter Coupon Code</string>
+
+    <string name="order_info">Order Info</string>
 
 
-
-
+    <string name="place_orderr">Place order</string>
 
 
 </resources>

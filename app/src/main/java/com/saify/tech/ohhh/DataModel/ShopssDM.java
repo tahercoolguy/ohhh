@@ -12,23 +12,7 @@ public class ShopssDM {
     private int delivery_Img;
     private int delivery_time_img;
     private String like_img;
-    private int star;
-
-    public ShopssDM(String rating_star, String rating_count, String dip_and_dip,
-                    String free_delivery, String delivery_time, String desert, String kuwaiti,
-                    int delivery_Img, int delivery_time_img, String like_img, int star) {
-        this.rating_star = rating_star;
-        this.rating_count = rating_count;
-        this.dip_and_dip = dip_and_dip;
-        this.free_delivery = free_delivery;
-        this.delivery_time = delivery_time;
-        this.desert = desert;
-        this.kuwaiti = kuwaiti;
-        this.delivery_Img = delivery_Img;
-        this.delivery_time_img = delivery_time_img;
-        this.like_img = like_img;
-        this.star = star;
-    }
+    private  int cake_img;
 
     public String getRating_star() {
         return rating_star;
@@ -110,11 +94,25 @@ public class ShopssDM {
         this.like_img = like_img;
     }
 
-    public int getStar() {
-        return star;
+    public int getCake_img() {
+        return cake_img;
     }
 
-    public void setStar(int star) {
-        this.star = star;
+    public void setCake_img(int cake_img) {
+        this.cake_img = cake_img;
+    }
+
+    public ShopssDM(String rating_star, String rating_count, String dip_and_dip, String free_delivery, String delivery_time, String desert, String kuwaiti, int delivery_Img, int delivery_time_img, String like_img, int home_cake_1, int cake_img) {
+        this.rating_star = rating_star;
+        this.rating_count = rating_count;
+        this.dip_and_dip = dip_and_dip;
+        this.free_delivery = free_delivery;
+        this.delivery_time = delivery_time;
+        this.desert = desert;
+        this.kuwaiti = kuwaiti;
+        this.delivery_Img = delivery_Img;
+        this.delivery_time_img = delivery_time_img;
+        this.like_img = like_img;
+        this.cake_img = cake_img;
     }
 }

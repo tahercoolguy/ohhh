@@ -14,11 +14,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.saify.tech.ohhh.Activity.MainActivity;
+import com.saify.tech.ohhh.Adapter.Featured_Shopss_Adapter;
+import com.saify.tech.ohhh.Adapter.Offers_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.OffersDM;
+import com.saify.tech.ohhh.DataModel.ShopssDM;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,6 +39,18 @@ public class Fragment_Home_Screen extends Fragment {
 
     @BindView(R.id.progress_bar) ProgressBar progress_bar;
     @BindView(R.id.txt_error) TextView txt_error;
+
+    @BindView(R.id.featuredShopsRcv)
+    RecyclerView featured_shops;
+
+    @BindView(R.id.offers_Rcv)
+    RecyclerView offers_Rcvv;
+
+    @BindView(R.id.best_fom_desert_Rcv)
+    RecyclerView best_fom_desert_Rcvv;
+
+
+
 
     @BindView(R.id.layout_parent) LinearLayout layout_parent;
     private HListView lst_latest_profiles, lst_latest_news, lst_featured_video;
@@ -54,20 +74,81 @@ public class Fragment_Home_Screen extends Fragment {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.home_screen_fragment_layout, container, false);
             ButterKnife.bind(this,rootView);
-            idMapping();
+             FeaturesShops();
+             Offers();
+             BestFromDesert();
 
-            setClickListeners();
             setDetails();
+
+
         }
         return rootView;
     }
 
-    private void idMapping() {
+    private void FeaturesShops() {
+
+        ArrayList<ShopssDM> shopssDMS = new ArrayList<>();
+
+         shopssDMS.add(new ShopssDM("4.5","(25+)","McDonald’s","Free delivery","10-15 mins","",
+                 "",R.drawable.ic_delivery_boy, R.drawable.ic_time,"",R.drawable.home_cake_1,R.drawable.home_cake_1));
+
+        shopssDMS.add(new ShopssDM("4.5","(25+)","McDonald’s","Free delivery","10-15 mins","",
+                "",R.drawable.ic_delivery_boy, R.drawable.ic_time,"",R.drawable.home_cake_1,R.drawable.home_cake_2));
+
+        shopssDMS.add(new ShopssDM("4.5","(25+)","McDonald’s","Free delivery","10-15 mins","",
+                "",R.drawable.ic_delivery_boy, R.drawable.ic_time,"",R.drawable.home_cake_1,R.drawable.home_cake_1));
+
+        shopssDMS.add(new ShopssDM("4.5","(25+)","McDonald’s","Free delivery","10-15 mins","",
+                "",R.drawable.ic_delivery_boy, R.drawable.ic_time,"",R.drawable.home_cake_1,R.drawable.home_cake_2));
+
+
+
+
+
+
+        Featured_Shopss_Adapter dm = new Featured_Shopss_Adapter(context, shopssDMS);
+//        LinearLayoutManager l = new LinearLayoutManager.HORIZONTAL(context);
+
+        LinearLayoutManager l
+                = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+        featured_shops.setLayoutManager(l);
+        featured_shops.setAdapter(dm);
+
+    }
+
+    private void Offers() {
+
+        ArrayList<OffersDM> offersDMS = new ArrayList<>();
+
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.ofer_cake_img_1));
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_2));
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_3));
+
+        Offers_Adapter dm = new Offers_Adapter(context, offersDMS);
+
+        LinearLayoutManager l
+                = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+        offers_Rcvv.setLayoutManager(l);
+        offers_Rcvv.setAdapter(dm);
 
 
     }
 
-    private void setClickListeners() {
+    private void BestFromDesert() {
+
+        ArrayList<OffersDM> offersDMS = new ArrayList<>();
+
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desrt_cake_1));
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_2));
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_3));
+
+        Offers_Adapter dm = new Offers_Adapter(context, offersDMS);
+
+        LinearLayoutManager l
+                = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+        best_fom_desert_Rcvv.setLayoutManager(l);
+        best_fom_desert_Rcvv.setAdapter(dm);
+
 
     }
 

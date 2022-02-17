@@ -73,6 +73,10 @@
         <activity android:name=".Activity.Term_And_Condition_Activity" />
         <activity android:name=".Activity.Privacy_Policy_Activity" />
         <activity android:name=".Activity.Refund_Policy_Activity" />
+        <activity android:name=".Activity.Address_Activity" />
+        <activity android:name=".Activity.Payment_Activity" />
+
+
 
 
 

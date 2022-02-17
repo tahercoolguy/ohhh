@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".Activity.Payment_Activity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:layout_marginTop="-50dp">
+
+        <ImageView
+            android:id="@+id/back_saved_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-30dp"
+            android:layout_marginTop="23dp"
+            android:src="@drawable/ic_back_back_otp">
+
+        </ImageView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/payment"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-50dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_circle_address_orange"></ImageView>
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="@color/grey"></LinearLayout>
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_circle_address_orange"></ImageView>
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="@color/grey"></LinearLayout>
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_circle_brown_unselected"></ImageView>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+         android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:src="@drawable/ic_cash_pymt"
+                android:background="@drawable/ic_cash_pymt"
+                android:layout_height="50dp">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/cash"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:src="@drawable/ic_cash_pymt"
+                android:background="@drawable/ic_cash_pymt"
+                android:layout_height="50dp">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/cash"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:src="@drawable/ic_cash_pymt"
+                android:background="@drawable/ic_cash_pymt"
+                android:layout_height="50dp">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/cash"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/enter_coupon_code"
+        android:layout_marginTop="20dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/order_info"
+        android:layout_marginTop="20dp">
+    </TextView>
+
+
+    <LinearLayout
+        android:id="@+id/now_RL"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_rectangle_white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/order_info_Rcv"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="match_parent">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+    <Button
+        android:id="@+id/place_order"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+         android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_corner_primary_colour"
+        android:text="@string/place_order"
+        android:width="300dp"
+        android:textColor="@color/white"></Button>
+
+
+</LinearLayout>
