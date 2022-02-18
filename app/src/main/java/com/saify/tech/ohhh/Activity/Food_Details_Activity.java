@@ -15,11 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Adapter.Order_Info_Adapter;
-import com.saify.tech.ohhh.Adapter.Saved_Address_DM_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.OrderInfoDM;
-import com.saify.tech.ohhh.DataModel.SavedAddressDM;
-import com.saify.tech.ohhh.Fragments.Fragment_Home_Screen;
 import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
@@ -31,7 +28,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Payment_Activity extends AppCompatActivity {
+public class Food_Details_Activity extends AppCompatActivity {
 
     AppController appController;
 
@@ -40,74 +37,28 @@ public class Payment_Activity extends AppCompatActivity {
     ConnectionDetector connectionDetector;
     DialogUtil dialogUtil;
 
-    @NotEmpty
-    @BindView(R.id.order_info_Rcv)
-    RecyclerView order_info_Rcvv;
-
-    @NotEmpty
-    @BindView(R.id.back_saved_address)
-    ImageView back;
-
-    @BindView(R.id.place_order)
-    Button place_order;
-
-    @BindView(R.id.cash_RL)
-    RelativeLayout cash;
-
-    @BindView(R.id.visa_RL)
-    RelativeLayout visa;
-
-    @BindView(R.id.knet_RL)
-    RelativeLayout knet;
-
-    @BindView(R.id.codeET)
-    EditText code;
-
-    @OnClick(R.id.cash_RL)
-    public void Cash() {
-
-        Cashh();
-        ifcash=true;
-    }
-
-    @OnClick(R.id.visa_RL)
-    public void Visa() {
-        Visa();
-        ifcard=true;
-
-
-    }
-
-    @OnClick(R.id.knet_RL)
-    public void Knet() {
-
-        Knett();
-        ifknet=true;
-    }
-
-    @OnClick(R.id.back_saved_address)
-    public void Back_address() {
-//        startActivity(new Intent(Address_Activity.this,Account_Activity.class));
-
-    }
-
-
-    @OnClick(R.id.place_order)
-    public void Place_Order() {
-//        startActivity(new Intent(Address_Activity.this,Account_Activity.class));
-
-    }
+//    @NotEmpty
+//    @BindView(R.id.order_info_Rcv)
+//    RecyclerView order_info_Rcvv;
+//
+//
+//    @OnClick(R.id.knet_RL)
+//    public void Knet() {
+//
+//        Knett();
+//        ifknet=true;
+//    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment);
+        setContentView(R.layout.activity_food_details);
         ButterKnife.bind(this);
         dialogUtil = new DialogUtil();
         appController = (AppController) getApplicationContext();
         connectionDetector = new ConnectionDetector(getApplicationContext());
-        user = new User(Payment_Activity.this);
+        user = new User(Food_Details_Activity.this);
         user = new User(this);
         idMappings();
 
@@ -125,10 +76,10 @@ public class Payment_Activity extends AppCompatActivity {
 //            HistoryRcv.setAdapter(new HistoryDM_Adapter((context), historyDMS));
 
 //
-        Order_Info_Adapter dm = new Order_Info_Adapter(Payment_Activity.this, orderInfoDMS);
+        Order_Info_Adapter dm = new Order_Info_Adapter(Food_Details_Activity.this, orderInfoDMS);
         LinearLayoutManager l = new LinearLayoutManager(this);
-        order_info_Rcvv.setLayoutManager(l);
-        order_info_Rcvv.setAdapter(dm);
+//        order_info_Rcvv.setLayoutManager(l);
+//        order_info_Rcvv.setAdapter(dm);
 
 
     }
@@ -152,34 +103,34 @@ public class Payment_Activity extends AppCompatActivity {
 
     }
 
-
-    boolean ifcash = false;
-    boolean ifknet = false;
-    boolean ifcard = false;
-
-    public void Cashh() {
-
-        if (ifcash) {
-
-            cash.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
-        }
-    }
-
-    public void Knett() {
-
-        if (ifknet) {
-
-            knet.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
-        }
-    }
-
-    public void Cardd() {
-
-        if (ifcard) {
-
-            visa.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
-        }
-    }
+//
+//    boolean ifcash = false;
+//    boolean ifknet = false;
+//    boolean ifcard = false;
+//
+//    public void Cashh() {
+//
+//        if (ifcash) {
+//
+//            cash.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
+//        }
+//    }
+//
+//    public void Knett() {
+//
+//        if (ifknet) {
+//
+//            knet.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
+//        }
+//    }
+//
+//    public void Cardd() {
+//
+//        if (ifcard) {
+//
+//            visa.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
+//        }
+//    }
 
 //    private void exitDialog() {
 //        DialogUtil.showDialogTwoButton(this, R.drawable.app_icon, getString(R.string.app_name), getString(R.string.are_you_sure_you_want_to_exit_the_app), getString(R.string.ok), getString(R.string.cancel), new DialogUtil.CallBack() {

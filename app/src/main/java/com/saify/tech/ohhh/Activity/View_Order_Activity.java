@@ -15,11 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Adapter.Order_Info_Adapter;
-import com.saify.tech.ohhh.Adapter.Saved_Address_DM_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.OrderInfoDM;
-import com.saify.tech.ohhh.DataModel.SavedAddressDM;
-import com.saify.tech.ohhh.Fragments.Fragment_Home_Screen;
 import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
@@ -31,7 +28,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Payment_Activity extends AppCompatActivity {
+public class View_Order_Activity extends AppCompatActivity {
 
     AppController appController;
 
@@ -102,12 +99,12 @@ public class Payment_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment);
+        setContentView(R.layout.calendar_view);
         ButterKnife.bind(this);
         dialogUtil = new DialogUtil();
         appController = (AppController) getApplicationContext();
         connectionDetector = new ConnectionDetector(getApplicationContext());
-        user = new User(Payment_Activity.this);
+        user = new User(View_Order_Activity.this);
         user = new User(this);
         idMappings();
 
@@ -125,7 +122,7 @@ public class Payment_Activity extends AppCompatActivity {
 //            HistoryRcv.setAdapter(new HistoryDM_Adapter((context), historyDMS));
 
 //
-        Order_Info_Adapter dm = new Order_Info_Adapter(Payment_Activity.this, orderInfoDMS);
+        Order_Info_Adapter dm = new Order_Info_Adapter(View_Order_Activity.this, orderInfoDMS);
         LinearLayoutManager l = new LinearLayoutManager(this);
         order_info_Rcvv.setLayoutManager(l);
         order_info_Rcvv.setAdapter(dm);

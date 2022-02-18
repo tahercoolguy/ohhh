@@ -75,6 +75,7 @@
         <activity android:name=".Activity.Refund_Policy_Activity" />
         <activity android:name=".Activity.Address_Activity" />
         <activity android:name=".Activity.Payment_Activity" />
+        <activity android:name=".Activity.Food_Details_Activity" />
 
 
 

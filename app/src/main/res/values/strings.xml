@@ -114,9 +114,38 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
     <string name="enter_coupon_code">Enter Coupon Code</string>
 
     <string name="order_info">Order Info</string>
+    <string name="add_code">Add Code</string>
+
+    <string name="code">MX225125</string>
 
 
     <string name="place_orderr">Place order</string>
+
+
+    <string name="cake_details">Brown the beef better. Lean ground beef – I like to use 85% lean angus. Garlic – use fresh  chopped. Spices – chili powder, cumin, onion powder.
+</string>
+
+    <string name="size">Size</string>
+    <string name="options">Options</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+
+    <string name="add_to_cart">Add To Cart </string>
+    <string name="extra_chesse">Extra Cheese</string>
+    <string name="mayonesse">Mayonesse</string>
+    <string name="extra_chocolate">Extra Chocolate</string>
+
+    <string name="placed">Placed</string>
+    <string name="accepted_by_shops">Accepted by Shops
+</string>
+    <string name="picked">Picked</string>
+    <string name="delivered">Delivered</string>
+
+    <string name="shipping_to">Shipping To
+</string>
+    <string name="note">Note</string>
+
 
 
 </resources>
