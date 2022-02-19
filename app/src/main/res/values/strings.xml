@@ -146,6 +146,9 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 </string>
     <string name="note">Note</string>
 
+    <string name="feed">Feed</string>
+    <string name="categories">Categories</string>
+    <string name="suncategory">Subcategory</string>
 
 
 </resources>

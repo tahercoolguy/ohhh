@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.DataModel.ShopssDM;
+import com.saify.tech.ohhh.Fragments.Feed_Categories_Fragment;
+import com.saify.tech.ohhh.Fragments.Fragment_Home_Screen;
 import com.saify.tech.ohhh.R;
 
 import java.util.ArrayList;
@@ -55,6 +57,15 @@ public class Featured_Shopss_Adapter extends RecyclerView.Adapter<Featured_Shops
         holder.delivery_boy.setImageResource(R.drawable.ic_delivery_boy);
         holder.time_img.setImageResource(R.drawable.ic_time);
         holder.cake.setImageResource(shopssDM.getCake_img());
+
+
+        holder.cake.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)context).addFragment(new Feed_Categories_Fragment(), false);
+
+            }
+        });
 
 
 

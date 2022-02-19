@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.DataModel.OffersDM;
 import com.saify.tech.ohhh.DataModel.ShopssDM;
+import com.saify.tech.ohhh.Fragments.Deep_and_Deep_1_Fragment;
+import com.saify.tech.ohhh.Fragments.Feed_Categories_Fragment;
 import com.saify.tech.ohhh.R;
 
 import java.util.ArrayList;
@@ -49,6 +51,14 @@ public class Offers_Adapter extends RecyclerView.Adapter<Offers_Adapter.Programm
         holder.textView.setText(offersDM.getOffer_chocklate_1());
 
          holder.img.setImageResource(offersDM.getChocklate_img_1());
+
+         holder.img.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 ((MainActivity)context).addFragment(new Deep_and_Deep_1_Fragment(), false);
+
+             }
+         });
 
 
     }
