@@ -2,11 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-     android:layout_marginTop="10dp"
+      android:layout_marginTop="10dp"
      android:orientation="vertical">
 
 
-    <androidx.cardview.widget.CardView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="@drawable/rounded_rectangle_white_account"
@@ -15,17 +15,17 @@
 
         <ImageView
             android:id="@+id/pastries_Img"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
             android:layout_width="80dp"
-
             android:layout_height="80dp"
+            android:layout_marginLeft="5dp"
+
+            android:layout_marginTop="10dp"
             android:src="@drawable/pastries_1"></ImageView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="70dp"
              android:orientation="horizontal">
 
             <TextView
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="100dp"
+                android:layout_marginLeft="110dp"
                 android:gravity="center"
                 android:text="#162432">
 
@@ -58,9 +58,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="70dp"
             android:layout_marginTop="60dp"
             android:orientation="horizontal">
 
@@ -81,18 +81,18 @@
                 android:layout_width="1dp"
                 android:layout_height="18dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:background="@color/grey">
+                android:layout_marginLeft="5dp"
+                 android:background="@color/grey">
 
             </LinearLayout>
 
             <TextView
                 android:id="@+id/dtm_Txt"
                 android:layout_width="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="15dp"
-                android:gravity="center"
+                 android:gravity="center"
                 android:text="29 Jan, 12:30">
 
             </TextView>
@@ -102,7 +102,7 @@
                 android:layout_width="1dp"
                 android:layout_height="18dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:background="@color/grey">
 
             </LinearLayout>
@@ -111,9 +111,7 @@
                 android:id="@+id/items_count_Txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="15dp"
-                android:gravity="center"
+                android:layout_marginLeft="5dp"
                 android:text="03 Items">
 
             </TextView>
@@ -195,7 +193,7 @@
 <!--        </LinearLayout>-->
 
 
-    </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 
 
 </LinearLayout>

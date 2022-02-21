@@ -2,19 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:animateLayoutChanges="true"
-
-    android:background="@android:color/white">
+    android:background="@color/new_grey"
+    >
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="10dp">
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:id="@+id/layout_parent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -76,12 +77,22 @@
 
                 </LinearLayout>
 
-                <ImageView
+                <RelativeLayout
+                    android:id="@+id/cart_Rl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/rounded_rectangle_white_account"
-                    android:src="@drawable/ic_cart_home_scren"></ImageView>
+                    android:gravity="center"
+                    android:background="@drawable/rectangle_white_border">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_cartttt"></ImageView>
+                </RelativeLayout>
+
+
 
             </LinearLayout>
 
@@ -108,43 +119,62 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp">
 
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginRight="20dp"-->
+
+
+                <!--                    android:background="@drawable/full_rounded_grad_with_transparent_background">-->
+
+
+                <!--                    <EditText-->
+                <!--                        android:id="@+id/passwordET"-->
+                <!--                        android:layout_width="match_parent"-->
+
+
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:layout_gravity="center"-->
+                <!--                        android:layout_marginLeft="30dp"-->
+                <!--                        android:layout_marginBottom="5dp"-->
+                <!--                        android:background="@android:color/transparent"-->
+                <!--                        android:hint="@string/find_for_food_or_restaurant"-->
+
+
+                <!--                        android:textSize="@dimen/text_size_normal"></EditText>-->
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-
-
-                    android:background="@drawable/full_rounded_grad_with_transparent_background">
-
+                    app:boxBackgroundColor="#FCFCFD"
+                     android:layout_height="wrap_content">
 
                     <EditText
                         android:id="@+id/passwordET"
                         android:layout_width="match_parent"
+                        app:boxBackgroundColor="@color/greyDark"
 
 
                         android:layout_height="match_parent"
-                        android:layout_gravity="center"
                         android:layout_marginLeft="30dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@android:color/transparent"
+                           android:background="@android:color/transparent"
                         android:hint="@string/find_for_food_or_restaurant"
 
-
                         android:textSize="@dimen/text_size_normal"></EditText>
-                </com.google.android.material.textfield.TextInputLayout>
 
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="20dp"
                     android:src="@drawable/places_ic_search">
 
                 </ImageView>
 
             </RelativeLayout>
-
 
 
             <LinearLayout
@@ -192,8 +222,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/featuredShopsRcv"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -222,7 +251,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/best_fom_desert_Rcv"
-                 android:layout_width="match_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>

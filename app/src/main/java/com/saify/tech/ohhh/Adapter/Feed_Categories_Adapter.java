@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -49,15 +50,14 @@ public class Feed_Categories_Adapter extends RecyclerView.Adapter<Feed_Categorie
         holder.pieces.setText(feed_categoriesDM.getPieces());
         holder.pastriess.setText(feed_categoriesDM.getPasties());
 
-        holder.feed_category_img.setOnClickListener(new View.OnClickListener() {
+
+
+        holder.feed_cakeLinearLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ((MainActivity)context).addFragment(new Deep_and_Deep_2_Fragment(), false);
-
             }
         });
-
-
     }
 
     @Override
@@ -71,6 +71,7 @@ public class Feed_Categories_Adapter extends RecyclerView.Adapter<Feed_Categorie
         TextView pastriess;
         TextView pricekwds;
         TextView pieces;
+        LinearLayout feed_cakeLinearLL;
 
 
         public Programming_AdapterViewHolder(@NonNull View itemView) {
@@ -79,6 +80,7 @@ public class Feed_Categories_Adapter extends RecyclerView.Adapter<Feed_Categorie
             pricekwds = (TextView) itemView.findViewById(R.id.price_kwd_Txt);
              pieces = (TextView) itemView.findViewById(R.id.pieces_Txt);
             feed_category_img=itemView.findViewById(R.id.feed_category_img);
+            feed_cakeLinearLL=itemView.findViewById(R.id.feed_cakeLinearLL);
          }
     }
 }

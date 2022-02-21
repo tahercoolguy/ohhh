@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="10dp"
     android:orientation="vertical">
 
 
-    <androidx.cardview.widget.CardView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
         app:cardCornerRadius="10dp"
@@ -38,7 +38,7 @@
                 android:gravity="center"
                 android:text="Pastries"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold">
 
             </TextView>
@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="180dp"
+                android:layout_marginLeft="175dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:src="@drawable/ic_crosssss">
@@ -89,6 +89,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginLeft="30dp"
+                android:layout_marginRight="50dp"
                 android:gravity="center"
                 android:text="10.000 KWD"
                 android:textColor="@color/colorPrimary"
@@ -98,28 +99,60 @@
             </TextView>
 
 
-            <ImageView
-                android:id="@+id/minus_product_img"
-                android:layout_width="wrap_content"
-                 android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/minus_cake_Rl"
+                android:layout_width="25dp"
 
-            </ImageView>
+
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_corner_border_primary_colour_plus_minus"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_circle_minus">
+
+                </ImageView>
+
+            </RelativeLayout>
 
             <TextView
-                android:id="@+id/items_count_Txt"
+                android:id="@+id/minus_plus_Txt"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></TextView>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:text="02"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold">
 
-            <ImageView
-                android:id="@+id/plus_product_Img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            </TextView>
+            <RelativeLayout
+                android:id="@+id/plus_cake_RL"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rounded_corner_border_primary_colour_selected_plus_minus"
+                android:gravity="center">
 
-            </ImageView>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_plus_white">
+
+                </ImageView>
+
+            </RelativeLayout>
         </LinearLayout>
 
 
-    </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 
 
 </LinearLayout>

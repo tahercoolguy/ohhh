@@ -41,283 +41,332 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_gravity="center"
-            android:layout_marginLeft="140dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="40dp"
             android:src="@drawable/small_ohh">
 
         </ImageView>
     </RelativeLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="20dp"
-
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sign_in"
-            android:textColor="@color/black"
-            android:textSize="30dp"
-            android:textStyle="bold">
-
-        </TextView>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="@string/username"></TextView>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/full_rounded_grad_with_transparent_background"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
-             android:paddingRight="15dp"
-            android:paddingBottom="15dp"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@color/colorPrimary">
-
-            <EditText
-                android:id="@+id/emailET"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:inputType="textEmailAddress"
-                android:textSize="@dimen/text_size_normal"></EditText>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/password"></TextView>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-
-            android:background="@drawable/full_rounded_grad_with_transparent_background"
-
-            app:passwordToggleEnabled="true">
-
-            <EditText
-                android:id="@+id/passwordET"
-                android:layout_width="match_parent"
-
-
-                android:layout_height="30dp"
-                android:background="@android:color/transparent"
-
-                android:inputType="textPassword"
-
-                android:textSize="@dimen/text_size_normal"></EditText>
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <Button
-            android:id="@+id/signInBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="50dp"
-            android:background="@drawable/rounded_corner_primary_colour"
-            android:gravity="center"
-            android:padding="15dp"
-            android:text="@string/sign_in"
-            android:textColor="@color/white"></Button>
-        <!--            <Button-->
-        <!--                android:layout_width="150dp"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_marginRight="20dp"-->
-        <!--                android:background="@drawable/rounded_corner_white"-->
-        <!--                android:gravity="center"-->
-        <!--                android:paddingTop="10dp"-->
-
-        <!--                android:paddingBottom="10dp"-->
-        <!--                android:text="Sign In"-->
-        <!--                android:textColor="@color/black"-->
-        <!--                android:textSize="@dimen/text_size_normal">-->
-
-        <!--            </Button>-->
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="60dp"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/dont_have_an_account"></TextView>
-
-            <TextView
-                android:id="@+id/signUpTxt"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sign_up"
-                android:textColor="@color/colorPrimary"></TextView>
-
-
-        </LinearLayout>
-
-        <!--            <Button-->
-        <!--                android:id="@+id/signUpBtn"-->
-        <!--                android:layout_width="150dp"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:background="@drawable/rounded_corner_grey"-->
-        <!--                android:gravity="center"-->
-        <!--                android:paddingTop="10dp"-->
-
-
-        <!--                android:paddingBottom="10dp"-->
-        <!--                android:text="Sign Up"-->
-        <!--                android:textColor="@color/white"-->
-        <!--                android:textSize="@dimen/text_size_normal">-->
-
-        <!--            </Button>-->
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:background="@color/greyDark"
-                android:gravity="center"></LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/sign_up_with">
-
-            </TextView>
-
-            <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:background="@color/greyDark"
-
-                android:gravity="center"></LinearLayout>
-
-        </LinearLayout>
-
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
-            android:gravity="center">
 
+            android:orientation="vertical">
 
-            <RelativeLayout
-                android:id="@+id/to_facebook_login"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:text="@string/sign_in"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold">
+
+            </TextView>
 
 
-                <ImageView
-                    android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/username"></TextView>
+
+
+            <!--        <com.google.android.material.textfield.TextInputLayout-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginTop="10dp"-->
+            <!--            android:layout_marginBottom="20dp"-->
+            <!--            android:background="@drawable/full_rounded_grad_with_transparent_background"-->
+            <!--            android:paddingLeft="15dp"-->
+            <!--            android:paddingTop="5dp"-->
+            <!--              android:paddingRight="15dp"-->
+            <!--            android:paddingBottom="15dp"-->
+            <!--            app:boxBackgroundMode="outline"-->
+            <!--            app:boxStrokeColor="@color/colorPrimary">-->
+
+            <!--            <EditText-->
+            <!--                android:id="@+id/emailET"-->
+
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:background="@android:color/transparent"-->
+            <!--                android:inputType="textEmailAddress"-->
+            <!--                android:textSize="@dimen/text_size_normal"></EditText>-->
+            <!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outlinedTextField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/emailET"
+
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_facebook_logo">
+                    android:background="@android:color/transparent"
+                    android:inputType="textEmailAddress"
+                    android:textSize="@dimen/text_size_normal"></EditText>
 
-                </ImageView>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password"></TextView>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                app:passwordToggleEnabled="true"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/passwordET"
+                    android:layout_width="match_parent"
+
+
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+
+                    android:inputType="textPassword"
+
+                    android:textSize="@dimen/text_size_normal"></EditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--        <com.google.android.material.textfield.TextInputLayout-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginTop="10dp"-->
+
+            <!--            android:background="@drawable/full_rounded_grad_with_transparent_background"-->
+
+            <!--            app:passwordToggleEnabled="true">-->
+
+            <!--            <EditText-->
+            <!--                android:id="@+id/passwordET"-->
+            <!--                android:layout_width="match_parent"-->
+
+
+            <!--                android:layout_height="30dp"-->
+            <!--                android:background="@android:color/transparent"-->
+
+            <!--                android:inputType="textPassword"-->
+
+            <!--                android:textSize="@dimen/text_size_normal"></EditText>-->
+            <!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+
+            <Button
+                android:id="@+id/signInBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/rounded_corner_primary_colour"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="@string/sign_in"
+                android:textColor="@color/white"></Button>
+            <!--            <Button-->
+            <!--                android:layout_width="150dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginRight="20dp"-->
+            <!--                android:background="@drawable/rounded_corner_white"-->
+            <!--                android:gravity="center"-->
+            <!--                android:paddingTop="10dp"-->
+
+            <!--                android:paddingBottom="10dp"-->
+            <!--                android:text="Sign In"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="@dimen/text_size_normal">-->
+
+            <!--            </Button>-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:gravity="center">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/facebook"
-                    android:textColor="@color/black">
+                    android:text="@string/dont_have_an_account"></TextView>
 
-                </TextView>
-            </RelativeLayout>
+                <TextView
+                    android:id="@+id/signUpTxt"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/colorPrimary"></TextView>
 
 
-            <RelativeLayout
-                android:id="@+id/to_google_login"
-                android:layout_width="wrap_content"
+            </LinearLayout>
+
+            <!--            <Button-->
+            <!--                android:id="@+id/signUpBtn"-->
+            <!--                android:layout_width="150dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:background="@drawable/rounded_corner_grey"-->
+            <!--                android:gravity="center"-->
+            <!--                android:paddingTop="10dp"-->
+
+
+            <!--                android:paddingBottom="10dp"-->
+            <!--                android:text="Sign Up"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="@dimen/text_size_normal">-->
+
+            <!--            </Button>-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@color/greyDark"
+                    android:gravity="center"></LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/sign_up_with">
+
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@color/greyDark"
+
+                    android:gravity="center"></LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
                 android:gravity="center">
 
 
-                <ImageView
+                <RelativeLayout
+                    android:id="@+id/to_facebook_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_google_logo">
+                    android:layout_weight="1">
 
-                </ImageView>
 
-                <TextView
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_facebook_logo">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/facebook"
+                        android:textColor="@color/black">
+
+                    </TextView>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/to_google_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/goggle"
-                    android:textColor="@color/black">
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center">
 
-                </TextView>
-            </RelativeLayout>
 
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_google_logo">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/goggle"
+                        android:textColor="@color/black">
+
+                    </TextView>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!--        <LinearLayout-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginTop="50dp"-->
+            <!--            android:gravity="center">-->
+
+            <!--            <Button-->
+            <!--                android:id="@+id/guestBtn"-->
+            <!--                android:layout_width="320dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:background="@drawable/rounded_corner_guest"-->
+            <!--                android:gravity="center"-->
+            <!--                android:paddingTop="10dp"-->
+
+
+            <!--                android:paddingBottom="10dp"-->
+            <!--                android:text="@string/gues"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="@dimen/text_size_normal">-->
+
+            <!--            </Button>-->
+            <!--        </LinearLayout>-->
         </LinearLayout>
 
-        <!--        <LinearLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginTop="50dp"-->
-        <!--            android:gravity="center">-->
-
-        <!--            <Button-->
-        <!--                android:id="@+id/guestBtn"-->
-        <!--                android:layout_width="320dp"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:background="@drawable/rounded_corner_guest"-->
-        <!--                android:gravity="center"-->
-        <!--                android:paddingTop="10dp"-->
-
-
-        <!--                android:paddingBottom="10dp"-->
-        <!--                android:text="@string/gues"-->
-        <!--                android:textColor="@color/white"-->
-        <!--                android:textSize="@dimen/text_size_normal">-->
-
-        <!--            </Button>-->
-        <!--        </LinearLayout>-->
     </LinearLayout>
+
 </LinearLayout>

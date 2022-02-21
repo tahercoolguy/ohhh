@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -48,6 +49,11 @@ public class Fragment_Home_Screen extends Fragment {
 
     @BindView(R.id.best_fom_desert_Rcv)
     RecyclerView best_fom_desert_Rcvv;
+
+    @BindView(R.id.cart_Rl)
+    RelativeLayout Cart;
+
+
 
 
 

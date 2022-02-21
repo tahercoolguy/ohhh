@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-      tools:context=".Activity.View_Order_Activity">
+    tools:context=".Activity.View_Order_Activity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -11,167 +11,157 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-
-        android:layout_marginTop="-50dp">
-
-        <ImageView
-            android:id="@+id/back_saved_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="-30dp"
-            android:layout_marginTop="23dp"
-            android:src="@drawable/ic_back_back_otp">
-
-        </ImageView>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:text="@string/view_order"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold">
-
-        </TextView>
-
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="-70dp"
-        android:gravity="center">
-
-
-    </LinearLayout>
-
-
-
-
-
-
-
-
-
-    <RelativeLayout
-        android:id="@+id/now_RL"
-        android:layout_width="match_parent"
-        android:layout_height="270dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/rounded_rectangle_white"
-        android:orientation="vertical">
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/ic_circle_address_orange"></ImageView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginTop="-50dp">
+
+                <ImageView
+                    android:id="@+id/back_saved_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-30dp"
+                    android:layout_marginTop="23dp"
+                    android:src="@drawable/ic_back_back_otp">
+
+                </ImageView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/view_order"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+
+            </RelativeLayout>
 
             <LinearLayout
-                android:layout_width="1dp"
-                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@color/grey"></LinearLayout>
-
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/ic_circle_address_orange"></ImageView>
-
-            <LinearLayout
-                android:layout_width="1dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@color/grey"></LinearLayout>
-
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/ic_circle_brown_unselected"></ImageView>
-
-            <LinearLayout
-                android:layout_width="1dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@color/grey"></LinearLayout>
-
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/ic_circle_brown_unselected"></ImageView>
+                android:layout_marginTop="-70dp"
+                android:gravity="center">
 
 
-
-        </LinearLayout>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/placed"
-            android:textColor="@color/black"
-            android:layout_marginTop="12dp"
-             android:layout_marginLeft="75dp"></TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="75dp"
-            android:layout_marginTop="88dp"
-            android:text="@string/accepted_by_shops"
-            android:textColor="@color/black"></TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/picked"
-            android:textColor="@color/black"
-            android:layout_marginTop="163dp"
-            android:layout_marginLeft="75dp"></TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/delivered"
-            android:textColor="@color/black"
-            android:layout_marginTop="237dp"
-            android:layout_marginLeft="75dp"></TextView>
+            </LinearLayout>
 
 
+            <RelativeLayout
+                android:id="@+id/now_RL"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_rectangle_white"
+                android:orientation="vertical">
 
 
-    </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:text="@string/shipping_to"></TextView>
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_placeeeed"></ImageView>
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@color/colorPrimary"></LinearLayout>
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_acceptedddd"></ImageView>
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@color/grey"></LinearLayout>
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_pickeddd"></ImageView>
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@color/grey"></LinearLayout>
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_pickeddd"></ImageView>
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/placed"
+                    android:textColor="@color/black"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginTop="88dp"
+                    android:text="@string/accepted_by_shops"
+                    android:textColor="@color/black"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginTop="163dp"
+                    android:text="@string/picked"
+                    android:textColor="@color/black"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginTop="237dp"
+                    android:text="@string/delivered"
+                    android:textColor="@color/black"></TextView>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/shipping_to"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"></TextView>
 
 
             <RelativeLayout
@@ -224,162 +214,168 @@ Al-Mubarak St, Kuwait City"
 
 
             </RelativeLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:text="@string/order_info"></TextView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-
-        android:layout_marginRight="20dp"
-        android:background="@drawable/rounded_rectangle_white">
-
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginLeft="15dp"
-           android:gravity="center"
-           android:layout_marginRight="10dp"
-           android:layout_marginTop="10dp"
-           android:orientation="horizontal">
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_weight="12"
-               android:text="Subtotal"
-               android:textColor="@color/black"></TextView>
-
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_weight="1"
-               android:layout_height="wrap_content"
-               android:text="5.000 KWD"
-               android:textColor="@color/black"></TextView>
-
-
-       </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:gravity="center"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="40dp"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="12"
-                android:text="Code Applied"
-                android:textColor="@color/black"></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="Mx3029"
-                android:textColor="@color/black"></TextView>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:gravity="center"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="70dp"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="12"
-                android:text="Discount"
-                android:textColor="@color/black"></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="50%"
-                android:textColor="@color/black"></TextView>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:gravity="center"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="100dp"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="12"
-                android:text="Delivery Charges"
-                android:textColor="@color/black"></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="3.000 KWD"
-                android:textColor="@color/black"></TextView>
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:gravity="center"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="130dp"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="12"
-                android:text="Total"
-                android:textColor="@color/black"></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="2.500 KWD"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimary"></TextView>
-
-
-        </LinearLayout>
-    </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
+                android:text="@string/order_info"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:text="@string/order_info"></TextView>
+                android:textStyle="bold"></TextView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_rectangle_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="12"
+                        android:text="Subtotal"
+                        android:textColor="@color/black"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="5.000 KWD"
+                        android:textColor="@color/black"></TextView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="12"
+                        android:text="Code Applied"
+                        android:textColor="@color/black"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mx3029"
+                        android:textColor="@color/black"></TextView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="12"
+                        android:text="Discount"
+                        android:textColor="@color/black"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="50%"
+                        android:textColor="@color/black"></TextView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="12"
+                        android:text="Delivery Charges"
+                        android:textColor="@color/black"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="3.000 KWD"
+                        android:textColor="@color/black"></TextView>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="130dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="12"
+                        android:text="Total"
+                        android:textColor="@color/black"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="2.500 KWD"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"></TextView>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/order_info"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"></TextView>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -394,17 +390,18 @@ Al-Mubarak St, Kuwait City"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:gravity="center"
-                    android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_weight="3"
                         android:layout_height="wrap_content"
+                        android:layout_weight="3"
                         android:text="1X"
                         android:textColor="@color/black"></TextView>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -414,8 +411,8 @@ Al-Mubarak St, Kuwait City"
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="25.000 KD"
                         android:textColor="@color/black"></TextView>
 
@@ -426,17 +423,18 @@ Al-Mubarak St, Kuwait City"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:gravity="center"
-                    android:layout_marginRight="10dp"
                     android:layout_marginTop="40dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_weight="3"
                         android:layout_height="wrap_content"
+                        android:layout_weight="3"
                         android:text="2X"
                         android:textColor="@color/black"></TextView>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -446,8 +444,8 @@ Al-Mubarak St, Kuwait City"
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="15.000 KD"
                         android:textColor="@color/black"></TextView>
 
@@ -458,17 +456,18 @@ Al-Mubarak St, Kuwait City"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:gravity="center"
-                    android:layout_marginRight="10dp"
                     android:layout_marginTop="70dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_weight="2"
                         android:layout_height="wrap_content"
+                        android:layout_weight="2"
                         android:text="3X"
                         android:textColor="@color/black"></TextView>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -478,8 +477,8 @@ Al-Mubarak St, Kuwait City"
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="20.000 KD"
                         android:textColor="@color/black"></TextView>
 
@@ -487,24 +486,23 @@ Al-Mubarak St, Kuwait City"
                 </LinearLayout>
 
 
+            </RelativeLayout>
 
-             </RelativeLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
+                android:text="@string/note"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:text="@string/note"></TextView>
+                android:textStyle="bold"></TextView>
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginLeft="20dp"
-                android:elevation="3dp"
                 android:layout_marginTop="10dp"
 
                 android:layout_marginRight="20dp"
@@ -512,9 +510,9 @@ Al-Mubarak St, Kuwait City"
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:background="@null"
+                    android:layout_height="match_parent"
 
-                    android:layout_height="match_parent">
+                    android:background="@null">
 
                 </EditText>
 
@@ -522,7 +520,6 @@ Al-Mubarak St, Kuwait City"
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
 
 
 </LinearLayout>

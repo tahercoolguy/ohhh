@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -80,13 +81,23 @@ public class LoginActivity extends AppCompatActivity implements  Validator.Valid
     @OnClick(R.id.to_google_login)
     public void To_Google_Login()
     {
-
+        String url = "https://www.google.com/";
+        Intent i = new Intent();
+        i.setPackage("com.android.chrome");
+        i.setAction(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i);
     }
 
     @OnClick(R.id.to_facebook_login)
     public void To_Facebook_Login()
     {
-
+        String url = "http://www.facebook.com";
+        Intent i = new Intent();
+        i.setPackage("com.android.chrome");
+        i.setAction(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i);
     }
 
 

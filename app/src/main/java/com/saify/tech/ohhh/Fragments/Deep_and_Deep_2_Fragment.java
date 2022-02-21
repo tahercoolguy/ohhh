@@ -58,6 +58,11 @@ public class Deep_and_Deep_2_Fragment extends Fragment {
     @BindView(R.id.sub_category_2_Rcv)
     RecyclerView sub_category_2_Rcv;
 
+    @BindView(R.id.back_dip_1RL)
+    RelativeLayout back;
+
+    @BindView(R.id.cart_dip_1)
+    RelativeLayout cart;
 
 
 
@@ -101,7 +106,8 @@ public class Deep_and_Deep_2_Fragment extends Fragment {
         deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Donat",R.drawable.cke_1));
         deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Pastries",R.drawable.cupcake));
         deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Custards",R.drawable.pudding));
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "kunafa",R.drawable.kunafa));
+
+
         deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "baklava",R.drawable.baklava));
 
         Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, deep_and_deep_cakeDMS);
@@ -114,20 +120,21 @@ public class Deep_and_Deep_2_Fragment extends Fragment {
     private void setClickListeners() {
         ArrayList<DND_Subcategory_DM> dnd_subcategory_dms = new ArrayList<>();
 
-        dnd_subcategory_dms.add(new DND_Subcategory_DM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_1));
-        dnd_subcategory_dms.add(new DND_Subcategory_DM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_1));
-        dnd_subcategory_dms.add(new DND_Subcategory_DM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_1));
-        dnd_subcategory_dms.add(new DND_Subcategory_DM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_1));
-        dnd_subcategory_dms.add(new DND_Subcategory_DM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_1));
-        dnd_subcategory_dms.add(new DND_Subcategory_DM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_1));
-        dnd_subcategory_dms.add(new DND_Subcategory_DM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_1));
-
-
-
-
+        dnd_subcategory_dms.add(new DND_Subcategory_DM("Assortment of pieces","Pasties","10.000 KWD",R.drawable.feed_cake_1));
+        dnd_subcategory_dms.add(new DND_Subcategory_DM("Assortment of pieces","Pasties","10.000 KWD",R.drawable.feed_cake_1));
+        dnd_subcategory_dms.add(new DND_Subcategory_DM("Assortment of pieces","Pasties","10.000 KWD",R.drawable.feed_cake_1));
 
         DND_Subcategory_Adapter dm = new DND_Subcategory_Adapter(context, dnd_subcategory_dms);
 
+
+
+        ArrayList<DND_Subcategory_DM> dnd_subcategory_dms2 = new ArrayList<>();
+
+        dnd_subcategory_dms2.add(new DND_Subcategory_DM("Assortment of pieces","Pasties","10.000 KWD",R.drawable.sub_catogry_2_cake_1));
+        dnd_subcategory_dms2.add(new DND_Subcategory_DM("Assortment of pieces","Pasties","10.000 KWD",R.drawable.sub_catogry_2_cake_2));
+        dnd_subcategory_dms2.add(new DND_Subcategory_DM("Assortment of pieces","Pasties","10.000 KWD",R.drawable.sub_catogry_2_cake_3));
+
+        DND_Subcategory_Adapter dm2 = new DND_Subcategory_Adapter(context, dnd_subcategory_dms2);
 
         LinearLayoutManager l = new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false);
         sub_category_1_Rcv.setLayoutManager(l);
@@ -136,7 +143,7 @@ public class Deep_and_Deep_2_Fragment extends Fragment {
         LinearLayoutManager ll = new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false);
 
         sub_category_2_Rcv.setLayoutManager(ll);
-        sub_category_2_Rcv.setAdapter(dm);
+        sub_category_2_Rcv.setAdapter(dm2);
 
 
     }

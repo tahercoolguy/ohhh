@@ -57,6 +57,11 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     @BindView(R.id.sub_category_2_Rcv)
     RecyclerView sub_category_2_Rcv;
 
+    @BindView(R.id.back_dip_1RL)
+    RelativeLayout back;
+
+    @BindView(R.id.cart_dip_1)
+    RelativeLayout cart;
 
     @BindView(R.id.layout_parent) LinearLayout layout_parent;
     private HListView lst_latest_profiles, lst_latest_news, lst_featured_video;
@@ -82,10 +87,25 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
             ButterKnife.bind(this,rootView);
             idMapping();
 
+            Subcaegry_2();
+
             setClickListeners();
             setDetails();
         }
         return rootView;
+    }
+
+    private void Subcaegry_2() {
+
+        ArrayList<Feed_CategoriesDM> feed_categoriesDMS2 = new ArrayList<>();
+        feed_categoriesDMS2.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_2_cake_1));
+        feed_categoriesDMS2.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_2_cake_2));
+        feed_categoriesDMS2.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_2_cake_3));
+        feed_categoriesDMS2.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_2_cake_4));
+
+        Feed_Categories_Adapter dm2 = new Feed_Categories_Adapter(context, feed_categoriesDMS2);
+        sub_category_2_Rcv.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+        sub_category_2_Rcv.setAdapter(dm2);
     }
 
     private void idMapping() {
@@ -116,28 +136,15 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
 
     private void setClickListeners() {
         ArrayList<Feed_CategoriesDM> feed_categoriesDMS = new ArrayList<>();
-
-        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_1));
-        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_2));
-        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_3));
-        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_4));
-        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_5));
-        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_6));
-        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_7));
-        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_8));
-        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_9));
-
-
-
-
+        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_category_cake_1));
+        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_cake_2));
+        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_cake_3));
+        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_cake_4));
 
         Feed_Categories_Adapter dm = new Feed_Categories_Adapter(context, feed_categoriesDMS);
-//        LinearLayoutManager l = new LinearLayoutManager.HORIZONTAL(context);
-
-        sub_category_2_Rcv.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         sub_category_1_Rcv.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         sub_category_1_Rcv.setAdapter(dm);
-        sub_category_2_Rcv.setAdapter(dm);
+
     }
 
     @Override

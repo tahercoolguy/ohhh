@@ -31,6 +31,7 @@ import com.saify.tech.ohhh.Adapter.Adapter_Menu;
 import com.saify.tech.ohhh.Fragments.Deep_and_Deep_1_Fragment;
 import com.saify.tech.ohhh.Fragments.Deep_and_Deep_2_Fragment;
 import com.saify.tech.ohhh.Fragments.Feed_Categories_Fragment;
+import com.saify.tech.ohhh.Fragments.Fragment_Account;
 import com.saify.tech.ohhh.Fragments.Fragment_Default;
 import com.saify.tech.ohhh.Fragments.Fragment_Home_Screen;
 import com.saify.tech.ohhh.Fragments.Fragment_Shops;
@@ -109,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
     public void selfService() {
         ifHome2 =true;
         Home2();
-//        addFragment(new SelfServiceFragment(),false);
 
     }
 
@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
             home2.setBackground(getDrawable(R.drawable.ic___selected2));
             home3.setBackground(getDrawable(R.drawable.ic___unselected3));
             home4.setBackground(getDrawable(R.drawable.ic___unselected4));
-//            addFragment(new Coach_Fragment(), false);
+            addFragment(new Feed_Categories_Fragment(), false);
 
 
         }
@@ -201,8 +201,7 @@ public class MainActivity extends AppCompatActivity {
             home2.setBackground(getDrawable(R.drawable.ic___unselected2));
             home3.setBackground(getDrawable(R.drawable.ic___unselected3));
             home4.setBackground(getDrawable(R.drawable.ic___selected4));
-             startActivity(new Intent(MainActivity.this,Account_Activity.class));
-
+            addFragment(new Fragment_Account(), false);
         }
 
     }

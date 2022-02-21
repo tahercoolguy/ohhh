@@ -8,462 +8,509 @@
     android:orientation="vertical"
     tools:context=".Activity.Food_Details_Activity">
 
-<androidx.core.widget.NestedScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="283dp">
-
-        <ImageView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:src="@drawable/food_details_cake_1"></ImageView>
+            android:orientation="vertical">
 
 
-    </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="283dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/food_details_cake_1"></ImageView>
 
 
-    <TextView
-        android:id="@+id/cake_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="5dp"
-        android:text="Red Velvet Cake"
-        android:textColor="@color/black"
-        android:textSize="25dp"></TextView>
+                <RelativeLayout
+                    android:id="@+id/back_dip_1RL"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="300dp"
+                    android:layout_weight="1"
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="5dp">
+                    android:background="@drawable/rounded_corner_white">
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_rating_star">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_left_back">
 
-        </ImageView>
-
-        <TextView
-            android:id="@+id/rating_star_Txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="4.5"
-            android:textColor="@color/black"
-            android:textStyle="bold">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/rating_star_count_Txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="(30+)"></TextView>
-
-        <TextView
-            android:id="@+id/see_review_Txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="See Review"
-            android:textColor="@color/colorPrimary"></TextView>
-    </LinearLayout>
+                    </ImageView>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-         android:layout_marginLeft="15dp"
-        android:layout_marginTop="5dp">
-
-        <TextView
-            android:id="@+id/price_kwd_Txt"
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="12.000 KWD"
-            android:layout_gravity="center"
-             android:textColor="@color/colorPrimary"
-            android:textSize="22dp"
-              android:textStyle="bold"></TextView>
-
-        <RelativeLayout
-            android:layout_width="30dp"
-            android:id="@+id/minus_cake_Rl"
+                </RelativeLayout>
 
 
-            android:layout_gravity="center"
-             android:gravity="center"
-            android:background="@drawable/rounded_corner_border_primary_colour_plus_minus"
-            android:layout_height="30dp">
+                <RelativeLayout
+                    android:id="@+id/cart_dip_1"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_corner_white">
 
-            <ImageView
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_cartttt">
+
+                    </ImageView>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/cake_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_circle_minus">
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:text="Red Velvet Cake"
+                android:textColor="@color/black"
+                android:textSize="20dp"></TextView>
 
-            </ImageView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp">
 
-        </RelativeLayout>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_rating_star">
 
-        <TextView
-            android:id="@+id/minus_plus_Txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="02"
-            android:textSize="16dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:textColor="@color/black"
-            android:textStyle="bold">
+                </ImageView>
 
-        </TextView>
+                <TextView
+                    android:id="@+id/rating_star_Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="4.5"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
 
-        <RelativeLayout
-            android:id="@+id/plus_cake_RL"
-            android:layout_width="30dp"
-            android:layout_marginRight="10dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:background="@drawable/rounded_corner_border_primary_colour_selected_plus_minus"
-            android:layout_height="30dp">
+                </TextView>
 
-            <ImageView
+                <TextView
+                    android:id="@+id/rating_star_count_Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="(30+)"></TextView>
+
+                <TextView
+                    android:id="@+id/see_review_Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="See Review"
+                    android:textColor="@color/colorPrimary"></TextView>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/price_kwd_Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="12.000 KWD"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"></TextView>
+
+                <RelativeLayout
+                    android:id="@+id/minus_cake_Rl"
+                    android:layout_width="25dp"
+
+
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_corner_border_primary_colour_plus_minus"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_circle_minus">
+
+                    </ImageView>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/minus_plus_Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="02"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <RelativeLayout
+                    android:id="@+id/plus_cake_RL"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/rounded_corner_border_primary_colour_selected_plus_minus"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_plus_white">
+
+                    </ImageView>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/cake_Description_Txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/cake_details">
+
+            </TextView>
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_plus_white">
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/size"
+                android:textColor="@color/black"
+                android:textSize="16dp"></TextView>
 
-            </ImageView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                 android:layout_marginRight="20dp">
 
-        </RelativeLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/capcicum"></ImageView>
 
-    </LinearLayout>
-    <TextView
-        android:id="@+id/cake_Description_Txt"
-        android:layout_width="match_parent"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:text="@string/cake_details"
-        android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="160dp"
+                    android:layout_weight="11"
+                    android:text="@string/small"
+                    android:textColor="@color/black"></TextView>
 
-    </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:text="@string/size"
-        android:textSize="20dp"
-        android:textColor="@color/black"></TextView>
+                    android:text="Free"
+                    android:textColor="@color/black"></TextView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-         android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="wrap_content"
-             android:src="@drawable/capcicum"
-            android:layout_marginRight="20dp"
-            android:layout_height="wrap_content"></ImageView>
+                <RelativeLayout
+                    android:id="@+id/small_RL"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="27dp"
+                    android:background="@drawable/radio_selector"
+                    android:gravity="center">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="@string/small"
-             android:textColor="@color/black"
-             android:layout_gravity="center"
-            android:layout_weight="11"
-            android:layout_marginRight="160dp"
-            android:layout_height="wrap_content"></TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="Free"
-             android:textColor="@color/black"
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:elevation="10dp"
+                        android:src="@drawable/circle_primary">
 
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"></TextView>
+                    </ImageView>
 
-        <RelativeLayout
-            android:id="@+id/small_RL"
-            android:layout_width="30dp"
-             android:layout_marginLeft="27dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-               android:background="@drawable/radio_selector"
-            android:layout_height="30dp">
-
-            <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:elevation="10dp"
-                android:src="@drawable/circle_primary">
-
-            </ImageView>
-
-        </RelativeLayout>
+                </RelativeLayout>
 
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:src="@drawable/mediu"
-            android:layout_marginRight="20dp"
-            android:layout_height="wrap_content"></ImageView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                 android:layout_marginRight="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="@string/medium"
-            android:textColor="@color/black"></TextView>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/mediu"></ImageView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="+1.000 KWD"
-            android:textColor="@color/black"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="@string/medium"
+                    android:textColor="@color/black"></TextView>
 
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
 
-        <RelativeLayout
-            android:id="@+id/medium_RL"
-            android:layout_width="30dp"
-            android:layout_marginLeft="20dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:background="@drawable/radio_unselector"
-            android:layout_height="30dp">
+                    android:text="+1.000 KWD"
+                    android:textColor="@color/black"></TextView>
 
-
-
-        </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/medium_RL"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/radio_unselector"
+                    android:gravity="center">
 
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:src="@drawable/masrum"
-            android:layout_marginRight="20dp"
-            android:layout_height="wrap_content"></ImageView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="@string/large"
-            android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-             android:layout_height="wrap_content"></TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="+1.000 KWD"
-            android:textColor="@color/black"
-
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"></TextView>
-
-        <RelativeLayout
-            android:id="@+id/large_RL"
-            android:layout_width="30dp"
-            android:layout_marginLeft="20dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:background="@drawable/radio_unselector"
-            android:layout_height="30dp">
+                </RelativeLayout>
 
 
+            </LinearLayout>
 
-        </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                 android:layout_marginRight="20dp">
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/masrum"></ImageView>
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="@string/large"
+                    android:textColor="@color/black"></TextView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:text="@string/options"
-        android:textSize="20dp"
-        android:textColor="@color/black"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:src="@drawable/capcicum"
-            android:layout_marginRight="20dp"
-            android:layout_height="wrap_content"></ImageView>
+                    android:text="+1.000 KWD"
+                    android:textColor="@color/black"></TextView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="Extra Cheese"
-            android:textColor="@color/black"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-             android:layout_height="wrap_content"></TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="Free"
-            android:layout_weight="0.3"
-              android:textColor="@color/black"
-
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"></TextView>
-
-        <RelativeLayout
-            android:id="@+id/extra_chesse_RL"
-            android:layout_width="30dp"
-             android:gravity="center"
-            android:layout_gravity="center"
-            android:background="@drawable/radio_unselector"
-            android:layout_height="30dp">
+                <RelativeLayout
+                    android:id="@+id/large_RL"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/radio_unselector"
+                    android:gravity="center">
 
 
-
-        </RelativeLayout>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:src="@drawable/mediu"
-            android:layout_marginRight="20dp"
-            android:layout_height="wrap_content"></ImageView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="Mayonesse"
-            android:textColor="@color/black"></TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="+1.000 KWD"
-            android:textColor="@color/black"
-
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"></TextView>
-
-        <RelativeLayout
-            android:id="@+id/mayonese_Rl"
-            android:layout_width="30dp"
-            android:layout_marginLeft="20dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:background="@drawable/radio_unselector"
-            android:layout_height="30dp">
+                </RelativeLayout>
 
 
-        </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/options"
+                android:textColor="@color/black"
+                android:textSize="16dp"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                 android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/capcicum"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Extra Cheese"
+                    android:textColor="@color/black"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.3"
+
+                    android:text="Free"
+                    android:textColor="@color/black"></TextView>
+
+                <RelativeLayout
+                    android:id="@+id/extra_chesse_RL"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/radio_unselector"
+                    android:gravity="center">
 
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:src="@drawable/masrum"
-            android:layout_marginRight="20dp"
-            android:layout_height="wrap_content"></ImageView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="Extra chocolate"
-            android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"></TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="+1.000 KWD"
-            android:textColor="@color/black"
-
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"></TextView>
-
-        <RelativeLayout
-            android:id="@+id/extra_chocklate_Rl"
-            android:layout_width="30dp"
-            android:layout_marginLeft="20dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:background="@drawable/radio_unselector"
-            android:layout_height="30dp">
+                </RelativeLayout>
 
 
-        </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                 android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/mediu"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Mayonesse"
+                    android:textColor="@color/black"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:text="+1.000 KWD"
+                    android:textColor="@color/black"></TextView>
+
+                <RelativeLayout
+                    android:id="@+id/mayonese_Rl"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/radio_unselector"
+                    android:gravity="center">
 
 
-    </LinearLayout>
+                </RelativeLayout>
 
 
-    <Button
-        android:id="@+id/add_to_cart_Btn"
-        android:layout_width="255dp"
-        android:layout_height="45dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:width="300dp"
-        android:background="@drawable/rounded_corner_primary_colour"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="@string/add_to_cart"
-        android:layout_marginBottom="30dp"
-        android:textColor="@color/white"></Button>
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                 android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/masrum"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Extra chocolate"
+                    android:textColor="@color/black"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:text="+1.000 KWD"
+                    android:textColor="@color/black"></TextView>
+
+                <RelativeLayout
+                    android:id="@+id/extra_chocklate_Rl"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/radio_unselector"
+                    android:gravity="center">
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/add_to_cart_Btn"
+                android:layout_width="255dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="30dp"
+                android:width="300dp"
+                android:background="@drawable/rounded_corner_primary_colour"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/add_to_cart"
+                android:textColor="@color/white"></Button>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

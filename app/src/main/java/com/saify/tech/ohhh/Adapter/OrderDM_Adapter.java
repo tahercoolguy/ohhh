@@ -1,9 +1,11 @@
 package com.saify.tech.ohhh.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.saify.tech.ohhh.Activity.MainActivity;
+import com.saify.tech.ohhh.Activity.View_Order_Activity;
 import com.saify.tech.ohhh.DataModel.HistoryDM;
 import com.saify.tech.ohhh.DataModel.OrderDM;
 import com.saify.tech.ohhh.R;
@@ -52,6 +55,20 @@ public class OrderDM_Adapter extends RecyclerView.Adapter<OrderDM_Adapter.Progra
         holder.count_products.setText(orderDM.getCount_product());
         holder.pastri_imgs.setImageResource(R.drawable.pastries_1);
 
+        holder.order_cancel_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        holder.view_order_Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+              }
+        });
+
 
     }
 
@@ -67,6 +84,8 @@ public class OrderDM_Adapter extends RecyclerView.Adapter<OrderDM_Adapter.Progra
         TextView pricekwds;
         TextView count_products;
         ImageView pastri_imgs;
+        Button view_order_Btn,order_cancel_btn;
+
 
 
         public Programming_AdapterViewHolder(@NonNull View itemView) {
@@ -76,6 +95,8 @@ public class OrderDM_Adapter extends RecyclerView.Adapter<OrderDM_Adapter.Progra
             pricekwds = (TextView) itemView.findViewById(R.id.price_Kwd_Txt);
             count_products = (TextView) itemView.findViewById(R.id.items_count_Txt);
             pastri_imgs = (ImageView) itemView.findViewById(R.id.pastries_Img);
+            view_order_Btn=itemView.findViewById(R.id.order_cancel_btn);
+            order_cancel_btn=itemView.findViewById(R.id.order_cancel_btn);
         }
     }
 }

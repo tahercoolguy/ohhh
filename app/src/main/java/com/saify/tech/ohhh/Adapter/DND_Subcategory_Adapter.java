@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -47,9 +48,10 @@ public class DND_Subcategory_Adapter extends RecyclerView.Adapter<DND_Subcategor
         holder.img.setImageResource(dnd_subcategory_dm.getImgcake());
         holder.heading1.setText(dnd_subcategory_dm.getHeading1());
         holder.heading2.setText(dnd_subcategory_dm.getHeading2());
-        holder.price.setText(dnd_subcategory_dm.getImgcake());
+        holder.price.setText(dnd_subcategory_dm.getHeading3());
 
-        holder.img.setOnClickListener(new View.OnClickListener() {
+
+        holder.subcategory_item_LL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ((MainActivity)context).startActivity(new Intent(context,Food_Details_Activity.class));
@@ -71,6 +73,7 @@ public class DND_Subcategory_Adapter extends RecyclerView.Adapter<DND_Subcategor
         TextView heading2;
         TextView price;
         ImageView img;
+        LinearLayout subcategory_item_LL;
 
 
         public Programming_AdapterViewHolder(@NonNull View itemView) {
@@ -79,6 +82,7 @@ public class DND_Subcategory_Adapter extends RecyclerView.Adapter<DND_Subcategor
             heading2 = (TextView) itemView.findViewById(R.id.pastries_txt);
             price = (TextView) itemView.findViewById(R.id.price_kwd_Txt);
             img = itemView.findViewById(R.id.cake_Img);
+            subcategory_item_LL=itemView.findViewById(R.id.subcategory_item_LL);
         }
     }
 }

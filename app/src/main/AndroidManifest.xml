@@ -76,8 +76,8 @@
         <activity android:name=".Activity.Address_Activity" />
         <activity android:name=".Activity.Payment_Activity" />
         <activity android:name=".Activity.Food_Details_Activity" />
-
-
+        <activity android:name=".Activity.Cart_Activity" />
+        <activity android:name=".Activity.View_Order_Activity" />
 
 
 

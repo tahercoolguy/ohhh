@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
-    android:layout_marginRight="20dp"
     android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
     android:orientation="vertical"
     tools:context=".Activity.Edit_Profile_Activity">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="-50dp"
-        android:layout_marginBottom="-40dp"
 
 
-        android:layout_height="wrap_content">
+        android:layout_marginBottom="-40dp">
 
         <ImageView
             android:id="@+id/back_edit_profile"
@@ -44,8 +44,6 @@
         </TextView>
 
 
-
-
     </RelativeLayout>
 
     <TextView
@@ -53,54 +51,86 @@
         android:layout_height="wrap_content"
         android:text="@string/full_name"></TextView>
 
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="10dp"-->
+
+    <!--        android:background="@drawable/full_rounded_grad_with_transparent_background">-->
+
+    <!--        <EditText-->
+    <!--            android:id="@+id/full_name_ET"-->
+    <!--            android:layout_width="match_parent"-->
+
+
+    <!--            android:layout_height="30dp"-->
+    <!--            android:background="@android:color/transparent"-->
+
+    <!--            android:inputType="textPassword"-->
+
+    <!--            android:textSize="@dimen/text_size_normal"></EditText>-->
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-
-        android:background="@drawable/full_rounded_grad_with_transparent_background">
+        app:passwordToggleEnabled="true">
 
         <EditText
             android:id="@+id/full_name_ET"
             android:layout_width="match_parent"
 
 
-            android:layout_height="30dp"
+            android:layout_height="match_parent"
             android:background="@android:color/transparent"
 
-            android:inputType="textPassword"
 
             android:textSize="@dimen/text_size_normal"></EditText>
+
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="@string/email"></TextView>
 
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="10dp"-->
+
+    <!--        android:background="@drawable/full_rounded_grad_with_transparent_background">-->
+
+    <!--        <EditText-->
+    <!--            android:id="@+id/email_ET"-->
+    <!--            android:layout_width="match_parent"-->
+
+
+    <!--            android:layout_height="30dp"-->
+    <!--            android:background="@android:color/transparent"-->
+
+    <!--            android:inputType="textPassword"-->
+
+    <!--            android:textSize="@dimen/text_size_normal"></EditText>-->
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-
-        android:background="@drawable/full_rounded_grad_with_transparent_background">
+        app:passwordToggleEnabled="true">
 
         <EditText
             android:id="@+id/email_ET"
             android:layout_width="match_parent"
-
-
-            android:layout_height="30dp"
+            android:layout_height="match_parent"
             android:background="@android:color/transparent"
-
             android:inputType="textPassword"
-
             android:textSize="@dimen/text_size_normal"></EditText>
     </com.google.android.material.textfield.TextInputLayout>
-
-
 
     <Button
         android:id="@+id/save_Btn"

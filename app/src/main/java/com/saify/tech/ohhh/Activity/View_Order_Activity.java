@@ -37,70 +37,12 @@ public class View_Order_Activity extends AppCompatActivity {
     ConnectionDetector connectionDetector;
     DialogUtil dialogUtil;
 
-    @NotEmpty
-    @BindView(R.id.order_info_Rcv)
-    RecyclerView order_info_Rcvv;
-
-    @NotEmpty
-    @BindView(R.id.back_saved_address)
-    ImageView back;
-
-    @BindView(R.id.place_order)
-    Button place_order;
-
-    @BindView(R.id.cash_RL)
-    RelativeLayout cash;
-
-    @BindView(R.id.visa_RL)
-    RelativeLayout visa;
-
-    @BindView(R.id.knet_RL)
-    RelativeLayout knet;
-
-    @BindView(R.id.codeET)
-    EditText code;
-
-    @OnClick(R.id.cash_RL)
-    public void Cash() {
-
-        Cashh();
-        ifcash=true;
-    }
-
-    @OnClick(R.id.visa_RL)
-    public void Visa() {
-        Visa();
-        ifcard=true;
-
-
-    }
-
-    @OnClick(R.id.knet_RL)
-    public void Knet() {
-
-        Knett();
-        ifknet=true;
-    }
-
-    @OnClick(R.id.back_saved_address)
-    public void Back_address() {
-//        startActivity(new Intent(Address_Activity.this,Account_Activity.class));
-
-    }
-
-
-    @OnClick(R.id.place_order)
-    public void Place_Order() {
-//        startActivity(new Intent(Address_Activity.this,Account_Activity.class));
-
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.calendar_view);
-        ButterKnife.bind(this);
+        setContentView(R.layout.activity_view_order);
+//        ButterKnife.bind(this);
         dialogUtil = new DialogUtil();
         appController = (AppController) getApplicationContext();
         connectionDetector = new ConnectionDetector(getApplicationContext());
@@ -109,23 +51,6 @@ public class View_Order_Activity extends AppCompatActivity {
         idMappings();
 
 
-        ArrayList<OrderInfoDM> orderInfoDMS = new ArrayList<>();
-
-        orderInfoDMS.add(new OrderInfoDM("Subtotal", "5.000 KWD"));
-        orderInfoDMS.add(new OrderInfoDM("Code Applied", "Mx3029"));
-        orderInfoDMS.add(new OrderInfoDM("Discount", "50%"));
-        orderInfoDMS.add(new OrderInfoDM("Delivery Charges", "3.000 KWD"));
-        orderInfoDMS.add(new OrderInfoDM("Total", "2.500 KWD"));
-
-
-//            HistoryRcv.setLayoutManager(new LinearLayoutManager(context));
-//            HistoryRcv.setAdapter(new HistoryDM_Adapter((context), historyDMS));
-
-//
-        Order_Info_Adapter dm = new Order_Info_Adapter(View_Order_Activity.this, orderInfoDMS);
-        LinearLayoutManager l = new LinearLayoutManager(this);
-        order_info_Rcvv.setLayoutManager(l);
-        order_info_Rcvv.setAdapter(dm);
 
 
     }
@@ -150,33 +75,6 @@ public class View_Order_Activity extends AppCompatActivity {
     }
 
 
-    boolean ifcash = false;
-    boolean ifknet = false;
-    boolean ifcard = false;
-
-    public void Cashh() {
-
-        if (ifcash) {
-
-            cash.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
-        }
-    }
-
-    public void Knett() {
-
-        if (ifknet) {
-
-            knet.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
-        }
-    }
-
-    public void Cardd() {
-
-        if (ifcard) {
-
-            visa.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
-        }
-    }
 
 //    private void exitDialog() {
 //        DialogUtil.showDialogTwoButton(this, R.drawable.app_icon, getString(R.string.app_name), getString(R.string.are_you_sure_you_want_to_exit_the_app), getString(R.string.ok), getString(R.string.cancel), new DialogUtil.CallBack() {

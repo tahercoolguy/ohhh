@@ -1,6 +1,7 @@
 package com.saify.tech.ohhh.Activity;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.Fragments.Fragment_Account;
 import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
@@ -35,6 +37,7 @@ public class Edit_Profile_Activity extends AppCompatActivity implements  Validat
     ConnectionDetector connectionDetector;
     User user;
     DialogUtil dialogUtil;
+    Context context;
 
 //    @NotEmpty
 //     @BindView(R.id.back_edit_profile)
@@ -62,6 +65,7 @@ public class Edit_Profile_Activity extends AppCompatActivity implements  Validat
     @OnClick(R.id.back_edit_profile)
     public void Back()
     {
+//        ((MainActivity)context).startActivity(new Intent(context, Fragment_Account.class));
         startActivity(new Intent(Edit_Profile_Activity.this,Account_Activity.class));
 
     }
@@ -83,6 +87,7 @@ public class Edit_Profile_Activity extends AppCompatActivity implements  Validat
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
         ButterKnife.bind(this);
+
         dialogUtil = new DialogUtil();
         appController = (AppController) getApplicationContext();
         connectionDetector = new ConnectionDetector(getApplicationContext());

@@ -1,11 +1,14 @@
 package com.saify.tech.ohhh.Adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,6 +24,9 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_Deep_Cake_Adapter.Programming_AdapterViewHolder> {
+
+    int row_index = 0;
+
 
     private Context context;
     private ArrayList<Deep_and_Deep_CakeDM> deep_and_deep_cakeDMS;
@@ -47,10 +53,27 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
         holder.cakeImg.setImageResource(deep_and_deep_cakeDM.getCake_img());
         holder.cakename.setText(deep_and_deep_cakeDM.getCake_name());
 
+        holder.linearLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+              row_index=0;
+              notifyDataSetChanged();
+            }
+        });
+        if (row_index == position) {
+            holder.cakename.setTextColor(Color.parseColor("#FFFFFFFF"));
+
+            holder.cake_deep_and_deepRL.setBackgroundResource(R.drawable.rounded_corner_deep_deep_cake);
+        }else {
+            holder.cakename.setTextColor(Color.parseColor("#E67826"));
+
+            holder.cake_deep_and_deepRL.setBackgroundResource(R.drawable.rounded_corner_deep_and_deep_white);
+        }
 
 
     }
+
 
     @Override
     public int getItemCount() {
@@ -61,12 +84,16 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
 
         TextView cakename;
         ImageView cakeImg;
+        RelativeLayout cake_deep_and_deepRL;
+        LinearLayout linearLL;
 
 
         public Programming_AdapterViewHolder(@NonNull View itemView) {
             super(itemView);
             cakename = (TextView) itemView.findViewById(R.id.cake_name_deep_Txt);
             cakeImg = itemView.findViewById(R.id.cake_deep_Img);
+            cake_deep_and_deepRL = itemView.findViewById(R.id.cake_deep_and_deepRL);
+            linearLL=itemView.findViewById(R.id.linearLL);
         }
     }
 }

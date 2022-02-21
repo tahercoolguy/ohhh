@@ -37,8 +37,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="30dp"
             android:background="@drawable/rounded_rectangle_white_account"
-            android:elevation="1dp"
-            android:gravity="center"
+             android:gravity="center"
 
             android:orientation="horizontal">
 
@@ -55,8 +54,7 @@
                     android:id="@+id/homeImage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic___selected1"
-                    />
+                    android:background="@drawable/ic___selected1" />
 
 
             </LinearLayout>
@@ -76,8 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:background="@drawable/ic___unselected2"
-                    />
+                    android:background="@drawable/ic___unselected2" />
 
 
             </LinearLayout>
@@ -102,8 +99,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/ic___unselected3"
-                    android:padding="10dp"
-                      />
+                    android:padding="10dp" />
 
             </LinearLayout>
 
@@ -123,8 +119,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:background="@drawable/ic___unselected4"
-                    />
+                    android:background="@drawable/ic___unselected4" />
 
             </LinearLayout>
             <!--                <LinearLayout-->

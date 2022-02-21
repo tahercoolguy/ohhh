@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -59,6 +60,13 @@ public class Shopss_Adapter extends RecyclerView.Adapter<Shopss_Adapter.Programm
         holder.delivery_boy.setImageResource(R.drawable.ic_delivery_boy);
         holder.time_img.setImageResource(R.drawable.ic_time);
 
+        holder.shop_cake_Rl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
 
     }
 
@@ -74,6 +82,8 @@ public class Shopss_Adapter extends RecyclerView.Adapter<Shopss_Adapter.Programm
         ImageView star,delivery_boy,time_img;
 //        LinearLayout like;
 
+        RelativeLayout shop_cake_Rl;
+
 
         public Programming_AdapterViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -87,6 +97,8 @@ public class Shopss_Adapter extends RecyclerView.Adapter<Shopss_Adapter.Programm
 //            like = (LinearLayout) itemView.findViewById(R.id.like_LL);
             delivery_boy = (ImageView) itemView.findViewById(R.id.dlivery_Img);
             time_img = (ImageView) itemView.findViewById(R.id.timer_delivery);
+
+            shop_cake_Rl=itemView.findViewById(R.id.shop_cake_Rl);
 
 //            desert=(Button) itemView.findViewById(R.id.desert_Btn);
 //            kuwaiti=(Button) itemView.findViewById(R.id.kuwait_Btn);

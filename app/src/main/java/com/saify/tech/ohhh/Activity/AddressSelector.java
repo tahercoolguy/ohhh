@@ -38,7 +38,7 @@ public class AddressSelector extends AppCompatActivity {
 
     @OnClick(R.id.arabic_Btn)
     public void Arabic() {
-        startActivity(new Intent(AddressSelector.this, LoginActivity.class));
+        startActivity(new Intent(AddressSelector.this, View_Order_Activity.class));
     }
 
 

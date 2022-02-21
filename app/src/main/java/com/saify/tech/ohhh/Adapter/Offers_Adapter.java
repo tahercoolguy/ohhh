@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.DataModel.OffersDM;
 import com.saify.tech.ohhh.DataModel.ShopssDM;
 import com.saify.tech.ohhh.Fragments.Deep_and_Deep_1_Fragment;
+import com.saify.tech.ohhh.Fragments.Deep_and_Deep_2_Fragment;
 import com.saify.tech.ohhh.Fragments.Feed_Categories_Fragment;
 import com.saify.tech.ohhh.R;
 
@@ -52,10 +54,10 @@ public class Offers_Adapter extends RecyclerView.Adapter<Offers_Adapter.Programm
 
          holder.img.setImageResource(offersDM.getChocklate_img_1());
 
-         holder.img.setOnClickListener(new View.OnClickListener() {
+         holder.shop_cake_RL.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 ((MainActivity)context).addFragment(new Deep_and_Deep_1_Fragment(), false);
+                 ((MainActivity)context).addFragment(new Deep_and_Deep_2_Fragment(), false);
 
              }
          });
@@ -72,12 +74,14 @@ public class Offers_Adapter extends RecyclerView.Adapter<Offers_Adapter.Programm
 
         TextView textView;
         ImageView img;
+        RelativeLayout shop_cake_RL;
 
 
         public Programming_AdapterViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.offer_chocklate_cake_txt_1);
             img = (ImageView) itemView.findViewById(R.id.offer_chocklate_img_1);
+            shop_cake_RL=itemView.findViewById(R.id.shop_cake_RL);
 
         }
     }

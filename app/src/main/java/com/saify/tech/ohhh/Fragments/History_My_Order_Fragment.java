@@ -89,13 +89,13 @@ public class History_My_Order_Fragment extends Fragment {
 
             ArrayList<HistoryDM> historyDMS = new ArrayList<>();
 
-            historyDMS.add(new HistoryDM("Pastries","#162432","10,000Kwd","03 Items",R.drawable.pastries_1,"29 Jan, 12:30"));
-            historyDMS.add(new HistoryDM("Pastries","#162432","10,000Kwd","03 Items",R.drawable.pastries_2,"29 Jan, 12:30"));
-            historyDMS.add(new HistoryDM("Pastries","#162432","10,000Kwd","03 Items",R.drawable.pastries_3,"29 Jan, 12:30"));
+            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_1,"29 Jan, 12:30"));
+            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_2,"29 Jan, 12:30"));
+            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_3,"29 Jan, 12:30"));
 
-            historyDMS.add(new HistoryDM("Pastries","#162432","10,000Kwd","03 Items",R.drawable.pastries_1,"29 Jan, 12:30"));
-            historyDMS.add(new HistoryDM("Pastries","#162432","10,000Kwd","03 Items",R.drawable.pastries_2,"29 Jan, 12:30"));
-            historyDMS.add(new HistoryDM("Pastries","#162432","10,000Kwd","03 Items",R.drawable.pastries_3,"29 Jan, 12:30"));
+            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_1,"29 Jan, 12:30"));
+            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_2,"29 Jan, 12:30"));
+            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_3,"29 Jan, 12:30"));
 
 //            HistoryRcv.setLayoutManager(new LinearLayoutManager(context));
 //            HistoryRcv.setAdapter(new HistoryDM_Adapter((context), historyDMS));

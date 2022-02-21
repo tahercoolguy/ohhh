@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.DataModel.ShopssDM;
+import com.saify.tech.ohhh.Fragments.Deep_and_Deep_1_Fragment;
 import com.saify.tech.ohhh.Fragments.Feed_Categories_Fragment;
 import com.saify.tech.ohhh.Fragments.Fragment_Home_Screen;
 import com.saify.tech.ohhh.R;
@@ -59,10 +61,10 @@ public class Featured_Shopss_Adapter extends RecyclerView.Adapter<Featured_Shops
         holder.cake.setImageResource(shopssDM.getCake_img());
 
 
-        holder.cake.setOnClickListener(new View.OnClickListener() {
+        holder.shop_cake_RL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity)context).addFragment(new Feed_Categories_Fragment(), false);
+                ((MainActivity)context).addFragment(new Deep_and_Deep_1_Fragment(), false);
 
             }
         });
@@ -84,6 +86,8 @@ public class Featured_Shopss_Adapter extends RecyclerView.Adapter<Featured_Shops
         ImageView star,delivery_boy,time_img,cake;
 //        LinearLayout like;
 
+        RelativeLayout shop_cake_RL;
+
 
         public Programming_AdapterViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -98,6 +102,7 @@ public class Featured_Shopss_Adapter extends RecyclerView.Adapter<Featured_Shops
             delivery_boy = (ImageView) itemView.findViewById(R.id.dlivery_Img);
             time_img = (ImageView) itemView.findViewById(R.id.timer_delivery);
             cake = (ImageView) itemView.findViewById(R.id.cake_shop_img1);
+            shop_cake_RL=itemView.findViewById(R.id.shop_cake_RL);
 
 
 //            desert=(Button) itemView.findViewById(R.id.desert_Btn);

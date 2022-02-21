@@ -72,15 +72,14 @@ public class Cart_Activity extends AppCompatActivity {
 
     private void Nornoya() {
         ArrayList<CartDM> cartDMS = new ArrayList<>();
-        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "0", R.drawable.circle_big, R.drawable.ic_circle_minus, R.drawable.ic_crosssss, R.drawable.nornoya_1));
-        cartDMS.add(new CartDM("Pastries", "Extra Cheese", "10.000 KWD", "0", R.drawable.circle_big, R.drawable.ic_circle_minus, R.drawable.ic_crosssss, R.drawable.nornoya_2));
-        cartDMS.add(new CartDM("Pastries", "Spicy chicken, beef", "10.000 KWD", "0", R.drawable.circle_big, R.drawable.ic_circle_minus, R.drawable.ic_crosssss, R.drawable.nornoya_3));
-
+        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "01", R.drawable.nornoya_1));
+        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "02", R.drawable.nornoya_2));
+        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "03", R.drawable.nornoya_3));
 
         Cart_Adapter dm = new Cart_Adapter(this, cartDMS);
 
         LinearLayoutManager l
-                = new LinearLayoutManager(Cart_Activity.this, LinearLayoutManager.HORIZONTAL, false);
+                = new LinearLayoutManager(Cart_Activity.this, LinearLayoutManager.VERTICAL, false);
         nonoya.setLayoutManager(l);
         nonoya.setAdapter(dm);
     }
@@ -90,10 +89,11 @@ public class Cart_Activity extends AppCompatActivity {
 
 
         Cart_Adapter dm = new Cart_Adapter(this, cartDMS);
-        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "0", R.drawable.circle_big, R.drawable.ic_circle_minus, R.drawable.ic_crosssss, R.drawable.dip_dip_cake));
-
+        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "01", R.drawable.nornoya_1));
+        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "02", R.drawable.nornoya_2));
+        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "03", R.drawable.nornoya_3));
         LinearLayoutManager l
-                = new LinearLayoutManager(Cart_Activity.this, LinearLayoutManager.HORIZONTAL, false);
+                = new LinearLayoutManager(Cart_Activity.this, LinearLayoutManager.VERTICAL, false);
         dip_and_dip.setLayoutManager(l);
         dip_and_dip.setAdapter(dm);
     }

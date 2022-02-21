@@ -18,6 +18,7 @@
         android:background="@drawable/rounded_corner_deep_deep_cake">
 
         <LinearLayout
+            android:id="@+id/linearLL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
