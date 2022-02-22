@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.mobsandgeeks.saripaar.annotation.Email;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
@@ -23,22 +24,22 @@ import butterknife.Optional;
 public class AddressSelector extends AppCompatActivity {
 
     @NotEmpty
-    @BindView(R.id.english_Btn)
-    Button Englishh;
+    @BindView(R.id.english_Txt)
+    TextView Englishh;
 
     @NotEmpty
-    @BindView(R.id.arabic_Btn)
-    Button Arabicc;
+    @BindView(R.id.arabic_Txt)
+    TextView Arabicc;
 
-    @OnClick(R.id.english_Btn)
+    @OnClick(R.id.english_Txt)
     public void Englishh() {
         startActivity(new Intent(AddressSelector.this, LoginActivity.class));
 
     }
 
-    @OnClick(R.id.arabic_Btn)
+    @OnClick(R.id.arabic_Txt)
     public void Arabic() {
-        startActivity(new Intent(AddressSelector.this, View_Order_Activity.class));
+        startActivity(new Intent(AddressSelector.this, LoginActivity.class));
     }
 
 

@@ -96,11 +96,11 @@ public class SignUpActivity extends AppCompatActivity implements  Validator.Vali
     TextView sign_up_Txt;
 
     @NotEmpty
-    @BindView(R.id.sign_up_Btn)
-    Button signBtn;
+    @BindView(R.id.sign_up_Txtt)
+    TextView signBtn;
 
 
-    @OnClick(R.id.sign_up_Btn)
+    @OnClick(R.id.sign_up_Txtt)
     public void signupBtn()
     {
         startActivity(new Intent(SignUpActivity.this,VerifyActivity.class));

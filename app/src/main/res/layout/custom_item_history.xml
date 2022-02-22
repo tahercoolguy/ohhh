@@ -2,11 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-      android:layout_marginTop="10dp"
-     android:orientation="vertical">
+    android:layout_marginTop="10dp"
+    android:orientation="vertical">
 
 
-    <RelativeLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="@drawable/rounded_rectangle_white_account"
@@ -26,15 +26,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
-             android:orientation="horizontal">
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/pastries_txt"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="Pastries"
                 android:textColor="@color/black"
@@ -48,8 +48,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="110dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="#162432">
 
@@ -58,9 +58,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="60dp"
             android:orientation="horizontal">
 
@@ -69,7 +69,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
                 android:gravity="center"
                 android:text="10.000 KWD"
                 android:textColor="@color/black"
@@ -81,18 +80,18 @@
                 android:layout_width="1dp"
                 android:layout_height="18dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                 android:background="@color/grey">
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:background="@color/grey">
 
             </LinearLayout>
 
             <TextView
                 android:id="@+id/dtm_Txt"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="5dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                 android:gravity="center"
+                android:gravity="center"
                 android:text="29 Jan, 12:30">
 
             </TextView>
@@ -102,7 +101,8 @@
                 android:layout_width="1dp"
                 android:layout_height="18dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
                 android:background="@color/grey">
 
             </LinearLayout>
@@ -111,89 +111,90 @@
                 android:id="@+id/items_count_Txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="03 Items">
 
             </TextView>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="horizontal"
+            android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
-             android:gravity="center"
+            android:gravity="center"
 
-            android:layout_height="wrap_content">
+            android:orientation="horizontal">
 
 
-
-            <Button
+            <TextView
                 android:id="@+id/view_order_Btn"
                 android:layout_width="100dp"
                 android:layout_height="38dp"
-                android:layout_weight="2"
-
                 android:layout_marginLeft="10dp"
+
                 android:layout_marginRight="10dp"
+                android:layout_weight="2"
                 android:background="@drawable/rounded_corner_primary_colour"
                 android:gravity="center"
                 android:text="@string/rate"
-                android:textColor="@color/white"></Button>
+                android:textColor="@color/white"></TextView>
 
 
-            <Button
+            <TextView
                 android:id="@+id/order_cancel_btn"
                 android:layout_width="100dp"
                 android:layout_height="38dp"
-                android:layout_weight="2"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:layout_weight="2"
                 android:background="@drawable/rounded_corner_whittte_colour"
                 android:gravity="center"
                 android:text="@string/re_order"
-                android:textColor="@color/colorPrimary"></Button>
+                android:textColor="@color/colorPrimary"></TextView>
 
         </LinearLayout>
 
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="90dp"-->
-<!--            android:gravity="center"-->
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="90dp"-->
+        <!--            android:gravity="center"-->
 
-<!--            android:orientation="horizontal">-->
-
-
-<!--            <Button-->
-<!--                android:id="@+id/view_order_Btn"-->
-<!--                android:layout_width="139dp"-->
-<!--                android:layout_height="38dp"-->
-<!--                android:layout_marginLeft="10dp"-->
-<!--                android:layout_marginRight="10dp"-->
-<!--                android:layout_weight="2"-->
-<!--                android:background="@drawable/rounded_corner_primary_colour"-->
-<!--                android:gravity="center"-->
-<!--                android:text="@string/view_order"-->
-<!--                android:textColor="@color/white"></Button>-->
+        <!--            android:orientation="horizontal">-->
 
 
-<!--            <Button-->
-<!--                android:id="@+id/order_cancel_btn"-->
-<!--                android:layout_width="139dp"-->
-<!--                android:layout_height="38dp"-->
-<!--                android:layout_marginLeft="10dp"-->
-<!--                android:layout_marginRight="10dp"-->
-<!--                android:layout_weight="2"-->
-<!--                android:background="@drawable/rounded_corner_whittte_colour"-->
-<!--                android:gravity="center"-->
-<!--                android:text="@string/cancel"-->
-<!--                android:textColor="@color/colorPrimary"></Button>-->
-
-<!--        </LinearLayout>-->
+        <!--            <Button-->
+        <!--                android:id="@+id/view_order_Btn"-->
+        <!--                android:layout_width="139dp"-->
+        <!--                android:layout_height="38dp"-->
+        <!--                android:layout_marginLeft="10dp"-->
+        <!--                android:layout_marginRight="10dp"-->
+        <!--                android:layout_weight="2"-->
+        <!--                android:background="@drawable/rounded_corner_primary_colour"-->
+        <!--                android:gravity="center"-->
+        <!--                android:text="@string/view_order"-->
+        <!--                android:textColor="@color/white"></Button>-->
 
 
-    </RelativeLayout>
+        <!--            <Button-->
+        <!--                android:id="@+id/order_cancel_btn"-->
+        <!--                android:layout_width="139dp"-->
+        <!--                android:layout_height="38dp"-->
+        <!--                android:layout_marginLeft="10dp"-->
+        <!--                android:layout_marginRight="10dp"-->
+        <!--                android:layout_weight="2"-->
+        <!--                android:background="@drawable/rounded_corner_whittte_colour"-->
+        <!--                android:gravity="center"-->
+        <!--                android:text="@string/cancel"-->
+        <!--                android:textColor="@color/colorPrimary"></Button>-->
+
+        <!--        </LinearLayout>-->
+
+
+    </androidx.cardview.widget.CardView>
 
 
 </LinearLayout>

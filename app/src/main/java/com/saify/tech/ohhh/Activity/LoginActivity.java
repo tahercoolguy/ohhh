@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements  Validator.Valid
     @BindView(R.id.passwordET)
     EditText passwordET;
 
-    @OnClick(R.id.signInBtn)
+    @OnClick(R.id.signInTxt)
     public void SignIn()
     {
             startActivity(new Intent(LoginActivity.this,MainActivity.class));
@@ -78,27 +78,27 @@ public class LoginActivity extends AppCompatActivity implements  Validator.Valid
     @BindView(R.id.to_google_login)
     RelativeLayout To_Google_Login;
 
-    @OnClick(R.id.to_google_login)
-    public void To_Google_Login()
-    {
-        String url = "https://www.google.com/";
-        Intent i = new Intent();
-        i.setPackage("com.android.chrome");
-        i.setAction(Intent.ACTION_VIEW);
-        i.setData(Uri.parse(url));
-        startActivity(i);
-    }
-
-    @OnClick(R.id.to_facebook_login)
-    public void To_Facebook_Login()
-    {
-        String url = "http://www.facebook.com";
-        Intent i = new Intent();
-        i.setPackage("com.android.chrome");
-        i.setAction(Intent.ACTION_VIEW);
-        i.setData(Uri.parse(url));
-        startActivity(i);
-    }
+//    @OnClick(R.id.to_google_login)
+//    public void To_Google_Login()
+//    {
+//        String url = "https://www.google.com/";
+//        Intent i = new Intent();
+//        i.setPackage("com.android.chrome");
+//        i.setAction(Intent.ACTION_VIEW);
+//        i.setData(Uri.parse(url));
+//        startActivity(i);
+//    }
+//
+//    @OnClick(R.id.to_facebook_login)
+//    public void To_Facebook_Login()
+//    {
+//        String url = "http://www.facebook.com";
+//        Intent i = new Intent();
+//        i.setPackage("com.android.chrome");
+//        i.setAction(Intent.ACTION_VIEW);
+//        i.setData(Uri.parse(url));
+//        startActivity(i);
+//    }
 
 
 //
