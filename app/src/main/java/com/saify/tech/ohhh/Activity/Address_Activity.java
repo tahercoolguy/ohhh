@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,19 +38,16 @@ public class Address_Activity extends AppCompatActivity {
     ConnectionDetector connectionDetector;
     DialogUtil dialogUtil;
 
-    @NotEmpty
-    @BindView(R.id.saved_address_Rcv)
-    RecyclerView saved_address_Rcvv;
 
     @NotEmpty
     @BindView(R.id.back_saved_address)
     ImageView back;
 
      @BindView(R.id.change_Btn)
-     Button change_Btn;
+     TextView change_Btn;
 
     @BindView(R.id.proceed_to_payment_Btn)
-    Button proceed;
+    TextView proceed;
 
     @BindView(R.id.now_RL)
     RelativeLayout now_RLL;
@@ -75,14 +73,14 @@ public class Address_Activity extends AppCompatActivity {
 
     @OnClick(R.id.proceed_to_payment_Btn)
     public void ProceedToPayment() {
-//        startActivity(new Intent(Address_Activity.this,Account_Activity.class));
+        startActivity(new Intent(Address_Activity.this,Payment_Activity.class));
 
     }
 
 
     @OnClick(R.id.back_saved_address)
     public void Back_address() {
-//        startActivity(new Intent(Address_Activity.this,Account_Activity.class));
+        startActivity(new Intent(Address_Activity.this,Cart_Activity.class));
 
     }
 
@@ -101,22 +99,7 @@ public class Address_Activity extends AppCompatActivity {
         idMappings();
 
 
-        ArrayList<SavedAddressDM> savedAddressDMS = new ArrayList<>();
-
-        savedAddressDMS.add(new SavedAddressDM("Al Nouf Tower, 11th Floor، Jaber \n" +
-                "Al-Mubarak St, Kuwait City", R.drawable.ic_home_logoooo, R.drawable.ic_delete, R.drawable.ic_edit));
-        savedAddressDMS.add(new SavedAddressDM("Al Nouf Tower, 11th Floor، Jaber \n" +
-                "Al-Mubarak St, Kuwait City", R.drawable.ic_home_logoooo, R.drawable.ic_delete, R.drawable.ic_edit));
-
-
-//            HistoryRcv.setLayoutManager(new LinearLayoutManager(context));
-//            HistoryRcv.setAdapter(new HistoryDM_Adapter((context), historyDMS));
-
 //
-        Saved_Address_DM_Adapter dm = new Saved_Address_DM_Adapter(Address_Activity.this, savedAddressDMS);
-        LinearLayoutManager l = new LinearLayoutManager(this);
-        saved_address_Rcvv.setLayoutManager(l);
-        saved_address_Rcvv.setAdapter(dm);
 
 
     }

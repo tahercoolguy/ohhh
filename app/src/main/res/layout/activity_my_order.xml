@@ -4,64 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/new_grey"
+
     android:layout_gravity="center"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:orientation="vertical"
+      android:orientation="vertical"
     tools:context=".Activity.My_Order_Activity">
 
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="-50dp"
+        android:layout_marginLeft="20dp"
+        android:background="@color/new_grey"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
 
 
-        android:layout_marginBottom="-40dp">
 
-        <ImageView
-            android:id="@+id/back_my_order"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="-60dp"
-            android:layout_marginTop="23dp"
-            android:src="@drawable/ic_back_back_otp">
-
-        </ImageView>
+            android:layout_gravity="center"
+            android:layout_marginTop="-50dp"
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:text="@string/my_order"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold">
+            android:layout_marginBottom="-40dp">
 
-        </TextView>
+            <ImageView
+                android:id="@+id/back_my_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-55dp"
+                android:layout_marginTop="23dp"
+                android:src="@drawable/ic_back_back_otp">
 
-
-    </RelativeLayout>
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/my_order_tab_layout"
-        android:layout_width="match_parent"
-        app:tabSelectedTextColor="@color/colorPrimary"
-        android:layout_height="wrap_content">
+            </ImageView>
 
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/my_order"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold">
 
-    </com.google.android.material.tabs.TabLayout>
+            </TextView>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager_my_order"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-    </androidx.viewpager.widget.ViewPager>
+        </RelativeLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_marginTop="-20dp"
+            android:id="@+id/my_order_tab_layout"
+            android:layout_width="match_parent"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            android:layout_height="wrap_content">
+
+
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager_my_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.viewpager.widget.ViewPager>
+
+
+    </LinearLayout>
+
 
 
 </LinearLayout>

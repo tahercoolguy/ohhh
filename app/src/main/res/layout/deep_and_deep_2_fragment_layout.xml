@@ -2,8 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/new_grey"
     android:animateLayoutChanges="true"
-    android:background="#FBFBFB">
+     >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -202,7 +203,7 @@
                     android:id="@+id/dip_and_dip_cake_1_Rcv"
                      android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"></androidx.recyclerview.widget.RecyclerView>
+                    android:layout_marginTop="10dp"></androidx.recyclerview.widget.RecyclerView>
 
 
                 <TextView

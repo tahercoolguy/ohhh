@@ -2,6 +2,7 @@ package com.saify.tech.ohhh.Fragments;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.saify.tech.ohhh.Activity.Cart_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.Adapter.Deep_and_Deep_Cake_Adapter;
 import com.saify.tech.ohhh.Adapter.Feed_Categories_Adapter;
@@ -35,6 +37,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import it.sephiroth.android.library.widget.HListView;
 
 public class Deep_and_Deep_1_Fragment extends Fragment {
@@ -62,6 +65,18 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
 
     @BindView(R.id.cart_dip_1)
     RelativeLayout cart;
+
+    @OnClick(R.id.back_dip_1RL)
+    public void bacck() {
+
+      }
+
+    @OnClick(R.id.cart_dip_1)
+    public void Cart() {
+
+        ((MainActivity)context).startActivity(new Intent(getActivity(), Cart_Activity.class));
+
+    }
 
     @BindView(R.id.layout_parent) LinearLayout layout_parent;
     private HListView lst_latest_profiles, lst_latest_news, lst_featured_video;

@@ -2,6 +2,7 @@ package com.saify.tech.ohhh.Fragments;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -18,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.saify.tech.ohhh.Activity.Cart_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.Adapter.Featured_Shopss_Adapter;
 import com.saify.tech.ohhh.Adapter.Offers_Adapter;
@@ -31,6 +33,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import it.sephiroth.android.library.widget.HListView;
 
 public class Fragment_Home_Screen extends Fragment {
@@ -52,6 +55,14 @@ public class Fragment_Home_Screen extends Fragment {
 
     @BindView(R.id.cart_Rl)
     RelativeLayout Cart;
+
+
+    @OnClick(R.id.cart_Rl)
+    public void Cart() {
+
+        ((MainActivity)context).startActivity(new Intent(getActivity(), Cart_Activity.class));
+
+    }
 
 
 
@@ -106,11 +117,6 @@ public class Fragment_Home_Screen extends Fragment {
 
         shopssDMS.add(new ShopssDM("4.5","(25+)","McDonald’s","Free delivery","10-15 mins","",
                 "",R.drawable.ic_delivery_boy, R.drawable.ic_time,"",R.drawable.home_cake_1,R.drawable.home_cake_2));
-
-
-
-
-
 
         Featured_Shopss_Adapter dm = new Featured_Shopss_Adapter(context, shopssDMS);
 //        LinearLayoutManager l = new LinearLayoutManager.HORIZONTAL(context);

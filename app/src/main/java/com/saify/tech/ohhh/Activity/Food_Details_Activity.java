@@ -3,11 +3,14 @@ package com.saify.tech.ohhh.Activity;
 
 
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,6 +20,10 @@ import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Adapter.Order_Info_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.OrderInfoDM;
+import com.saify.tech.ohhh.Fragments.Deep_and_Deep_2_Fragment;
+import com.saify.tech.ohhh.Fragments.Feed_Categories_Fragment;
+import com.saify.tech.ohhh.Fragments.Fragment_Home_Screen;
+import com.saify.tech.ohhh.Fragments.Fragment_Shops;
 import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
@@ -27,15 +34,109 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.MaybeOnSubscribe;
 
 public class Food_Details_Activity extends AppCompatActivity {
 
     AppController appController;
 
     private User user;
+    Context context;
     Dialog progress;
     ConnectionDetector connectionDetector;
     DialogUtil dialogUtil;
+
+
+    @BindView(R.id.smalll_RL)
+    RelativeLayout smalll_RL;
+
+    @BindView(R.id.medium_RL)
+    RelativeLayout medium_RL;
+
+    @BindView(R.id.large_RL)
+    RelativeLayout large_RL;
+
+    @BindView(R.id.cheese_1RL)
+    RelativeLayout cheese_1RL;
+
+    @BindView(R.id.mayonese_2Rl)
+    RelativeLayout mayonese_2Rl;
+
+    @BindView(R.id.extra_chocklate_3Rl)
+    RelativeLayout extra_chocklate_3Rl;
+
+    @BindView(R.id.add_to_cart_Btn)
+    TextView add_to_cart_Btn;
+
+    @BindView(R.id.cart_RL)
+    RelativeLayout cart_rl;
+
+    @BindView(R.id.back_RL)
+    RelativeLayout back;
+
+
+    @OnClick(R.id.back_RL)
+    public void bacck() {
+
+//        ((MainActivity)context).startActivity(new Intent(Food_Details_Activity.this, Deep_and_Deep_2_Fragment.class));
+    }
+
+    @OnClick(R.id.cart_RL)
+    public void cartt() {
+
+        startActivity(new Intent(Food_Details_Activity.this,Cart_Activity.class));
+    }
+
+    @OnClick(R.id.add_to_cart_Btn)
+    public void cart() {
+
+         startActivity(new Intent(Food_Details_Activity.this,Cart_Activity.class));
+    }
+
+    @OnClick(R.id.cheese_1RL)
+    public void cheese() {
+
+        ifHome11 = true;
+        cheese1();
+      }
+
+    @OnClick(R.id.mayonese_2Rl)
+    public void mayonese() {
+
+        ifHome21 = true;
+        Mayonese1();
+
+     }
+
+    @OnClick(R.id.extra_chocklate_3Rl)
+    public void chocklate() {
+
+        ifHome31 = true;
+        ExtraChocklate1();
+
+    }
+
+
+    @OnClick(R.id.smalll_RL)
+    public void Small() {
+
+        ifHome1 = true;
+        Home1();
+    }
+
+    @OnClick(R.id.medium_RL)
+    public void Medium() {
+        ifHome2 = true;
+        Home2();
+    }
+
+    @OnClick(R.id.large_RL)
+    public void Large() {
+
+        ifHome3 =true;
+        Home3();
+    }
+
 
 //    @NotEmpty
 //    @BindView(R.id.order_info_Rcv)
@@ -55,7 +156,8 @@ public class Food_Details_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_details);
         ButterKnife.bind(this);
-        dialogUtil = new DialogUtil();
+         dialogUtil = new DialogUtil();
+         context = ((MainActivity)context);
         appController = (AppController) getApplicationContext();
         connectionDetector = new ConnectionDetector(getApplicationContext());
         user = new User(Food_Details_Activity.this);
@@ -84,6 +186,94 @@ public class Food_Details_Activity extends AppCompatActivity {
 
     }
 
+
+    boolean ifHome11 = false;
+    boolean ifHome21 = false;
+    boolean ifHome31= false;
+
+    public void cheese1() {
+
+        if (ifHome11) {
+
+            cheese_1RL.setBackground(getDrawable(R.drawable.ic_freee));
+            mayonese_2Rl.setBackground(getDrawable(R.drawable.ic_unfree));
+            extra_chocklate_3Rl.setBackground(getDrawable(R.drawable.ic_unfree));
+
+
+        }
+
+    }
+
+    public void Mayonese1() {
+
+        if (ifHome21) {
+
+            cheese_1RL.setBackground(getDrawable(R.drawable.ic_unfree));
+            mayonese_2Rl.setBackground(getDrawable(R.drawable.ic_freee));
+            extra_chocklate_3Rl.setBackground(getDrawable(R.drawable.ic_unfree));
+
+
+        }
+
+    }
+
+    public void ExtraChocklate1() {
+
+        if (ifHome31) {
+
+            cheese_1RL.setBackground(getDrawable(R.drawable.ic_unfree));
+            mayonese_2Rl.setBackground(getDrawable(R.drawable.ic_unfree));
+            extra_chocklate_3Rl.setBackground(getDrawable(R.drawable.ic_freee));
+
+
+        }
+
+    }
+
+
+
+    boolean ifHome1 = false;
+    boolean ifHome2 = false;
+    boolean ifHome3 = false;
+
+    public void Home1() {
+
+        if (ifHome1) {
+
+            smalll_RL.setBackground(getDrawable(R.drawable.ic_freee));
+            medium_RL.setBackground(getDrawable(R.drawable.ic_unfree));
+            large_RL.setBackground(getDrawable(R.drawable.ic_unfree));
+
+
+        }
+
+    }
+
+    public void Home2() {
+
+        if (ifHome2) {
+
+            smalll_RL.setBackground(getDrawable(R.drawable.ic_unfree));
+            medium_RL.setBackground(getDrawable(R.drawable.ic_freee));
+            large_RL.setBackground(getDrawable(R.drawable.ic_unfree));
+
+
+        }
+
+    }
+
+    public void Home3() {
+
+        if (ifHome3) {
+
+            smalll_RL.setBackground(getDrawable(R.drawable.ic_unfree));
+            medium_RL.setBackground(getDrawable(R.drawable.ic_unfree));
+            large_RL.setBackground(getDrawable(R.drawable.ic_freee));
+
+
+        }
+
+    }
 
     @Override
     protected void onResume() {

@@ -57,7 +57,7 @@ public class Offers_Adapter extends RecyclerView.Adapter<Offers_Adapter.Programm
          holder.shop_cake_RL.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 ((MainActivity)context).addFragment(new Deep_and_Deep_2_Fragment(), false);
+                 ((MainActivity)context).addFragment(new Deep_and_Deep_1_Fragment(), false);
 
              }
          });

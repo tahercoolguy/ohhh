@@ -65,8 +65,10 @@ public class OrderDM_Adapter extends RecyclerView.Adapter<OrderDM_Adapter.Progra
         holder.view_order_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-              }
+                Intent myIntent = new Intent(view.getContext(),View_Order_Activity.class);
+//                myIntent.putExtra("intVariableName", eventsList.get(position).getEvent_id());
+                view.getContext().startActivity(myIntent);
+               }
         });
 
 
@@ -84,7 +86,7 @@ public class OrderDM_Adapter extends RecyclerView.Adapter<OrderDM_Adapter.Progra
         TextView pricekwds;
         TextView count_products;
         ImageView pastri_imgs;
-        Button view_order_Btn,order_cancel_btn;
+        TextView view_order_Btn,order_cancel_btn;
 
 
 
@@ -95,7 +97,7 @@ public class OrderDM_Adapter extends RecyclerView.Adapter<OrderDM_Adapter.Progra
             pricekwds = (TextView) itemView.findViewById(R.id.price_Kwd_Txt);
             count_products = (TextView) itemView.findViewById(R.id.items_count_Txt);
             pastri_imgs = (ImageView) itemView.findViewById(R.id.pastries_Img);
-            view_order_Btn=itemView.findViewById(R.id.order_cancel_btn);
+            view_order_Btn=itemView.findViewById(R.id.view_order_Btn);
             order_cancel_btn=itemView.findViewById(R.id.order_cancel_btn);
         }
     }

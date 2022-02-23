@@ -2,6 +2,7 @@ package com.saify.tech.ohhh.Fragments;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -19,6 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
+import com.saify.tech.ohhh.Activity.Cart_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.Adapter.Shopss_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
@@ -47,10 +49,14 @@ public class Fragment_Shops extends Fragment {
     ImageView cart;
 
 
+
     @OnClick(R.id.cart_Img)
-    public void Cart()
-    {
-     }
+    public void Cart() {
+
+        ((MainActivity)context).startActivity(new Intent(getActivity(), Cart_Activity.class));
+
+    }
+
 
 
     @BindView(R.id.progress_bar) ProgressBar progress_bar;

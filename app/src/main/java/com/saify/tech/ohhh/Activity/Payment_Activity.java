@@ -3,11 +3,13 @@ package com.saify.tech.ohhh.Activity;
 
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -45,11 +47,11 @@ public class Payment_Activity extends AppCompatActivity {
     RecyclerView order_info_Rcvv;
 
     @NotEmpty
-    @BindView(R.id.back_saved_address)
+    @BindView(R.id.back_Img)
     ImageView back;
 
     @BindView(R.id.place_order)
-    Button place_order;
+    TextView place_order;
 
     @BindView(R.id.cash_RL)
     RelativeLayout cash;
@@ -62,6 +64,17 @@ public class Payment_Activity extends AppCompatActivity {
 
     @BindView(R.id.codeET)
     EditText code;
+
+
+
+    @OnClick(R.id.place_order)
+    public void PlaceOrder() {
+
+      startActivity(new Intent(Payment_Activity.this,Thank_You_Activity.class));
+
+    }
+
+
 
     @OnClick(R.id.cash_RL)
     public void Cash() {
@@ -86,9 +99,9 @@ public class Payment_Activity extends AppCompatActivity {
         ifknet = true;
     }
 
-    @OnClick(R.id.back_saved_address)
-    public void Back_address() {
-//        startActivity(new Intent(Address_Activity.this,Account_Activity.class));
+    @OnClick(R.id.back_Img)
+    public void Back() {
+        startActivity(new Intent(Payment_Activity.this,Address_Activity.class));
 
     }
 

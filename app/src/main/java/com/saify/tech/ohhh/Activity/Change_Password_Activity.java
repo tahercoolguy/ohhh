@@ -55,7 +55,7 @@ public class Change_Password_Activity extends AppCompatActivity implements  Vali
 //
     @NotEmpty
     @BindView(R.id.done_Btn)
-    Button Done;
+    TextView Done;
 
     @NotEmpty
     @BindView(R.id. back_change_password)

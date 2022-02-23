@@ -4,227 +4,241 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:background="@color/new_grey"
     android:orientation="vertical"
     tools:context=".Activity.Address_Activity">
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-
-        android:layout_marginTop="-50dp">
-
-        <ImageView
-            android:id="@+id/back_saved_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="-30dp"
-            android:layout_marginTop="23dp"
-            android:src="@drawable/ic_back_back_otp">
-
-        </ImageView>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:text="@string/address"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold">
-
-        </TextView>
-
-
-    </RelativeLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="-50dp"
-        android:gravity="center">
-
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/ic_circle_address_orange"></ImageView>
-
-        <LinearLayout
-            android:layout_width="50dp"
-            android:layout_height="1dp"
-            android:layout_gravity="center"
-            android:background="@color/grey"></LinearLayout>
-
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/ic_circle_brown_unselected"></ImageView>
-
-        <LinearLayout
-            android:layout_width="50dp"
-            android:layout_height="1dp"
-            android:layout_gravity="center"
-            android:background="@color/grey"></LinearLayout>
-
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/ic_circle_brown_unselected"></ImageView>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/select_delivery_address"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"></TextView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="154dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-
-        android:layout_marginRight="20dp"
-        android:background="@drawable/rounded_rectangle_white">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_work_brief"></ImageView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/work"
-            android:textColor="@color/black"
-            android:textStyle="bold">
-
-        </TextView>
-
-        <Button
-            android:id="@+id/change_Btn"
-            android:layout_width="130dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="220dp"
-            android:background="@drawable/rounded_corner_primary_colour"
-            android:text="@string/change"
-            android:textColor="@color/white"></Button>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="+965 12345678"
-            android:textColor="@color/black"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_height="wrap_content">
-
-        </TextView>
-
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+
+            android:layout_marginTop="-50dp">
+
+            <ImageView
+                android:id="@+id/back_saved_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-30dp"
+                android:layout_marginTop="23dp"
+                android:src="@drawable/ic_back_back_otp">
+
+            </ImageView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/address"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold">
+
+            </TextView>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="-50dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_circle_address_orange"></ImageView>
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/grey"></LinearLayout>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_circle_brown_unselected"></ImageView>
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/grey"></LinearLayout>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_circle_brown_unselected"></ImageView>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/select_delivery_address"
             android:textColor="@color/black"
-            android:text="Al Nouf Tower, 11th Floor، Jaber
+            android:textSize="20sp"
+            android:textStyle="bold"></TextView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="154dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_rectangle_white">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_work_brief"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/work"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/change_Btn"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="270dp"
+                android:background="@drawable/rounded_corner_primary_colour"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="@string/change"
+                android:textColor="@color/white"
+                android:textStyle="bold"></TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="+965 12345678"
+                android:textColor="@color/black"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:text="Al Nouf Tower, 11th Floor، Jaber
 Al-Mubarak St, Kuwait City Al Nouf Tower, 11th Floor، Jaber
 Al-Mubarak St, Kuwait City"></TextView>
 
 
-    </RelativeLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/select_delivery_time"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"></TextView>
-
-    <RelativeLayout
-        android:id="@+id/now_RL"
-        android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_height="50dp"
-        android:background="@drawable/rounded_rectangle_white"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/ic_now_clock"></ImageView>
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="15dp"
-            android:text="@string/now"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/select_delivery_time"
             android:textColor="@color/black"
-            android:textSize="17dp">
+            android:textSize="20sp"
+            android:textStyle="bold"></TextView>
 
-        </TextView>
-    </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/now_RL"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_rectangle_white"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
-    <RelativeLayout
-        android:id="@+id/customize_RL"
-        android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_height="50dp"
-        android:background="@drawable/rounded_rectangle_white"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_now_clock"></ImageView>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/ic_work_brief"></ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/now"
+                android:textColor="@color/black"
+                android:textSize="17dp">
 
+            </TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/customize_RL"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_rectangle_white"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_work_brief"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/customize"
+                android:textColor="@color/black"
+                android:textSize="17dp">
+
+            </TextView>
+        </RelativeLayout>
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/proceed_to_payment_Btn"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="15dp"
-            android:text="@string/customize"
-            android:textColor="@color/black"
-            android:textSize="17dp">
+            android:padding="15dp"
+              android:layout_marginTop="50dp"
+            android:textStyle="bold"
+                android:layout_gravity="center"
+            android:gravity="center"
+              android:background="@drawable/rounded_corner_primary_colour"
+            android:text="@string/proceed_to_payment"
+            android:textColor="@color/white"></TextView>
 
-        </TextView>
-    </RelativeLayout>
-    <Button
-        android:id="@+id/proceed_to_payment_Btn"
-         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
-         android:background="@drawable/rounded_corner_primary_colour"
-        android:text="@string/proceed_to_payment"
-        android:textColor="@color/white"></Button>
+
+    </LinearLayout>
+
 
 
 </LinearLayout>

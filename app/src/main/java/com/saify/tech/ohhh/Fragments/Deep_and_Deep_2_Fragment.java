@@ -2,6 +2,7 @@ package com.saify.tech.ohhh.Fragments;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,6 +21,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.saify.tech.ohhh.Activity.Cart_Activity;
+import com.saify.tech.ohhh.Activity.Food_Details_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.Adapter.DND_Subcategory_Adapter;
 import com.saify.tech.ohhh.Adapter.Deep_and_Deep_Cake_Adapter;
@@ -35,6 +38,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import it.sephiroth.android.library.widget.HListView;
 
 public class Deep_and_Deep_2_Fragment extends Fragment {
@@ -64,6 +68,22 @@ public class Deep_and_Deep_2_Fragment extends Fragment {
     @BindView(R.id.cart_dip_1)
     RelativeLayout cart;
 
+
+    @OnClick(R.id.back_dip_1RL)
+    public void bacck() {
+
+//        ((MainActivity)context).addFragment(Deep_and_Deep_2_Fragment.this,false);
+
+        startActivity(new Intent(getActivity(),Deep_and_Deep_1_Fragment.class));
+    }
+
+
+    @OnClick(R.id.cart_dip_1)
+    public void Cart() {
+
+        ((MainActivity)context).startActivity(new Intent(getActivity(), Cart_Activity.class));
+
+    }
 
 
     @BindView(R.id.layout_parent)
