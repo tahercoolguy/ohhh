@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/new_grey"
-
     android:layout_height="match_parent"
+
+    android:background="@color/new_grey"
 
     tools:context=".Activity.View_Order_Activity">
 
@@ -40,7 +40,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
+                    android:fontFamily="@font/semi_bold"
                     android:gravity="center"
+
                     android:text="@string/view_order"
                     android:textColor="@color/black"
                     android:textSize="18dp"
@@ -162,6 +164,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/semi_bold"
+
                 android:text="@string/shipping_to"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -189,6 +193,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="45dp"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="@font/semi_bold"
+
                     android:text="@string/work"
                     android:textColor="@color/black"
                     android:textStyle="bold">
@@ -224,7 +230,9 @@ Al-Mubarak St, Kuwait City"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/semi_bold"
                 android:text="@string/order_info"
+
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"></TextView>
@@ -376,8 +384,10 @@ Al-Mubarak St, Kuwait City"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/semi_bold"
                 android:text="@string/order_info"
                 android:textColor="@color/black"
+
                 android:textSize="18sp"
                 android:textStyle="bold"></TextView>
 
@@ -497,6 +507,8 @@ Al-Mubarak St, Kuwait City"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/semi_bold"
+
                 android:text="@string/note"
                 android:textColor="@color/black"
                 android:textSize="18sp"

@@ -21,9 +21,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/semi_bold"
+
         android:text="@string/thank_you"
         android:textColor="@color/black"
-        android:textSize="30dp"
+        android:textSize="28dp"
         android:textStyle="bold">
 
     </TextView>
@@ -34,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+
         android:textColor="@color/black"
         android:text="@string/we_have_received_your_order">
 

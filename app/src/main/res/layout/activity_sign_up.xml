@@ -64,6 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="@string/sign_up"
+            android:fontFamily="@font/semi_bold"
             android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="bold">
@@ -399,7 +400,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="@string/alredy_have_an_accounnt"
+                 android:text="@string/alredy_have_an_accounnt"
                 android:textStyle="bold"></TextView>
 
             <TextView
@@ -407,6 +408,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/semi_bold"
                 android:text="@string/login"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"></TextView>

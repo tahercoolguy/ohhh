@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.saify.tech.ohhh.Activity.Address_Activity;
 import com.saify.tech.ohhh.Activity.Cart_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.Activity.Saved_Address_Activity;
@@ -60,6 +61,8 @@ public class Nornoya_Dip_Adapter extends RecyclerView.Adapter<Nornoya_Dip_Adapte
         holder.checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                context.startActivity(new Intent(context, Address_Activity.class));
 
             }
         });

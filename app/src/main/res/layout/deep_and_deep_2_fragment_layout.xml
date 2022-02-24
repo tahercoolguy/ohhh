@@ -113,6 +113,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:layout_marginTop="350dp"
+                        android:fontFamily="@font/semi_bold"
                         android:gravity="center"
                         android:text="@string/dip_and_dip"
                         android:textColor="@color/black"
@@ -143,6 +144,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="@color/black"
                         android:layout_gravity="center"
 
                         android:text="20-30 min"></TextView>
@@ -166,6 +168,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="@color/black"
                         android:layout_gravity="center"
                         android:text="4.9"></TextView>
 
@@ -173,6 +176,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="@color/black"
                         android:layout_gravity="center"
                         android:text="(458)"></TextView>
 
@@ -196,6 +200,7 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:textColor="@color/black"
                         android:text="Free delivery"></TextView>
                 </LinearLayout>
 
@@ -213,6 +218,8 @@
                     android:layout_marginLeft="10dp"
                     android:text="@string/suncategory"
                     android:textColor="@color/black"
+                    android:fontFamily="@font/semi_bold"
+
                     android:textSize="18dp"
                     android:textStyle="bold"></TextView>
 
@@ -230,6 +237,8 @@
                     android:layout_marginLeft="10dp"
                     android:text="@string/suncategory"
                     android:textColor="@color/black"
+                    android:fontFamily="@font/semi_bold"
+
                     android:textSize="18dp"
                     android:textStyle="bold"></TextView>
 

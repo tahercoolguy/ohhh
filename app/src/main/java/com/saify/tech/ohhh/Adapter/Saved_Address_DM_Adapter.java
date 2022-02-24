@@ -41,11 +41,7 @@ public class Saved_Address_DM_Adapter extends RecyclerView.Adapter<Saved_Address
         SavedAddressDM savedAddressDM = savedAddressDMS.get(position);
         holder.address.setText(savedAddressDM.getAddress());
         holder.home.setText(savedAddressDM.getHome());
-         holder.edit.setImageResource(savedAddressDM.getEdit_img());
-        holder.delete.setImageResource(savedAddressDM.getDelete_img());
-
-
-
+        holder.home_img.setImageResource(savedAddressDM.getHome_img());
     }
 
     @Override
@@ -56,15 +52,14 @@ public class Saved_Address_DM_Adapter extends RecyclerView.Adapter<Saved_Address
     public class Programming_AdapterViewHolder extends RecyclerView.ViewHolder{
 
         TextView address,home;
-         ImageView edit,delete;
+         ImageView home_img;
 
 
         public Programming_AdapterViewHolder(@NonNull View itemView) {
             super(itemView);
             address = (TextView) itemView.findViewById(R.id.address_txt);
             home=(TextView) itemView.findViewById(R.id.home_txt);
-             edit = (ImageView) itemView.findViewById(R.id.edit_address_Img);
-            delete = (ImageView) itemView.findViewById(R.id.delete_address_img);
+            home_img=(ImageView) itemView.findViewById(R.id.home_img);
 
         }
     }

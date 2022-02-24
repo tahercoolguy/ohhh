@@ -34,6 +34,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:gravity="center"
+            android:fontFamily="@font/semi_bold"
+
             android:text="@string/payment"
             android:textColor="@color/black"
             android:textSize="18dp"
@@ -101,6 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:background="@drawable/ic_payment_card_bg_unselected"
                 android:gravity="center">
 
@@ -115,14 +118,16 @@
             </RelativeLayout>
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/cash">
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:gravity="center"-->
+<!--                android:text="@string/cash">-->
 
-            </TextView>
+<!--            </TextView>-->
 
 
         </LinearLayout>
@@ -137,6 +142,7 @@
             <RelativeLayout
                 android:id="@+id/visa_RL"
                 android:layout_width="wrap_content"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_payment_card_bg_unselected"
@@ -152,14 +158,16 @@
 
             </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/card">
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:gravity="center"-->
+<!--                android:text="@string/card">-->
 
-            </TextView>
+<!--            </TextView>-->
 
 
         </LinearLayout>
@@ -175,12 +183,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:background="@drawable/ic_payment_card_selected"
                 android:gravity="center">
 
                 <ImageView
                     android:layout_width="wrap_content"
-
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_knet_pymt">
 
@@ -188,17 +196,71 @@
 
             </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/knet">
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:gravity="center"-->
+<!--                android:text="@string/knet">-->
 
-            </TextView>
+<!--            </TextView>-->
 
 
         </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:layout_gravity="center">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+             android:layout_gravity="center"
+            android:gravity="center"
+            android:fontFamily="@font/semi_bold"
+
+            android:textColor="@color/black"
+              android:layout_height="wrap_content"
+             android:text="@string/cash">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+             android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:fontFamily="@font/semi_bold"
+
+            android:layout_marginLeft="105dp"
+             android:layout_height="wrap_content"
+            android:text="@string/card">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:fontFamily="@font/semi_bold"
+
+            android:layout_marginLeft="100dp"
+             android:gravity="center"
+             android:text="@string/knet">
+
+        </TextView>
+
+
+
+
     </LinearLayout>
 
 
@@ -208,6 +270,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
+        android:fontFamily="@font/semi_bold"
+
         android:layout_marginRight="20dp"
         android:text="@string/enter_coupon_code"></TextView>
 
@@ -243,6 +307,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold"
+
                 android:layout_marginBottom="5dp"
                 android:background="@android:color/transparent"
                 android:text="@string/code"
@@ -257,7 +322,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="250dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
+              android:fontFamily="@font/semi_bold"
+
             android:src="@drawable/places_ic_search"
             android:text="@string/add_code"
             android:textColor="@color/colorPrimary">
@@ -271,6 +338,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:textStyle="bold"
+        android:fontFamily="@font/semi_bold"
+
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:text="@string/order_info"></TextView>
@@ -292,7 +361,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="20dp">
 
 
@@ -307,6 +376,8 @@
         android:gravity="center"
         android:padding="15dp"
         android:layout_marginTop="50dp"
+        android:fontFamily="@font/semi_bold"
+
         android:textStyle="bold"
          android:background="@drawable/rounded_corner_primary_colour"
          android:text="@string/place_order"

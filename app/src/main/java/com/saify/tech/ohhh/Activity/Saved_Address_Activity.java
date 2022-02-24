@@ -75,15 +75,11 @@ public class Saved_Address_Activity extends AppCompatActivity {
         ArrayList<SavedAddressDM> savedAddressDMS = new ArrayList<>();
 
         savedAddressDMS.add(new SavedAddressDM("Al Nouf Tower, 11th Floor، Jaber \n" +
-                "Al-Mubarak St, Kuwait City", R.drawable.ic_home_logoooo, R.drawable.ic_delete, R.drawable.ic_edit));
-        savedAddressDMS.add(new SavedAddressDM("Al Nouf Tower, 11th Floor، Jaber \n" +
-                "Al-Mubarak St, Kuwait City", R.drawable.ic_home_logoooo, R.drawable.ic_delete, R.drawable.ic_edit));
+                "Al-Mubarak St, Kuwait City","Home",R.drawable.ic_home_logoooo));
 
+        savedAddressDMS.add(new SavedAddressDM( "Al Nouf Tower, 11th Floor، Jaber \n" +
+                "Al-Mubarak St, Kuwait City","Home",R.drawable.ic_home_2));
 
-//            HistoryRcv.setLayoutManager(new LinearLayoutManager(context));
-//            HistoryRcv.setAdapter(new HistoryDM_Adapter((context), historyDMS));
-
-//
         Saved_Address_DM_Adapter dm = new Saved_Address_DM_Adapter(Saved_Address_Activity.this, savedAddressDMS);
         LinearLayoutManager l = new LinearLayoutManager(this);
         saved_address_Rcvv.setLayoutManager(l);

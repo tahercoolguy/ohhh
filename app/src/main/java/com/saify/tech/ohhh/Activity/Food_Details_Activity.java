@@ -48,22 +48,22 @@ public class Food_Details_Activity extends AppCompatActivity {
 
 
     @BindView(R.id.smalll_RL)
-    RelativeLayout smalll_RL;
+    ImageView smalll_RL;
 
     @BindView(R.id.medium_RL)
-    RelativeLayout medium_RL;
+    ImageView medium_RL;
 
     @BindView(R.id.large_RL)
-    RelativeLayout large_RL;
+    ImageView large_RL;
 
     @BindView(R.id.cheese_1RL)
-    RelativeLayout cheese_1RL;
+    ImageView cheese_1RL;
 
     @BindView(R.id.mayonese_2Rl)
-    RelativeLayout mayonese_2Rl;
+    ImageView mayonese_2Rl;
 
     @BindView(R.id.extra_chocklate_3Rl)
-    RelativeLayout extra_chocklate_3Rl;
+    ImageView extra_chocklate_3Rl;
 
     @BindView(R.id.add_to_cart_Btn)
     TextView add_to_cart_Btn;

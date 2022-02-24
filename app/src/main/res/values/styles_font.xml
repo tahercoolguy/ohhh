@@ -20,4 +20,8 @@
         <item name="android:fontFamily">@font/montserrat_regular</item>
     </style>
 
+    <style name="semi_bold">
+        <item name="android:fontFamily">@font/semi_bold</item>
+    </style>
+
 </resources>

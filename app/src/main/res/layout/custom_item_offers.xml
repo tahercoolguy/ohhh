@@ -67,11 +67,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:textStyle="bold"
+                android:fontFamily="@font/semi_bold"
 
                 android:layout_centerInParent="true"
                 android:text="Chocolate Cake"
-                android:textColor="@color/black"></TextView>
+                android:textColor="@color/black"
+                android:textStyle="bold"></TextView>
 
         </RelativeLayout>
 

@@ -69,6 +69,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/semi_bold"
                 android:text="@string/sign_in"
                 android:textColor="@color/black"
                 android:textSize="30sp"
@@ -110,23 +111,24 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/outlinedTextField"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                    app:boxCornerRadiusBottomEnd="10dp"
+                android:layout_marginTop="5dp"
+                 app:boxCornerRadiusBottomEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
 
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailET"
 
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:inputType="textEmailAddress"
-                    android:textSize="@dimen/text_size_normal"></EditText>
+                    android:padding="10dp"
+                     android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_box_unselected"
+                     android:inputType="textEmailAddress"
+                    android:textSize="@dimen/text_size_normal"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -139,25 +141,24 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
+                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxCornerRadiusBottomEnd="10dp"
-                app:boxCornerRadiusBottomStart="10dp"
-                 app:boxCornerRadiusTopEnd="10dp"
+                android:layout_marginTop="5dp"
+                 app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwordET"
                     android:layout_width="match_parent"
-
-
+                    android:padding="10dp"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
+                     android:background="@drawable/rectangle_box_unselected"
 
                     android:inputType="textPassword"
 
-                    android:textSize="@dimen/text_size_normal"></EditText>
+                    android:textSize="@dimen/text_size_normal"></com.google.android.material.textfield.TextInputEditText>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -193,6 +194,7 @@
                 android:layout_marginTop="60dp"
                 android:layout_marginRight="50dp"
                 android:background="@drawable/rounded_corner_primary_colour"
+                android:fontFamily="@font/semi_bold"
                 android:gravity="center"
                 android:padding="15dp"
                 android:text="@string/sign_in"
@@ -275,7 +277,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/sign_up_with">
+                    android:text="@string/sign_up_with"
+                    android:textStyle="bold">
 
                 </TextView>
 

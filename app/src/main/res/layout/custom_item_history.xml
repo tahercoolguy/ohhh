@@ -26,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
+            android:layout_marginTop="25dp"
             android:orientation="horizontal">
 
             <TextView
@@ -33,9 +34,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/semi_bold"
+
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
+                 android:gravity="center"
                 android:text="Pastries"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -47,10 +49,11 @@
                 android:id="@+id/code_pastries"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/semi_bold"
+
                 android:layout_gravity="center"
                 android:layout_marginLeft="110dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
+                 android:gravity="center"
                 android:text="#162432">
 
             </TextView>
@@ -71,6 +74,8 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="10.000 KWD"
+                android:fontFamily="@font/semi_bold"
+
                 android:textColor="@color/black"
                 android:textStyle="bold">
 
@@ -91,6 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+
                 android:gravity="center"
                 android:text="29 Jan, 12:30">
 

@@ -70,6 +70,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/semi_bold"
                         android:text="@string/khaitan"
                         android:textColor="@color/colorPrimary"
                         android:textStyle="bold"
@@ -101,6 +102,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/semi_bold"
                 android:layout_marginTop="20dp"
                 android:text="@string/what_would_you_like"
                 android:textColor="@color/black"
@@ -111,6 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="to order"
+                android:fontFamily="@font/semi_bold"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold"></TextView>
@@ -160,6 +163,7 @@
                         android:id="@+id/passwordET"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:fontFamily="@font/semi_bold"
 
 
                         android:layout_marginLeft="30dp"
@@ -194,6 +198,7 @@
                     android:layout_marginTop="15dp"
                     android:text="Featured Shops"
                     android:textColor="@color/black"
+                    android:fontFamily="@font/semi_bold"
                     android:textSize="18dp"
                     android:textStyle="bold"></TextView>
 
@@ -236,6 +241,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Offers"
+                android:fontFamily="@font/semi_bold"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold"></TextView>
@@ -249,6 +255,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/semi_bold"
                 android:layout_marginTop="10dp"
                 android:text="Best from Desserts"
                 android:textColor="@color/black"
