@@ -6,14 +6,16 @@ public class CartDM {
     private String extra_meyonese;
     private String kwd;
     private String item_count;
+    private  String text;
 
     private int pastry_img;
 
-    public CartDM(String pastries, String extra_meyonese, String kwd, String item_count, int pastry_img) {
+    public CartDM(String pastries, String extra_meyonese, String kwd, String item_count, String text, int pastry_img) {
         this.pastries = pastries;
         this.extra_meyonese = extra_meyonese;
         this.kwd = kwd;
         this.item_count = item_count;
+        this.text = text;
         this.pastry_img = pastry_img;
     }
 
@@ -47,6 +49,14 @@ public class CartDM {
 
     public void setItem_count(String item_count) {
         this.item_count = item_count;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 
     public int getPastry_img() {

@@ -55,6 +55,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="-20dp"
             android:layout_marginRight="20dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -68,6 +69,7 @@
                 android:fontFamily="@font/semi_bold"
 
                 android:layout_marginLeft="10dp"
+                android:layout_weight="1"
                 android:text="@string/mohammad"
                 android:textColor="@color/black"
                 android:textSize="18dp"
@@ -77,10 +79,9 @@
 
             <ImageView
                 android:id="@+id/edit_user_name_Img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="120dp"
-                android:src="@drawable/ic_name_edit">
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                 android:src="@drawable/ic_name_edit">
 
             </ImageView>
 

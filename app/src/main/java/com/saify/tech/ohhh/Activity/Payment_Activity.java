@@ -101,8 +101,7 @@ public class Payment_Activity extends AppCompatActivity {
 
     @OnClick(R.id.back_Img)
     public void Back() {
-        startActivity(new Intent(Payment_Activity.this,Address_Activity.class));
-
+            finish();
     }
 
 

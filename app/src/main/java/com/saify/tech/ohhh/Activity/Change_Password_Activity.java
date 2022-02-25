@@ -66,8 +66,7 @@ public class Change_Password_Activity extends AppCompatActivity implements  Vali
     @OnClick(R.id.back_change_password)
     public void back()
     {
-        startActivity(new Intent(Change_Password_Activity.this,Account_Activity.class));
-
+        finish();
     }
 
 
@@ -75,8 +74,7 @@ public class Change_Password_Activity extends AppCompatActivity implements  Vali
     @OnClick(R.id.done_Btn)
     public void DoneBtn()
     {
-        startActivity(new Intent(Change_Password_Activity.this,Account_Activity.class));
-
+            finish();
     }
 
 

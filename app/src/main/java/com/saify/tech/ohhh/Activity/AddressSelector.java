@@ -33,13 +33,15 @@ public class AddressSelector extends AppCompatActivity {
 
     @OnClick(R.id.english_Txt)
     public void Englishh() {
-        startActivity(new Intent(AddressSelector.this, LoginActivity.class));
+        startActivity(new Intent(AddressSelector.this, MainActivity.class));
+        finish();
 
     }
 
     @OnClick(R.id.arabic_Txt)
     public void Arabic() {
-        startActivity(new Intent(AddressSelector.this, LoginActivity.class));
+        startActivity(new Intent(AddressSelector.this, MainActivity.class));
+        finish();
     }
 
 

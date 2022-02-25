@@ -53,19 +53,6 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     @BindView(R.id.signUpTxt)
     TextView SignUpTxt;
 
-    @OnClick(R.id.emailET)
-    public void emailET() {
-        ifemail = true;
-        Email_Selected();
-    }
-
-    @OnClick(R.id.passwordET)
-    public void passwordET() {
-        ifpassword = true;
-        Password_Selected();
-
-    }
-
 
     @OnClick(R.id.signUpTxt)
     public void signUpTxt() {
@@ -122,28 +109,27 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
         user = new User(LoginActivity.this);
         validator = new Validator(this);
         validator.setValidationListener(this);
-        Password_Selected();
-        Email_Selected();
+
 
     }
 
-
-    boolean ifemail = false;
-    boolean ifpassword = false;
-
-    public void Email_Selected() {
-
-        ifemail = true;
-        EmailET.setBackground(getDrawable(R.drawable.rectangle_box));
-        passwordET.setBackground(getDrawable(R.drawable.rectangle_box_unselected));
-
-    }
-
-    public void Password_Selected() {
-        ifpassword = true;
-        EmailET.setBackground(getDrawable(R.drawable.rectangle_box_unselected));
-        passwordET.setBackground(getDrawable(R.drawable.rectangle_box));
-    }
+//
+//    boolean ifemail = false;
+//    boolean ifpassword = false;
+//
+//    public void Email_Selected() {
+//
+//        ifemail = true;
+//        EmailET.setBackground(getDrawable(R.drawable.rectangle_box));
+//        passwordET.setBackground(getDrawable(R.drawable.rectangle_box_unselected));
+//
+//    }
+//
+//    public void Password_Selected() {
+//        ifpassword = true;
+//        EmailET.setBackground(getDrawable(R.drawable.rectangle_box_unselected));
+//        passwordET.setBackground(getDrawable(R.drawable.rectangle_box));
+//    }
 
     @Override
     public void onValidationSucceeded() {

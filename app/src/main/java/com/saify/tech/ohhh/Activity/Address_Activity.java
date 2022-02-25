@@ -80,8 +80,7 @@ public class Address_Activity extends AppCompatActivity {
 
     @OnClick(R.id.back_saved_address)
     public void Back_address() {
-        startActivity(new Intent(Address_Activity.this,Cart_Activity.class));
-
+            finish();
     }
 
 

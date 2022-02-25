@@ -60,12 +60,12 @@ public class Cart_Activity extends AppCompatActivity {
 //
 //        startActivity(new Intent(Cart_Activity.this,Address_Activity.class));
 //    }
-//
-//    @OnClick(R.id.back_cart)
-//    public void Back_Cart() {
-//        startActivity(new Intent(Cart_Activity.this,Food_Details_Activity.class));
-//
-//    }
+
+    @OnClick(R.id.back_cart)
+    public void Back_Cart() {
+         finish();
+
+    }
     @BindView(R.id.nornoya_deep_Rcv)
     RecyclerView nornoya_deep_Rcvv;
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,7 @@ public class Cart_Adapter extends RecyclerView.Adapter<Cart_Adapter.Programming_
 
     private Context context;
     private ArrayList<CartDM> cartDMS;
+
 
     public Cart_Adapter(Context context, ArrayList<CartDM> cartDMS) {
         this.context = context;
@@ -51,6 +53,28 @@ public class Cart_Adapter extends RecyclerView.Adapter<Cart_Adapter.Programming_
         holder.count0.setText(cartDM.getItem_count());
         holder.kd.setText(cartDM.getKwd());
         holder.pastryimg.setImageResource(cartDM.getPastry_img());
+        holder.minus_plus_Txt.setText(cartDM.getText());
+
+
+        holder.minus_cake_Rl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (holder.count > 0) {
+                    holder.count--;
+                    holder.minus_plus_Txt.setText(String.valueOf(holder.count));
+                }
+            }
+        });
+
+        holder.plus_cake_RL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                holder.count++;
+                holder.minus_plus_Txt.setText(String.valueOf(holder.count));
+            }
+        });
+
 
     }
 
@@ -61,9 +85,10 @@ public class Cart_Adapter extends RecyclerView.Adapter<Cart_Adapter.Programming_
 
     public class Programming_AdapterViewHolder extends RecyclerView.ViewHolder {
 
-        TextView pastri,extra,count0,kd;
-         ImageView pastryimg;
-
+        TextView pastri, extra, count0, kd, minus_plus_Txt;
+        ImageView pastryimg;
+        RelativeLayout minus_cake_Rl, plus_cake_RL;
+        int count = 0;
 
         public Programming_AdapterViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -72,7 +97,9 @@ public class Cart_Adapter extends RecyclerView.Adapter<Cart_Adapter.Programming_
             count0 = (TextView) itemView.findViewById(R.id.minus_plus_Txt);
             kd = (TextView) itemView.findViewById(R.id.price_Kwd_Txt);
             pastryimg = (ImageView) itemView.findViewById(R.id.pastries_Img);
-
+            minus_cake_Rl = (RelativeLayout) itemView.findViewById(R.id.minus_cake_Rl);
+            plus_cake_RL = (RelativeLayout) itemView.findViewById(R.id.plus_cake_RL);
+            minus_plus_Txt = (TextView) itemView.findViewById(R.id.minus_plus_Txt);
 
 
         }

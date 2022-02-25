@@ -159,6 +159,7 @@ public class Fragment_Account extends Fragment {
     @OnClick(R.id.logout_LL)
     public void Log_Out() {
         startActivity(new Intent(context, LoginActivity.class));
+        ((MainActivity)context).finish();
 
     }
 

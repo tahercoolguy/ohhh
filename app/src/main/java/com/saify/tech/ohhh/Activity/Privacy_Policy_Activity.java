@@ -27,8 +27,7 @@ public class Privacy_Policy_Activity extends AppCompatActivity{
 
     @OnClick(R.id.back_term_and_condition)
     public void Back_Term() {
-        startActivity(new Intent(Privacy_Policy_Activity.this,Account_Activity.class));
-
+            finish();
     }
 
 

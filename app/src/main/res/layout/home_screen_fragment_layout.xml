@@ -80,19 +80,38 @@
 
                 </LinearLayout>
 
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/cart_Rl"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:gravity="center"-->
+<!--                    android:background="@drawable/rectangle_white_border">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:src="@drawable/ic_cartttt"></ImageView>-->
+<!--                </RelativeLayout>-->
+
+
                 <RelativeLayout
                     android:id="@+id/cart_Rl"
                     android:layout_width="wrap_content"
+                    android:layout_marginLeft="-10dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:background="@drawable/rectangle_white_border">
+                      android:background="@drawable/rounded_corner_white">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_cartttt"></ImageView>
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_cartttt">
+
+                    </ImageView>
+
+
                 </RelativeLayout>
 
 
@@ -203,6 +222,7 @@
                     android:textStyle="bold"></TextView>
 
                 <TextView
+                    android:id="@+id/view_all_Txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="180dp"

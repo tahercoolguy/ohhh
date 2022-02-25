@@ -24,6 +24,7 @@ public class Adapter_Shops extends RecyclerView.Adapter<Adapter_Shops.ViewHolder
     User user;
 
 
+
     int selectedPosition = 0;
 
     public Adapter_Shops(Context context, ArrayList<ShopsResult> arrayList) {

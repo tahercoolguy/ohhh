@@ -53,8 +53,8 @@ public class Saved_Address_Activity extends AppCompatActivity {
 
     @OnClick(R.id.back_saved_address)
     public void Back_address() {
-        startActivity(new Intent(Saved_Address_Activity.this,Account_Activity.class));
 
+                finish();
     }
 
 

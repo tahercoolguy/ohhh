@@ -62,8 +62,7 @@ public class My_Order_Activity extends AppCompatActivity implements Validator.Va
     @OnClick(R.id.back_my_order)
     public void OrderBack() {
 
-        startActivity(new Intent(My_Order_Activity.this,Account_Activity.class));
-
+            finish();
     }
 
 

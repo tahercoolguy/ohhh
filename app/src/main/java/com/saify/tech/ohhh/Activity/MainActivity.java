@@ -102,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
     public void dashBoard() {
         Home1();
         ifHome1 =true;
-         addFragment(new Fragment_Home_Screen(),false);
 
     }
 
@@ -117,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
     public void reportIncident() {
         Home3();
         ifHome3=true;
-         addFragment(new Fragment_Shops(), false);
 
     }
 

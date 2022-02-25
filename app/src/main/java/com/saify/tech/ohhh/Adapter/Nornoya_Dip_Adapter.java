@@ -68,9 +68,9 @@ public class Nornoya_Dip_Adapter extends RecyclerView.Adapter<Nornoya_Dip_Adapte
         });
 
         ArrayList<CartDM> cartDMS = new ArrayList<>();
-        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "01", R.drawable.nornoya_1));
-        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "02", R.drawable.nornoya_2));
-        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "03", R.drawable.nornoya_3));
+        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "01","0", R.drawable.nornoya_1));
+        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "02","0", R.drawable.nornoya_2));
+        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "03","0", R.drawable.nornoya_3));
 
         Cart_Adapter dm2 = new Cart_Adapter(context, cartDMS);
 

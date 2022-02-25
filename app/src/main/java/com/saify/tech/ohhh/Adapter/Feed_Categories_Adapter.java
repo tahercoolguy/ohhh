@@ -1,6 +1,7 @@
 package com.saify.tech.ohhh.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
+import com.saify.tech.ohhh.Activity.Food_Details_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.DataModel.Feed_CategoriesDM;
 import com.saify.tech.ohhh.DataModel.HistoryDM;
@@ -55,7 +57,7 @@ public class Feed_Categories_Adapter extends RecyclerView.Adapter<Feed_Categorie
         holder.feed_cakeLinearLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity)context).addFragment(new Deep_and_Deep_2_Fragment(), false);
+                ((MainActivity)context).startActivity(new Intent(context, Food_Details_Activity.class));
             }
         });
     }

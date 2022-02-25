@@ -45,7 +45,9 @@ public class Food_Details_Activity extends AppCompatActivity {
     Dialog progress;
     ConnectionDetector connectionDetector;
     DialogUtil dialogUtil;
+    int count = 0;
 
+    String strCounter;
 
     @BindView(R.id.smalll_RL)
     ImageView smalll_RL;
@@ -74,23 +76,55 @@ public class Food_Details_Activity extends AppCompatActivity {
     @BindView(R.id.back_RL)
     RelativeLayout back;
 
+    @BindView(R.id.minus_cake_Rl)
+    RelativeLayout minus;
+
+
+    @BindView(R.id.plus_cake_RL)
+    RelativeLayout plus;
+
+
+    @BindView(R.id.minus_plus_Txt)
+    TextView minus_plus_text;
+
+
+    @OnClick(R.id.minus_cake_Rl)
+    public void Minus() {
+
+        if (count > 0)
+            count--;
+        strCounter = Integer.toString(count);
+        minus_plus_text.setText(strCounter);
+
+    }
+
+    @OnClick(R.id.plus_cake_RL)
+    public void Plus() {
+
+        count++;
+        strCounter = Integer.toString(count);
+        minus_plus_text.setText(strCounter);
+
+    }
+
 
     @OnClick(R.id.back_RL)
     public void bacck() {
 
-//        ((MainActivity)context).startActivity(new Intent(Food_Details_Activity.this, Deep_and_Deep_2_Fragment.class));
+        finish();
+
     }
 
     @OnClick(R.id.cart_RL)
     public void cartt() {
 
-        startActivity(new Intent(Food_Details_Activity.this,Cart_Activity.class));
+        startActivity(new Intent(Food_Details_Activity.this, Cart_Activity.class));
     }
 
     @OnClick(R.id.add_to_cart_Btn)
     public void cart() {
 
-         startActivity(new Intent(Food_Details_Activity.this,Cart_Activity.class));
+        startActivity(new Intent(Food_Details_Activity.this, Cart_Activity.class));
     }
 
     @OnClick(R.id.cheese_1RL)
@@ -98,7 +132,7 @@ public class Food_Details_Activity extends AppCompatActivity {
 
         ifHome11 = true;
         cheese1();
-      }
+    }
 
     @OnClick(R.id.mayonese_2Rl)
     public void mayonese() {
@@ -106,7 +140,7 @@ public class Food_Details_Activity extends AppCompatActivity {
         ifHome21 = true;
         Mayonese1();
 
-     }
+    }
 
     @OnClick(R.id.extra_chocklate_3Rl)
     public void chocklate() {
@@ -133,7 +167,7 @@ public class Food_Details_Activity extends AppCompatActivity {
     @OnClick(R.id.large_RL)
     public void Large() {
 
-        ifHome3 =true;
+        ifHome3 = true;
         Home3();
     }
 
@@ -156,8 +190,8 @@ public class Food_Details_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_details);
         ButterKnife.bind(this);
-         dialogUtil = new DialogUtil();
-         context = ((MainActivity)context);
+        dialogUtil = new DialogUtil();
+        context = ((MainActivity) context);
         appController = (AppController) getApplicationContext();
         connectionDetector = new ConnectionDetector(getApplicationContext());
         user = new User(Food_Details_Activity.this);
@@ -189,7 +223,7 @@ public class Food_Details_Activity extends AppCompatActivity {
 
     boolean ifHome11 = false;
     boolean ifHome21 = false;
-    boolean ifHome31= false;
+    boolean ifHome31 = false;
 
     public void cheese1() {
 
@@ -229,7 +263,6 @@ public class Food_Details_Activity extends AppCompatActivity {
         }
 
     }
-
 
 
     boolean ifHome1 = false;

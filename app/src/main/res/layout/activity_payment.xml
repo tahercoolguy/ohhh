@@ -224,7 +224,6 @@
             android:layout_width="wrap_content"
              android:layout_gravity="center"
             android:gravity="center"
-            android:fontFamily="@font/semi_bold"
 
             android:textColor="@color/black"
               android:layout_height="wrap_content"
@@ -237,7 +236,6 @@
              android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@color/black"
-            android:fontFamily="@font/semi_bold"
 
             android:layout_marginLeft="105dp"
              android:layout_height="wrap_content"
@@ -250,7 +248,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColor="@color/black"
-            android:fontFamily="@font/semi_bold"
 
             android:layout_marginLeft="100dp"
              android:gravity="center"
@@ -301,15 +298,11 @@
             <EditText
                 android:id="@+id/codeET"
                 android:layout_width="match_parent"
-
-
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
-                android:textStyle="bold"
-
-                android:layout_marginBottom="5dp"
-                android:background="@android:color/transparent"
+                 android:textStyle="bold"
+                 android:background="@android:color/transparent"
                 android:text="@string/code"
                 android:textColor="@color/black"
 
@@ -322,8 +315,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="250dp"
-            android:layout_marginTop="10dp"
-              android:fontFamily="@font/semi_bold"
+            android:layout_marginTop="8dp"
 
             android:src="@drawable/places_ic_search"
             android:text="@string/add_code"
@@ -348,7 +340,7 @@
     <LinearLayout
         android:id="@+id/now_RL"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="195dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"

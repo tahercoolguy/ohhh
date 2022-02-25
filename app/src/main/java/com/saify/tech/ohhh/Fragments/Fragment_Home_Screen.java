@@ -47,6 +47,9 @@ public class Fragment_Home_Screen extends Fragment {
     @BindView(R.id.featuredShopsRcv)
     RecyclerView featured_shops;
 
+    @BindView(R.id.view_all_Txt)
+    TextView view_all;
+
     @BindView(R.id.offers_Rcv)
     RecyclerView offers_Rcvv;
 
@@ -65,9 +68,12 @@ public class Fragment_Home_Screen extends Fragment {
     }
 
 
+    @OnClick(R.id.view_all_Txt)
+    public void ViewAll() {
 
+        ((MainActivity)context).addFragment(new Deep_and_Deep_1_Fragment(),false);
 
-
+    }
 
     @BindView(R.id.layout_parent) LinearLayout layout_parent;
     private HListView lst_latest_profiles, lst_latest_news, lst_featured_video;
@@ -94,7 +100,6 @@ public class Fragment_Home_Screen extends Fragment {
              FeaturesShops();
              Offers();
              BestFromDesert();
-
             setDetails();
 
 

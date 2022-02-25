@@ -1,6 +1,7 @@
 package com.saify.tech.ohhh.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +14,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.saify.tech.ohhh.Activity.Food_Details_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.DataModel.HistoryDM;
 import com.saify.tech.ohhh.DataModel.OrderDM;
 import com.saify.tech.ohhh.DataModel.ShopssDM;
+import com.saify.tech.ohhh.Fragments.Deep_and_Deep_1_Fragment;
 import com.saify.tech.ohhh.R;
 
 import java.util.ArrayList;
@@ -64,7 +67,9 @@ public class Shopss_Adapter extends RecyclerView.Adapter<Shopss_Adapter.Programm
             @Override
             public void onClick(View view) {
 
-            }
+                ((MainActivity)context).addFragment(new Deep_and_Deep_1_Fragment(),false);
+
+              }
         });
 
 

@@ -61,14 +61,14 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     RecyclerView sub_category_2_Rcv;
 
     @BindView(R.id.back_dip_1RL)
-    RelativeLayout back;
+    ImageView back;
 
     @BindView(R.id.cart_dip_1)
     RelativeLayout cart;
 
     @OnClick(R.id.back_dip_1RL)
     public void bacck() {
-
+        ((MainActivity)context).addFragment(new Fragment_Home_Screen(),false);
       }
 
     @OnClick(R.id.cart_dip_1)

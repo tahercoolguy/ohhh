@@ -28,8 +28,7 @@ public class Term_And_Condition_Activity extends AppCompatActivity{
 
     @OnClick(R.id.back_term_and_condition)
     public void Back_Term() {
-        startActivity(new Intent(Term_And_Condition_Activity.this,Account_Activity.class));
-
+                finish();
     }
 
 

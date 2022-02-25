@@ -65,16 +65,14 @@ public class Edit_Profile_Activity extends AppCompatActivity implements  Validat
     @OnClick(R.id.back_edit_profile)
     public void Back()
     {
-//        ((MainActivity)context).startActivity(new Intent(context, Fragment_Account.class));
-        startActivity(new Intent(Edit_Profile_Activity.this,Account_Activity.class));
-
+            finish();
     }
 
 
     @OnClick(R.id.save_Btn)
     public void SaveBtn()
     {
-        startActivity(new Intent(Edit_Profile_Activity.this,Account_Activity.class));
+        finish();
 
     }
 

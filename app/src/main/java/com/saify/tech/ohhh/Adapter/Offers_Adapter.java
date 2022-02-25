@@ -1,6 +1,7 @@
 package com.saify.tech.ohhh.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.saify.tech.ohhh.Activity.Food_Details_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.DataModel.OffersDM;
 import com.saify.tech.ohhh.DataModel.ShopssDM;
@@ -52,15 +54,15 @@ public class Offers_Adapter extends RecyclerView.Adapter<Offers_Adapter.Programm
 
         holder.textView.setText(offersDM.getOffer_chocklate_1());
 
-         holder.img.setImageResource(offersDM.getChocklate_img_1());
+        holder.img.setImageResource(offersDM.getChocklate_img_1());
 
-         holder.shop_cake_RL.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 ((MainActivity)context).addFragment(new Deep_and_Deep_1_Fragment(), false);
-
-             }
-         });
+        holder.shop_cake_RL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                 ((MainActivity)context).addFragment(new Food_Details_Activity(), false);
+                ((MainActivity) context).startActivity(new Intent(context, Food_Details_Activity.class));
+            }
+        });
 
 
     }
@@ -81,7 +83,7 @@ public class Offers_Adapter extends RecyclerView.Adapter<Offers_Adapter.Programm
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.offer_chocklate_cake_txt_1);
             img = (ImageView) itemView.findViewById(R.id.offer_chocklate_img_1);
-            shop_cake_RL=itemView.findViewById(R.id.shop_cake_RL);
+            shop_cake_RL = itemView.findViewById(R.id.shop_cake_RL);
 
         }
     }
