@@ -6,4 +6,4 @@
         android:startColor="@color/white" />
     <corners android:radius="10dp" />
     <size android:height="37dp" android:width="38dp"/>
-</shape>
+ </shape>

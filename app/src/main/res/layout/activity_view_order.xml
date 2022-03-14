@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="@color/new_grey"
+    android:background="@color/white"
 
     tools:context=".Activity.View_Order_Activity">
 
@@ -70,6 +70,7 @@
                 android:layout_height="270dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
+                android:elevation="0.1dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/rounded_rectangle_white"
                 android:orientation="vertical">
@@ -176,6 +177,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="154dp"
                 android:layout_marginLeft="20dp"
+                android:elevation="0.1dp"
                 android:layout_marginTop="10dp"
 
                 android:layout_marginRight="20dp"
@@ -240,6 +242,7 @@ Al-Mubarak St, Kuwait City"
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
+                android:elevation="0.1dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
 
@@ -396,6 +399,7 @@ Al-Mubarak St, Kuwait City"
                 android:layout_height="100dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
+                android:elevation="0.1dp"
 
                 android:layout_marginRight="20dp"
                 android:background="@drawable/rounded_rectangle_white">
@@ -520,6 +524,7 @@ Al-Mubarak St, Kuwait City"
                 android:layout_height="125dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
+                android:elevation="0.1dp"
 
                 android:layout_marginRight="20dp"
                 android:background="@drawable/rounded_corner_edit_text_colour">
@@ -527,8 +532,9 @@ Al-Mubarak St, Kuwait City"
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
+                    android:background="@null"
 
-                    android:background="@null">
+                   >
 
                 </EditText>
 

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/circle_white"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Activity.VerifyActivity">
@@ -115,6 +116,23 @@
         android:textStyle="bold"
         android:text="@string/please_resend"
         android:textColor="@color/colorPrimary"></TextView>
+
+
+    <TextView
+        android:id="@+id/verify_otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rounded_corner_primary_colour"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:padding="15dp"
+        android:text="@string/verify_otp"
+        android:textColor="@color/white"
+        android:textStyle="bold"></TextView>
 
 
 </LinearLayout>

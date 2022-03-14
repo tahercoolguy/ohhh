@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -38,11 +39,30 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     @NotEmpty
     @Email
     @BindView(R.id.emailET)
-    com.google.android.material.textfield.TextInputEditText EmailET;
+    EditText EmailET;
 
     @NotEmpty
     @BindView(R.id.passwordET)
-    com.google.android.material.textfield.TextInputEditText passwordET;
+    EditText passwordET;
+
+//    @OnClick(R.id.emailET)
+//    public void em() {
+////        ifemail = true;
+//        EmailET.setBackground(getDrawable(R.drawable.box2));
+//        passwordET.setBackground(getDrawable(R.drawable.box));
+//
+////        Email_Selected();
+//     }
+
+//    @OnClick(R.id.passwordET)
+//    public void pass() {
+////        ifpassword = true;
+////        Password_Selected();
+//
+//        EmailET.setBackground(getDrawable(R.drawable.box));
+//        passwordET.setBackground(getDrawable(R.drawable.box2));
+//    }
+
 
     @OnClick(R.id.signInTxt)
     public void SignIn() {
@@ -68,33 +88,6 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     @BindView(R.id.to_google_login)
     RelativeLayout To_Google_Login;
 
-//    @OnClick(R.id.to_google_login)
-//    public void To_Google_Login()
-//    {
-//        String url = "https://www.google.com/";
-//        Intent i = new Intent();
-//        i.setPackage("com.android.chrome");
-//        i.setAction(Intent.ACTION_VIEW);
-//        i.setData(Uri.parse(url));
-//        startActivity(i);
-//    }
-//
-//    @OnClick(R.id.to_facebook_login)
-//    public void To_Facebook_Login()
-//    {
-//        String url = "http://www.facebook.com";
-//        Intent i = new Intent();
-//        i.setPackage("com.android.chrome");
-//        i.setAction(Intent.ACTION_VIEW);
-//        i.setData(Uri.parse(url));
-//        startActivity(i);
-//    }
-
-
-//
-//    @OnClick(R.id.guestBtn)
-//    public void guestBtn()
-//    {}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,22 +106,21 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
 
     }
 
-//
+
 //    boolean ifemail = false;
 //    boolean ifpassword = false;
 //
 //    public void Email_Selected() {
 //
-//        ifemail = true;
-//        EmailET.setBackground(getDrawable(R.drawable.rectangle_box));
-//        passwordET.setBackground(getDrawable(R.drawable.rectangle_box_unselected));
+//        EmailET.setBackground(getDrawable(R.drawable.box2));
+//        passwordET.setBackground(getDrawable(R.drawable.box));
 //
 //    }
 //
 //    public void Password_Selected() {
-//        ifpassword = true;
-//        EmailET.setBackground(getDrawable(R.drawable.rectangle_box_unselected));
-//        passwordET.setBackground(getDrawable(R.drawable.rectangle_box));
+//
+//        EmailET.setBackground(getDrawable(R.drawable.box));
+//        passwordET.setBackground(getDrawable(R.drawable.box2));
 //    }
 
     @Override

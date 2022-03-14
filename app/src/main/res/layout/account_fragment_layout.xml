@@ -2,14 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_light"
-    android:animateLayoutChanges="true">
+    android:background="@color/white"
+     android:animateLayoutChanges="true">
 
     <LinearLayout
         android:id="@+id/layout_parent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-         android:orientation="vertical">
+        android:orientation="vertical">
 
 
         <RelativeLayout
@@ -54,10 +54,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="-20dp"
             android:layout_marginRight="20dp"
-            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
 
@@ -66,10 +66,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="@font/semi_bold"
-
                 android:layout_marginLeft="10dp"
+
                 android:layout_weight="1"
+                android:fontFamily="@font/semi_bold"
                 android:text="@string/mohammad"
                 android:textColor="@color/black"
                 android:textSize="18dp"
@@ -81,7 +81,7 @@
                 android:id="@+id/edit_user_name_Img"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                 android:src="@drawable/ic_name_edit">
+                android:src="@drawable/ic_name_edit">
 
             </ImageView>
 
@@ -95,7 +95,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/rounded_rectangle_white_account"
-            android:elevation="0.2dp"
+            android:elevation="0.1dp"
             android:gravity="center">
 
             <LinearLayout
@@ -200,7 +200,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/rounded_rectangle_white_account"
-            android:elevation="0.2dp"
+            android:elevation="0.1dp"
             android:gravity="center">
 
             <LinearLayout
@@ -210,10 +210,10 @@
 
                 <RelativeLayout
                     android:layout_width="40dp"
-                    android:background="@drawable/circle_white"
-                    android:elevation="0.5dp"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_height="40dp">
+                    android:background="@drawable/circle_white"
+                    android:elevation="0.5dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -254,10 +254,10 @@
 
                 <RelativeLayout
                     android:layout_width="40dp"
-                    android:background="@drawable/circle_white"
-                    android:elevation="0.5dp"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_height="40dp">
+                    android:background="@drawable/circle_white"
+                    android:elevation="0.5dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -300,7 +300,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/rounded_rectangle_white_account"
-            android:elevation="0.2dp">
+            android:elevation="0.1dp">
 
             <LinearLayout
                 android:id="@+id/term_and_condition_LL"
@@ -309,10 +309,10 @@
 
                 <RelativeLayout
                     android:layout_width="40dp"
-                    android:background="@drawable/circle_white"
-                    android:elevation="0.5dp"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_height="40dp">
+                    android:background="@drawable/circle_white"
+                    android:elevation="0.5dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -445,10 +445,10 @@
 
                 <RelativeLayout
                     android:layout_width="40dp"
-                    android:background="@drawable/circle_white"
-                    android:elevation="0.5dp"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_height="40dp">
+                    android:background="@drawable/circle_white"
+                    android:elevation="0.1dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -490,8 +490,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
-            android:elevation="0.2dp"
             android:background="@drawable/rounded_rectangle_white_account"
+            android:elevation="0.2dp"
             android:gravity="center">
 
             <LinearLayout

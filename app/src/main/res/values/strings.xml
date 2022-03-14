@@ -37,6 +37,8 @@
 
     <string name="english">English</string>
     <string name="arabic">Arabic</string>
+    <string name="verify_otp">Verify OTP</string>
+
     <string name="sign_in">Sign In</string>
     <string name="username">Username</string>
     <string name="password">Password</string>

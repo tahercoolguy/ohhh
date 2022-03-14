@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/new_grey"
+    android:background="@color/white"
     android:layout_height="match_parent"
-      tools:context=".Activity.SplashScreen">
+    tools:context=".Activity.SplashScreen">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-          android:layout_height="match_parent">
+        android:layout_height="match_parent">
 
         <ImageView
             android:layout_width="match_parent"
@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="330dp"
-             android:src="@drawable/ohh_splash">
+            android:src="@drawable/ohh_splash">
 
         </ImageView>
 

@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
-    android:background="@color/new_grey"
 
     android:orientation="vertical"
     tools:context=".Activity.Payment_Activity">
@@ -284,30 +284,27 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/cutum_select_1"
+            android:padding="10dp"
             app:boxCornerRadiusBottomEnd="10dp"
             app:boxCornerRadiusBottomStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/rounded_corner_border_primary_colour"
 
 
-            android:padding="5dp">
+            app:boxCornerRadiusTopStart="10dp">
 
 
             <EditText
                 android:id="@+id/codeET"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
-                 android:textStyle="bold"
-                 android:background="@android:color/transparent"
+                android:background="@android:color/transparent"
                 android:text="@string/code"
                 android:textColor="@color/black"
-
-
-                android:textSize="@dimen/text_size_normal"></EditText>
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold"></EditText>
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -341,6 +338,7 @@
         android:id="@+id/now_RL"
         android:layout_width="match_parent"
         android:layout_height="195dp"
+        android:elevation="0.1dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"

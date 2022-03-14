@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:animateLayoutChanges="true"
-    android:background="@color/new_grey"
-    >
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -59,8 +58,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
                             android:layout_marginTop="1dp"
-                             android:layout_marginLeft="10dp"
                             android:src="@drawable/ic_deliver_bottom">
 
                         </ImageView>
@@ -73,35 +72,35 @@
                         android:fontFamily="@font/semi_bold"
                         android:text="@string/khaitan"
                         android:textColor="@color/colorPrimary"
-                        android:textStyle="bold"
-                        android:textSize="16dp">
+                        android:textSize="16dp"
+                        android:textStyle="bold">
 
                     </TextView>
 
                 </LinearLayout>
 
-<!--                <RelativeLayout-->
-<!--                    android:id="@+id/cart_Rl"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:gravity="center"-->
-<!--                    android:background="@drawable/rectangle_white_border">-->
+                <!--                <RelativeLayout-->
+                <!--                    android:id="@+id/cart_Rl"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_gravity="center"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:background="@drawable/rectangle_white_border">-->
 
-<!--                    <ImageView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_gravity="center"-->
-<!--                        android:src="@drawable/ic_cartttt"></ImageView>-->
-<!--                </RelativeLayout>-->
+                <!--                    <ImageView-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_gravity="center"-->
+                <!--                        android:src="@drawable/ic_cartttt"></ImageView>-->
+                <!--                </RelativeLayout>-->
 
 
                 <RelativeLayout
                     android:id="@+id/cart_Rl"
                     android:layout_width="wrap_content"
-                    android:layout_marginLeft="-10dp"
                     android:layout_height="wrap_content"
-                      android:background="@drawable/rounded_corner_white">
+                    android:layout_marginLeft="-10dp"
+                    android:background="@drawable/rounded_corner_white">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -115,27 +114,26 @@
                 </RelativeLayout>
 
 
-
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/semi_bold"
                 android:layout_marginTop="20dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/semi_bold"
                 android:text="@string/what_would_you_like"
                 android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold"></TextView>
+                android:textSize="24sp"></TextView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="to order"
+                android:autoSizeTextType="uniform"
                 android:fontFamily="@font/semi_bold"
+                android:text="to order"
                 android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold"></TextView>
+                android:textSize="24sp"></TextView>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -169,25 +167,24 @@
                 <!--                </com.google.android.material.textfield.TextInputLayout>-->
 
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cutum_select_1"
+                    app:boxBackgroundColor="#FCFCFD"
                     app:boxCornerRadiusBottomEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
-                    app:boxCornerRadiusTopStart="10dp"
-                    android:layout_height="wrap_content"
-                    app:boxBackgroundColor="#FCFCFD">
+                    app:boxCornerRadiusTopStart="10dp">
 
                     <EditText
                         android:id="@+id/passwordET"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:fontFamily="@font/semi_bold"
-
-
                         android:layout_marginLeft="30dp"
-                        android:background="@android:color/transparent"
+                        android:background="@color/transparent"
+                         android:fontFamily="@font/semi_bold"
                         android:hint="@string/find_for_food_or_restaurant"
+                        android:padding="12dp"
                         android:textSize="@dimen/text_size_normal"
 
                         app:boxBackgroundColor="@color/greyDark"></EditText>
@@ -198,7 +195,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="14dp"
                     android:src="@drawable/places_ic_search">
 
                 </ImageView>
@@ -215,29 +212,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:ems="14"
+                    android:fontFamily="@font/semi_bold"
                     android:text="Featured Shops"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/semi_bold"
-                    android:textSize="18dp"
-                    android:textStyle="bold"></TextView>
+                    android:textSize="18dp"></TextView>
 
                 <TextView
                     android:id="@+id/view_all_Txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="180dp"
                     android:layout_marginTop="15dp"
-                    android:text="View All"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimary"></TextView>
+                    android:text="View All >"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"></TextView>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="25dp"
-
-                    android:src="@drawable/ic_view_all"></ImageView>
 
             </LinearLayout>
 
@@ -260,11 +249,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Offers"
                 android:fontFamily="@font/semi_bold"
+                android:text="Offers"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"></TextView>
+                android:textSize="18dp"></TextView>
 
 
             <androidx.recyclerview.widget.RecyclerView
@@ -275,12 +263,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/semi_bold"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/semi_bold"
                 android:text="Best from Desserts"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"></TextView>
+                android:textSize="18dp"></TextView>
 
 
             <androidx.recyclerview.widget.RecyclerView

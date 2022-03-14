@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="center"
     android:orientation="vertical"
-    android:background="@color/new_grey"
+    android:background="@color/white"
 
     tools:context=".Activity.AddressSelector">
 

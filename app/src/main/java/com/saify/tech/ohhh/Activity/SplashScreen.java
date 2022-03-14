@@ -72,7 +72,7 @@ public class SplashScreen extends AppCompatActivity {
 //                    startActivity(new Intent(SplashScreen.this, AdvertiseSelector.class));
 //                    finish();
 //                }
-                startActivity(new Intent(SplashScreen.this, AddressSelector.class));
+                startActivity(new Intent(SplashScreen.this, LoginActivity.class));
                 finish();
 
             }

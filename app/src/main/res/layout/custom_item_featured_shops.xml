@@ -33,7 +33,6 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="255dp"
-
                 android:layout_marginTop="10dp"
                 android:background="@drawable/button_rounded_primary_color_selector"
                 android:elevation="11dp">
@@ -55,7 +54,6 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rounded_corner_white_rating_bg"
-
                 android:gravity="center"
                 android:orientation="horizontal">
 
