@@ -95,7 +95,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/rounded_rectangle_white_account"
-            android:elevation="0.1dp"
+            android:elevation="1dp"
             android:gravity="center">
 
             <LinearLayout
@@ -200,7 +200,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/rounded_rectangle_white_account"
-            android:elevation="0.1dp"
+            android:elevation="1dp"
             android:gravity="center">
 
             <LinearLayout
@@ -300,7 +300,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/rounded_rectangle_white_account"
-            android:elevation="0.1dp">
+            android:elevation="1dp">
 
             <LinearLayout
                 android:id="@+id/term_and_condition_LL"
@@ -403,7 +403,7 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="20dp"
                     android:background="@drawable/circle_white"
-                    android:elevation="0.5dp">
+                    android:elevation="1dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -491,7 +491,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/rounded_rectangle_white_account"
-            android:elevation="0.2dp"
+            android:elevation="1dp"
             android:gravity="center">
 
             <LinearLayout

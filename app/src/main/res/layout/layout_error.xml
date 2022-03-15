@@ -11,7 +11,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
 
-        android:indeterminateDrawable="@drawable/progress_bar_drawable"
+        android:indeterminateDrawable="@drawable/ohh_splash"
         android:padding="18dp"
         android:visibility="gone" />
 

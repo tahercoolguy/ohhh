@@ -208,7 +208,7 @@ public class Fragment_Account extends Fragment {
             public void run() {
                DismissProgress();
             }
-        }, 1500);
+        }, 100);
 
 
 

@@ -102,13 +102,17 @@ public class MainActivity extends AppCompatActivity {
     public void dashBoard() {
         Home1();
         ifHome1 =true;
+         addFragment(new Fragment_Home_Screen(), false);
 
-    }
+
+     }
 
     @OnClick(R.id.chatImage)
     public void selfService() {
         ifHome2 =true;
         Home2();
+        addFragment(new Feed_Categories_Fragment(), false);
+
 
     }
 
@@ -116,6 +120,8 @@ public class MainActivity extends AppCompatActivity {
     public void reportIncident() {
         Home3();
         ifHome3=true;
+        addFragment(new Fragment_Shops(), false);
+
 
     }
 
@@ -124,6 +130,8 @@ public class MainActivity extends AppCompatActivity {
     public void eForm() {
         Home4();
         ifHome4=true;
+        addFragment(new Fragment_Account(), false);
+
 //        addFragment(new EFormFragment(),false);
     }
 
@@ -154,7 +162,6 @@ public class MainActivity extends AppCompatActivity {
             home2.setBackground(getDrawable(R.drawable.ic___unselected2));
             home3.setBackground(getDrawable(R.drawable.ic___unselected3));
             home4.setBackground(getDrawable(R.drawable.ic___unselected4));
-            addFragment(new Fragment_Home_Screen(), false);
 
 
         }
@@ -169,7 +176,6 @@ public class MainActivity extends AppCompatActivity {
             home2.setBackground(getDrawable(R.drawable.ic___selected2));
             home3.setBackground(getDrawable(R.drawable.ic___unselected3));
             home4.setBackground(getDrawable(R.drawable.ic___unselected4));
-            addFragment(new Feed_Categories_Fragment(), false);
 
 
         }
@@ -184,7 +190,6 @@ public class MainActivity extends AppCompatActivity {
             home2.setBackground(getDrawable(R.drawable.ic___unselected2));
             home3.setBackground(getDrawable(R.drawable.ic___selected3));
             home4.setBackground(getDrawable(R.drawable.ic___unselected4));
-            addFragment(new Fragment_Shops(), false);
 
 
         }
@@ -199,7 +204,6 @@ public class MainActivity extends AppCompatActivity {
             home2.setBackground(getDrawable(R.drawable.ic___unselected2));
             home3.setBackground(getDrawable(R.drawable.ic___unselected3));
             home4.setBackground(getDrawable(R.drawable.ic___selected4));
-            addFragment(new Fragment_Account(), false);
         }
 
     }

@@ -141,6 +141,14 @@ public class Fragment_Home_Screen extends Fragment {
         offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_2));
         offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_3));
 
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.ofer_cake_img_1));
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_2));
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_3));
+
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.ofer_cake_img_1));
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_2));
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_3));
+
         Offers_Adapter dm = new Offers_Adapter(context, offersDMS);
 
         LinearLayoutManager l
@@ -154,6 +162,14 @@ public class Fragment_Home_Screen extends Fragment {
     private void BestFromDesert() {
 
         ArrayList<OffersDM> offersDMS = new ArrayList<>();
+
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desrt_cake_1));
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_2));
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_3));
+
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desrt_cake_1));
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_2));
+        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_3));
 
         offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desrt_cake_1));
         offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_2));
@@ -181,7 +197,7 @@ public class Fragment_Home_Screen extends Fragment {
             public void run() {
                DismissProgress();
             }
-        }, 1500);
+        }, 100);
 
 
 

@@ -174,7 +174,7 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
             public void run() {
                DismissProgress();
             }
-        }, 1500);
+        }, 100);
 
 
 

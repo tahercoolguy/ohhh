@@ -49,11 +49,11 @@
                     <ImageView
                         android:id="@+id/back_dip_1RL"
                         android:layout_width="wrap_content"
-                        android:layout_weight="50"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="-300dp"
 
-                         android:layout_marginLeft="-300dp"
                         android:layout_marginTop="-45dp"
+                        android:layout_weight="50"
                         android:src="@drawable/ic_back_back_otp">
 
                     </ImageView>

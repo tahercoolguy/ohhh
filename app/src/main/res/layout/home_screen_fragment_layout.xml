@@ -22,20 +22,19 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:src="@drawable/ic_oohh_home_screen"></ImageView>
 
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="80dp"
-                    android:layout_marginRight="80dp"
+                    android:layout_weight="31"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -69,7 +68,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/semi_bold"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:gravity="center"
                         android:text="@string/khaitan"
                         android:textColor="@color/colorPrimary"
                         android:textSize="16dp"
@@ -99,7 +100,7 @@
                     android:id="@+id/cart_Rl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="-10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/rounded_corner_white">
 
                     <ImageView
@@ -123,8 +124,8 @@
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/semi_bold"
                 android:text="@string/what_would_you_like"
-                android:textColor="@color/black"
-                android:textSize="24sp"></TextView>
+                android:textColor="#323643"
+                android:textSize="20dp"></TextView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -132,8 +133,8 @@
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/semi_bold"
                 android:text="to order"
-                android:textColor="@color/black"
-                android:textSize="24sp"></TextView>
+                android:textColor="#323643"
+                android:textSize="20dp"></TextView>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -166,39 +167,22 @@
                 <!--                        android:textSize="@dimen/text_size_normal"></EditText>-->
                 <!--                </com.google.android.material.textfield.TextInputLayout>-->
 
-                <com.google.android.material.textfield.TextInputLayout
+
+                <EditText
+                    android:id="@+id/passwordET"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/cutum_select_1"
-                    app:boxBackgroundColor="#FCFCFD"
-                    app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxCornerRadiusBottomStart="10dp"
-                    app:boxCornerRadiusTopEnd="10dp"
-                    app:boxCornerRadiusTopStart="10dp">
+                    android:layout_height="45dp"
+                    android:background="@drawable/rectangle_white_grey_border"
+                     android:drawableStart="@drawable/places_ic_search"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/semi_bold"
+                    android:hint="@string/find_for_food_or_restaurant"
+                    android:paddingLeft="10dp"
 
-                    <EditText
-                        android:id="@+id/passwordET"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="30dp"
-                        android:background="@color/transparent"
-                         android:fontFamily="@font/semi_bold"
-                        android:hint="@string/find_for_food_or_restaurant"
-                        android:padding="12dp"
-                        android:textSize="@dimen/text_size_normal"
+                     android:textSize="@dimen/text_size_normal"
 
-                        app:boxBackgroundColor="@color/greyDark"></EditText>
+                    app:boxBackgroundColor="@color/greyDark"></EditText>
 
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="14dp"
-                    android:src="@drawable/places_ic_search">
-
-                </ImageView>
 
             </RelativeLayout>
 
@@ -206,16 +190,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:ems="14"
+                    android:layout_weight="13"
                     android:fontFamily="@font/semi_bold"
                     android:text="Featured Shops"
-                    android:textColor="@color/black"
+                    android:textColor="#323643"
                     android:textSize="18dp"></TextView>
 
                 <TextView
@@ -223,6 +208,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:layout_weight="1"
                     android:text="View All >"
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold"></TextView>
@@ -248,10 +234,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:fontFamily="@font/semi_bold"
                 android:text="Offers"
-                android:textColor="@color/black"
+                android:textColor="#323643"
                 android:textSize="18dp"></TextView>
 
 
@@ -263,16 +248,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:fontFamily="@font/semi_bold"
                 android:text="Best from Desserts"
-                android:textColor="@color/black"
+                android:textColor="#323643"
                 android:textSize="18dp"></TextView>
 
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/best_fom_desert_Rcv"
                 android:layout_width="match_parent"
+                android:layout_marginBottom="100dp"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>

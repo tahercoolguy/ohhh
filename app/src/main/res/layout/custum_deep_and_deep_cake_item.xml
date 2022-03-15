@@ -4,23 +4,24 @@
     android:layout_width="70dp"
     android:layout_marginTop="2dp"
     android:layout_height="105dp"
-    android:layout_marginLeft="10dp"
+    android:layout_marginLeft="5dp"
     android:adjustViewBounds="true"
     android:orientation="vertical"
     app:riv_corner_radius="12dp">
 
     <RelativeLayout
         android:id="@+id/cake_deep_and_deepRL"
-         android:layout_width="match_parent"
-        android:layout_height="103dp"
+         android:layout_width="60dp"
+        android:layout_height="95dp"
+        android:elevation="3dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:background="@drawable/rounded_corner_deep_deep_cake">
 
         <LinearLayout
             android:id="@+id/linearLL"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -32,10 +33,13 @@
 
             <TextView
                 android:id="@+id/cake_name_deep_Txt"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:elevation="2dp"
                 android:layout_height="wrap_content"
                 android:text="Cake"
-                android:textSize="13dp"
+                android:textSize="10dp"
 
                 android:textColor="@color/white"></TextView>
         </LinearLayout>

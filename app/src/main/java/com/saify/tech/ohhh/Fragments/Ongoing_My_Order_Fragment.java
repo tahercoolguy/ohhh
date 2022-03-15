@@ -124,7 +124,7 @@ public class Ongoing_My_Order_Fragment extends Fragment {
             public void run() {
                 DismissProgress();
             }
-        }, 1500);
+        }, 100);
 
 
     }

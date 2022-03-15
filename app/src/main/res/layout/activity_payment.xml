@@ -338,7 +338,7 @@
         android:id="@+id/now_RL"
         android:layout_width="match_parent"
         android:layout_height="195dp"
-        android:elevation="0.1dp"
+        android:elevation="1dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"

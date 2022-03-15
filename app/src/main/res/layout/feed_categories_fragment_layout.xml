@@ -15,33 +15,34 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="30dp">
+             android:layout_marginTop="10dp">
 
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/my_order_tab_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                 android:keepScreenOn="false"
-                android:scrollIndicators="none"
+                android:keepScreenOn="false"
+                app:tabIndicatorGravity="center"
+                 android:scrollIndicators="none"
                 android:scrollbars="none"
-                app:tabIndicator="@null"
-
                 app:tabGravity="center"
+
+                app:tabIndicator="@null"
                 app:tabSelectedTextColor="@color/black"
+                app:tabTextAppearance="@style/TabLayoutStyle"
                 app:tabTextColor="@color/greyDark">
+
 
             </com.google.android.material.tabs.TabLayout>
 
             <ImageView
                 android:id="@+id/searchImg"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                 android:layout_width="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                 android:layout_marginTop="12dp"
                 android:src="@drawable/places_ic_search"></ImageView>
 
 
@@ -51,9 +52,7 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager_my_order"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </androidx.viewpager.widget.ViewPager>
+            android:layout_height="wrap_content"></androidx.viewpager.widget.ViewPager>
         <!--       <androidx.recyclerview.widget.RecyclerView-->
         <!--           android:id="@+id/feed_Rv"-->
         <!--           android:layout_marginRight="10dp"-->

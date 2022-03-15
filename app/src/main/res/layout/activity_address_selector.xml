@@ -17,15 +17,15 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-99dp"
             android:layout_marginLeft="-5dp"
+            android:layout_marginTop="-99dp"
             android:src="@drawable/circle_big"></ImageView>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-21dp"
             android:layout_marginLeft="-46dp"
+            android:layout_marginTop="-21dp"
             android:src="@drawable/circle_small">
 
 
@@ -34,10 +34,11 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_marginLeft="300dp"
             android:layout_marginTop="-90dp"
+            android:layout_marginRight="-90dp"
 
-            android:layout_marginRight="-108dp"
             android:src="@drawable/circle_dark"></ImageView>
 
     </RelativeLayout>

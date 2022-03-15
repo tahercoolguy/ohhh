@@ -144,7 +144,7 @@ public class Fragment_Shops extends Fragment {
             public void run() {
                DismissProgress();
             }
-        }, 1500);
+        }, 100);
 
 
 

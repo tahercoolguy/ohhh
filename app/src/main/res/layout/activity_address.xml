@@ -103,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="154dp"
             android:layout_marginLeft="20dp"
-            android:elevation="0.1dp"
+            android:elevation="1dp"
             android:layout_marginTop="20dp"
 
             android:layout_marginRight="20dp"
@@ -157,12 +157,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="70dp"
                 android:layout_marginLeft="10dp"
-                android:textColor="@color/black"
+                android:layout_marginTop="70dp"
                 android:text="Al Nouf Tower, 11th Floor، Jaber
 Al-Mubarak St, Kuwait City Al Nouf Tower, 11th Floor، Jaber
-Al-Mubarak St, Kuwait City"></TextView>
+Al-Mubarak St, Kuwait City"
+                android:textColor="@color/black"></TextView>
 
 
         </RelativeLayout>
@@ -183,7 +183,7 @@ Al-Mubarak St, Kuwait City"></TextView>
             android:id="@+id/now_RL"
             android:layout_width="match_parent"
             android:layout_marginTop="20dp"
-            android:elevation="0.1dp"
+            android:elevation="1dp"
             android:layout_height="50dp"
             android:background="@drawable/rounded_rectangle_white"
             android:layout_marginLeft="20dp"
@@ -213,7 +213,7 @@ Al-Mubarak St, Kuwait City"></TextView>
             android:layout_width="match_parent"
             android:layout_marginTop="20dp"
             android:layout_height="50dp"
-            android:elevation="0.1dp"
+            android:elevation="1dp"
             android:background="@drawable/rounded_rectangle_white"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp">
