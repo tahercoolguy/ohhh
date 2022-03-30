@@ -3,6 +3,7 @@ package com.saify.tech.ohhh.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -33,14 +34,14 @@ public class AddressSelector extends AppCompatActivity {
 
     @OnClick(R.id.english_Txt)
     public void Englishh() {
-        startActivity(new Intent(AddressSelector.this, MainActivity.class));
+        startActivity(new Intent(AddressSelector.this, LoginActivity.class));
         finish();
 
     }
 
     @OnClick(R.id.arabic_Txt)
     public void Arabic() {
-        startActivity(new Intent(AddressSelector.this, MainActivity.class));
+        startActivity(new Intent(AddressSelector.this, LoginActivity.class));
         finish();
     }
 

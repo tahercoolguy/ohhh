@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context=".Activity.VerifyActivity">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -15,29 +16,12 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="-5dp"
-            android:layout_marginTop="-99dp"
-            android:src="@drawable/circle_big"></ImageView>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="-46dp"
-            android:layout_marginTop="-21dp"
-            android:src="@drawable/circle_small">
-
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="-84dp"
+            android:src="@drawable/circle_big_accent">
 
         </ImageView>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="300dp"
-            android:layout_marginTop="-90dp"
-
-            android:layout_marginRight="-108dp"
-            android:src="@drawable/circle_dark"></ImageView>
-
 
         <ImageView
             android:id="@+id/back_verification_otp_page_Img"
@@ -47,28 +31,71 @@
             android:background="@drawable/ic_back_back_otp"
             android:elevation="10dp"></ImageView>
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="-84dp"
+            android:src="@drawable/circle_big_accent">
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-84dp"
+            android:layout_marginRight="-80dp"
+            android:src="@drawable/circle_big_primary">
+
+        </ImageView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-45dp"
+            android:layout_marginTop="-5dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/circle_small_primary"></ImageView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/circle_small_centre">
+
+
+            </ImageView>
+
+
+        </RelativeLayout>
+
+
+
 
     </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginTop="-30dp"
+        android:layout_marginLeft="30dp"
         android:text="@string/verification_code"
-        android:fontFamily="@font/semi_bold"
-        android:textColor="@color/black"
+         android:textColor="@color/black"
         android:textSize="30dp"
-        android:textStyle="bold">
+        >
 
     </TextView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:fontFamily="@font/semi_bold"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+         android:layout_marginTop="10dp"
         android:text="@string/please_type_the_verification_code_sent">
 
     </TextView>
@@ -77,6 +104,8 @@
         android:id="@+id/otp_view"
         android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textColor="@color/colorPrimary"
@@ -99,8 +128,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:textStyle="bold"
-        android:fontFamily="@font/semi_bold"
-        android:text="@string/i_didnot_receive_a_code"
+         android:text="@string/i_didnot_receive_a_code"
         android:textColor="#5C5959">
 
     </TextView>
@@ -109,30 +137,28 @@
         android:id="@+id/please_resend_Txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/semi_bold"
-        android:layout_gravity="center"
+         android:layout_gravity="center"
+        android:textStyle="bold"
         android:layout_marginTop="3dp"
 
-        android:textStyle="bold"
-        android:text="@string/please_resend"
+         android:text="@string/please_resend"
         android:textColor="@color/colorPrimary"></TextView>
 
 
     <TextView
-        android:id="@+id/verify_otp"
+        android:id="@+id/submit_Txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:layout_marginRight="50dp"
         android:background="@drawable/rounded_corner_primary_colour"
-        android:gravity="center"
-        android:layout_gravity="center"
+         android:gravity="center"
+        android:textSize="@dimen/text_size_title"
         android:padding="15dp"
-        android:text="@string/verify_otp"
+        android:text="@string/submit"
         android:textColor="@color/white"
-        android:textStyle="bold"></TextView>
+       ></TextView>
 
 
 </LinearLayout>

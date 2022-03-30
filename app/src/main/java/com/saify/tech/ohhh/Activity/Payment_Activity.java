@@ -179,22 +179,6 @@ public class Payment_Activity extends AppCompatActivity {
         knet.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
         visa.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
 
-//        if (ifcash) {
-//            cash.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
-//            knet.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//            visa.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//        } if (ifknet){
-//
-//            cash.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//            knet.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
-//            visa.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//
-//        } if(ifcard){
-//
-//
-//            cash.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//            knet.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//            visa.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
 //        }
     }
 
@@ -206,24 +190,7 @@ public class Payment_Activity extends AppCompatActivity {
         knet.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
         visa.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
 
-//        if (ifcash) {
-//            cash.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
-//            knet.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//            visa.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//        } if (ifknet){
-//
-//            cash.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//            knet.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
-//            visa.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//
-//        } if(ifcard){
-//
-//
-//            cash.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//            knet.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//            visa.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
-//        }
-    }
+     }
 
     public void Cashh2() {
 
@@ -232,24 +199,7 @@ public class Payment_Activity extends AppCompatActivity {
         knet.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
         visa.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
 
-//        if (ifcash) {
-//            cash.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
-//            knet.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//            visa.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//        } if (ifknet){
-//
-//            cash.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//            knet.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
-//            visa.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//
-//        } if(ifcard){
-//
-//
-//            cash.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//            knet.setBackground(getDrawable(R.drawable.ic_payment_card_bg_unselected));
-//            visa.setBackground(getDrawable(R.drawable.ic_payment_card_selected));
-//        }
-    }
+     }
 
 //    public void Knett() {
 //

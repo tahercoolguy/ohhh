@@ -17,39 +17,68 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="-5dp"
-            android:layout_marginTop="-99dp"
-            android:src="@drawable/circle_big"></ImageView>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="-46dp"
-            android:layout_marginTop="-21dp"
-            android:src="@drawable/circle_small">
-
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="-84dp"
+            android:src="@drawable/circle_big_accent">
 
         </ImageView>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="300dp"
-            android:layout_marginTop="-90dp"
-            android:layout_marginRight="-90dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="-84dp"
+            android:src="@drawable/circle_big_accent">
 
-            android:src="@drawable/circle_dark"></ImageView>
+        </ImageView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-84dp"
+            android:layout_marginRight="-80dp"
+            android:src="@drawable/circle_big_primary">
+
+        </ImageView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-45dp"
+            android:layout_marginTop="-5dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/circle_small_primary"></ImageView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/circle_small_centre">
+
+
+            </ImageView>
+
+
+        </RelativeLayout>
+
+
+
 
     </RelativeLayout>
+
 
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginTop="230dp"
-        android:src="@drawable/ohh_splash">
+        android:src="@drawable/ic_ohh_plash">
 
     </ImageView>
 
@@ -57,8 +86,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_marginBottom="80dp"
+        android:layout_alignParentBottom="true"
+
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -66,32 +96,36 @@
             android:id="@+id/english_Txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-             android:padding="15dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="30dp"
-            android:gravity="center"
             android:layout_gravity="center"
-            android:layout_weight="1"
+            android:layout_marginLeft="30dp"
             android:layout_marginRight="10dp"
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner_primary_colour"
+            android:gravity="center"
+            android:padding="15dp"
             android:text="@string/english"
-            android:textColor="@color/white"></TextView>
+            android:textSize="@dimen/text_size_title"
+
+            android:textColor="@color/white"
+            ></TextView>
 
         <TextView
             android:id="@+id/arabic_Txt"
-            android:layout_gravity="center"
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginLeft="10dp"
-            android:textStyle="bold"
             android:layout_marginRight="30dp"
-             android:layout_weight="1"
-            android:padding="15dp"
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner_primary_colour"
-            android:text="@string/arabic"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textSize="@dimen/text_size_title"
 
-            android:textColor="@color/white"></TextView>
+            android:text="@string/arabic"
+            android:textColor="@color/white"
+
+             ></TextView>
 
     </LinearLayout>
 

@@ -31,7 +31,7 @@
                 android:id="@+id/back_edit_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-50dp"
+                android:layout_marginLeft="-60dp"
                 android:layout_marginTop="23dp"
                 android:src="@drawable/ic_back_back_otp">
 
@@ -237,9 +237,10 @@
             android:background="@drawable/rounded_corner_primary_colour"
             android:gravity="center"
             android:padding="15dp"
+            android:textSize="@dimen/text_size_title"
             android:text="@string/save"
             android:textColor="@color/white"
-            android:textStyle="bold"></TextView>
+           ></TextView>
 
 
     </LinearLayout>

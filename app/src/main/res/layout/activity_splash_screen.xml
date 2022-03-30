@@ -14,18 +14,19 @@
 
         <ImageView
             android:layout_width="match_parent"
+            android:layout_centerInParent="true"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
-            android:src="@drawable/ohh_bg">
+            android:src="@drawable/ic_ohh_splash_bg">
 
         </ImageView>
 
 
         <ImageView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/ohh_splash">
+            android:src="@drawable/ic_ohh_plash">
 
         </ImageView>
 
