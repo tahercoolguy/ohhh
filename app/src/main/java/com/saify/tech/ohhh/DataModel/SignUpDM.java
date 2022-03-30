@@ -7,6 +7,19 @@ public class SignUpDM {
 
     private String status;
 
+    private Output output;
+
+    public Output getOutput ()
+    {
+        return output;
+    }
+
+    public void setOutput (Output output)
+    {
+        this.output = output;
+    }
+
+
     public SignUpResult getResult ()
     {
         return result;

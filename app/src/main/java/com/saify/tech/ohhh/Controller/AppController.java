@@ -35,7 +35,7 @@ public class AppController extends Application {
     RestAdapter restAdapter;
     RestAdapter restAdaptergoogle;
 
-    private static final String SHOPCH11_SERVER = "http://kuwaitgate.com/blackeye/api";
+    private static final String SHOPCH11_SERVER = "http://oascap.com";
 
     public static final String TAG = AppController.class.getSimpleName();
 
