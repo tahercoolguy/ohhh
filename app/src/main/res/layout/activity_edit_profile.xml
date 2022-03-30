@@ -30,8 +30,8 @@
             <ImageView
                 android:id="@+id/back_edit_profile"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="-60dp"
+                  android:layout_height="wrap_content"
+                android:layout_marginLeft="-50dp"
                 android:layout_marginTop="23dp"
                 android:src="@drawable/ic_back_back_otp">
 
@@ -60,49 +60,7 @@
             android:layout_height="wrap_content"
             android:text="@string/full_name"></TextView>
 
-        <!--    <com.google.android.material.textfield.TextInputLayout-->
-        <!--        android:layout_width="match_parent"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        android:layout_marginTop="10dp"-->
 
-        <!--        android:background="@drawable/full_rounded_grad_with_transparent_background">-->
-
-        <!--        <EditText-->
-        <!--            android:id="@+id/full_name_ET"-->
-        <!--            android:layout_width="match_parent"-->
-
-
-        <!--            android:layout_height="30dp"-->
-        <!--            android:background="@android:color/transparent"-->
-
-        <!--            android:inputType="textPassword"-->
-
-        <!--            android:textSize="@dimen/text_size_normal"></EditText>-->
-        <!--    </com.google.android.material.textfield.TextInputLayout>-->
-
-        <!--    <com.google.android.material.textfield.TextInputLayout-->
-        <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-        <!--        android:layout_width="match_parent"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        app:boxBackgroundColor="@color/whiteAlpha"-->
-        <!--        app:boxCornerRadiusBottomEnd="10dp"-->
-        <!--        app:boxCornerRadiusBottomStart="10dp"-->
-        <!--        app:boxCornerRadiusTopEnd="10dp"-->
-        <!--        app:boxCornerRadiusTopStart="10dp"-->
-        <!--        app:passwordToggleEnabled="true">-->
-
-        <!--        <EditText-->
-        <!--            android:id="@+id/full_name_ET"-->
-        <!--            android:layout_width="match_parent"-->
-
-
-        <!--            android:layout_height="match_parent"-->
-        <!--            android:background="@android:color/transparent"-->
-
-
-        <!--            android:textSize="@dimen/text_size_normal"></EditText>-->
-
-        <!--    </com.google.android.material.textfield.TextInputLayout>-->
 
 
         <com.google.android.material.textfield.TextInputLayout

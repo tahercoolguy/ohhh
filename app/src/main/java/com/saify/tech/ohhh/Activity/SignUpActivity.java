@@ -56,12 +56,12 @@ import retrofit.mime.MultipartTypedOutput;
 import retrofit.mime.TypedFile;
 import retrofit.mime.TypedString;
 
-public class SignUpActivity extends AppCompatActivity implements  Validator.ValidationListener{
+public class SignUpActivity extends AppCompatActivity implements Validator.ValidationListener {
     AppController appController;
     private static final int IMAGE_PICKER_SELECT = 1;
-    private static final int IMAGE_PICKER_SELECT1 =2 ;
-    private static final int FILE_PICKER_SELECT =3 ;
-    private static final int IMAGE_VIDEO_ACTIVITY_PICKER=4;
+    private static final int IMAGE_PICKER_SELECT1 = 2;
+    private static final int FILE_PICKER_SELECT = 3;
+    private static final int IMAGE_VIDEO_ACTIVITY_PICKER = 4;
 
     Dialog progress;
     ConnectionDetector connectionDetector;
@@ -101,16 +101,14 @@ public class SignUpActivity extends AppCompatActivity implements  Validator.Vali
 
 
     @OnClick(R.id.sign_up_Txtt)
-    public void signupBtn()
-    {
-        startActivity(new Intent(SignUpActivity.this,VerifyActivity.class));
+    public void signupBtn() {
+        startActivity(new Intent(SignUpActivity.this, VerifyActivity.class));
     }
 
 
     @OnClick(R.id.sign_up_Txt)
-    public void signup()
-    {
-        startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
+    public void signup() {
+        startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
     }
 
     @Override
@@ -124,7 +122,7 @@ public class SignUpActivity extends AppCompatActivity implements  Validator.Vali
         connectionDetector = new ConnectionDetector(getApplicationContext());
         user = new User(SignUpActivity.this);
 
-        validator=new Validator(this);
+        validator = new Validator(this);
         validator.setValidationListener(this);
 
     }
@@ -133,7 +131,8 @@ public class SignUpActivity extends AppCompatActivity implements  Validator.Vali
     public void onValidationSucceeded() {
 
     }
-    boolean o=true;
+
+    boolean o = true;
     Validator validator;
 
 
@@ -142,23 +141,23 @@ public class SignUpActivity extends AppCompatActivity implements  Validator.Vali
         for (ValidationError error : errors) {
             View view = error.getView();
             String message = error.getCollatedErrorMessage(this);
-            o=false;
+            o = false;
             // Display error messages ;)
             if (view instanceof TextInputEditText) {
                 ((TextInputEditText) view).setError(message);
             } else {
-                Helper.showToast(SignUpActivity.this,message);
+                Helper.showToast(SignUpActivity.this, message);
             }
         }
     }
 
     public void isValid() {
         boolean done = true;
-        o=true;
+        o = true;
         validator.validate();
         //o=done;
-        if(!done)
-            o=done;
+        if (!done)
+            o = done;
 
     }
 
@@ -203,7 +202,7 @@ public class SignUpActivity extends AppCompatActivity implements  Validator.Vali
 
     }
 
-    int REQUEST_IMAGE =3;
+    int REQUEST_IMAGE = 3;
 
     private void launchCameraIntent() {
         Intent intent = new Intent(SignUpActivity.this, ImagePickerActivity.class);
@@ -221,7 +220,9 @@ public class SignUpActivity extends AppCompatActivity implements  Validator.Vali
 
         startActivityForResult(intent, REQUEST_IMAGE);
     }
-Uri Video;
+
+    Uri Video;
+
     private void launchGalleryIntent() {
         Intent intent = new Intent(SignUpActivity.this, ImagePickerActivity.class);
         intent.putExtra(ImagePickerActivity.INTENT_IMAGE_PICKER_OPTION, ImagePickerActivity.REQUEST_GALLERY_IMAGE);
@@ -234,7 +235,8 @@ Uri Video;
     }
 
     Bitmap mainFile;
-File videoFile;
+    File videoFile;
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -279,47 +281,46 @@ File videoFile;
 //        }
 
 
-        if(requestCode == IMAGE_VIDEO_ACTIVITY_PICKER) {
+        if (requestCode == IMAGE_VIDEO_ACTIVITY_PICKER) {
             if (data != null) {
                 if (data.getStringExtra("mode").equalsIgnoreCase("photo")) {
                     Uri.fromFile(new File(data.getStringExtra("uri")));
 
                 } else {
-                 Video= Uri.fromFile(new File(data.getStringExtra("uri")));
+                    Video = Uri.fromFile(new File(data.getStringExtra("uri")));
                     UploadVideo();
                 }
 
             }
         }
     }
+
     private static final int VIDEO_CAPTURE = 101;
     private Uri fileUri;
 
-    public void startRecording()
-    {
-       Intent intent=new Intent(SignUpActivity.this,CameraHandling.class);
-        intent.putExtra("mode","video");
-        startActivityForResult(intent,IMAGE_VIDEO_ACTIVITY_PICKER);
+    public void startRecording() {
+        Intent intent = new Intent(SignUpActivity.this, CameraHandling.class);
+        intent.putExtra("mode", "video");
+        startActivityForResult(intent, IMAGE_VIDEO_ACTIVITY_PICKER);
     }
 
 
     String user_id;
-    public void UploadVideo()
-    {
-        if(connectionDetector.isConnectingToInternet())
-        {
+
+    public void UploadVideo() {
+        if (connectionDetector.isConnectingToInternet()) {
             progress = new DialogUtil().showProgressDialog(this, getString(R.string.please_wait));
-            MultipartTypedOutput multipartTypedOutput=new MultipartTypedOutput();
-            multipartTypedOutput.addPart("user_id",new TypedString(user_id));
-           File imageFile = new File(getRealPathFromUri(SignUpActivity.this, Video));
+            MultipartTypedOutput multipartTypedOutput = new MultipartTypedOutput();
+            multipartTypedOutput.addPart("user_id", new TypedString(user_id));
+            File imageFile = new File(getRealPathFromUri(SignUpActivity.this, Video));
 
 //            multipartTypedOutput.addPart("video_file", new TypedFile("video/mp4", imageFile));
-            multipartTypedOutput.addPart("video_file",new TypedFile("video/mp4", imageFile));
+            multipartTypedOutput.addPart("video_file", new TypedFile("video/mp4", imageFile));
             appController.paServices.RecordedVideo(multipartTypedOutput, new Callback<VideoDM>() {
                 @Override
                 public void success(VideoDM videoDM, Response response) {
                     progress.dismiss();
-                    Helper.showToast(SignUpActivity.this,"Video Uploaded Successfully");
+                    Helper.showToast(SignUpActivity.this, "Video Uploaded Successfully");
                     finish();
                 }
 
@@ -327,14 +328,14 @@ File videoFile;
                 public void failure(RetrofitError error) {
 
                     progress.dismiss();
-                    Log.e("String",error.toString());
-                    Helper.showToast(SignUpActivity.this,"User Created Successfully");
+                    Log.e("String", error.toString());
+                    Helper.showToast(SignUpActivity.this, "User Created Successfully");
                     finish();
 
                 }
             });
-        }else
-            Helper.showToast(SignUpActivity.this,getString(R.string.no_internet_connection));
+        } else
+            Helper.showToast(SignUpActivity.this, getString(R.string.no_internet_connection));
     }
 
     /**
@@ -362,18 +363,18 @@ File videoFile;
         intent.setData(uri);
         startActivityForResult(intent, 101);
     }
+
     public static String getRealPathFromUri(Context context, Uri contentUri) {
         Cursor cursor = null;
         try {
-            String[] proj = { MediaStore.Images.Media.DATA };
+            String[] proj = {MediaStore.Images.Media.DATA};
             cursor = context.getContentResolver().query(contentUri, proj, null, null, null);
             int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
             cursor.moveToFirst();
             return cursor.getString(column_index);
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             return contentUri.getPath();
-        }finally {
+        } finally {
 //            if (cursor != null) {
 //                cursor.close();
 //            }

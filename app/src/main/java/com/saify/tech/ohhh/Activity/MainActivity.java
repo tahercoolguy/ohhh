@@ -81,59 +81,74 @@ public class MainActivity extends AppCompatActivity {
     private User user;
 
     @NotEmpty
-    @BindView(R.id.homeImage)
-    ImageView home1;
+    @BindView(R.id.HomeLL)
+    LinearLayout home1;
 
     @NotEmpty
-    @BindView(R.id.chatImage)
-    ImageView home2;
+    @BindView(R.id.Categories_Feed_LL)
+    LinearLayout home2;
 
     @NotEmpty
-    @BindView(R.id.profileImage)
-    ImageView home3;
+    @BindView(R.id.Shops_LL)
+    LinearLayout home3;
 
     @NotEmpty
-    @BindView(R.id.reportimg)
-    ImageView home4;
+    @BindView(R.id.Account_LL)
+    LinearLayout home4;
 
 
+    @NotEmpty
+    @BindView(R.id.home_img)
+    ImageView home;
 
-     @OnClick(R.id.homeImage)
-    public void dashBoard() {
+    @NotEmpty
+    @BindView(R.id.shop_Img)
+    ImageView shop;
+
+    @NotEmpty
+    @BindView(R.id.feed_category_img)
+    ImageView categories;
+
+    @NotEmpty
+    @BindView(R.id.account_Img)
+    ImageView account;
+
+     @OnClick(R.id.HomeLL)
+    public void home_LL() {
+        ifHome1=true;
         Home1();
-        ifHome1 =true;
          addFragment(new Fragment_Home_Screen(), false);
 
 
      }
 
-    @OnClick(R.id.chatImage)
-    public void selfService() {
-        ifHome2 =true;
+    @OnClick(R.id.Categories_Feed_LL)
+    public void categories_LL() {
+        ifHome2=true;
         Home2();
+
         addFragment(new Feed_Categories_Fragment(), false);
 
 
     }
 
-    @OnClick(R.id.profileImage)
-    public void reportIncident() {
-        Home3();
+    @OnClick(R.id.Shops_LL)
+    public void shops_LL() {
         ifHome3=true;
+        Home3();
         addFragment(new Fragment_Shops(), false);
 
 
     }
 
 
-    @OnClick(R.id.reportimg)
-    public void eForm() {
-        Home4();
+    @OnClick(R.id.Account_LL)
+    public void account_LL() {
         ifHome4=true;
+        Home4();
         addFragment(new Fragment_Account(), false);
 
-//        addFragment(new EFormFragment(),false);
-    }
+     }
 
 
     @Override
@@ -158,10 +173,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (ifHome1) {
 
-            home1.setBackground(getDrawable(R.drawable.ic___selected1));
-            home2.setBackground(getDrawable(R.drawable.ic___unselected2));
-            home3.setBackground(getDrawable(R.drawable.ic___unselected3));
-            home4.setBackground(getDrawable(R.drawable.ic___unselected4));
+            home.setBackground(getDrawable(R.drawable.ic___selected1));
+            categories.setBackground(getDrawable(R.drawable.ic___unselected2));
+            shop.setBackground(getDrawable(R.drawable.ic___unselected3));
+            account.setBackground(getDrawable(R.drawable.ic___unselected4));
 
 
         }
@@ -172,10 +187,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (ifHome2) {
 
-            home1.setBackground(getDrawable(R.drawable.ic___unselected1));
-            home2.setBackground(getDrawable(R.drawable.ic___selected2));
-            home3.setBackground(getDrawable(R.drawable.ic___unselected3));
-            home4.setBackground(getDrawable(R.drawable.ic___unselected4));
+            home.setBackground(getDrawable(R.drawable.ic___unselected1));
+            categories.setBackground(getDrawable(R.drawable.ic___selected2));
+            shop.setBackground(getDrawable(R.drawable.ic___unselected3));
+            account.setBackground(getDrawable(R.drawable.ic___unselected4));
 
 
         }
@@ -186,10 +201,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (ifHome3) {
 
-            home1.setBackground(getDrawable(R.drawable.ic___unselected1));
-            home2.setBackground(getDrawable(R.drawable.ic___unselected2));
-            home3.setBackground(getDrawable(R.drawable.ic___selected3));
-            home4.setBackground(getDrawable(R.drawable.ic___unselected4));
+            home.setBackground(getDrawable(R.drawable.ic___unselected1));
+            categories.setBackground(getDrawable(R.drawable.ic___unselected2));
+            shop.setBackground(getDrawable(R.drawable.ic___selected3));
+            account.setBackground(getDrawable(R.drawable.ic___unselected4));
 
 
         }
@@ -200,10 +215,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (ifHome4) {
 
-            home1.setBackground(getDrawable(R.drawable.ic___unselected1));
-            home2.setBackground(getDrawable(R.drawable.ic___unselected2));
-            home3.setBackground(getDrawable(R.drawable.ic___unselected3));
-            home4.setBackground(getDrawable(R.drawable.ic___selected4));
+            home.setBackground(getDrawable(R.drawable.ic___unselected1));
+            categories.setBackground(getDrawable(R.drawable.ic___unselected2));
+            shop.setBackground(getDrawable(R.drawable.ic___unselected3));
+            account.setBackground(getDrawable(R.drawable.ic___selected4));
         }
 
     }
