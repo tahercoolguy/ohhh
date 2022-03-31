@@ -92,8 +92,8 @@ public class SignUpActivity extends AppCompatActivity implements Validator.Valid
     EditText emailET;
 
     @NotEmpty
-    @BindView(R.id.sign_up_Txt)
-    TextView sign_up_Txt;
+    @BindView(R.id.Login_Txt)
+    TextView Login_Txt;
 
     @NotEmpty
     @BindView(R.id.sign_up_Txtt)
@@ -106,7 +106,7 @@ public class SignUpActivity extends AppCompatActivity implements Validator.Valid
     }
 
 
-    @OnClick(R.id.sign_up_Txt)
+    @OnClick(R.id.Login_Txt)
     public void signup() {
         startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
     }
