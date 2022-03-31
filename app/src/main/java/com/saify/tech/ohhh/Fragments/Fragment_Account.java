@@ -41,8 +41,8 @@ public class Fragment_Account extends Fragment {
     private View rootView;
     private Context context;
 
-    @BindView(R.id.progress_bar) ProgressBar progress_bar;
-    @BindView(R.id.txt_error) TextView txt_error;
+//    @BindView(R.id.progress_bar) ProgressBar progress_bar;
+//    @BindView(R.id.txt_error) TextView txt_error;
 
     @BindView(R.id.layout_parent) LinearLayout layout_parent;
     private HListView lst_latest_profiles, lst_latest_news, lst_featured_video;
@@ -182,7 +182,7 @@ public class Fragment_Account extends Fragment {
             idMapping();
 
             setClickListeners();
-            setDetails();
+//            setDetails();
         }
         return rootView;
     }
@@ -201,33 +201,33 @@ public class Fragment_Account extends Fragment {
         super.onResume();
     }
 
-    private void setDetails() {
-       ShowProgress();
-        rootView.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-               DismissProgress();
-            }
-        }, 100);
+//    private void setDetails() {
+//       ShowProgress();
+//        rootView.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//               DismissProgress();
+//            }
+//        }, 100);
+//
+//
+//
+//
+//    }
 
-
-
-
-    }
-
-    public void ShowProgress()
-    {
-        progress_bar.setVisibility(View.VISIBLE);
-        txt_error.setVisibility(View.GONE);
-        layout_parent.setVisibility(View.GONE);
-    }
-
-    public void DismissProgress()
-    {
-        progress_bar.setVisibility(View.GONE);
-        txt_error.setVisibility(View.GONE);
-        layout_parent.setVisibility(View.VISIBLE);
-    }
+//    public void ShowProgress()
+//    {
+//        progress_bar.setVisibility(View.VISIBLE);
+//        txt_error.setVisibility(View.GONE);
+//        layout_parent.setVisibility(View.GONE);
+//    }
+//
+//    public void DismissProgress()
+//    {
+//        progress_bar.setVisibility(View.GONE);
+//        txt_error.setVisibility(View.GONE);
+//        layout_parent.setVisibility(View.VISIBLE);
+//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

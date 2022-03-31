@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -56,7 +57,7 @@ public class My_Order_Activity extends AppCompatActivity implements Validator.Va
     androidx.viewpager.widget.ViewPager ViewPager;
 
      @BindView(R.id.back_my_order)
-     ImageView back;
+     LinearLayout back;
 
 
     @OnClick(R.id.back_my_order)

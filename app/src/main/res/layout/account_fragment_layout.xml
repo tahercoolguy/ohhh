@@ -1,62 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-     android:animateLayoutChanges="true">
+    android:background="@color/grey_light_bg"
+     android:layout_height="match_parent"
+      android:animateLayoutChanges="true">
 
     <LinearLayout
         android:id="@+id/layout_parent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+         android:layout_marginBottom="100dp"
         android:orientation="vertical">
 
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="-50dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-
-            android:layout_marginBottom="-40dp">
-
-            <ImageView
-                android:id="@+id/back_account"
+            <LinearLayout
+                android:id="@+id/back_term_and_condition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:elevation="100dp"
+                android:orientation="horizontal">
 
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="-30dp"
-                android:layout_marginTop="23dp"
-                android:src="@drawable/ic_back_back_otp">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/circle_white"
+                    android:layout_height="wrap_content">
 
-            </ImageView>
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_back_back"></ImageView>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
 
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:fontFamily="@font/semi_bold"
-
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginRight="40dp"
                 android:gravity="center"
+
+
                 android:text="@string/account"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold">
+                android:textSize="18dp">
 
             </TextView>
-
-
-        </RelativeLayout>
+        </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="-20dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:orientation="horizontal">
 
@@ -69,11 +81,9 @@
                 android:layout_marginLeft="10dp"
 
                 android:layout_weight="1"
-                android:fontFamily="@font/semi_bold"
                 android:text="@string/mohammad"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold">
+                android:textSize="18dp">
 
             </TextView>
 
@@ -87,48 +97,52 @@
 
         </LinearLayout>
 
-        <RelativeLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
+             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+
             android:background="@drawable/rounded_rectangle_white_account"
-            android:elevation="1dp"
-            android:gravity="center">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/order_history_LL"
-
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:orientation="horizontal">
 
 
                 <RelativeLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/circle_white"
-                    android:elevation="0.5dp">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                        android:background="@drawable/circle_grey_bg"></ImageView>
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+
                         android:layout_centerInParent="true"
                         android:src="@drawable/ic_o_history"></ImageView>
 
                 </RelativeLayout>
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="30dp"
-                    android:gravity="center"
-                    android:text="@string/order_history"
-                    android:textColor="@color/black">
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.6"
+                    android:text="@string/order_history">
 
                 </TextView>
 
@@ -136,43 +150,48 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="170dp"
+                    android:layout_marginRight="20dp"
                     android:src="@drawable/ic_foward">
 
                 </ImageView>
-
             </LinearLayout>
-
 
             <LinearLayout
                 android:id="@+id/saved_address_LL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+
+                android:orientation="horizontal">
+
 
                 <RelativeLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/circle_white"
-                    android:elevation="0.5dp">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/circle_grey_bg"></ImageView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
                         android:layout_centerInParent="true"
                         android:src="@drawable/ic_sa_address"></ImageView>
 
                 </RelativeLayout>
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="30dp"
-                    android:text="@string/saved_address"
-                    android:textColor="@color/black">
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.6"
+                    android:text="@string/saved_address">
 
                 </TextView>
 
@@ -180,57 +199,60 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="160dp"
+                    android:layout_marginRight="20dp"
                     android:src="@drawable/ic_foward">
 
                 </ImageView>
-
-
             </LinearLayout>
 
 
-        </RelativeLayout>
+        </LinearLayout>
 
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="10dp"
+
             android:background="@drawable/rounded_rectangle_white_account"
-            android:elevation="1dp"
-            android:gravity="center">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/push_notification_LL"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:orientation="horizontal">
+
 
                 <RelativeLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/circle_white"
-                    android:elevation="0.5dp">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/circle_grey_bg"></ImageView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
                         android:layout_centerInParent="true"
                         android:src="@drawable/ic_push_notification"></ImageView>
 
                 </RelativeLayout>
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="30dp"
-                    android:text="@string/push_notification"
-                    android:textColor="@color/black">
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.6"
+                    android:text="@string/push_notification">
 
                 </TextView>
 
@@ -238,43 +260,48 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="145dp"
+                    android:layout_marginRight="20dp"
                     android:src="@drawable/ic_foward">
 
                 </ImageView>
-
             </LinearLayout>
-
 
             <LinearLayout
                 android:id="@+id/change_password_LL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+
+                android:orientation="horizontal">
+
 
                 <RelativeLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/circle_white"
-                    android:elevation="0.5dp">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/circle_grey_bg"></ImageView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
                         android:layout_centerInParent="true"
                         android:src="@drawable/ic_ch_password"></ImageView>
 
                 </RelativeLayout>
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="30dp"
-                    android:text="@string/change_password"
-                    android:textColor="@color/black">
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.6"
+                    android:text="@string/change_password">
 
                 </TextView>
 
@@ -282,55 +309,60 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="140dp"
+                    android:layout_marginRight="20dp"
                     android:src="@drawable/ic_foward">
 
                 </ImageView>
-
             </LinearLayout>
 
 
-        </RelativeLayout>
+        </LinearLayout>
 
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="10dp"
+
             android:background="@drawable/rounded_rectangle_white_account"
-            android:elevation="1dp">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/term_and_condition_LL"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:orientation="horizontal">
+
 
                 <RelativeLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/circle_white"
-                    android:elevation="0.5dp">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/circle_grey_bg"></ImageView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
                         android:layout_centerInParent="true"
                         android:src="@drawable/ic_term_condition"></ImageView>
 
                 </RelativeLayout>
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="30dp"
-                    android:gravity="center"
-                    android:text="@string/term_and_condition"
-                    android:textColor="@color/black">
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.6"
+                    android:text="@string/term_and_condition">
 
                 </TextView>
 
@@ -338,44 +370,47 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="120dp"
+                    android:layout_marginRight="20dp"
                     android:src="@drawable/ic_foward">
 
                 </ImageView>
-
             </LinearLayout>
-
 
             <LinearLayout
                 android:id="@+id/refund_policy_LL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp">
+                android:layout_marginTop="10dp"
+
+                android:orientation="horizontal">
+
 
                 <RelativeLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/circle_white"
-                    android:elevation="0.5dp">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/circle_grey_bg"></ImageView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
                         android:layout_centerInParent="true"
                         android:src="@drawable/ic_refund_policy"></ImageView>
 
                 </RelativeLayout>
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="30dp"
-                    android:gravity="center"
-                    android:text="@string/refund_policy"
-                    android:textColor="@color/black">
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.9"
+                    android:text="@string/refund_policy">
 
                 </TextView>
 
@@ -383,45 +418,48 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="165dp"
+                    android:layout_marginRight="20dp"
                     android:src="@drawable/ic_foward">
 
                 </ImageView>
-
-                <include layout="@layout/layout_error" />
-
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/privacy_policy_LL"
                 android:layout_width="match_parent"
+
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp">
+                android:layout_marginTop="10dp"
+
+                android:orientation="horizontal">
+
 
                 <RelativeLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/circle_white"
-                    android:elevation="1dp">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/circle_grey_bg"></ImageView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
                         android:layout_centerInParent="true"
                         android:src="@drawable/ic_privacy_policy"></ImageView>
 
                 </RelativeLayout>
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="30dp"
-                    android:gravity="center"
-                    android:text="@string/privacy_policy"
-                    android:textColor="@color/black">
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.6"
+                    android:text="@string/privacy_policy">
 
                 </TextView>
 
@@ -429,30 +467,37 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="165dp"
+                    android:layout_marginRight="20dp"
                     android:src="@drawable/ic_foward">
 
                 </ImageView>
-
             </LinearLayout>
-
 
             <LinearLayout
                 android:id="@+id/contact_us_LL"
                 android:layout_width="match_parent"
+
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+
+                android:orientation="horizontal">
+
 
                 <RelativeLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/circle_white"
-                    android:elevation="0.1dp">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/circle_grey_bg"></ImageView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
                         android:layout_centerInParent="true"
                         android:src="@drawable/ic_contact_us"></ImageView>
 
@@ -462,10 +507,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="30dp"
-                    android:gravity="center"
-                    android:text="@string/contact_us"
-                    android:textColor="@color/black">
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.6"
+                    android:text="@string/contact_us">
 
                 </TextView>
 
@@ -473,59 +517,62 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="183dp"
+                    android:layout_marginRight="20dp"
                     android:src="@drawable/ic_foward">
 
                 </ImageView>
-
             </LinearLayout>
 
 
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="10dp"
+
             android:background="@drawable/rounded_rectangle_white_account"
-            android:elevation="1dp"
-            android:gravity="center">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/logout_LL"
-
                 android:layout_width="match_parent"
-                android:layout_height="80dp">
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+
+                android:orientation="horizontal">
+
 
                 <RelativeLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/circle_white"
-                    android:elevation="0.5dp"
-                    android:gravity="center">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/circle_grey_bg"></ImageView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
                         android:layout_centerInParent="true"
                         android:src="@drawable/ic_log___out"></ImageView>
 
                 </RelativeLayout>
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="30dp"
-                    android:gravity="center"
-                    android:text="@string/log_out"
-                    android:textColor="@color/black">
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.6"
+                    android:text="@string/log_out">
 
                 </TextView>
 
@@ -533,15 +580,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="205dp"
+                    android:layout_marginRight="20dp"
                     android:src="@drawable/ic_foward">
 
                 </ImageView>
-
             </LinearLayout>
 
 
-        </RelativeLayout>
+        </LinearLayout>
+
 
     </LinearLayout>
 

@@ -5,6 +5,7 @@ package com.saify.tech.ohhh.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,13 +23,12 @@ public class Refund_Policy_Activity extends AppCompatActivity{
     private User user;
     @NotEmpty
     @BindView(R.id.back_term_and_condition)
-    ImageView back;
+    LinearLayout back;
 
 
     @OnClick(R.id.back_term_and_condition)
     public void Back_Term() {
-         finish();
-
+        finish();
     }
 
 

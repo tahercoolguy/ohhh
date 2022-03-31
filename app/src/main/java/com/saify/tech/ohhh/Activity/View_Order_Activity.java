@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,7 +37,24 @@ public class View_Order_Activity extends AppCompatActivity {
     Dialog progress;
     ConnectionDetector connectionDetector;
     DialogUtil dialogUtil;
+    @NotEmpty
+    @BindView(R.id.back_term_and_condition)
+    LinearLayout back;
 
+
+    @OnClick(R.id.back_term_and_condition)
+    public void Back_Term() {
+        finish();
+    }
+
+
+
+
+//    @OnClick(R.id.done_Btn)
+//    public void DoneBtn()
+//    {
+//        finish();
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

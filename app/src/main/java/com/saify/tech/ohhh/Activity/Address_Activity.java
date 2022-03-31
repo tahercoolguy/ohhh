@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -41,7 +42,7 @@ public class Address_Activity extends AppCompatActivity {
 
     @NotEmpty
     @BindView(R.id.back_saved_address)
-    ImageView back;
+    LinearLayout back;
 
      @BindView(R.id.change_Btn)
      TextView change_Btn;

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -47,8 +48,8 @@ public class Payment_Activity extends AppCompatActivity {
     RecyclerView order_info_Rcvv;
 
     @NotEmpty
-    @BindView(R.id.back_Img)
-    ImageView back;
+    @BindView(R.id.back_LL)
+    LinearLayout back;
 
     @BindView(R.id.place_order)
     TextView place_order;
@@ -99,7 +100,7 @@ public class Payment_Activity extends AppCompatActivity {
         ifknet = true;
     }
 
-    @OnClick(R.id.back_Img)
+    @OnClick(R.id.back_LL)
     public void Back() {
             finish();
     }

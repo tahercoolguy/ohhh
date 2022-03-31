@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -62,18 +63,14 @@ public class Edit_Profile_Activity extends AppCompatActivity implements  Validat
 
 
 
-    @OnClick(R.id.back_edit_profile)
-    public void Back()
-    {
-            finish();
-    }
+    @NotEmpty
+    @BindView(R.id.back_term_and_condition)
+    LinearLayout back;
 
 
-    @OnClick(R.id.save_Btn)
-    public void SaveBtn()
-    {
+    @OnClick(R.id.back_term_and_condition)
+    public void Back_Term() {
         finish();
-
     }
 
 

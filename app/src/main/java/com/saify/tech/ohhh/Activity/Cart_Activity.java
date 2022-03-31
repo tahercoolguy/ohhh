@@ -5,6 +5,7 @@ package com.saify.tech.ohhh.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,7 +34,7 @@ public class Cart_Activity extends AppCompatActivity {
     private User user;
     @NotEmpty
     @BindView(R.id.back_cart)
-    ImageView back;
+    LinearLayout back;
 //
 //    @BindView(R.id.nornoya_Rcv)
 //    RecyclerView nonoya;

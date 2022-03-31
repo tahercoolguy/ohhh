@@ -3,57 +3,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:layout_gravity="center"
-    android:background="@color/white"
+    android:layout_gravity="center"
+    android:background="@color/grey_light_bg"
     android:orientation="vertical"
-    tools:context=".Activity.Thank_You_Activity">
+    tools:context=".Activity.Term_And_Condition_Activity">
 
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginTop="-50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
 
-        android:layout_height="wrap_content">
-
-        <ImageView
+        <LinearLayout
             android:id="@+id/back_term_and_condition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="-40dp"
-            android:layout_marginTop="23dp"
-            android:src="@drawable/ic_back_back_otp">
+            android:layout_gravity="center"
+            android:elevation="100dp"
+            android:orientation="horizontal">
 
-        </ImageView>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_white"></ImageView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_back_back"></ImageView>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
 
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginRight="40dp"
             android:gravity="center"
-            android:fontFamily="@font/semi_bold"
+
 
             android:text="@string/terms"
             android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold">
+            android:textSize="18dp">
 
         </TextView>
-
-
-
-
-    </RelativeLayout>
+    </LinearLayout>
 
 
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="-50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:textSize="16dp"
-         android:layout_height="match_parent"
-        android:text="@string/termss"></TextView>
+        android:text="@string/termss"
+        android:textSize="@dimen/text_size_normal"></TextView>
 
 </LinearLayout>

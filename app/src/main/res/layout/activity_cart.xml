@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/white"
+    android:background="@color/grey_light_bg"
 
     android:orientation="vertical"
     tools:context=".Activity.Cart_Activity">
@@ -20,39 +20,57 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
-                android:layout_marginTop="-50dp">
-
-                <ImageView
+                <LinearLayout
                     android:id="@+id/back_cart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="-40dp"
-                    android:layout_marginTop="23dp"
-                    android:src="@drawable/ic_back_back_otp">
+                    android:layout_gravity="center"
+                    android:elevation="100dp"
+                    android:orientation="horizontal">
 
-                </ImageView>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/circle_white"></ImageView>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_back_back"></ImageView>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
 
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="40dp"
                     android:gravity="center"
+
+
                     android:text="@string/cart"
                     android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold">
+                    android:textSize="18dp">
 
                 </TextView>
-
-
-            </RelativeLayout>
+            </LinearLayout>
 
 
             <!--            <LinearLayout-->
@@ -189,9 +207,9 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/nornoya_deep_Rcv"
                 android:layout_width="match_parent"
+                android:layout_marginHorizontal="10dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-65dp"
-                android:layout_marginBottom="10dp"></androidx.recyclerview.widget.RecyclerView>
+                 android:layout_marginBottom="10dp"></androidx.recyclerview.widget.RecyclerView>
 
         </LinearLayout>
 

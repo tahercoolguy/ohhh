@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,21 +44,18 @@ public class Saved_Address_Activity extends AppCompatActivity {
     @BindView(R.id.saved_address_Rcv)
     RecyclerView saved_address_Rcvv;
 
+
+
     @NotEmpty
     @BindView(R.id.back_saved_address)
-    ImageView Back;
-
-
+    LinearLayout back;
 
 
 
     @OnClick(R.id.back_saved_address)
     public void Back_address() {
-
-                finish();
+        finish();
     }
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

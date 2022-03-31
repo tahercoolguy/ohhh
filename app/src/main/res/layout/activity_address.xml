@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/white"
+    android:background="@color/grey_light_bg"
     android:orientation="vertical"
     tools:context=".Activity.Address_Activity">
 
@@ -14,47 +14,63 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-            android:layout_marginTop="-50dp">
-
-            <ImageView
+            <LinearLayout
                 android:id="@+id/back_saved_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-30dp"
-                android:layout_marginTop="23dp"
-                android:src="@drawable/ic_back_back_otp">
+                android:layout_gravity="center"
+                android:elevation="100dp"
+                android:orientation="horizontal">
 
-            </ImageView>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circle_white"></ImageView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_back_back"></ImageView>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
 
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:fontFamily="@font/semi_bold"
-
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginRight="40dp"
                 android:gravity="center"
+
+
                 android:text="@string/address"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold">
+                android:textSize="18dp">
 
             </TextView>
-
-
-        </RelativeLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="-50dp"
+            android:layout_marginTop="10dp"
             android:gravity="center">
 
             <ImageView
@@ -93,17 +109,14 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:text="@string/select_delivery_address"
-            android:fontFamily="@font/semi_bold"
 
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"></TextView>
+            android:textSize="20sp"></TextView>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="154dp"
+            android:layout_height="150dp"
             android:layout_marginLeft="20dp"
-            android:elevation="1dp"
             android:layout_marginTop="20dp"
 
             android:layout_marginRight="20dp"
@@ -112,6 +125,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:src="@drawable/ic_work_brief"></ImageView>
@@ -122,43 +136,42 @@
                 android:layout_marginLeft="45dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/work"
-                android:fontFamily="@font/semi_bold"
 
-                android:textColor="@color/black"
-                android:textStyle="bold">
+                android:textColor="@color/black">
 
             </TextView>
 
             <TextView
                 android:id="@+id/change_Btn"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/semi_bold"
+                android:layout_alignParentEnd="true"
 
-                android:layout_marginLeft="270dp"
                 android:background="@drawable/rounded_corner_primary_colour"
                 android:gravity="center"
-                android:padding="15dp"
+                android:padding="10dp"
                 android:text="@string/change"
-                android:textColor="@color/white"
-                android:textStyle="bold"></TextView>
+                android:textColor="@color/white"></TextView>
 
 
             <TextView
                 android:layout_width="wrap_content"
-                android:text="+965 12345678"
-                android:textColor="@color/black"
-                android:layout_marginTop="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_height="wrap_content">
+                android:layout_marginTop="40dp"
+                android:text="+965 12345678"
+                android:textColor="@color/black">
 
             </TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="70dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
                 android:text="Al Nouf Tower, 11th Floor، Jaber
 Al-Mubarak St, Kuwait City Al Nouf Tower, 11th Floor، Jaber
 Al-Mubarak St, Kuwait City"
@@ -172,22 +185,19 @@ Al-Mubarak St, Kuwait City"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/semi_bold"
 
             android:text="@string/select_delivery_time"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"></TextView>
+            android:textSize="20sp"></TextView>
 
         <RelativeLayout
             android:id="@+id/now_RL"
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
-            android:elevation="1dp"
             android:layout_height="50dp"
-            android:background="@drawable/rounded_rectangle_white"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_rectangle_white">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -211,12 +221,11 @@ Al-Mubarak St, Kuwait City"
         <RelativeLayout
             android:id="@+id/customize_RL"
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
             android:layout_height="50dp"
-            android:elevation="1dp"
-            android:background="@drawable/rounded_rectangle_white"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_rectangle_white">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -236,22 +245,23 @@ Al-Mubarak St, Kuwait City"
 
             </TextView>
         </RelativeLayout>
+
         <TextView
             android:id="@+id/proceed_to_payment_Btn"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="50dp"
             android:layout_height="wrap_content"
-            android:padding="15dp"
-              android:layout_marginTop="50dp"
-            android:textStyle="bold"
-                android:layout_gravity="center"
+              android:layout_gravity="center"
+            android:layout_marginVertical="40dp"
+             android:background="@drawable/rounded_corner_primary_colour"
             android:gravity="center"
-              android:background="@drawable/rounded_corner_primary_colour"
+            android:padding="15dp"
             android:text="@string/proceed_to_payment"
-            android:textColor="@color/white"></TextView>
+            android:textColor="@color/white"
+            android:textStyle="bold"></TextView>
 
 
     </LinearLayout>
-
 
 
 </LinearLayout>

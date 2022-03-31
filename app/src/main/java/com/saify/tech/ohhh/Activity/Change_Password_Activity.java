@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -58,14 +59,12 @@ public class Change_Password_Activity extends AppCompatActivity implements  Vali
     TextView Done;
 
     @NotEmpty
-    @BindView(R.id. back_change_password)
-    ImageView BackChangePassword;
+    @BindView(R.id.back_term_and_condition)
+    LinearLayout back;
 
 
-
-    @OnClick(R.id.back_change_password)
-    public void back()
-    {
+    @OnClick(R.id.back_term_and_condition)
+    public void Back_Term() {
         finish();
     }
 

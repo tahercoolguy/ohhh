@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,7 +24,7 @@ public class Term_And_Condition_Activity extends AppCompatActivity{
     private User user;
     @NotEmpty
     @BindView(R.id.back_term_and_condition)
-    ImageView back;
+    LinearLayout back;
 
 
     @OnClick(R.id.back_term_and_condition)

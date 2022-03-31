@@ -1,56 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
+    android:background="@color/grey_light_bg"
 
     android:orientation="vertical"
     tools:context=".Activity.Payment_Activity">
 
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
 
-        android:layout_marginTop="-50dp">
-
-        <ImageView
-            android:id="@+id/back_Img"
+        <LinearLayout
+            android:id="@+id/back_LL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="-30dp"
-            android:layout_marginTop="23dp"
-            android:src="@drawable/ic_back_back_otp">
+            android:layout_gravity="center"
+            android:elevation="100dp"
+            android:orientation="horizontal">
 
-        </ImageView>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_white"></ImageView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_back_back"></ImageView>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
 
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginRight="40dp"
             android:gravity="center"
-            android:fontFamily="@font/semi_bold"
+
 
             android:text="@string/payment"
             android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold">
+            android:textSize="18dp">
 
         </TextView>
-
-
-    </RelativeLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="-50dp"
+        android:layout_marginTop="10dp"
         android:gravity="center">
 
         <ImageView
@@ -118,16 +135,16 @@
             </RelativeLayout>
 
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                android:layout_marginTop="5dp"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:gravity="center"-->
-<!--                android:text="@string/cash">-->
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:layout_marginTop="5dp"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:gravity="center"-->
+            <!--                android:text="@string/cash">-->
 
-<!--            </TextView>-->
+            <!--            </TextView>-->
 
 
         </LinearLayout>
@@ -142,9 +159,9 @@
             <RelativeLayout
                 android:id="@+id/visa_RL"
                 android:layout_width="wrap_content"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:background="@drawable/ic_payment_card_bg_unselected"
                 android:gravity="center">
 
@@ -158,16 +175,16 @@
 
             </RelativeLayout>
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_weight="1"-->
-<!--                android:layout_marginTop="5dp"-->
-<!--                android:gravity="center"-->
-<!--                android:text="@string/card">-->
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:layout_marginTop="5dp"-->
+            <!--                android:gravity="center"-->
+            <!--                android:text="@string/card">-->
 
-<!--            </TextView>-->
+            <!--            </TextView>-->
 
 
         </LinearLayout>
@@ -196,16 +213,16 @@
 
             </RelativeLayout>
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_weight="1"-->
-<!--                android:layout_marginTop="5dp"-->
-<!--                android:gravity="center"-->
-<!--                android:text="@string/knet">-->
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:layout_marginTop="5dp"-->
+            <!--                android:gravity="center"-->
+            <!--                android:text="@string/knet">-->
 
-<!--            </TextView>-->
+            <!--            </TextView>-->
 
 
         </LinearLayout>
@@ -213,33 +230,22 @@
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_gravity="center"
 
-        android:layout_gravity="center">
+        android:orientation="horizontal">
 
-
-        <TextView
-            android:layout_width="wrap_content"
-             android:layout_gravity="center"
-            android:gravity="center"
-
-            android:textColor="@color/black"
-              android:layout_height="wrap_content"
-             android:text="@string/cash">
-
-        </TextView>
 
         <TextView
             android:layout_width="wrap_content"
-             android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:textColor="@color/black"
 
-            android:layout_marginLeft="105dp"
-             android:layout_height="wrap_content"
-            android:text="@string/card">
+            android:layout_weight="1"
+            android:text="@string/cash"
+            android:textColor="@color/black">
 
         </TextView>
 
@@ -247,15 +253,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:gravity="center"
 
-            android:layout_marginLeft="100dp"
-             android:gravity="center"
-             android:text="@string/knet">
+            android:text="@string/card"
+            android:textColor="@color/black">
 
         </TextView>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
 
+            android:text="@string/knet"
+            android:textColor="@color/black">
+
+        </TextView>
 
 
     </LinearLayout>
@@ -266,11 +282,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:fontFamily="@font/semi_bold"
-
         android:layout_marginRight="20dp"
-        android:text="@string/enter_coupon_code"></TextView>
+
+        android:text="@string/enter_coupon_code"
+        android:textStyle="bold"></TextView>
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -284,7 +299,6 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
             android:background="@drawable/cutum_select_1"
             android:padding="10dp"
             app:boxCornerRadiusBottomEnd="10dp"
@@ -299,20 +313,19 @@
                 android:id="@+id/codeET"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
                 android:background="@android:color/transparent"
                 android:text="@string/code"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_normal"
-                android:textStyle="bold"></EditText>
+                android:textSize="@dimen/text_size_normal"></EditText>
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="14dp"
 
             android:src="@drawable/places_ic_search"
             android:text="@string/add_code"
@@ -326,19 +339,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:textStyle="bold"
-        android:fontFamily="@font/semi_bold"
-
         android:layout_marginTop="20dp"
+
         android:layout_marginRight="20dp"
-        android:text="@string/order_info"></TextView>
+        android:text="@string/order_info"
+        android:textStyle="bold"></TextView>
 
 
     <LinearLayout
         android:id="@+id/now_RL"
         android:layout_width="match_parent"
         android:layout_height="195dp"
-        android:elevation="1dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
@@ -360,18 +371,19 @@
 
     <TextView
         android:id="@+id/place_order"
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:padding="15dp"
+        android:layout_marginHorizontal="50dp"
         android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_corner_primary_colour"
         android:fontFamily="@font/semi_bold"
+        android:gravity="center"
 
-        android:textStyle="bold"
-         android:background="@drawable/rounded_corner_primary_colour"
-         android:text="@string/place_order"
-        android:textColor="@color/white"></TextView>
+        android:padding="15dp"
+        android:text="@string/place_order"
+        android:textColor="@color/white"
+        android:textStyle="bold"></TextView>
 
 
 </LinearLayout>
