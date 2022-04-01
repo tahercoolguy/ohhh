@@ -50,6 +50,7 @@ public class Fragment_Shops extends Fragment {
 
 
 
+
     @OnClick(R.id.cart_Img)
     public void Cart() {
 

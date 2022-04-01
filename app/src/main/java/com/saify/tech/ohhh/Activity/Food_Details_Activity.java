@@ -49,6 +49,8 @@ public class Food_Details_Activity extends AppCompatActivity {
 
     String strCounter;
 
+
+
     @BindView(R.id.smalll_RL)
     ImageView smalll_RL;
 

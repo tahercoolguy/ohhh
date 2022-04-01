@@ -70,6 +70,7 @@ public class Saved_Address_Activity extends AppCompatActivity {
         idMappings();
 
 
+
         ArrayList<SavedAddressDM> savedAddressDMS = new ArrayList<>();
 
         savedAddressDMS.add(new SavedAddressDM("Al Nouf Tower, 11th Floor، Jaber \n" +

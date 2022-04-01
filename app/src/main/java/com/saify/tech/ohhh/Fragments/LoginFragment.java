@@ -36,6 +36,7 @@ public class LoginFragment extends Fragment {
     @BindView(R.id.txt_error)
     TextView txt_error;
 
+
     @BindView(R.id.layout_parent)
     LinearLayout layout_parent;
     private HListView lst_latest_profiles, lst_latest_news, lst_featured_video;

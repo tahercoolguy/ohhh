@@ -38,6 +38,7 @@ public class Fragment_Default extends Fragment {
     ConnectionDetector connectionDetector;
     ProgressDialog progressDialog;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

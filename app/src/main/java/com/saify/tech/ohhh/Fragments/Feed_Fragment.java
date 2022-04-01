@@ -45,6 +45,7 @@ public class Feed_Fragment extends Fragment {
 
 
 
+
     @BindView(R.id.layout_parent) LinearLayout layout_parent;
     private HListView lst_latest_profiles, lst_latest_news, lst_featured_video;
     AppController appController;

@@ -31,7 +31,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Edit_Profile_Activity extends AppCompatActivity implements  Validator.ValidationListener{
+public class Edit_Profile_Activity extends AppCompatActivity implements Validator.ValidationListener {
     AppController appController;
 
     Dialog progress;
@@ -60,9 +60,6 @@ public class Edit_Profile_Activity extends AppCompatActivity implements  Validat
 //    Button Save;
 
 
-
-
-
     @NotEmpty
     @BindView(R.id.back_term_and_condition)
     LinearLayout back;
@@ -72,9 +69,6 @@ public class Edit_Profile_Activity extends AppCompatActivity implements  Validat
     public void Back_Term() {
         finish();
     }
-
-
-
 
 
     @Override
@@ -87,7 +81,7 @@ public class Edit_Profile_Activity extends AppCompatActivity implements  Validat
         appController = (AppController) getApplicationContext();
         connectionDetector = new ConnectionDetector(getApplicationContext());
         user = new User(Edit_Profile_Activity.this);
-        validator=new Validator(this);
+        validator = new Validator(this);
         validator.setValidationListener(this);
 
     }
@@ -96,7 +90,8 @@ public class Edit_Profile_Activity extends AppCompatActivity implements  Validat
     public void onValidationSucceeded() {
 
     }
-    boolean o=true;
+
+    boolean o = true;
     Validator validator;
 
 
@@ -105,23 +100,23 @@ public class Edit_Profile_Activity extends AppCompatActivity implements  Validat
         for (ValidationError error : errors) {
             View view = error.getView();
             String message = error.getCollatedErrorMessage(this);
-            o=false;
+            o = false;
             // Display error messages ;)
             if (view instanceof TextInputEditText) {
                 ((TextInputEditText) view).setError(message);
             } else {
-                Helper.showToast(Edit_Profile_Activity.this,message);
+                Helper.showToast(Edit_Profile_Activity.this, message);
             }
         }
     }
 
     public void isValid() {
         boolean done = true;
-        o=true;
+        o = true;
         validator.validate();
         //o=done;
-        if(!done)
-            o=done;
+        if (!done)
+            o = done;
 
     }
 

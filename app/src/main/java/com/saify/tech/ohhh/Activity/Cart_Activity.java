@@ -64,12 +64,12 @@ public class Cart_Activity extends AppCompatActivity {
 
     @OnClick(R.id.back_cart)
     public void Back_Cart() {
-         finish();
+        finish();
 
     }
+
     @BindView(R.id.nornoya_deep_Rcv)
     RecyclerView nornoya_deep_Rcvv;
-
 
 
     @Override
@@ -115,8 +115,8 @@ public class Cart_Activity extends AppCompatActivity {
 
     private void Nornoya_Dip_Adapt() {
         ArrayList<Nornoya_Dip_Dm> nornoya_dip_dms = new ArrayList<>();
-        nornoya_dip_dms.add(new Nornoya_Dip_Dm("Nornoya",R.drawable.nornoya));
-        nornoya_dip_dms.add(new Nornoya_Dip_Dm("Dip N Dip",R.drawable.deep_small));
+        nornoya_dip_dms.add(new Nornoya_Dip_Dm("Nornoya", R.drawable.nornoya));
+        nornoya_dip_dms.add(new Nornoya_Dip_Dm("Dip N Dip", R.drawable.deep_small));
 
 
         Nornoya_Dip_Adapter dm = new Nornoya_Dip_Adapter(this, nornoya_dip_dms);

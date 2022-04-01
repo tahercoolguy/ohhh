@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     private AppBarLayout app_bar;
     private TextView txt_title, textUserName;
     private RoundedImageView imageProfile;
-      Context context;
+    Context context;
 
     private User user;
 
@@ -113,18 +113,18 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.account_Img)
     ImageView account;
 
-     @OnClick(R.id.HomeLL)
+    @OnClick(R.id.HomeLL)
     public void home_LL() {
-        ifHome1=true;
+        ifHome1 = true;
         Home1();
-         addFragment(new Fragment_Home_Screen(), false);
+        addFragment(new Fragment_Home_Screen(), false);
 
 
-     }
+    }
 
     @OnClick(R.id.Categories_Feed_LL)
     public void categories_LL() {
-        ifHome2=true;
+        ifHome2 = true;
         Home2();
 
         addFragment(new Feed_Categories_Fragment(), false);
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.Shops_LL)
     public void shops_LL() {
-        ifHome3=true;
+        ifHome3 = true;
         Home3();
         addFragment(new Fragment_Shops(), false);
 
@@ -144,11 +144,11 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.Account_LL)
     public void account_LL() {
-        ifHome4=true;
+        ifHome4 = true;
         Home4();
         addFragment(new Fragment_Account(), false);
 
-     }
+    }
 
 
     @Override
@@ -222,6 +222,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -233,6 +234,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     boolean selected_1 = true;
+
     public void home() {
 
 

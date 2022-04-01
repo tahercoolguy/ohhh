@@ -31,7 +31,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Change_Password_Activity extends AppCompatActivity implements  Validator.ValidationListener{
+public class Change_Password_Activity extends AppCompatActivity implements Validator.ValidationListener {
     AppController appController;
 
     Dialog progress;
@@ -39,7 +39,7 @@ public class Change_Password_Activity extends AppCompatActivity implements  Vali
     User user;
     DialogUtil dialogUtil;
 
-//    @NotEmpty
+    //    @NotEmpty
 //     @BindView(R.id.current_passwordET)
 //    EditText currentPassword;
 //
@@ -69,15 +69,10 @@ public class Change_Password_Activity extends AppCompatActivity implements  Vali
     }
 
 
-
     @OnClick(R.id.done_Btn)
-    public void DoneBtn()
-    {
-            finish();
+    public void DoneBtn() {
+        finish();
     }
-
-
-
 
 
     @Override
@@ -91,7 +86,7 @@ public class Change_Password_Activity extends AppCompatActivity implements  Vali
         appController = (AppController) getApplicationContext();
         connectionDetector = new ConnectionDetector(getApplicationContext());
         user = new User(Change_Password_Activity.this);
-        validator=new Validator(this);
+        validator = new Validator(this);
         validator.setValidationListener(this);
 
     }
@@ -100,7 +95,8 @@ public class Change_Password_Activity extends AppCompatActivity implements  Vali
     public void onValidationSucceeded() {
 
     }
-    boolean o=true;
+
+    boolean o = true;
     Validator validator;
 
 
@@ -109,23 +105,23 @@ public class Change_Password_Activity extends AppCompatActivity implements  Vali
         for (ValidationError error : errors) {
             View view = error.getView();
             String message = error.getCollatedErrorMessage(this);
-            o=false;
+            o = false;
             // Display error messages ;)
             if (view instanceof TextInputEditText) {
                 ((TextInputEditText) view).setError(message);
             } else {
-                Helper.showToast(Change_Password_Activity.this,message);
+                Helper.showToast(Change_Password_Activity.this, message);
             }
         }
     }
 
     public void isValid() {
         boolean done = true;
-        o=true;
+        o = true;
         validator.validate();
         //o=done;
-        if(!done)
-            o=done;
+        if (!done)
+            o = done;
 
     }
 

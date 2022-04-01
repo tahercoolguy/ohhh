@@ -10,6 +10,7 @@
         <item name="android:dialogTheme">@style/AppDialogTheme</item>
         <item name="android:fontFamily">@font/montserrat_regular</item>
     </style>
+
     <style name="AppThemeFragment" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>

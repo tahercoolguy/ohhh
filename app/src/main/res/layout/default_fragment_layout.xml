@@ -5,6 +5,7 @@
     android:animateLayoutChanges="true"
     android:background="@color/colorAppBG">
 
+
     <LinearLayout
         android:id="@+id/layout_parent"
         android:layout_width="match_parent"

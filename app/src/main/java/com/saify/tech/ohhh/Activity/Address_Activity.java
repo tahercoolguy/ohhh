@@ -44,8 +44,8 @@ public class Address_Activity extends AppCompatActivity {
     @BindView(R.id.back_saved_address)
     LinearLayout back;
 
-     @BindView(R.id.change_Btn)
-     TextView change_Btn;
+    @BindView(R.id.change_Btn)
+    TextView change_Btn;
 
     @BindView(R.id.proceed_to_payment_Btn)
     TextView proceed;
@@ -60,7 +60,9 @@ public class Address_Activity extends AppCompatActivity {
     public void Now_RL() {
 //        startActivity(new Intent(Address_Activity.this,Account_Activity.class));
 
-    } @OnClick(R.id.customize_RL)
+    }
+
+    @OnClick(R.id.customize_RL)
     public void Customize_Rl() {
 //        startActivity(new Intent(Address_Activity.this,Account_Activity.class));
 
@@ -74,16 +76,15 @@ public class Address_Activity extends AppCompatActivity {
 
     @OnClick(R.id.proceed_to_payment_Btn)
     public void ProceedToPayment() {
-        startActivity(new Intent(Address_Activity.this,Payment_Activity.class));
+        startActivity(new Intent(Address_Activity.this, Payment_Activity.class));
 
     }
 
 
     @OnClick(R.id.back_saved_address)
     public void Back_address() {
-            finish();
+        finish();
     }
-
 
 
     @Override

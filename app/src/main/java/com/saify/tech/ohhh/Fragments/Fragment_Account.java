@@ -235,6 +235,7 @@ public class Fragment_Account extends Fragment {
         setHasOptionsMenu(true);
     }
 
+
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);

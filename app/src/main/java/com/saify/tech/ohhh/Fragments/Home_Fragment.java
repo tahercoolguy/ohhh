@@ -59,6 +59,7 @@ public class Home_Fragment extends Fragment {
     ConnectionDetector connectionDetector;
     ProgressDialog progressDialog;
 
+
     @BindView(R.id.newsRV)
     RecyclerView newsRV;
 

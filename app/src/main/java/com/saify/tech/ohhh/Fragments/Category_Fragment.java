@@ -40,6 +40,7 @@ public class Category_Fragment extends Fragment {
 
 
 
+
     @BindView(R.id.categories_Rv)
     RecyclerView categories;
 

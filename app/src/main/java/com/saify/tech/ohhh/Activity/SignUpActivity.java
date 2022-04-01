@@ -76,6 +76,7 @@ public class SignUpActivity extends AppCompatActivity implements Validator.Valid
     @BindView(R.id.mobileET)
     EditText mobileET;
 
+
     @NotEmpty
     @Password
     @BindView(R.id.passwordET)

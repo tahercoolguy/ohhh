@@ -28,6 +28,7 @@ public class AddressSelector extends AppCompatActivity {
     @BindView(R.id.english_Txt)
     TextView Englishh;
 
+
     @NotEmpty
     @BindView(R.id.arabic_Txt)
     TextView Arabicc;

@@ -27,6 +27,7 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         user=new User(SplashScreen.this);
 
+
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d("Android Token", "Refreshed token: " + refreshedToken);
         try {

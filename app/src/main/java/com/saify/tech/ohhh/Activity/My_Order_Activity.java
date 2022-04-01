@@ -45,7 +45,6 @@ public class My_Order_Activity extends AppCompatActivity implements Validator.Va
     DialogUtil dialogUtil;
 
 
-
     @Optional
     @NotEmpty
     @BindView(R.id.my_order_tab_layout)
@@ -56,14 +55,14 @@ public class My_Order_Activity extends AppCompatActivity implements Validator.Va
     @BindView(R.id.viewpager_my_order)
     androidx.viewpager.widget.ViewPager ViewPager;
 
-     @BindView(R.id.back_my_order)
-     LinearLayout back;
+    @BindView(R.id.back_my_order)
+    LinearLayout back;
 
 
     @OnClick(R.id.back_my_order)
     public void OrderBack() {
 
-            finish();
+        finish();
     }
 
 

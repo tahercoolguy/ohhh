@@ -47,6 +47,7 @@ public class Fragment_Home_Screen extends Fragment {
     @BindView(R.id.featuredShopsRcv)
     RecyclerView featured_shops;
 
+
     @BindView(R.id.view_all_Txt)
     TextView view_all;
 

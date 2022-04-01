@@ -41,6 +41,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     @BindView(R.id.emailET)
     EditText EmailET;
 
+
     @NotEmpty
     @BindView(R.id.passwordET)
     EditText passwordET;

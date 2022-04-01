@@ -43,6 +43,7 @@ public class Payment_Activity extends AppCompatActivity {
     ConnectionDetector connectionDetector;
     DialogUtil dialogUtil;
 
+
     @NotEmpty
     @BindView(R.id.order_info_Rcv)
     RecyclerView order_info_Rcvv;
