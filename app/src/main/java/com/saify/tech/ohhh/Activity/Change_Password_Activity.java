@@ -3,6 +3,7 @@ package com.saify.tech.ohhh.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,11 +15,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Email;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.LoginDM;
 import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
@@ -30,6 +33,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class Change_Password_Activity extends AppCompatActivity implements Validator.ValidationListener {
     AppController appController;
@@ -39,21 +45,18 @@ public class Change_Password_Activity extends AppCompatActivity implements Valid
     User user;
     DialogUtil dialogUtil;
 
-    //    @NotEmpty
-//     @BindView(R.id.current_passwordET)
-//    EditText currentPassword;
-//
-//    @NotEmpty
-//    @BindView(R.id.passwordET)
-//    EditText password;
-//
-//
-//
-//
-//    @NotEmpty
-//    @BindView(R.id.confirm_passwordET)
-//    EditText confirmPassword;
-//
+    @NotEmpty
+    @BindView(R.id.current_passwordET)
+    EditText currentPassword;
+
+    @NotEmpty
+    @BindView(R.id.passwordET)
+    EditText password;
+
+    @NotEmpty
+    @BindView(R.id.confirm_passwordET)
+    EditText confirmPassword;
+
     @NotEmpty
     @BindView(R.id.done_Btn)
     TextView Done;
@@ -71,8 +74,69 @@ public class Change_Password_Activity extends AppCompatActivity implements Valid
 
     @OnClick(R.id.done_Btn)
     public void DoneBtn() {
+
+//        if(connectionDetector.isConnectingToInternet())
+//        {
+//
+//            boolean correct = true;
+//            if(currentPassword.getText().toString().equalsIgnoreCase(""))
+//            {
+//                correct=false;
+//                Helper.showToast(Change_Password_Activity.this,"kindly enter your current Password");
+//            }
+//
+//            else if(password.getText().toString().equalsIgnoreCase(""))
+//            {
+//                correct=false;
+//                Helper.showToast(Change_Password_Activity.this,"kindly enter your password");
+//            }
+//
+//            else if(confirmPassword.getText().toString().equalsIgnoreCase(""))
+//            {
+//                correct=false;
+//                Helper.showToast(Change_Password_Activity.this,"kindly enter your Confirm Password");
+//            }
+//
+//            else if (correct) {
+//                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+//
+//                progress = dialogUtil.showProgressDialog(Change_Password_Activity.this, getString(R.string.please_wait));
+//
+//                appController.paServices.Login(user.getId(), password.getText().toString(),confirmPassword.getText().toString(), new Callback<LoginDM>() {
+//
+//                    @Override
+//
+//                    public void success ( LoginDM loginDM, Response response ) {
+//                        progress.dismiss();
+//                        if (loginDM.getOutput().getData().get(0).getStatus().equalsIgnoreCase("1")) {
+////                        Helper.shwToast(LoginActivity.this,customerRegisterDM.getMessage());
+//          //                  user.setId(Integer.valueOf(loginDM.getOutput().getData().get(0).getId()));
+//
+//          //                  startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//          //                  finish();
+//
+//                        } else
+//                            Helper.showToast(Change_Password_Activity.this, loginDM.getOutput().getMessage());
+//                    }
+//
+//                    @Override
+//                    public void failure ( RetrofitError retrofitError ) {
+//                        progress.dismiss();
+//
+//                        Log.e("error", retrofitError.toString());
+//
+//                    }
+//                });
+//            }
+//        }else
+//            Helper.showToast(Change_Password_Activity.this,getString(R.string.no_internet_connection));
+//
+
+
         finish();
     }
+
+
 
 
     @Override

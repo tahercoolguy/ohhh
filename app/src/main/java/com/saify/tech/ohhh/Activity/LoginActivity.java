@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.LoginDM;
 import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
@@ -21,12 +24,16 @@ import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Email;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
+import com.twitter.sdk.android.core.models.TwitterCollection;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
 public class LoginActivity extends AppCompatActivity implements Validator.ValidationListener {
@@ -67,7 +74,61 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
 
     @OnClick(R.id.signInTxt)
     public void SignIn() {
-        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+        if(connectionDetector.isConnectingToInternet())
+        {
+
+            boolean correct = true;
+            if(EmailET.getText().toString().equalsIgnoreCase(""))
+            {
+                correct=false;
+                Helper.showToast(LoginActivity.this,"kindly enter your email");
+            }
+
+            else if(passwordET.getText().toString().equalsIgnoreCase(""))
+            {
+                correct=false;
+                Helper.showToast(LoginActivity.this,"kindly enter your password");
+            }
+
+            else if (correct) {
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+                progress = dialogUtil.showProgressDialog(LoginActivity.this, getString(R.string.please_wait));
+
+                appController.paServices.Login(EmailET.getText().toString(), passwordET.getText().toString(), new Callback<LoginDM>() {
+
+                            @Override
+
+                            public void success ( LoginDM loginDM, Response response ) {
+                                progress.dismiss();
+                                if (loginDM.getOutput().getData().get(0).getStatus().equalsIgnoreCase("1")) {
+//                        Helper.shwToast(LoginActivity.this,customerRegisterDM.getMessage());
+                                    user.setId(Integer.valueOf(loginDM.getOutput().getData().get(0).getId()));
+
+                                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                    finish();
+
+                                } else
+                                    Helper.showToast(LoginActivity.this, loginDM.getOutput().getMessage());
+                            }
+
+                            @Override
+                            public void failure ( RetrofitError retrofitError ) {
+                                progress.dismiss();
+
+                                Log.e("error", retrofitError.toString());
+
+                            }
+                        });
+            }
+        }else
+            Helper.showToast(LoginActivity.this,getString(R.string.no_internet_connection));
+
+
+
+
+//        startActivity(new Intent(LoginActivity.this, MainActivity.class));
     }
 
     @NotEmpty

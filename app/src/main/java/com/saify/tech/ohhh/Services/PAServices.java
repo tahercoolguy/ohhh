@@ -65,14 +65,13 @@ public interface PAServices {
     @FormUrlEncoded
     @POST("/ohhh/webservices/ohhh/SignUp")
     public void SignUp(@Field("firstname") String firstname,
-                                 @Field("lastname") String lastname,
-                                 @Field("email") String email,
-                                 @Field("phone") String phone,
-                                 @Field("countrycode") String countrycode,
-                                 @Field("password") String password,
-                                 @Field("confpassword") String confpassword,
+                       @Field("lastname") String lastname,
+                       @Field("email") String email,
+                       @Field("phone") String phone,
+                       @Field("countrycode") String countrycode,
+                       @Field("password") String password,
 
-                                 Callback<SignUpDM> signUpDMCallback);
+                       Callback<SignUpDM> signUpDMCallback);
 
 
     //2
