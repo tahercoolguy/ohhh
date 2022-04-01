@@ -48,7 +48,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:src="@drawable/ic_left_back">
+                        android:src="@drawable/ic_back_back">
 
                     </ImageView>
 
@@ -85,14 +85,12 @@
                 android:id="@+id/cake_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/semi_bold"
 
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
                 android:text="Red Velvet Cake"
                 android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold"></TextView>
+                android:textSize="20dp"></TextView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -112,11 +110,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:fontFamily="@font/semi_bold"
 
                     android:text="4.5"
-                    android:textColor="@color/black"
-                    android:textStyle="bold">
+                    android:textColor="@color/black">
 
                 </TextView>
 
@@ -137,6 +133,7 @@
             </LinearLayout>
 
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -147,7 +144,6 @@
                     android:id="@+id/price_kwd_Txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/semi_bold"
 
                     android:layout_gravity="center"
                     android:layout_weight="1"
@@ -182,7 +178,6 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:fontFamily="@font/semi_bold"
 
                     android:gravity="center"
                     android:text="2"
@@ -218,6 +213,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
+                android:textColor="@color/black"
+
                 android:layout_marginRight="15dp"
                 android:text="@string/cake_details"
                 android:textSize="16dp">
@@ -229,53 +226,57 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
-                android:fontFamily="@font/semi_bold"
 
                 android:text="@string/size"
                 android:textColor="@color/black"
-                android:textSize="16dp"
-                android:textStyle="bold"></TextView>
+                android:textSize="18dp"></TextView>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+
+                    android:src="@drawable/small_size"></ImageView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:text="@string/small">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+
                     android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="free">
 
-                    android:src="@drawable/capcicum"></ImageView>
+                </TextView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-
-                    android:text="@string/small"
-                    android:textColor="@color/black"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-
-
-                    android:text="Free"
-                    android:textColor="@color/black"></TextView>
 
                 <ImageView
-                    android:id="@+id/smalll_RL"
-                     android:layout_width="wrap_content"
+                    android:id="@+id/smalll_Img"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="6dp"
-                    android:background="@drawable/ic_freee"
-                    android:gravity="center">
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/ic_freee">
 
 
                 </ImageView>
@@ -286,52 +287,48 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="10dp"
                     android:src="@drawable/mediu"></ImageView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="@string/medium"
-                    android:textColor="@color/black"></TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textColor="@color/black"
+
                     android:layout_weight="1"
+                    android:text="@string/medium">
 
-                    android:text="+1.000 KWD"
-                    android:textColor="@color/black"></TextView>
+                </TextView>
 
-                <!--                <RelativeLayout-->
-                <!--                    android:id="@+id/medium_RL"-->
-                <!--                    android:layout_width="25dp"-->
-                <!--                    android:layout_height="25dp"-->
-                <!--                    android:layout_gravity="center"-->
-                <!--                    android:layout_marginLeft="20dp"-->
-                <!--                    android:background="@drawable/radio_unselector"-->
-                <!--                    android:gravity="center">-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+
+                    android:layout_marginRight="20dp"
+                    android:text="1000KWD">
+
+                </TextView>
 
 
-                <!--                </RelativeLayout>-->
                 <ImageView
                     android:id="@+id/medium_RL"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="17dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/price_unselector"
-                    android:gravity="center">
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/price_unselector">
 
 
                 </ImageView>
@@ -342,241 +339,233 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="10dp"
                     android:src="@drawable/masrum"></ImageView>
 
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textColor="@color/black"
+
                     android:layout_weight="1"
-                    android:text="@string/large"
-                    android:textColor="@color/black"></TextView>
+                    android:text="@string/large">
+
+                </TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="0.3"
+                    android:textColor="@color/black"
 
-                    android:text="+1.000 KWD"
-                    android:textColor="@color/black"></TextView>
+                    android:layout_marginRight="20dp"
+                    android:text="1000KWD">
 
-                <!--                <RelativeLayout-->
-                <!--                    android:id="@+id/large_RL"-->
-                <!--                    android:layout_width="25dp"-->
-                <!--                    android:layout_height="25dp"-->
-                <!--                    android:layout_gravity="center"-->
-                <!--                    android:layout_marginLeft="20dp"-->
-                <!--                    android:background="@drawable/radio_unselector"-->
-                <!--                    android:gravity="center">-->
+                </TextView>
 
 
-                <!--                </RelativeLayout>-->
                 <ImageView
                     android:id="@+id/large_RL"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="27dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/price_unselector"
-                    android:gravity="center">
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/price_unselector">
 
 
                 </ImageView>
 
 
             </LinearLayout>
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
-                android:fontFamily="@font/semi_bold"
 
                 android:text="@string/options"
                 android:textColor="@color/black"
-                android:textSize="16dp"
-                android:textStyle="bold"></TextView>
+                android:textSize="18dp"></TextView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:src="@drawable/capcicum"></ImageView>
+                    android:layout_marginRight="10dp"
+
+                    android:src="@drawable/small_size"></ImageView>
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+
+                    android:textColor="@color/black"
+
                     android:layout_weight="1"
-                    android:text="Extra Cheese"
-                    android:textColor="@color/black"></TextView>
+                    android:text="@string/extra_chesse">
+
+                </TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="0.3"
+                    android:textColor="@color/black"
 
-                    android:text="Free"
-                    android:textColor="@color/black"></TextView>
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="free">
 
-                <!--                <RelativeLayout-->
-                <!--                    android:id="@+id/cheese_RL"-->
-                <!--                    android:layout_width="25dp"-->
-                <!--                    android:layout_height="25dp"-->
-                <!--                    android:layout_gravity="center"-->
-                <!--                    android:layout_marginLeft="27dp"-->
-                <!--                    android:background="@drawable/radio_selector"-->
-                <!--                    android:gravity="center">-->
+                </TextView>
 
-                <!--                    <ImageView-->
-                <!--                        android:layout_width="15dp"-->
-                <!--                        android:layout_height="15dp"-->
-                <!--                        android:elevation="10dp"-->
-                <!--                        android:src="@drawable/circle_primary">-->
-
-                <!--                    </ImageView>-->
-
-                <!--                </RelativeLayout>-->
 
                 <ImageView
                     android:id="@+id/cheese_1RL"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="27dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/price_selector"
-                    android:gravity="center">
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/ic_freee">
 
 
                 </ImageView>
+
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="10dp"
+
                     android:src="@drawable/mediu"></ImageView>
 
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textColor="@color/black"
+
                     android:layout_weight="1"
-                    android:text="Mayonesse"
-                    android:textColor="@color/black"></TextView>
+                    android:text="@string/mayonesse">
+
+                </TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textColor="@color/black"
 
-                    android:text="+1.000 KWD"
-                    android:textColor="@color/black"></TextView>
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="+1.000KWD">
 
-                <!--                <RelativeLayout-->
-                <!--                    android:id="@+id/mayonese_Rl"-->
-                <!--                    android:layout_width="25dp"-->
-                <!--                    android:layout_height="25dp"-->
-                <!--                    android:layout_gravity="center"-->
-                <!--                    android:layout_marginLeft="20dp"-->
-                <!--                    android:background="@drawable/radio_unselector"-->
-                <!--                    android:gravity="center">-->
+                </TextView>
 
 
-                <!--                </RelativeLayout>-->
                 <ImageView
                     android:id="@+id/mayonese_2Rl"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="27dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/price_unselector"
-                    android:gravity="center">
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/price_unselector">
 
 
                 </ImageView>
+
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="10dp"
+
                     android:src="@drawable/masrum"></ImageView>
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:text="Extra chocolate"
-                    android:textColor="@color/black"></TextView>
+                    android:textColor="@color/black"
+
+                    android:text="@string/extra_chocolate">
+
+                </TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textColor="@color/black"
 
-                    android:text="+1.000 KWD"
-                    android:textColor="@color/black"></TextView>
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="+1.000KWD">
 
-                <!--                <RelativeLayout-->
-                <!--                    android:id="@+id/extra_chocklate_Rl"-->
-                <!--                    android:layout_width="25dp"-->
-                <!--                    android:layout_height="25dp"-->
-                <!--                    android:layout_gravity="center"-->
-                <!--                    android:layout_marginLeft="25dp"-->
-                <!--                    android:background="@drawable/radio_unselector"-->
-                <!--                    android:gravity="center">-->
+                </TextView>
 
-
-                <!--                </RelativeLayout>-->
 
                 <ImageView
                     android:id="@+id/extra_chocklate_3Rl"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="27dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/price_unselector"
-                    android:gravity="center">
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/price_unselector">
 
 
                 </ImageView>
+
+
             </LinearLayout>
+
+
+
+
+
+
 
 
             <TextView
@@ -584,7 +573,7 @@
                 android:layout_width="255dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 android:width="300dp"
                 android:background="@drawable/rounded_corner_primary_colour"

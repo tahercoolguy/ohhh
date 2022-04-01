@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -45,13 +46,13 @@ public class Fragment_Shops extends Fragment {
     RecyclerView Shopss_Rcv;
 
     @NotEmpty
-    @BindView(R.id.cart_Img)
-    ImageView cart;
+    @BindView(R.id.cart_LL)
+    RelativeLayout cart;
 
 
 
 
-    @OnClick(R.id.cart_Img)
+    @OnClick(R.id.cart_LL)
     public void Cart() {
 
         ((MainActivity)context).startActivity(new Intent(getActivity(), Cart_Activity.class));

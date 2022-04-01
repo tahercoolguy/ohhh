@@ -51,7 +51,7 @@ public class Food_Details_Activity extends AppCompatActivity {
 
 
 
-    @BindView(R.id.smalll_RL)
+    @BindView(R.id.smalll_Img)
     ImageView smalll_RL;
 
     @BindView(R.id.medium_RL)
@@ -153,7 +153,7 @@ public class Food_Details_Activity extends AppCompatActivity {
     }
 
 
-    @OnClick(R.id.smalll_RL)
+    @OnClick(R.id.smalll_Img)
     public void Small() {
 
         ifHome1 = true;
