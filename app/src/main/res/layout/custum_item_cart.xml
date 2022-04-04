@@ -35,11 +35,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/semi_bold"
 
                 android:layout_marginLeft="30dp"
-                 android:layout_weight="5"
                 android:layout_marginTop="10dp"
-                 android:text="Pastries"
+                android:layout_weight="5"
+                android:text="Pastries"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold">
@@ -51,8 +52,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
-                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:src="@drawable/ic_crosssss">
 
@@ -93,6 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                  android:layout_weight="1"
+                android:fontFamily="@font/semi_bold"
 
                 android:layout_marginLeft="30dp"
                  android:text="10.000 KWD"
@@ -131,7 +133,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:gravity="center"
-                android:text="0"
+                android:text="0"                        android:fontFamily="@font/semi_bold"
+
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 >

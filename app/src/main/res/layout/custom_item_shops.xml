@@ -12,7 +12,7 @@
         android:id="@+id/shop_cake_Rl"
         android:layout_width="wrap_content"
         android:layout_height="275dp"
-        android:background="@drawable/rounded_corner_white"
+        android:background="@drawable/my_shadow"
         android:orientation="horizontal"
         app:cardCornerRadius="20dp">
 
@@ -98,10 +98,11 @@
             android:id="@+id/dip_and_dip_Txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
             android:layout_marginBottom="70dp"
             android:text="Dip n Dip"
+            android:fontFamily="@font/semi_bold"
 
             android:textColor="@color/black"
             android:textSize="18dp"></TextView>

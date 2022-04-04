@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/grey_light_bg"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".Activity.Address_Activity">
 
@@ -31,13 +31,16 @@
                 android:orientation="horizontal">
 
                 <RelativeLayout
+                    android:background="@drawable/my_shadow_back_button"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/circle_white"></ImageView>
+                        android:background="@drawable/my_shadow_back_button"
+                        ></ImageView>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -58,6 +61,7 @@
                 android:layout_gravity="center"
                 android:layout_marginRight="40dp"
                 android:gravity="center"
+                android:fontFamily="@font/semi_bold"
 
 
                 android:text="@string/address"
@@ -80,7 +84,7 @@
                 android:src="@drawable/ic_circle_address_orange"></ImageView>
 
             <LinearLayout
-                android:layout_width="50dp"
+                android:layout_width="25dp"
                 android:layout_height="1dp"
                 android:layout_gravity="center"
                 android:background="@color/grey"></LinearLayout>
@@ -91,7 +95,7 @@
                 android:src="@drawable/ic_circle_brown_unselected"></ImageView>
 
             <LinearLayout
-                android:layout_width="50dp"
+                android:layout_width="25dp"
                 android:layout_height="1dp"
                 android:layout_gravity="center"
                 android:background="@color/grey"></LinearLayout>
@@ -110,6 +114,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:text="@string/select_delivery_address"
+            android:fontFamily="@font/semi_bold"
 
             android:textColor="@color/black"
             android:textSize="20sp"></TextView>
@@ -121,7 +126,7 @@
             android:layout_marginTop="20dp"
 
             android:layout_marginRight="20dp"
-            android:background="@drawable/rounded_rectangle_white">
+            android:background="@drawable/my_shadow">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -185,7 +190,8 @@ Al-Mubarak St, Kuwait City"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/semi_bold"
 
             android:text="@string/select_delivery_time"
             android:textColor="@color/black"
@@ -196,25 +202,31 @@ Al-Mubarak St, Kuwait City"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/rounded_rectangle_white">
+            android:background="@drawable/my_shadow">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"
+
                 android:layout_marginTop="15dp"
-                android:src="@drawable/ic_now_clock"></ImageView>
+                 android:src="@drawable/ic_now_clock"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
+                android:layout_marginLeft="60dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"
                 android:layout_marginTop="15dp"
                 android:text="@string/now"
                 android:textColor="@color/black"
-                android:textSize="17dp">
+                android:textSize="17dp"
+                android:textStyle="bold">
 
             </TextView>
         </RelativeLayout>
@@ -226,21 +238,25 @@ Al-Mubarak St, Kuwait City"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/rounded_rectangle_white">
+            android:background="@drawable/my_shadow">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="15dp"
-                android:src="@drawable/ic_work_brief"></ImageView>
+                android:src="@drawable/ic_customize_pencil"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginLeft="60dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"                android:layout_marginTop="15dp"
                 android:text="@string/customize"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="17dp">
 
@@ -250,7 +266,7 @@ Al-Mubarak St, Kuwait City"
         <TextView
             android:id="@+id/proceed_to_payment_Btn"
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="50dp"
+            android:layout_marginHorizontal="80dp"
             android:layout_height="wrap_content"
               android:layout_gravity="center"
             android:layout_marginVertical="40dp"
@@ -259,7 +275,7 @@ Al-Mubarak St, Kuwait City"
             android:padding="15dp"
             android:text="@string/proceed_to_payment"
             android:textColor="@color/white"
-            android:textStyle="bold"></TextView>
+            ></TextView>
 
 
     </LinearLayout>

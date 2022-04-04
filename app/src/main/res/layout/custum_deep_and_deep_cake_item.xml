@@ -16,7 +16,7 @@
         android:layout_height="95dp"
         android:elevation="3dp"
         android:layout_gravity="center"
-        android:gravity="center"
+          android:gravity="center"
         android:background="@drawable/rounded_corner_deep_deep_cake">
 
         <LinearLayout
@@ -29,20 +29,22 @@
             <ImageView
                 android:id="@+id/cake_deep_Img"
                 android:layout_width="wrap_content"
-                android:src="@drawable/cake"
-                android:layout_height="wrap_content"></ImageView>
+                android:layout_height="wrap_content"
+                android:src="@drawable/cake"></ImageView>
 
             <TextView
                 android:id="@+id/cake_name_deep_Txt"
                 android:layout_width="match_parent"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:elevation="2dp"
                 android:layout_height="wrap_content"
-                android:text="Cake"
-                android:textSize="10dp"
+                android:layout_gravity="center"
+                android:elevation="2dp"
+                android:fontFamily="@font/semi_bold"
+                android:gravity="center"
 
-                android:textColor="@color/white"></TextView>
+                android:text="Cake"
+                android:textColor="@color/white"
+
+                android:textSize="10dp"></TextView>
         </LinearLayout>
 
 

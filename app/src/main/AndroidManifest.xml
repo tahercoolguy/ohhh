@@ -52,7 +52,10 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".Activity.MainActivity" />
+        <activity
+            android:name=".Activity.MainActivity"
+            android:windowSoftInputMode="adjustPan" />
+
         <activity android:name=".Activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -78,12 +81,6 @@
         <activity android:name=".Activity.Food_Details_Activity" />
         <activity android:name=".Activity.Cart_Activity" />
         <activity android:name=".Activity.View_Order_Activity" />
-
-
-
-
-
-
 
 
     </application>

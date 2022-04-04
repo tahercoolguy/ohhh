@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_light_bg"
+    android:background="@color/white"
 
     android:animateLayoutChanges="true">
 
@@ -24,10 +24,11 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_centerInParent="true"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/semi_bold"
 
 
+                android:layout_centerInParent="true"
                 android:text="@string/shops"
                 android:textColor="@color/black"
                 android:textSize="18dp">
@@ -41,12 +42,14 @@
                 android:layout_width="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="10dp"
-                android:layout_height="wrap_content">
+                android:background="@drawable/my_shadow_back_button"
+                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/circle_white"></ImageView>
+                    android:background="@drawable/my_shadow_back_button"
+                    ></ImageView>
 
                 <ImageView
                     android:layout_width="wrap_content"

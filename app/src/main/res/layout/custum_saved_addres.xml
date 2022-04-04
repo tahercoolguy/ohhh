@@ -14,8 +14,8 @@
     <RelativeLayout
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-         android:layout_height="105dp"
-        android:background="@drawable/rounded_rectangle_white_account"
+         android:layout_height="wrap_content"
+        android:background="@drawable/my_shadow"
          app:cardCornerRadius="20dp"
         android:orientation="horizontal">
 
@@ -43,6 +43,8 @@
                 android:layout_gravity="center"
                  android:layout_weight="12"
                 android:text="@string/home"
+                android:fontFamily="@font/semi_bold"
+
                 android:textColor="@color/black"
                 android:textSize="18sp"
                  >

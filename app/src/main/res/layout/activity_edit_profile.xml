@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/grey_light_bg"
+    android:background="@color/white"
 
 
     android:orientation="vertical"
@@ -34,13 +34,16 @@
                 android:orientation="horizontal">
 
                 <RelativeLayout
+                    android:background="@drawable/my_shadow_back_button"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/circle_white"></ImageView>
+                        android:background="@drawable/my_shadow_back_button"
+                        ></ImageView>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -61,6 +64,7 @@
                 android:layout_gravity="center"
                 android:layout_marginRight="40dp"
                 android:gravity="center"
+                android:fontFamily="@font/semi_bold"
 
 
                 android:text="@string/edit_profile"
@@ -71,7 +75,7 @@
         </LinearLayout>
 
         <TextView
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/full_name"></TextView>
@@ -104,6 +108,8 @@
             <EditText
                 android:id="@+id/full_name_ET"
                 android:layout_marginTop="5dp"
+                android:lines="1"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/cutum_select_1"
@@ -192,6 +198,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/cutum_select_1"
+                android:lines="1"
 
                 android:padding="13dp">
 

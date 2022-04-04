@@ -13,7 +13,7 @@
         android:layout_width="300dp"
          android:layout_height="match_parent"
         app:cardCornerRadius="13dp"
-         android:background="@drawable/rounded_rectangle_white_account"
+         android:background="@drawable/my_shadow"
          android:orientation="horizontal">
 
         <RelativeLayout
@@ -52,6 +52,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="80dp"
                 android:layout_height="28dp"
+                android:layout_alignParentStart="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rounded_corner_white_rating_bg"
@@ -96,23 +97,24 @@
         </RelativeLayout>
 
         <TextView
+            android:fontFamily="@font/semi_bold"
+
             android:id="@+id/dip_and_dip_Txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="145dp"
             android:text="McDonald's"
 
             android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold"></TextView>
+            android:textSize="18dp"></TextView>
 
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="170dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="175dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -160,8 +162,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="190dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="195dp"
+            android:layout_marginLeft="10dp"
             android:orientation="horizontal"
             android:paddingBottom="5dp">
 

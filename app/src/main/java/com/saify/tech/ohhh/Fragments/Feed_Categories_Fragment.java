@@ -46,7 +46,6 @@ public class Feed_Categories_Fragment extends Fragment {
 //    @BindView(R.id.my_order_tab_layout)
 //    com.google.android.material.tabs.TabLayout tabLayout;
 //
-
 //    @Optional
 //    @NotEmpty
 //    @BindView(R.id.viewpager_my_order)
@@ -76,6 +75,7 @@ public class Feed_Categories_Fragment extends Fragment {
 
     @BindView(R.id.layout_parent)
     LinearLayout layout_parent;
+
     private HListView lst_latest_profiles, lst_latest_news, lst_featured_video;
     AppController appController;
     ConnectionDetector connectionDetector;
@@ -93,13 +93,19 @@ public class Feed_Categories_Fragment extends Fragment {
         progressDialog.setMessage(getResources().getString(R.string.please_wait));
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
-//        ((MainActivity) context).setTitle(getString(R.string.home));
+        ((MainActivity) context).setTitle(getString(R.string.home));
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.feed_categories_fragment_layout, container, false);
             ButterKnife.bind(this, rootView);
+
             tabLayout.setupWithViewPager(ViewPager);
 
-            idMapping();
+            VPAdapter vpAdapter = new VPAdapter(getActivity().getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+            vpAdapter.addFragment(new Feed_Fragment(), getString(R.string.feed));
+            vpAdapter.addFragment(new Category_Fragment(), getString(R.string.categories));
+            ViewPager.setAdapter(vpAdapter);
+
+            
 //            VPAdapter vpAdapter = new VPAdapter(getActivity().getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
 //            vpAdapter.addFragment(new Ongoing_My_Order_Fragment(), getString(R.string.ongoing));
 //            vpAdapter.addFragment(new History_My_Order_Fragment(), getString(R.string.history));
@@ -107,20 +113,11 @@ public class Feed_Categories_Fragment extends Fragment {
 
 
             setClickListeners();
-            setDetails();
+//            setDetails();
         }
         return rootView;
     }
 
-    private void idMapping() {
-
-        VPAdapter vpAdapter = new VPAdapter(getActivity().getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        vpAdapter.addFragment(new Feed_Fragment(), getString(R.string.feed));
-        vpAdapter.addFragment(new Category_Fragment(), getString(R.string.categories));
-        ViewPager.setAdapter(vpAdapter);
-
-
-    }
 
     private void setClickListeners() {
 
@@ -131,17 +128,17 @@ public class Feed_Categories_Fragment extends Fragment {
         super.onResume();
     }
 
-    private void setDetails() {
-        ShowProgress();
-        rootView.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                DismissProgress();
-            }
-        }, 100);
-
-
-    }
+//    private void setDetails() {
+//        ShowProgress();
+//        rootView.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                DismissProgress();
+//            }
+//        }, 3000);
+//
+//
+//    }
 
     public void ShowProgress() {
         progress_bar.setVisibility(View.VISIBLE);

@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@color/white">
+    android:background="@color/white"
+    >
 
 
     <ScrollView
@@ -100,14 +101,17 @@
                 <RelativeLayout
                     android:id="@+id/cart_Rl"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/rounded_corner_white">
+                     android:layout_height="wrap_content"
+                     android:layout_marginRight="20dp"
+                     android:layout_weight="1"
+                    android:background="@drawable/my_shadow_back_button"
+                    >
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
+
                         android:src="@drawable/ic_cartttt">
 
                     </ImageView>
@@ -122,18 +126,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:autoSizeTextType="uniform"
                 android:fontFamily="@font/semi_bold"
-                android:text="@string/what_would_you_like"
+
+                android:autoSizeTextType="uniform"
+                 android:text="@string/what_would_you_like"
                 android:textColor="#323643"
                 android:textSize="20dp"></TextView>
 
             <TextView
+                android:fontFamily="@font/semi_bold"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:autoSizeTextType="uniform"
-                android:fontFamily="@font/semi_bold"
-                android:text="to order"
+                 android:text="to order"
                 android:textColor="#323643"
                 android:textSize="20dp"></TextView>
 
@@ -141,7 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp">
+                 android:layout_marginRight="20dp">
 
                 <!--                <com.google.android.material.textfield.TextInputLayout-->
                 <!--                    android:layout_width="match_parent"-->
@@ -174,13 +180,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:background="@drawable/rectangle_white_grey_border"
-                     android:drawableStart="@drawable/places_ic_search"
+                    android:drawableStart="@drawable/places_ic_search"
                     android:drawablePadding="10dp"
-                    android:fontFamily="@font/semi_bold"
                     android:hint="@string/find_for_food_or_restaurant"
                     android:paddingLeft="10dp"
 
-                     android:textSize="@dimen/text_size_normal"
+                    android:textSize="@dimen/text_size_normal"
 
                     app:boxBackgroundColor="@color/greyDark"></EditText>
 
@@ -192,15 +197,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:fontFamily="@font/semi_bold"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:layout_weight="13"
-                    android:fontFamily="@font/semi_bold"
-                    android:text="Featured Shops"
+                     android:text="Featured Shops"
                     android:textColor="#323643"
                     android:textSize="18dp"></TextView>
 
@@ -233,10 +241,13 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:fontFamily="@font/semi_bold"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/semi_bold"
-                android:text="Offers"
+                 android:text="Offers"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
                 android:textColor="#323643"
                 android:textSize="18dp"></TextView>
 
@@ -247,10 +258,13 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:fontFamily="@font/semi_bold"
+
+                android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/semi_bold"
-                android:text="Best from Desserts"
+                android:layout_marginBottom="10dp"
+                 android:text="Best from Desserts"
                 android:textColor="#323643"
                 android:textSize="18dp"></TextView>
 

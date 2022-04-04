@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/grey_light_bg"
+    android:background="@color/white"
 
     android:orientation="vertical"
     tools:context=".Activity.Payment_Activity">
-
 
 
     <LinearLayout
@@ -23,18 +22,21 @@
             android:id="@+id/back_LL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_gravity="center"
-            android:elevation="100dp"
-            android:orientation="horizontal">
+             android:orientation="horizontal">
 
             <RelativeLayout
+                android:background="@drawable/my_shadow_back_button"
+
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                 android:layout_height="wrap_content">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/circle_white"></ImageView>
+                    android:background="@drawable/my_shadow_back_button"
+                    ></ImageView>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -55,6 +57,7 @@
             android:layout_gravity="center"
             android:layout_marginRight="40dp"
             android:gravity="center"
+            android:fontFamily="@font/semi_bold"
 
 
             android:text="@string/payment"
@@ -77,7 +80,7 @@
             android:src="@drawable/ic_circle_address_orange"></ImageView>
 
         <LinearLayout
-            android:layout_width="50dp"
+            android:layout_width="25dp"
             android:layout_height="1dp"
             android:layout_gravity="center"
             android:background="@color/grey"></LinearLayout>
@@ -88,7 +91,7 @@
             android:src="@drawable/ic_circle_address_orange"></ImageView>
 
         <LinearLayout
-            android:layout_width="50dp"
+            android:layout_width="25dp"
             android:layout_height="1dp"
             android:layout_gravity="center"
             android:background="@color/grey"></LinearLayout>
@@ -242,9 +245,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center"
-
             android:layout_weight="1"
+
+            android:gravity="center"
             android:text="@string/cash"
             android:textColor="@color/black">
 
@@ -282,7 +285,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
 
         android:text="@string/enter_coupon_code"
@@ -310,10 +313,12 @@
             app:boxCornerRadiusTopStart="10dp">
 
 
-            <EditText
+            <EditText                        android:fontFamily="@font/semi_bold"
+
                 android:id="@+id/codeET"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
                 android:background="@android:color/transparent"
                 android:text="@string/code"
                 android:textColor="@color/black"
@@ -325,8 +330,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="14dp"
 
             android:src="@drawable/places_ic_search"
             android:text="@string/add_code"
@@ -340,7 +345,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
 
         android:layout_marginRight="20dp"
         android:text="@string/order_info"
@@ -354,7 +359,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/rounded_rectangle_white"
+        android:background="@drawable/my_shadow"
         android:orientation="vertical">
 
 
@@ -365,8 +370,6 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="20dp">
-
-
         </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 
@@ -375,16 +378,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginHorizontal="50dp"
+        android:layout_marginHorizontal="80dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/rounded_corner_primary_colour"
-        android:fontFamily="@font/semi_bold"
-        android:gravity="center"
+         android:gravity="center"
 
         android:padding="15dp"
         android:text="@string/place_order"
         android:textColor="@color/white"
-        android:textStyle="bold"></TextView>
+         ></TextView>
 
 
 </LinearLayout>

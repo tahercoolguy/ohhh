@@ -82,6 +82,8 @@
 
 
             <TextView
+                android:fontFamily="@font/semi_bold"
+
                 android:id="@+id/cake_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -96,7 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="15dp">
 
                 <ImageView
                     android:layout_width="20dp"
@@ -106,6 +108,8 @@
                 </ImageView>
 
                 <TextView
+                    android:fontFamily="@font/semi_bold"
+
                     android:id="@+id/rating_star_Txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -138,9 +142,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="20dp">
 
                 <TextView
+                    android:fontFamily="@font/semi_bold"
+
                     android:id="@+id/price_kwd_Txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -178,9 +184,10 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
+                    android:fontFamily="@font/semi_bold"
 
                     android:gravity="center"
-                    android:text="2"
+                    android:text="1"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="bold">
@@ -225,7 +232,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/semi_bold"
 
                 android:text="@string/size"
                 android:textColor="@color/black"
@@ -392,7 +400,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/semi_bold"
 
                 android:text="@string/options"
                 android:textColor="@color/black"

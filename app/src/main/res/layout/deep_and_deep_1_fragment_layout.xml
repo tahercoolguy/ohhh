@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="@color/white"
+
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@color/white"
-    >
+     >
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <LinearLayout
                 android:id="@+id/layout_parent"
                 android:layout_width="match_parent"
@@ -22,49 +25,43 @@
                 android:layout_marginRight="10dp"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
-<!--                    <RelativeLayout-->
-<!--                        android:id="@+id/back_dip_1RL"-->
-<!--                        android:layout_width="50dp"-->
-<!--                        android:layout_height="40dp"-->
-<!--                        android:layout_marginRight="300dp"-->
-<!--                        android:layout_weight="1"-->
 
-<!--                        android:background="@drawable/rounded_corner_white">-->
-
-<!--                        <ImageView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_centerInParent="true"-->
-<!--                            android:src="@drawable/ic_left_back">-->
-
-<!--                        </ImageView>-->
-
-
-<!--                    </RelativeLayout>-->
-                    <ImageView
+                    <RelativeLayout
                         android:id="@+id/back_dip_1RL"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="-300dp"
 
-                        android:layout_marginTop="-45dp"
-                        android:layout_weight="50"
-                        android:src="@drawable/ic_back_back_otp">
+                        android:layout_alignParentStart="true"
+                        android:background="@drawable/my_shadow_back_button">
 
-                    </ImageView>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_shadow_back_button"></ImageView>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_back_back"></ImageView>
+
+                    </RelativeLayout>
+
 
                     <RelativeLayout
                         android:id="@+id/cart_dip_1"
                         android:layout_width="wrap_content"
-                        android:layout_marginTop="5dp"
-                         android:layout_height="wrap_content"
-                         android:background="@drawable/rounded_corner_white">
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/my_shadow_back_button">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -75,19 +72,15 @@
                         </ImageView>
 
 
-
-
                     </RelativeLayout>
 
-                </LinearLayout>
+                </RelativeLayout>
 
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="-60dp"
-                     >
+                    android:layout_marginTop="10dp">
 
 
                     <ImageView
@@ -98,162 +91,172 @@
 
                     </ImageView>
 
-
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginLeft="150dp"
-                        android:layout_marginTop="79dp"
-                        android:src="@drawable/circle_white">
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="87dp"
+                        android:src="@drawable/circle_white_bg">
 
                     </ImageView>
-
 
                     <ImageView
                         android:layout_width="110dp"
                         android:layout_height="110dp"
-                        android:layout_marginLeft="145dp"
-                        android:layout_marginTop="77dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="90dp"
                         android:src="@drawable/deep_and_deep">
 
                     </ImageView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_marginLeft="160dp"
-                        android:fontFamily="@font/semi_bold"
-                        android:layout_marginTop="353dp"
-                         android:gravity="center"
-                        android:text="@string/dip_and_dip"
-                        android:textColor="@color/black"
-                        android:textSize="20dp"
-                        android:textStyle="bold"></TextView>
 
                 </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:layout_marginTop="-170dp"
-                    android:orientation="horizontal">
+                    android:layout_marginTop="-4dp"
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/ic_timer_alarm">
-
-                    </ImageView>
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/semi_bold"
+                        android:gravity="center"
+                        android:text="@string/dip_and_dip"
                         android:textColor="@color/black"
-                        android:layout_gravity="center"
+                        android:textSize="20dp"></TextView>
 
-                        android:text="20-30 min"></TextView>
-
-                    <ImageView
-                        android:layout_width="5dp"
-                        android:layout_height="5dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/rounded_grey_new" />
-
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_rating_star">
-
-                    </ImageView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/black"
-                        android:layout_gravity="center"
-                        android:text="4.9"></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/black"
-                        android:layout_gravity="center"
-                        android:text="(458)"></TextView>
-
-                    <ImageView
-                        android:layout_width="5dp"
-                        android:layout_height="5dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/rounded_grey_new" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_free_delivery">
-
-                    </ImageView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/black"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Free delivery"></TextView>
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_timer_alarm">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="20-30 min"
+
+                            android:textColor="@color/black"></TextView>
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/rounded_grey_new" />
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_rating_star">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="4.9"
+                            android:textColor="@color/black"></TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="(458)"
+                            android:textColor="@color/black"></TextView>
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/rounded_grey_new" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_free_delivery">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="Free delivery"
+                            android:textColor="@color/black"></TextView>
+                    </LinearLayout>
+
+
                 </LinearLayout>
+
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/dip_and_dip_cake_1_Rcv"
                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"></androidx.recyclerview.widget.RecyclerView>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"></androidx.recyclerview.widget.RecyclerView>
 
 
                 <TextView
                     android:layout_width="wrap_content"
+
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="@string/suncategory"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="10dp"
                     android:fontFamily="@font/semi_bold"
+                    android:text="@string/suncategory"
                     android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"></TextView>
+                    android:textSize="18dp"></TextView>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/sub_category_1_Rcv"
-                     android:layout_width="match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                 </androidx.recyclerview.widget.RecyclerView>
 
                 <TextView
                     android:layout_width="wrap_content"
+
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="10dp"
                     android:fontFamily="@font/semi_bold"
                     android:text="@string/suncategory"
                     android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"></TextView>
+                    android:textSize="18dp"></TextView>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/sub_category_2_Rcv"
-                     android:layout_width="match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                 </androidx.recyclerview.widget.RecyclerView>
@@ -263,6 +266,7 @@
 
 
         </androidx.core.widget.NestedScrollView>
+
         <include layout="@layout/layout_error" />
 
     </LinearLayout>

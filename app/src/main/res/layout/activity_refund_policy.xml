@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_light_bg"
+    android:background="@color/white"
 
     android:layout_gravity="center"
      android:orientation="vertical"
@@ -27,13 +27,16 @@
             android:orientation="horizontal">
 
             <RelativeLayout
+                android:background="@drawable/my_shadow_back_button"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/circle_white"></ImageView>
+                    android:background="@drawable/my_shadow_back_button"
+                    ></ImageView>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -54,6 +57,7 @@
             android:layout_gravity="center"
             android:layout_marginRight="40dp"
             android:gravity="center"
+            android:fontFamily="@font/semi_bold"
 
 
             android:text="@string/refund_policy"

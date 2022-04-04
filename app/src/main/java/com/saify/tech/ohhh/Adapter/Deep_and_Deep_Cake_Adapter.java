@@ -1,5 +1,6 @@
 package com.saify.tech.ohhh.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.media.Image;
@@ -25,11 +26,10 @@ import java.util.ArrayList;
 
 public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_Deep_Cake_Adapter.Programming_AdapterViewHolder> {
 
-    int row_index = 0;
-
 
     private Context context;
     private ArrayList<Deep_and_Deep_CakeDM> deep_and_deep_cakeDMS;
+    int row_index = 0;
 
     public Deep_and_Deep_Cake_Adapter(Context context, ArrayList<Deep_and_Deep_CakeDM> deep_and_deep_cakeDMS) {
         this.context = context;
@@ -46,7 +46,7 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         Deep_and_Deep_CakeDM deep_and_deep_cakeDM = deep_and_deep_cakeDMS.get(position);
 
@@ -56,22 +56,26 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
         holder.linearLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-              row_index=0;
-              notifyDataSetChanged();
+                row_index = position;
+                notifyDataSetChanged();
+//                if (position == 0) {
+//
+//                    holder.cakename.setTextColor(Color.parseColor("#FFFFFFFF"));
+//                    holder.cake_deep_and_deepRL.setBackgroundResource(R.drawable.rounded_corner_deep_deep_cake);
+//                } else if(position==1){
+//                    holder.cakename.setTextColor(Color.parseColor("#FFFFFFFF"));
+//                    holder.cake_deep_and_deepRL.setBackgroundResource(R.drawable.rounded_corner_deep_deep_cake);
+//                }
             }
         });
         if (row_index == position) {
             holder.cakename.setTextColor(Color.parseColor("#FFFFFFFF"));
-
             holder.cake_deep_and_deepRL.setBackgroundResource(R.drawable.rounded_corner_deep_deep_cake);
         }else {
             holder.cakename.setTextColor(Color.parseColor("#E67826"));
 
             holder.cake_deep_and_deepRL.setBackgroundResource(R.drawable.rounded_corner_deep_and_deep_white);
         }
-
-
     }
 
 
@@ -93,7 +97,7 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
             cakename = (TextView) itemView.findViewById(R.id.cake_name_deep_Txt);
             cakeImg = itemView.findViewById(R.id.cake_deep_Img);
             cake_deep_and_deepRL = itemView.findViewById(R.id.cake_deep_and_deepRL);
-            linearLL=itemView.findViewById(R.id.linearLL);
+            linearLL = itemView.findViewById(R.id.linearLL);
         }
     }
 }

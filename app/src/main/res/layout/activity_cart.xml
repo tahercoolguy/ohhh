@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/grey_light_bg"
+    android:background="@color/white"
 
 
     android:orientation="vertical"
@@ -38,12 +38,14 @@
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_shadow_back_button">
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/circle_white"></ImageView>
+                            android:background="@drawable/my_shadow_back_button"></ImageView>
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -63,8 +65,9 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginRight="40dp"
-                    android:gravity="center"
+                    android:fontFamily="@font/semi_bold"
 
+                    android:gravity="center"
 
                     android:text="@string/cart"
                     android:textColor="@color/black"
@@ -208,9 +211,9 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/nornoya_deep_Rcv"
                 android:layout_width="match_parent"
-                android:layout_marginHorizontal="10dp"
                 android:layout_height="wrap_content"
-                 android:layout_marginBottom="10dp"></androidx.recyclerview.widget.RecyclerView>
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginBottom="10dp"></androidx.recyclerview.widget.RecyclerView>
 
         </LinearLayout>
 

@@ -62,7 +62,7 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     RecyclerView sub_category_2_Rcv;
 
     @BindView(R.id.back_dip_1RL)
-    ImageView back;
+    RelativeLayout back;
 
     @BindView(R.id.cart_dip_1)
     RelativeLayout cart;

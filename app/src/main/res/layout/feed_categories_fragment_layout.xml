@@ -6,7 +6,6 @@
     android:animateLayoutChanges="true"
     android:background="@color/white">
 
-
     <LinearLayout
         android:id="@+id/layout_parent"
         android:layout_width="match_parent"
@@ -16,20 +15,20 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-             android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/my_order_tab_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:keepScreenOn="false"
-                app:tabIndicatorGravity="center"
-                 android:scrollIndicators="none"
+                android:layout_marginHorizontal="50dp"
+                android:scrollIndicators="none"
                 android:scrollbars="none"
                 app:tabGravity="center"
-
                 app:tabIndicator="@null"
+                app:tabIndicatorGravity="center"
                 app:tabSelectedTextColor="@color/black"
                 app:tabTextAppearance="@style/TabLayoutStyle"
                 app:tabTextColor="@color/greyDark">
@@ -37,15 +36,46 @@
 
             </com.google.android.material.tabs.TabLayout>
 
-            <ImageView
-                android:id="@+id/searchImg"
-                android:layout_marginRight="20dp"
-                 android:layout_width="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_height="wrap_content"
-                 android:layout_marginTop="12dp"
-                android:src="@drawable/places_ic_search"></ImageView>
 
+            <!--            <ImageView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_alignParentEnd="true"-->
+            <!--                android:layout_marginTop="12dp"-->
+            <!--                android:layout_marginRight="20dp"-->
+            <!--                android:src="@drawable/ic_search"></ImageView>-->
+
+            <LinearLayout
+                android:id="@+id/searchLL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="20dp"
+                android:elevation="100dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circle_white"></ImageView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_search"></ImageView>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
 
         </RelativeLayout>
 
@@ -53,7 +83,11 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager_my_order"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></androidx.viewpager.widget.ViewPager>
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+        </androidx.viewpager.widget.ViewPager>
         <!--       <androidx.recyclerview.widget.RecyclerView-->
         <!--           android:id="@+id/feed_Rv"-->
         <!--           android:layout_marginRight="10dp"-->

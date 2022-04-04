@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
      android:orientation="vertical"
-    android:background="@color/grey_light_bg"
+    android:background="@color/white"
     tools:context=".Activity.Saved_Address_Activity">
 
 
@@ -22,17 +22,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:elevation="100dp"
-            android:orientation="horizontal">
+             android:orientation="horizontal">
 
             <RelativeLayout
+                android:background="@drawable/my_shadow_back_button"
+
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                  android:layout_height="wrap_content">
 
                 <ImageView
+
+                    android:background="@drawable/my_shadow_back_button"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/circle_white"></ImageView>
+                    ></ImageView>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -51,6 +55,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:fontFamily="@font/semi_bold"
+
             android:layout_marginRight="40dp"
             android:gravity="center"
             android:text="@string/saved_address"
@@ -62,7 +68,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/saved_address_Rcv"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
