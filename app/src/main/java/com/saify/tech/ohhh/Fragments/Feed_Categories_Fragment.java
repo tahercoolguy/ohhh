@@ -98,14 +98,14 @@ public class Feed_Categories_Fragment extends Fragment {
             rootView = inflater.inflate(R.layout.feed_categories_fragment_layout, container, false);
             ButterKnife.bind(this, rootView);
 
-            tabLayout.setupWithViewPager(ViewPager);
 
             VPAdapter vpAdapter = new VPAdapter(getActivity().getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
             vpAdapter.addFragment(new Feed_Fragment(), getString(R.string.feed));
             vpAdapter.addFragment(new Category_Fragment(), getString(R.string.categories));
             ViewPager.setAdapter(vpAdapter);
 
-            
+            tabLayout.setupWithViewPager(ViewPager);
+
 //            VPAdapter vpAdapter = new VPAdapter(getActivity().getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
 //            vpAdapter.addFragment(new Ongoing_My_Order_Fragment(), getString(R.string.ongoing));
 //            vpAdapter.addFragment(new History_My_Order_Fragment(), getString(R.string.history));

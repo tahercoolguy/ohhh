@@ -135,7 +135,7 @@ public class Payment_Activity extends AppCompatActivity {
         orderInfoDMS.add(new OrderInfoDM("Code Applied", "Mx3029"));
         orderInfoDMS.add(new OrderInfoDM("Discount", "50%"));
         orderInfoDMS.add(new OrderInfoDM("Delivery Charges", "3.000 KWD"));
-        orderInfoDMS.add(new OrderInfoDM("Total", "2.500 KWD"));
+//        orderInfoDMS.add(new OrderInfoDM("Total", "2.500 KWD"));
 
 
 //            HistoryRcv.setLayoutManager(new LinearLayoutManager(context));

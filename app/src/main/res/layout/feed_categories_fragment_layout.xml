@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
+     android:animateLayoutChanges="true"
     android:background="@color/white">
 
     <LinearLayout
@@ -11,6 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+             android:orientation="vertical">
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -88,6 +95,12 @@
             android:layout_marginTop="10dp">
 
         </androidx.viewpager.widget.ViewPager>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+            </View>
         <!--       <androidx.recyclerview.widget.RecyclerView-->
         <!--           android:id="@+id/feed_Rv"-->
         <!--           android:layout_marginRight="10dp"-->
@@ -95,6 +108,9 @@
         <!--           android:layout_height="match_parent">-->
 
         <!--       </androidx.recyclerview.widget.RecyclerView>-->
+    </LinearLayout>
+
+
     </LinearLayout>
 
     <include layout="@layout/layout_error" />

@@ -16,8 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="80dp"
-            android:orientation="vertical">
+             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -380,6 +379,9 @@ Al-Mubarak St, Kuwait City"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="2.500 KWD"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:fontFamily="@font/semi_bold"
                         android:textColor="@color/colorPrimary"
                         android:textStyle="bold"></TextView>
 
@@ -561,8 +563,8 @@ Al-Mubarak St, Kuwait City"
                 android:layout_width="match_parent"
                 android:layout_height="125dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginBottom="100dp"
-                 android:layout_marginTop="10dp"
+                  android:layout_marginTop="10dp"
+                android:layout_marginBottom="70dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/my_shadow"
                 >
@@ -572,7 +574,7 @@ Al-Mubarak St, Kuwait City"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:cursorVisible="true"
-                     android:lines="8"
+                    android:lines="8"
 
                     >
 

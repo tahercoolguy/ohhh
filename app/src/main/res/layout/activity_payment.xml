@@ -355,7 +355,7 @@
     <LinearLayout
         android:id="@+id/now_RL"
         android:layout_width="match_parent"
-        android:layout_height="195dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
@@ -371,6 +371,35 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="20dp">
         </androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+              android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="12"
+                android:text="Total"
+                android:textColor="@color/black"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2.500 KWD"
+                android:fontFamily="@font/semi_bold"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"></TextView>
+
+
+        </LinearLayout>
     </LinearLayout>
 
     <TextView
