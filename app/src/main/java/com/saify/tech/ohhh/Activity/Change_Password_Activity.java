@@ -21,6 +21,7 @@ import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Email;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.ChangePasswordDM;
 import com.saify.tech.ohhh.DataModel.LoginDM;
 import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.User;
@@ -78,62 +79,34 @@ public class Change_Password_Activity extends AppCompatActivity implements Valid
 //        if(connectionDetector.isConnectingToInternet())
 //        {
 //
-//            boolean correct = true;
-//            if(currentPassword.getText().toString().equalsIgnoreCase(""))
-//            {
-//                correct=false;
-//                Helper.showToast(Change_Password_Activity.this,"kindly enter your current Password");
-//            }
+//            progress = dialogUtil.showProgressDialog(Change_Password_Activity.this,getString(R.string.please_wait));
 //
-//            else if(password.getText().toString().equalsIgnoreCase(""))
-//            {
-//                correct=false;
-//                Helper.showToast(Change_Password_Activity.this,"kindly enter your password");
-//            }
+//            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 //
-//            else if(confirmPassword.getText().toString().equalsIgnoreCase(""))
-//            {
-//                correct=false;
-//                Helper.showToast(Change_Password_Activity.this,"kindly enter your Confirm Password");
-//            }
 //
-//            else if (correct) {
-//                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+//        //    appController.paServices.ChangePassword(user.getId(),password.getText().toString(),confirmPassword.getText().toString(), new Callback<ChangePasswordDM>() {
+//                @Override
 //
-//                progress = dialogUtil.showProgressDialog(Change_Password_Activity.this, getString(R.string.please_wait));
+//                public void success ( ChangePasswordDM changePasswordDM, Response response )
+//                {
+//                    progress.dismiss();
+//                    if(changePasswordDM.getOutput().getData().get(0).getStatus().equalsIgnoreCase("1"))
+//                    {
+//                        Helper.showToast(Change_Password_Activity.this,changePasswordDM.getOutput().getMessage());
 //
-//                appController.paServices.Login(user.getId(), password.getText().toString(),confirmPassword.getText().toString(), new Callback<LoginDM>() {
+//                    }else
+//                        Helper.showToast(Change_Password_Activity.this,changePasswordDM.getOutput().getMessage());
+//                }
 //
-//                    @Override
+//                @Override
+//                public void failure ( RetrofitError retrofitError ) {
+//                    progress.dismiss();
+//                    Log.e("error",retrofitError.toString());
 //
-//                    public void success ( LoginDM loginDM, Response response ) {
-//                        progress.dismiss();
-//                        if (loginDM.getOutput().getData().get(0).getStatus().equalsIgnoreCase("1")) {
-////                        Helper.shwToast(LoginActivity.this,customerRegisterDM.getMessage());
-//          //                  user.setId(Integer.valueOf(loginDM.getOutput().getData().get(0).getId()));
-//
-//          //                  startActivity(new Intent(LoginActivity.this, MainActivity.class));
-//          //                  finish();
-//
-//                        } else
-//                            Helper.showToast(Change_Password_Activity.this, loginDM.getOutput().getMessage());
-//                    }
-//
-//                    @Override
-//                    public void failure ( RetrofitError retrofitError ) {
-//                        progress.dismiss();
-//
-//                        Log.e("error", retrofitError.toString());
-//
-//                    }
-//                });
-//            }
+//                }
+//            });
 //        }else
-//            Helper.showToast(Change_Password_Activity.this,getString(R.string.no_internet_connection));
-//
-
-
-        finish();
+//            Helper.showToast(LoginActivity.this,getString(R.string.no_internet_connection));
     }
 
 

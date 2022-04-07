@@ -61,15 +61,22 @@ public interface PAServices {
     void Shops(Callback<ShopsDM> shopsDMCallback);
 
 
+    @Headers("Cache-Control: no-cache;")
+    @POST("/ohhh/webservices/ohhh/SignUp")
+    void signUp(@Body MultipartTypedOutput multipartTypedOutput, Callback<SignUpDM> simpleDMCallback);
+
+
+
     // 1
     @FormUrlEncoded
     @POST("/ohhh/webservices/ohhh/SignUp")
     public void SignUp(@Field("firstname") String firstname,
                        @Field("lastname") String lastname,
                        @Field("email") String email,
+                       @Field("password") String password,
+                       @Field("confpassword") String confpassword,
                        @Field("phone") String phone,
                        @Field("countrycode") String countrycode,
-                       @Field("password") String password,
 
                        Callback<SignUpDM> signUpDMCallback);
 

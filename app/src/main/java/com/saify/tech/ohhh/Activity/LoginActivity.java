@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.icu.text.Transliterator;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -42,6 +43,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     ConnectionDetector connectionDetector;
     User user;
     DialogUtil dialogUtil;
+    int position=0;
 
     @NotEmpty
     @Email
@@ -102,9 +104,9 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
 
                             public void success ( LoginDM loginDM, Response response ) {
                                 progress.dismiss();
-                                if (loginDM.getOutput().getData().get(0).getStatus().equalsIgnoreCase("1")) {
+                                if (loginDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 //                        Helper.shwToast(LoginActivity.this,customerRegisterDM.getMessage());
-                                    user.setId(Integer.valueOf(loginDM.getOutput().getData().get(0).getId()));
+                                    user.setId(Integer.valueOf(loginDM.getOutput().getData().get(position).getId()));
 
                                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                     finish();

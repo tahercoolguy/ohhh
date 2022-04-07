@@ -113,79 +113,137 @@ public class SignUpActivity extends AppCompatActivity implements Validator.Valid
     public void signupBtn()
     {
 
-        if(connectionDetector.isConnectingToInternet())
-        {
-            boolean correct =true;
-            if(firstNameET.getText().toString().equalsIgnoreCase(""))
-            {
-                correct=false;
-                Helper.showToast(SignUpActivity.this,"kindly enter your name");
-            }
-            else if(emailET.getText().toString().equalsIgnoreCase(""))
-            {
-                correct=false;
-                Helper.showToast(SignUpActivity.this,"kindly enter your email");
-            }
-            else if (passwordET.getText().toString().equalsIgnoreCase("")){
-                correct=false;
-                Helper.showToast(SignUpActivity.this,"kindly enter your password");
-            }
-
-            else if (confirmPasswordET.getText().toString().equalsIgnoreCase("")){
-                correct=false;
-                Helper.showToast(SignUpActivity.this,"kindly enter your confirm password");
-            }
-            else if (pinCodeTxt.getText().toString().equalsIgnoreCase("")) {
-                correct=false;
-                Helper.showToast(SignUpActivity.this,"kindly enter your country Code");
-            }
-            else if(mobileET.getText().toString().equalsIgnoreCase("")){
-                correct=false;
-                Helper.showToast(SignUpActivity.this,"kindly enter your mobile number");
-            }
-//
-//            else if(!checkboxCB.isChecked())
+//        if(connectionDetector.isConnectingToInternet())
+//        {
+//            boolean correct =true;
+//            if(firstNameET.getText().toString().equalsIgnoreCase(""))
 //            {
 //                correct=false;
-//                Helper.showToast(SignUpActivity.this,"kindly read terms and conditions");
+//                Helper.showToast(SignUpActivity.this,"kindly enter your name");
 //            }
+//            else if(emailET.getText().toString().equalsIgnoreCase(""))
+//            {
+//                correct=false;
+//                Helper.showToast(SignUpActivity.this,"kindly enter your email");
+//            }
+//            else if (passwordET.getText().toString().equalsIgnoreCase("")){
+//                correct=false;
+//                Helper.showToast(SignUpActivity.this,"kindly enter your password");
+//            }
+//
+//            else if (confirmPasswordET.getText().toString().equalsIgnoreCase("")){
+//                correct=false;
+//                Helper.showToast(SignUpActivity.this,"kindly enter your confirm password");
+//            }
+//            else if (pinCodeTxt.getText().toString().equalsIgnoreCase("")) {
+//                correct=false;
+//                Helper.showToast(SignUpActivity.this,"kindly enter your country Code");
+//            }
+//            else if(mobileET.getText().toString().equalsIgnoreCase("")){
+//                correct=false;
+//                Helper.showToast(SignUpActivity.this,"kindly enter your mobile number");
+//            }
+////
+////            else if(!checkboxCB.isChecked())
+////            {
+////                correct=false;
+////                Helper.showToast(SignUpActivity.this,"kindly read terms and conditions");
+////            }
+//
+//
+//            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+//            if(correct) {
+//                progress = dialogUtil.showProgressDialog(SignUpActivity.this,getString(R.string.please_wait));
+//
+//                appController.paServices.SignUp(firstNameET.getText().toString(),"",emailET.getText().toString(), passwordET.getText().toString(),confirmPasswordET.getText().toString(), pinCodeTxt.getText().toString(),mobileET.getText().toString(), new Callback<SignUpDM>(){
+//                    @Override
+//
+//                    public void success ( SignUpDM signUpDM, Response response )
+//                    {
+//                        progress.dismiss();
+//                        if (signUpDM.getOutput().getSuccess().equalsIgnoreCase("1") )
+//                        {
+//
+////                        user.setId(Integer.valueOf(signUpDM.getOutput().getData().get(0).getId()));
+//
+//
+//
+//                            startActivity(new Intent(SignUpActivity.this, VerifyActivity.class));
+//
+//                        } else
+//                            Helper.showToast(SignUpActivity.this, signUpDM.getMessage());
+//
+//                    }
+//
+//                    @Override
+//                    public void failure ( RetrofitError retrofitError ) {
+//                        progress.dismiss();
+//                        Log.e("error", retrofitError.toString());
+//
+//                    }
+//                });
+//            }
+//        }else
+//            Helper.showToast(SignUpActivity.this,getString(R.string.no_internet_connection));
+//
 
 
-            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-            if(correct) {
-                progress = dialogUtil.showProgressDialog(SignUpActivity.this,getString(R.string.please_wait));
-
-                appController.paServices.SignUp(firstNameET.getText().toString(),emailET.getText().toString(), passwordET.getText().toString(),confirmPasswordET.getText().toString(), pinCodeTxt.getText().toString(),mobileET.getText().toString(), new Callback<SignUpDM>(){
-                    @Override
-
-                    public void success ( SignUpDM signUpDM, Response response ) {
-                        progress.dismiss();
-                        if (signUpDM.getStatus().equalsIgnoreCase("1") || signUpDM.getStatus().equalsIgnoreCase("5") || signUpDM.getStatus().equalsIgnoreCase("4") || signUpDM.getStatus().equalsIgnoreCase("3") || signUpDM.getStatus().equalsIgnoreCase("2")) {
-
-
-                           user.setId(Integer.valueOf(signUpDM.getOutput().getData().get(0).getId()));
-
-
-                            startActivity(new Intent(SignUpActivity.this, VerifyActivity.class));
-
-                        } else
-                            Helper.showToast(SignUpActivity.this, signUpDM.getMessage());
-                    }
-
-                    @Override
-                    public void failure ( RetrofitError retrofitError ) {
-                        progress.dismiss();
-                        Log.e("error", retrofitError.toString());
-
-                    }
-                });
-            }
-        }else
-            Helper.showToast(SignUpActivity.this,getString(R.string.no_internet_connection));
 
 
 
-//        startActivity(new Intent(SignUpActivity.this, VerifyActivity.class));
+        try {
+            if (connectionDetector.isConnectingToInternet()) {
+                isValid();
+
+
+                if (o) {
+                    progress = dialogUtil.showProgressDialog(SignUpActivity.this,getString(R.string.please_wait));
+                    MultipartTypedOutput multipartTypedOutput = new MultipartTypedOutput();
+//                    multipartTypedOutput.addPart("firstname",new TypedString(firstNameET.getText().toString()));
+//                    multipartTypedOutput.addPart("lastname",new TypedString(" "));
+//                    multipartTypedOutput.addPart("email",new TypedString(emailET.getText().toString()));
+//                    multipartTypedOutput.addPart("password",new TypedString(passwordET.getText().toString()));
+//                    multipartTypedOutput.addPart("confpassword",new TypedString(confirmPasswordET.getText().toString()));
+//                    multipartTypedOutput.addPart("countrycode",new TypedString(pinCodeTxt.getText().toString()));
+//                    multipartTypedOutput.addPart("phone",new TypedString(mobileET.getText().toString()));
+
+                    multipartTypedOutput.addPart("first_name",new TypedString(firstNameET.getText().toString()));
+                    multipartTypedOutput.addPart("last_name",new TypedString(""));
+                    multipartTypedOutput.addPart("email",new TypedString(emailET.getText().toString()));
+                    multipartTypedOutput.addPart("password",new TypedString(passwordET.getText().toString()));
+                    multipartTypedOutput.addPart("confirm_password",new TypedString(confirmPasswordET.getText().toString()));
+                    multipartTypedOutput.addPart("mobile_number",new TypedString(mobileET.getText().toString()));
+                    multipartTypedOutput.addPart("countrycode",new TypedString(pinCodeTxt.getText().toString()));
+
+
+                    appController.paServices.signUp(multipartTypedOutput, new Callback<SignUpDM>() {
+                        @Override
+                        public void success(SignUpDM signUpDM, Response response) {
+                            progress.dismiss();
+                            if(signUpDM.getOutput().getSuccess().equalsIgnoreCase("1"))
+                            {
+
+                                 Helper.showToast(SignUpActivity.this,signUpDM.getOutput().getMessage());
+                                finish();
+                            }else
+                                Helper.showToast(SignUpActivity.this,signUpDM.getOutput().getMessage());
+
+                        }
+
+                        @Override
+                        public void failure(RetrofitError error) {
+                            Log.e("String",error.toString());
+                        }
+                    });
+                }
+            } else
+                Helper.showToast(SignUpActivity.this, getString(R.string.no_internet_connection));
+        }catch (Exception e)
+        {
+            Log.e("String",e.toString());
+        }
+
+
     }
 
 
@@ -463,4 +521,12 @@ public class SignUpActivity extends AppCompatActivity implements Validator.Valid
 //            }
         }
     }
+
+
+
+
+
+
+
+
 }
