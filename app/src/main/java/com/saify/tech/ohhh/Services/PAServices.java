@@ -28,7 +28,7 @@ import retrofit.mime.MultipartTypedOutput;
 
 public interface PAServices {
     @Headers("Cache-Control: no-cache;")
-    @POST("/auth/signin")
+    @POST("/ohhh/SignUp")
     void SignUp(@Body MultipartTypedOutput multipartTypedOutput, Callback<SignUpDM> signUpDMCallback);
 
     @Headers("Cache-Control: no-cache;")
@@ -60,16 +60,16 @@ public interface PAServices {
     @GET("/user/view_shops")
     void Shops(Callback<ShopsDM> shopsDMCallback);
 
-
-    @Headers("Cache-Control: no-cache;")
-    @POST("/ohhh/webservices/ohhh/SignUp")
-    void signUp(@Body MultipartTypedOutput multipartTypedOutput, Callback<SignUpDM> simpleDMCallback);
-
+//
+//    @Headers("Cache-Control: no-cache;")
+//    @POST("/ohhh/webservices/ohhh/SignUp")
+//    void signUp(@Body MultipartTypedOutput multipartTypedOutput, Callback<SignUpDM> simpleDMCallback);
+//
 
 
     // 1
     @FormUrlEncoded
-    @POST("/ohhh/webservices/ohhh/SignUp")
+    @POST("/ohhh/SignUp")
     public void SignUp(@Field("firstname") String firstname,
                        @Field("lastname") String lastname,
                        @Field("email") String email,
@@ -83,18 +83,18 @@ public interface PAServices {
 
     //2
     @FormUrlEncoded
-    @POST("/ohhh/webservices/ohhh/login")
+    @POST("/ohhh/login")
     public void Login(@Field("email") String email,
                       @Field("password") String password,
                       Callback<LoginDM> loginDMCallback);
 
     //3
     @FormUrlEncoded
-    @POST("/ohhh/webservices/ohhh/changePassword")
+    @POST("/ohhh/changePassword")
     public void ChangePassword(@Field("userid") String userid,
-                      @Field("password") String password,
-                      @Field("confpassword") String confpassword,
-                      Callback<ChangePasswordDM> changePasswordDMCallback);
+                         @Field("password") String password,
+                         @Field("confpassword") String confpassword,
+                       Callback<ChangePasswordDM> changePasswordDMCallback);
 
     //4
     @GET("/ohhh/webservices/ohhh/catgorylist")
