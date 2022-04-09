@@ -79,32 +79,53 @@ public class Change_Password_Activity extends AppCompatActivity implements Valid
         if(connectionDetector.isConnectingToInternet())
         {
 
-            progress = dialogUtil.showProgressDialog(Change_Password_Activity.this,getString(R.string.please_wait));
 
-            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+            boolean correct = true;
+            if(currentPassword.getText().toString().equalsIgnoreCase(""))
+            {
+                correct=false;
+                Helper.showToast(Change_Password_Activity.this,"kindly enter your current password");
+            }
 
-            appController.paServices.ChangePassword(String.valueOf(user.getId()),password.getText().toString(),confirmPassword.getText().toString(), new Callback<ChangePasswordDM>() {
-                @Override
+            else if(password.getText().toString().equalsIgnoreCase(""))
+            {
+                correct=false;
+                Helper.showToast(Change_Password_Activity.this,"kindly enter your password");
+            }
 
-                public void success ( ChangePasswordDM changePasswordDM, Response response )
-                {
-                    progress.dismiss();
-                    if(changePasswordDM.getOutput().getSuccess().equalsIgnoreCase("1"))
-                    {
+            else if(confirmPassword.getText().toString().equalsIgnoreCase(""))
+            {
+                correct=false;
+                Helper.showToast(Change_Password_Activity.this,"kindly enter your confirm password");
+            }
 
-                        Helper.showToast(Change_Password_Activity.this,changePasswordDM.getOutput().getMessage());
-                       finish();
-                    }else
-                        Helper.showToast(Change_Password_Activity.this,changePasswordDM.getOutput().getMessage());
-                }
+            else if (correct) {
 
-                @Override
-                public void failure ( RetrofitError retrofitError ) {
-                    progress.dismiss();
-                    Log.e("error",retrofitError.toString());
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
-                }
-            });
+                progress = dialogUtil.showProgressDialog(Change_Password_Activity.this, getString(R.string.please_wait));
+
+                appController.paServices.ChangePassword(String.valueOf(user.getId()), password.getText().toString(), confirmPassword.getText().toString(), new Callback<ChangePasswordDM>() {
+                    @Override
+
+                    public void success(ChangePasswordDM changePasswordDM, Response response) {
+                        progress.dismiss();
+                        if (changePasswordDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+                            Helper.showToast(Change_Password_Activity.this, changePasswordDM.getOutput().getMessage());
+                            finish();
+                        } else
+                            Helper.showToast(Change_Password_Activity.this, changePasswordDM.getOutput().getMessage());
+                    }
+
+                    @Override
+                    public void failure(RetrofitError retrofitError) {
+                        progress.dismiss();
+                        Log.e("error", retrofitError.toString());
+
+                    }
+                });
+            }
         }else
             Helper.showToast(Change_Password_Activity.this,getString(R.string.no_internet_connection));
     }

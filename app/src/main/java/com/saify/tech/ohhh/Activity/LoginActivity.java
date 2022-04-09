@@ -93,7 +93,8 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
                 Helper.showToast(LoginActivity.this,"kindly enter your password");
             }
 
-            else if (correct) {
+            else if (correct)
+            {
                 String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
                 progress = dialogUtil.showProgressDialog(LoginActivity.this, getString(R.string.please_wait));

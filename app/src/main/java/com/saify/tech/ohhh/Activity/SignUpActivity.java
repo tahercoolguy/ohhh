@@ -115,34 +115,34 @@ public class SignUpActivity extends AppCompatActivity implements Validator.Valid
 
         if(connectionDetector.isConnectingToInternet())
         {
-//            boolean correct =true;
-//            if(firstNameET.getText().toString().equalsIgnoreCase(""))
-//            {
-//                correct=false;
-//                Helper.showToast(SignUpActivity.this,"kindly enter your name");
-//            }
-//            else if(emailET.getText().toString().equalsIgnoreCase(""))
-//            {
-//                correct=false;
-//                Helper.showToast(SignUpActivity.this,"kindly enter your email");
-//            }
-//            else if (passwordET.getText().toString().equalsIgnoreCase("")){
-//                correct=false;
-//                Helper.showToast(SignUpActivity.this,"kindly enter your password");
-//            }
-//
-//            else if (confirmPasswordET.getText().toString().equalsIgnoreCase("")){
-//                correct=false;
-//                Helper.showToast(SignUpActivity.this,"kindly enter your confirm password");
-//            }
-//            else if (pinCodeTxt.getText().toString().equalsIgnoreCase("")) {
-//                correct=false;
-//                Helper.showToast(SignUpActivity.this,"kindly enter your country Code");
-//            }
-//            else if(mobileET.getText().toString().equalsIgnoreCase("")){
-//                correct=false;
-//                Helper.showToast(SignUpActivity.this,"kindly enter your mobile number");
-//            }
+            boolean correct =true;
+            if(firstNameET.getText().toString().equalsIgnoreCase(""))
+            {
+                correct=false;
+                Helper.showToast(SignUpActivity.this,"kindly enter your name");
+            }
+            else if(emailET.getText().toString().equalsIgnoreCase(""))
+            {
+                correct=false;
+                Helper.showToast(SignUpActivity.this,"kindly enter your email");
+            }
+            else if (passwordET.getText().toString().equalsIgnoreCase("")){
+                correct=false;
+                Helper.showToast(SignUpActivity.this,"kindly enter your password");
+            }
+
+            else if (confirmPasswordET.getText().toString().equalsIgnoreCase("")){
+                correct=false;
+                Helper.showToast(SignUpActivity.this,"kindly enter your confirm password");
+            }
+            else if (pinCodeTxt.getText().toString().equalsIgnoreCase("")) {
+                correct=false;
+                Helper.showToast(SignUpActivity.this,"kindly enter your country Code");
+            }
+            else if(mobileET.getText().toString().equalsIgnoreCase("")){
+                correct=false;
+                Helper.showToast(SignUpActivity.this,"kindly enter your mobile number");
+            }
 ////
 ////            else if(!checkboxCB.isChecked())
 ////            {
@@ -150,22 +150,20 @@ public class SignUpActivity extends AppCompatActivity implements Validator.Valid
 ////                Helper.showToast(SignUpActivity.this,"kindly read terms and conditions");
 ////            }
 
+            else if (correct) {
 
-            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
-                progress = dialogUtil.showProgressDialog(SignUpActivity.this,getString(R.string.please_wait));
+                progress = dialogUtil.showProgressDialog(SignUpActivity.this, getString(R.string.please_wait));
 
-                appController.paServices.SignUp(firstNameET.getText().toString(),"",emailET.getText().toString(), passwordET.getText().toString(),confirmPasswordET.getText().toString(), pinCodeTxt.getText().toString(),mobileET.getText().toString(), new Callback<SignUpDM>(){
+                appController.paServices.SignUp(firstNameET.getText().toString(), "", emailET.getText().toString(), passwordET.getText().toString(), confirmPasswordET.getText().toString(), pinCodeTxt.getText().toString(), mobileET.getText().toString(), new Callback<SignUpDM>() {
                     @Override
 
-                    public void success ( SignUpDM signUpDM, Response response )
-                    {
+                    public void success(SignUpDM signUpDM, Response response) {
                         progress.dismiss();
-                        if (signUpDM.getOutput().getSuccess().equalsIgnoreCase("1") )
-                        {
+                        if (signUpDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
-                        user.setId(Integer.valueOf(signUpDM.getOutput().getData().get(0).getId()));
-
+                            user.setId(Integer.valueOf(signUpDM.getOutput().getData().get(0).getId()));
 
 
                             startActivity(new Intent(SignUpActivity.this, VerifyActivity.class));
@@ -176,12 +174,13 @@ public class SignUpActivity extends AppCompatActivity implements Validator.Valid
                     }
 
                     @Override
-                    public void failure ( RetrofitError retrofitError ) {
+                    public void failure(RetrofitError retrofitError) {
                         progress.dismiss();
                         Log.e("error", retrofitError.toString());
 
                     }
                 });
+            }
 
         }else
             Helper.showToast(SignUpActivity.this,getString(R.string.no_internet_connection));
