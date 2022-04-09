@@ -104,6 +104,76 @@ public class Info {
 
     private String prepare_days;
 
+    private String ordering;
+
+    private String delivery_charges;
+
+    private String governates_id;
+
+    private String name;
+
+    private String ids;
+
+    private String title2;
+
+    private String title3;
+
+
+    public String getDelivery_charges() {
+        return delivery_charges;
+    }
+
+    public void setDelivery_charges(String delivery_charges) {
+        this.delivery_charges = delivery_charges;
+    }
+
+    public String getGovernates_id() {
+        return governates_id;
+    }
+
+    public void setGovernates_id(String governates_id) {
+        this.governates_id = governates_id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getIds() {
+        return ids;
+    }
+
+    public void setIds(String ids) {
+        this.ids = ids;
+    }
+
+    public String getTitle2() {
+        return title2;
+    }
+
+    public void setTitle2(String title2) {
+        this.title2 = title2;
+    }
+
+    public String getTitle3() {
+        return title3;
+    }
+
+    public void setTitle3(String title3) {
+        this.title3 = title3;
+    }
+
+    public String getOrdering() {
+        return ordering;
+    }
+
+    public void setOrdering(String ordering) {
+        this.ordering = ordering;
+    }
 
     public String getPrepare_mins() {
         return prepare_mins;
@@ -582,4 +652,13 @@ public class Info {
     {
         this.status = status;
     }
+
+
+
+
+
+
+
+
+
 }
