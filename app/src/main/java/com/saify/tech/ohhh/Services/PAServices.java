@@ -4,10 +4,12 @@ package com.saify.tech.ohhh.Services;
 //import io.opencensus.stats.Stats;
 
 
+import com.saify.tech.ohhh.DataModel.AreaDM;
 import com.saify.tech.ohhh.DataModel.BannerDM;
 import com.saify.tech.ohhh.DataModel.CatgoryListDM;
 import com.saify.tech.ohhh.DataModel.ChangePasswordDM;
 import com.saify.tech.ohhh.DataModel.EventsDM;
+import com.saify.tech.ohhh.DataModel.GovernatesDM;
 import com.saify.tech.ohhh.DataModel.LoginDM;
 import com.saify.tech.ohhh.DataModel.NewsDM;
 import com.saify.tech.ohhh.DataModel.ProductsBycatIdDM;
@@ -97,26 +99,39 @@ public interface PAServices {
                        Callback<ChangePasswordDM> changePasswordDMCallback);
 
     //4
-    @GET("/ohhh/webservices/ohhh/catgorylist")
+    @GET("/ohhh/catgorylist")
     public void CatgoryList(Callback<CatgoryListDM> catgoryListDMCallback);
 
 
     //5
-    @GET("/ohhh/webservices/ohhh/shops")
+    @GET("/ohhh/shops")
     public void ohhhShops(Callback<ShopsDM> shopsDMCallback);
 
     //6
     @FormUrlEncoded
-    @POST("/ohhh/webservices/ohhh/ShopsBycatId")
+    @POST("/ohhh/ShopsBycatId")
     public void ShopsBycatId(@Field("cat_id") String cat_id,
                                Callback<ShopsBycatIdDM> shopsBycatIdDMCallback);
 
 
     //7
     @FormUrlEncoded
-    @POST("/ohhh/webservices/ohhh/ProductsBycatId")
+    @POST("/ohhh/ProductsBycatId")
     public void ProductsBycatId(@Field("cat_id") String cat_id,
                                Callback<ProductsBycatIdDM> productsBycatIdDMCallback);
+
+
+    //8
+    @GET("/ohhh/governates")
+    public void Governates(Callback<GovernatesDM> governatesDMCallback);
+
+    //9
+    @FormUrlEncoded
+    @POST("/ohhh/area")
+    public void Area(@Field("governates_id") String governates_id,
+                     Callback<AreaDM> areaDMCallback);
+
+
 
 
 
