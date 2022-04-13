@@ -17,27 +17,30 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.saify.tech.ohhh.Activity.Food_Details_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.DataModel.HistoryDM;
+import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.OrderDM;
+import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.ShopssDM;
 import com.saify.tech.ohhh.Fragments.Deep_and_Deep_1_Fragment;
 import com.saify.tech.ohhh.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class Shopss_Adapter extends RecyclerView.Adapter<Shopss_Adapter.Programming_AdapterViewHolder> {
 
     private Context context;
-    private ArrayList<ShopssDM> shopssDMS;
+    private ArrayList<Info> arrayList;
 
-    public Shopss_Adapter(Context context, ArrayList<ShopssDM> shopssDMS) {
+    public Shopss_Adapter(Context context, ArrayList<Info> arrayList) {
         this.context = context;
-        this.shopssDMS = shopssDMS;
+        this.arrayList = arrayList;
     }
 
-    public Shopss_Adapter(ArrayList<ShopssDM> shopssDMS) {
+    public Shopss_Adapter(ArrayList<Info> arrayList) {
     }
 
-    public Shopss_Adapter(MainActivity context, ArrayList<ShopssDM> shopssDMS) {
+    public Shopss_Adapter(MainActivity context, ArrayList<Info> arrayList) {
     }
 
     @NonNull
@@ -51,13 +54,21 @@ public class Shopss_Adapter extends RecyclerView.Adapter<Shopss_Adapter.Programm
     @Override
     public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, int position) {
 
-        ShopssDM shopssDM = shopssDMS.get(position);
+        Info info= arrayList.get(position);
 
-        holder.ratingstar.setText(shopssDM.getRating_star());
-        holder.ratingcounting.setText(shopssDM.getRating_count());
-        holder.dip_and_dip.setText(shopssDM.getDip_and_dip());
-        holder.free_delivry.setText(shopssDM.getFree_delivery());
-        holder.minutes_time.setText(shopssDM.getDelivery_time());
+
+        holder.dip_and_dip.setText(info.getShop_name_en());
+        if(!info.getImage().equalsIgnoreCase(""))
+        {
+            Picasso.with(context).load(info.getImage()).into(holder.cakeshopimg);
+        }
+
+
+//        holder.ratingstar.setText(Info.getRating_star());
+//        holder.ratingcounting.setText(Info.getRating_count());
+
+//        holder.free_delivry.setText(shopssDM.getFree_delivery());
+//        holder.minutes_time.setText(shopssDM.getDelivery_time());
 
 
         holder.delivery_boy.setImageResource(R.drawable.ic_delivery_boy);
@@ -71,20 +82,18 @@ public class Shopss_Adapter extends RecyclerView.Adapter<Shopss_Adapter.Programm
 
               }
         });
-
-
     }
 
     @Override
     public int getItemCount() {
-        return shopssDMS.size();
+        return arrayList.size();
     }
 
     public class Programming_AdapterViewHolder extends RecyclerView.ViewHolder {
 
         TextView ratingstar,ratingcounting,dip_and_dip,free_delivry,minutes_time;
 //        Button desert,kuwaiti;
-        ImageView star,delivery_boy,time_img;
+        ImageView star,delivery_boy,time_img,cakeshopimg;
 //        LinearLayout like;
 
         RelativeLayout shop_cake_Rl;
@@ -102,7 +111,7 @@ public class Shopss_Adapter extends RecyclerView.Adapter<Shopss_Adapter.Programm
 //            like = (LinearLayout) itemView.findViewById(R.id.like_LL);
             delivery_boy = (ImageView) itemView.findViewById(R.id.dlivery_Img);
             time_img = (ImageView) itemView.findViewById(R.id.timer_delivery);
-
+            cakeshopimg=(ImageView) itemView.findViewById(R.id.cake_shop_img1111);
             shop_cake_Rl=itemView.findViewById(R.id.shop_cake_Rl);
 
 //            desert=(Button) itemView.findViewById(R.id.desert_Btn);
@@ -110,3 +119,4 @@ public class Shopss_Adapter extends RecyclerView.Adapter<Shopss_Adapter.Programm
         }
     }
 }
+

@@ -69,7 +69,7 @@ public class Category_Fragment extends Fragment {
             idMapping();
 
             setClickListeners();
-//            setDetails();
+ //           setDetails();
 
 
             ArrayList<Feed_CategoriesDM> feed_categoriesDMS = new ArrayList<>();
@@ -152,4 +152,5 @@ public class Category_Fragment extends Fragment {
         super.onPrepareOptionsMenu(menu);
         menu.findItem(R.id.action_back).setVisible(false);
     }
+
 }

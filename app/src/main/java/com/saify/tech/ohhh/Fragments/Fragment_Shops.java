@@ -1,5 +1,6 @@
 package com.saify.tech.ohhh.Fragments;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -25,7 +26,11 @@ import com.saify.tech.ohhh.Activity.Cart_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.Adapter.Shopss_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.CatgoryListDM;
+import com.saify.tech.ohhh.DataModel.ShopsDM;
 import com.saify.tech.ohhh.DataModel.ShopssDM;
+import com.saify.tech.ohhh.Helper.DialogUtil;
+import com.saify.tech.ohhh.Helper.Helper;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
 
@@ -35,11 +40,20 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import it.sephiroth.android.library.widget.HListView;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class Fragment_Shops extends Fragment {
 
     private View rootView;
     private Context context;
+
+    AppController appController;
+    ConnectionDetector connectionDetector;
+    ProgressDialog progressDialog;
+//    DialogUtil dialogUtil;
+//    Dialog progress;
 
     @NotEmpty
     @BindView(R.id.shopss_Rcv)
@@ -66,9 +80,8 @@ public class Fragment_Shops extends Fragment {
 //
 //    @BindView(R.id.layout_parent) LinearLayout layout_parent;
     private HListView lst_latest_profiles, lst_latest_news, lst_featured_video;
-    AppController appController;
-    ConnectionDetector connectionDetector;
-    ProgressDialog progressDialog;
+
+
 
 
     @Nullable
@@ -98,34 +111,59 @@ public class Fragment_Shops extends Fragment {
     private void idMapping() {
 
 
-        ArrayList<ShopssDM> shopssDMS = new ArrayList<>();
-
-        shopssDMS.add(new ShopssDM("4.5","(25+)","Dip n Dip","Free delivery",
-                "10-15 mins","","",R.drawable.ic_delivery_boy,
-                R.drawable.ic_time,"", R.drawable.home_cake_1, R.drawable.ic_rating_star));
-
-        shopssDMS.add(new ShopssDM("4.5","(25+)","Dip n Dip","Free delivery",
-                "10-15 mins","","",R.drawable.ic_delivery_boy,
-                R.drawable.ic_time,"", R.drawable.home_cake_1, R.drawable.ic_rating_star));
-
-        shopssDMS.add(new ShopssDM("4.5","(25+)","Dip n Dip","Free delivery",
-                "10-15 mins","","",R.drawable.ic_delivery_boy,
-                R.drawable.ic_time,"", R.drawable.home_cake_1, R.drawable.ic_rating_star));
-
-        shopssDMS.add(new ShopssDM("4.5","(25+)","Dip n Dip","Free delivery",
-                "10-15 mins","","",R.drawable.ic_delivery_boy,
-                R.drawable.ic_time,"", R.drawable.home_cake_1, R.drawable.ic_rating_star));
-
-
+//        ArrayList<ShopssDM> shopssDMS = new ArrayList<>();
+//
+//        shopssDMS.add(new ShopssDM("4.5","(25+)","Dip n Dip","Free delivery",
+//                "10-15 mins","","",R.drawable.ic_delivery_boy,
+//                R.drawable.ic_time,"", R.drawable.home_cake_1, R.drawable.ic_rating_star));
+//
+//        shopssDMS.add(new ShopssDM("4.5","(25+)","Dip n Dip","Free delivery",
+//                "10-15 mins","","",R.drawable.ic_delivery_boy,
+//                R.drawable.ic_time,"", R.drawable.home_cake_1, R.drawable.ic_rating_star));
+//
+//        shopssDMS.add(new ShopssDM("4.5","(25+)","Dip n Dip","Free delivery",
+//                "10-15 mins","","",R.drawable.ic_delivery_boy,
+//                R.drawable.ic_time,"", R.drawable.home_cake_1, R.drawable.ic_rating_star));
+//
+//        shopssDMS.add(new ShopssDM("4.5","(25+)","Dip n Dip","Free delivery",
+//                "10-15 mins","","",R.drawable.ic_delivery_boy,
+//                R.drawable.ic_time,"", R.drawable.home_cake_1, R.drawable.ic_rating_star));
 
 
-        Shopss_Adapter dm = new Shopss_Adapter(context, shopssDMS);
-        LinearLayoutManager l = new LinearLayoutManager(context);
-        Shopss_Rcv.setLayoutManager(l);
-        Shopss_Rcv.setAdapter(dm);
+
+        if(connectionDetector.isConnectingToInternet())
+        {
+//            progress = dialogUtil.showProgressDialog(getActivity(),getString(R.string.please_wait));
+            appController.paServices.ohhhShops(new Callback<ShopsDM>() {
+                @Override
+                public void success(ShopsDM shopsDM, Response response) {
+ //                   progress.dismiss();
+                    if(shopsDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
 
+
+
+             Shopss_Adapter dm = new Shopss_Adapter(context, shopsDM.getOutput().getInfo());
+             LinearLayoutManager l = new LinearLayoutManager(context);
+             Shopss_Rcv.setLayoutManager(l);
+             Shopss_Rcv.setAdapter(dm);
+
+                    }else
+                        Helper.showToast(getActivity(),shopsDM.getOutput().getMessage());
+                }
+
+                @Override
+                public void failure(RetrofitError retrofitError) {
+//                    progress.dismiss();
+
+                }
+            });
+        }else
+            Helper.showToast(getActivity(),getString(R.string.no_internet_connection));
     }
+
+
+
 
 
 
