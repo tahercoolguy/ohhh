@@ -39,8 +39,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/my_shadow_back_button"
-                        ></ImageView>
+                        android:background="@drawable/my_shadow_back_button"></ImageView>
 
                     <ImageView
                         android:layout_width="wrap_content"

@@ -11,6 +11,7 @@ import com.saify.tech.ohhh.DataModel.ChangePasswordDM;
 import com.saify.tech.ohhh.DataModel.EventsDM;
 import com.saify.tech.ohhh.DataModel.GovernatesDM;
 import com.saify.tech.ohhh.DataModel.LoginDM;
+import com.saify.tech.ohhh.DataModel.MyprofileDM;
 import com.saify.tech.ohhh.DataModel.NewsDM;
 import com.saify.tech.ohhh.DataModel.ProductsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.RestaurentDM;
@@ -131,7 +132,11 @@ public interface PAServices {
     public void Area(@Field("governates_id") String governates_id,
                      Callback<AreaDM> areaDMCallback);
 
-
+     //9
+     @FormUrlEncoded
+     @POST("/ohhh/Myprofile")
+     public void Myprofile(@Field("user_id") String user_id,
+                  Callback<MyprofileDM> myprofileDMCallback);
 
 
 

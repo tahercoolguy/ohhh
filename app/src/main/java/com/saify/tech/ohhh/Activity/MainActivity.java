@@ -187,9 +187,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (ifHome2) {
 
-            home.setBackground(getDrawable(R.drawable.ic___unselected1));
-            categories.setBackground(getDrawable(R.drawable.ic___selected2));
-            shop.setBackground(getDrawable(R.drawable.ic___unselected3));
+             home.setBackground(getDrawable(R.drawable.ic___unselected1));
+             categories.setBackground(getDrawable(R.drawable.ic___selected2));
+             shop.setBackground(getDrawable(R.drawable.ic___unselected3));
             account.setBackground(getDrawable(R.drawable.ic___unselected4));
 
 

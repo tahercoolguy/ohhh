@@ -154,6 +154,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
     <string name="feed">Feed</string>
     <string name="categories">Categories</string>
     <string name="suncategory">Subcategory</string>
+    <string name="my_profile">My Profile</string>
 
 
 </resources>

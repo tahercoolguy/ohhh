@@ -119,6 +119,98 @@ public class Info {
     private String title3;
 
 
+    private String date;
+    private String fname;
+    private String gender;
+    private String device_id;
+    private String countrycode;
+    private String language;
+    private String lname;
+    private String phone;
+    private String secretcode;
+    private String username;
+
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getFname() {
+        return fname;
+    }
+
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getDevice_id() {
+        return device_id;
+    }
+
+    public void setDevice_id(String device_id) {
+        this.device_id = device_id;
+    }
+
+    public String getCountrycode() {
+        return countrycode;
+    }
+
+    public void setCountrycode(String countrycode) {
+        this.countrycode = countrycode;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public String getLname() {
+        return lname;
+    }
+
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getSecretcode() {
+        return secretcode;
+    }
+
+    public void setSecretcode(String secretcode) {
+        this.secretcode = secretcode;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getDelivery_charges() {
         return delivery_charges;
     }

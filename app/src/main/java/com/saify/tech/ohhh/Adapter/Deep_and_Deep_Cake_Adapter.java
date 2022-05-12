@@ -18,7 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.saify.tech.ohhh.DataModel.Deep_and_Deep_CakeDM;
 import com.saify.tech.ohhh.DataModel.Feed_CategoriesDM;
+import com.saify.tech.ohhh.DataModel.Deep_and_Deep_CakeDM;
 import com.saify.tech.ohhh.R;
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -28,12 +30,12 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
 
 
     private Context context;
-    private ArrayList<Deep_and_Deep_CakeDM> deep_and_deep_cakeDMS;
+    private ArrayList<Deep_and_Deep_CakeDM> arrayList;
     int row_index = 0;
 
-    public Deep_and_Deep_Cake_Adapter(Context context, ArrayList<Deep_and_Deep_CakeDM> deep_and_deep_cakeDMS) {
+    public Deep_and_Deep_Cake_Adapter(Context context, ArrayList<Deep_and_Deep_CakeDM> arraylist) {
         this.context = context;
-        this.deep_and_deep_cakeDMS = deep_and_deep_cakeDMS;
+        this.arrayList =arraylist;
     }
 
 
@@ -48,9 +50,14 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
     @Override
     public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
-        Deep_and_Deep_CakeDM deep_and_deep_cakeDM = deep_and_deep_cakeDMS.get(position);
+        Deep_and_Deep_CakeDM deep_and_deep_cakeDM= arrayList.get(position);
 
-        holder.cakeImg.setImageResource(deep_and_deep_cakeDM.getCake_img());
+//        if(!Deep_and_Deep_CakeDM.getImage().equalsIgnoreCase(""))
+//        {
+//            Picasso.with(context).load(Deep_and_Deep_CakeDM.getImage()).into(holder.cakeImg);
+//        }
+
+              holder.cakeImg.setImageResource(deep_and_deep_cakeDM.getCake_img());
         holder.cakename.setText(deep_and_deep_cakeDM.getCake_name());
 
         holder.linearLL.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +77,7 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
         });
         if (row_index == position) {
             holder.cakename.setTextColor(Color.parseColor("#FFFFFFFF"));
-            holder.cake_deep_and_deepRL.setBackgroundResource(R.drawable.rounded_corner_deep_deep_cake);
+            holder.cake_deep_and_deepRL.setBackgroundResource(R.drawable.boarder_shape);
         }else {
             holder.cakename.setTextColor(Color.parseColor("#E67826"));
 
@@ -81,7 +88,7 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
 
     @Override
     public int getItemCount() {
-        return deep_and_deep_cakeDMS.size();
+        return arrayList.size();
     }
 
     public class Programming_AdapterViewHolder extends RecyclerView.ViewHolder {

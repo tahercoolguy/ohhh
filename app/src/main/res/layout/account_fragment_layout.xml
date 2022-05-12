@@ -342,6 +342,60 @@
                         </ImageView>
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:id="@+id/myProfileLL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+
+                        android:orientation="horizontal">
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:background="@drawable/my_shadow"
+                            android:padding="4dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/circle_white"></ImageView>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_ch_password"></ImageView>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/myProfile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:layout_weight="0.6"
+                            android:text="@string/my_profile"
+                            android:textColor="@color/black">
+
+                        </TextView>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/ic_foward">
+
+                        </ImageView>
+                    </LinearLayout>
+
+
 
                 </LinearLayout>
 

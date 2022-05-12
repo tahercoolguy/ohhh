@@ -30,6 +30,9 @@ import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.Deep_and_Deep_CakeDM;
 import com.saify.tech.ohhh.DataModel.Feed_CategoriesDM;
 import com.saify.tech.ohhh.DataModel.OffersDM;
+import com.saify.tech.ohhh.DataModel.ShopsBycatIdDM;
+import com.saify.tech.ohhh.DataModel.ShopsDM;
+import com.saify.tech.ohhh.Helper.Helper;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
 
@@ -39,6 +42,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import it.sephiroth.android.library.widget.HListView;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class Deep_and_Deep_1_Fragment extends Fragment {
 
@@ -142,11 +148,37 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
         deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "kunafa",R.drawable.kunafa));
         deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "baklava",R.drawable.baklava));
 
-        Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, deep_and_deep_cakeDMS);
+//
+//        if(connectionDetector.isConnectingToInternet())
+//        {
+////            progress = dialogUtil.showProgressDialog(getActivity(),getString(R.string.please_wait));
+//            appController.paServices.ShopsBycatId(cat_id,new Callback<ShopsBycatIdDM>() {
+//                @Override
+//                public void success(ShopsBycatIdDM shopsBycatIdDM, Response response) {
+//                    //                   progress.dismiss();
+//                    if(shopsBycatIdDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
+
+        Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, deep_and_deep_cakeDMS);
         LinearLayoutManager l = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
         dip_and_dip_cake_1_Rcv.setLayoutManager(l);
         dip_and_dip_cake_1_Rcv.setAdapter(dm);
+
+//
+//                    }else
+//                        Helper.showToast(getActivity(),shopsBycatIdDM.getOutput().getMessage());
+//                }
+//
+//                @Override
+//                public void failure(RetrofitError retrofitError) {
+////                    progress.dismiss();
+//
+//                }
+//            });
+//        }else
+//            Helper.showToast(getActivity(),getString(R.string.no_internet_connection));
+//
+//
 
     }
 
