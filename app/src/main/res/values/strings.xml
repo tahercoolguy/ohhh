@@ -155,6 +155,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
     <string name="categories">Categories</string>
     <string name="suncategory">Subcategory</string>
     <string name="my_profile">My Profile</string>
+    <string name="Phone">Phone</string>
 
 
 </resources>

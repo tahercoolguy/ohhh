@@ -204,9 +204,47 @@
 
 
             </EditText>
-
-
         </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/Phone"></TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/pinCodeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/cutum_select_1"
+                android:padding="15dp"
+                android:textSize="@dimen/text_size_normal"
+                android:hint="+1">
+
+            </EditText>
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:textSize="@dimen/text_size_normal"
+                android:id="@+id/mobileET"
+                android:background="@drawable/cutum_select_1"
+                android:padding="15dp"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:layout_height="wrap_content"></EditText>
+
+
+        </LinearLayout>
+
 
         <TextView
             android:id="@+id/save_Btn"

@@ -18,6 +18,7 @@ import com.saify.tech.ohhh.DataModel.RestaurentDM;
 import com.saify.tech.ohhh.DataModel.ShopsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.ShopsDM;
 import com.saify.tech.ohhh.DataModel.SignUpDM;
+import com.saify.tech.ohhh.DataModel.UpdateProfileDM;
 import com.saify.tech.ohhh.DataModel.VideoDM;
 
 import retrofit.Callback;
@@ -138,6 +139,14 @@ public interface PAServices {
      public void Myprofile(@Field("user_id") String user_id,
                   Callback<MyprofileDM> myprofileDMCallback);
 
-
+      //10
+      @FormUrlEncoded
+      @POST("/ohhh/UpdateProfile")
+      public void UpdateProfile(@Field("user_id") String user_id,
+                                @Field("fname") String fname,
+                                @Field("lname") String lname,
+                                @Field("phone") String phone,
+                                @Field("email") String email,
+                       Callback<UpdateProfileDM> updateProfileDMCallback);
 
 }
