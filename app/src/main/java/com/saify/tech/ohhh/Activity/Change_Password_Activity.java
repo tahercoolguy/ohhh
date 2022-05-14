@@ -112,7 +112,7 @@ public class Change_Password_Activity extends AppCompatActivity implements Valid
                         progress.dismiss();
                         if (changePasswordDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
-                            Helper.showToast(Change_Password_Activity.this, changePasswordDM.getOutput().getMessage());
+                            Helper.showToast(Change_Password_Activity.this, "Change Password Successfully");
                             finish();
                         } else
                             Helper.showToast(Change_Password_Activity.this, changePasswordDM.getOutput().getMessage());
