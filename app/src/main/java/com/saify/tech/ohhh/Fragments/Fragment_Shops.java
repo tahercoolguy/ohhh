@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -155,6 +156,8 @@ public class Fragment_Shops extends Fragment {
                 @Override
                 public void failure(RetrofitError retrofitError) {
 //                    progress.dismiss();
+
+                    Log.e("error", retrofitError.toString());
 
                 }
             });

@@ -2,18 +2,13 @@ package com.saify.tech.ohhh.DataModel;
 
 public class UpdateProfileDM {
 
-    private Output output;
+    private OutputNew output;
 
-    public Output getOutput() {
-
+    public OutputNew getOutput() {
         return output;
-
     }
 
-    public void setOutput(Output output) {
-
+    public void setOutput(OutputNew output) {
         this.output = output;
-
     }
-
 }
