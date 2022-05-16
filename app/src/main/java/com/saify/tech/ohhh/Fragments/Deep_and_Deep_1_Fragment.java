@@ -1,5 +1,6 @@
 package com.saify.tech.ohhh.Fragments;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -27,11 +28,13 @@ import com.saify.tech.ohhh.Adapter.Deep_and_Deep_Cake_Adapter;
 import com.saify.tech.ohhh.Adapter.Feed_Categories_Adapter;
 import com.saify.tech.ohhh.Adapter.Offers_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.CatgoryListDM;
 import com.saify.tech.ohhh.DataModel.Deep_and_Deep_CakeDM;
 import com.saify.tech.ohhh.DataModel.Feed_CategoriesDM;
 import com.saify.tech.ohhh.DataModel.OffersDM;
 import com.saify.tech.ohhh.DataModel.ShopsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.ShopsDM;
+import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.Helper;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
@@ -64,8 +67,8 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     @BindView(R.id.sub_category_1_Rcv)
     RecyclerView sub_category_1_Rcv;
 
-    @BindView(R.id.sub_category_2_Rcv)
-    RecyclerView sub_category_2_Rcv;
+//    @BindView(R.id.sub_category_2_Rcv)
+//    RecyclerView sub_category_2_Rcv;
 
     @BindView(R.id.back_dip_1RL)
     RelativeLayout back;
@@ -90,6 +93,8 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     AppController appController;
     ConnectionDetector connectionDetector;
     ProgressDialog progressDialog;
+    Dialog progress;
+    DialogUtil dialogUtil;
 
     @Nullable
     @Override
@@ -109,7 +114,7 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
             ButterKnife.bind(this,rootView);
             idMapping();
 
-            Subcaegry_2();
+//            Subcaegry_2();
 
             setClickListeners();
             setDetails();
@@ -117,68 +122,66 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
         return rootView;
     }
 
-    private void Subcaegry_2() {
-
-        ArrayList<Feed_CategoriesDM> feed_categoriesDMS2 = new ArrayList<>();
-        feed_categoriesDMS2.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_2_cake_1));
-        feed_categoriesDMS2.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_2_cake_2));
-        feed_categoriesDMS2.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_2_cake_3));
-        feed_categoriesDMS2.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_2_cake_4));
-
-        Feed_Categories_Adapter dm2 = new Feed_Categories_Adapter(context, feed_categoriesDMS2);
-        sub_category_2_Rcv.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
-        sub_category_2_Rcv.setAdapter(dm2);
-    }
+//    private void Subcaegry_2() {
+//
+//        ArrayList<Feed_CategoriesDM> feed_categoriesDMS2 = new ArrayList<>();
+//        feed_categoriesDMS2.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_2_cake_1));
+//        feed_categoriesDMS2.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_2_cake_2));
+//        feed_categoriesDMS2.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_2_cake_3));
+//        feed_categoriesDMS2.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_2_cake_4));
+//
+//        Feed_Categories_Adapter dm2 = new Feed_Categories_Adapter(context, feed_categoriesDMS2);
+//        sub_category_2_Rcv.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+//        sub_category_2_Rcv.setAdapter(dm2);
+//    }
 
     private void idMapping() {
 
-        ArrayList<Deep_and_Deep_CakeDM> deep_and_deep_cakeDMS = new ArrayList<>();
-
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Cake",R.drawable.cake));
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Donat",R.drawable.cke_1));
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Pastries",R.drawable.cupcake));
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Custards",R.drawable.pudding));
-         deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "kunafa",R.drawable.kunafa));
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "baklava",R.drawable.baklava));
-
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Cake",R.drawable.cake));
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Donat",R.drawable.cke_1));
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Pastries",R.drawable.cupcake));
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Custards",R.drawable.pudding));
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "kunafa",R.drawable.kunafa));
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "baklava",R.drawable.baklava));
-
+//        ArrayList<Deep_and_Deep_CakeDM> deep_and_deep_cakeDMS = new ArrayList<>();
 //
-//        if(connectionDetector.isConnectingToInternet())
-//        {
-////            progress = dialogUtil.showProgressDialog(getActivity(),getString(R.string.please_wait));
-//            appController.paServices.ShopsBycatId(cat_id,new Callback<ShopsBycatIdDM>() {
-//                @Override
-//                public void success(ShopsBycatIdDM shopsBycatIdDM, Response response) {
-//                    //                   progress.dismiss();
-//                    if(shopsBycatIdDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Cake",R.drawable.cake));
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Donat",R.drawable.cke_1));
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Pastries",R.drawable.cupcake));
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Custards",R.drawable.pudding));
+//         deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "kunafa",R.drawable.kunafa));
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "baklava",R.drawable.baklava));
+//
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Cake",R.drawable.cake));
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Donat",R.drawable.cke_1));
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Pastries",R.drawable.cupcake));
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Custards",R.drawable.pudding));
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "kunafa",R.drawable.kunafa));
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "baklava",R.drawable.baklava));
 
 
-        Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, deep_and_deep_cakeDMS);
+        if(connectionDetector.isConnectingToInternet())
+        {
+//            progress = dialogUtil.showProgressDialog(getActivity(),getString(R.string.please_wait));
+            appController.paServices.CatgoryList(new Callback<CatgoryListDM>() {
+                @Override
+                public void success(CatgoryListDM catgoryListDM, Response response) {
+                    //                   progress.dismiss();
+                    if(catgoryListDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+
+        Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, catgoryListDM.getOutput().getData());
         LinearLayoutManager l = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
         dip_and_dip_cake_1_Rcv.setLayoutManager(l);
         dip_and_dip_cake_1_Rcv.setAdapter(dm);
 
-//
-//                    }else
-//                        Helper.showToast(getActivity(),shopsBycatIdDM.getOutput().getMessage());
-//                }
-//
-//                @Override
-//                public void failure(RetrofitError retrofitError) {
-////                    progress.dismiss();
-//
-//                }
-//            });
-//        }else
-//            Helper.showToast(getActivity(),getString(R.string.no_internet_connection));
-//
-//
+
+                    }else
+                        Helper.showToast(getActivity(),catgoryListDM.getOutput().getMessage());
+                }
+
+                @Override
+                public void failure(RetrofitError retrofitError) {
+                    progress.dismiss();
+
+                }
+            });
+        }else
+            Helper.showToast(getActivity(),getString(R.string.no_internet_connection));
 
     }
 

@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
+import com.saify.tech.ohhh.DataModel.Data;
 import com.saify.tech.ohhh.DataModel.Deep_and_Deep_CakeDM;
 import com.saify.tech.ohhh.DataModel.Feed_CategoriesDM;
 import com.saify.tech.ohhh.DataModel.Deep_and_Deep_CakeDM;
@@ -30,10 +31,10 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
 
 
     private Context context;
-    private ArrayList<Deep_and_Deep_CakeDM> arrayList;
+    private ArrayList<Data> arrayList;
     int row_index = 0;
 
-    public Deep_and_Deep_Cake_Adapter(Context context, ArrayList<Deep_and_Deep_CakeDM> arraylist) {
+    public Deep_and_Deep_Cake_Adapter(Context context, ArrayList<Data> arraylist) {
         this.context = context;
         this.arrayList =arraylist;
     }
@@ -50,15 +51,15 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
     @Override
     public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
-        Deep_and_Deep_CakeDM deep_and_deep_cakeDM= arrayList.get(position);
+        Data data= arrayList.get(position);
 
 //        if(!Deep_and_Deep_CakeDM.getImage().equalsIgnoreCase(""))
 //        {
 //            Picasso.with(context).load(Deep_and_Deep_CakeDM.getImage()).into(holder.cakeImg);
 //        }
 
-              holder.cakeImg.setImageResource(deep_and_deep_cakeDM.getCake_img());
-        holder.cakename.setText(deep_and_deep_cakeDM.getCake_name());
+//              holder.cakeImg.setImageResource(deep_and_deep_cakeDM.getCake_img());
+        holder.cakename.setText(data.getTitle_en());
 
         holder.linearLL.setOnClickListener(new View.OnClickListener() {
             @Override

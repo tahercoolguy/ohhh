@@ -121,21 +121,21 @@ public class Deep_and_Deep_2_Fragment extends Fragment {
 
     private void idMapping() {
 
-        ArrayList<Deep_and_Deep_CakeDM> deep_and_deep_cakeDMS = new ArrayList<>();
-
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Cake",R.drawable.cake));
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Donat",R.drawable.cke_1));
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Pastries",R.drawable.cupcake));
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Custards",R.drawable.pudding));
-
-
-        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "baklava",R.drawable.baklava));
-
-        Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, deep_and_deep_cakeDMS);
-
-        LinearLayoutManager l = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-        dip_and_dip_cake_1_Rcv.setLayoutManager(l);
-        dip_and_dip_cake_1_Rcv.setAdapter(dm);
+//        ArrayList<Deep_and_Deep_CakeDM> deep_and_deep_cakeDMS = new ArrayList<>();
+//
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Cake",R.drawable.cake));
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Donat",R.drawable.cke_1));
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Pastries",R.drawable.cupcake));
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "Custards",R.drawable.pudding));
+//
+//
+//        deep_and_deep_cakeDMS.add(new Deep_and_Deep_CakeDM( "baklava",R.drawable.baklava));
+//
+//        Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, deep_and_deep_cakeDMS);
+//
+//        LinearLayoutManager l = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+//        dip_and_dip_cake_1_Rcv.setLayoutManager(l);
+//        dip_and_dip_cake_1_Rcv.setAdapter(dm);
     }
 
     private void setClickListeners() {
