@@ -2,17 +2,13 @@ package com.saify.tech.ohhh.DataModel;
 
 public class ShopsBycatIdDM {
 
-    private Output output;
+    private OutputShopByCID output;
 
-    public Output getOutput ()
-    {
+    public OutputShopByCID getOutput() {
         return output;
     }
 
-    public void setOutput (Output output)
-    {
+    public void setOutput(OutputShopByCID output) {
         this.output = output;
     }
-
-
 }

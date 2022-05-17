@@ -4,8 +4,7 @@
     android:background="@color/white"
 
     android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
-     >
+    android:animateLayoutChanges="true">
 
 
     <LinearLayout
@@ -225,7 +224,7 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-
+                     android:id="@+id/subCategory"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"
@@ -238,7 +237,8 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/sub_category_1_Rcv"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="100dp">
 
                 </androidx.recyclerview.widget.RecyclerView>
 

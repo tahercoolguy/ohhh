@@ -2,6 +2,7 @@ package com.saify.tech.ohhh.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.Image;
 import android.view.LayoutInflater;
@@ -11,8 +12,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
@@ -20,6 +23,8 @@ import com.saify.tech.ohhh.DataModel.Data;
 import com.saify.tech.ohhh.DataModel.Deep_and_Deep_CakeDM;
 import com.saify.tech.ohhh.DataModel.Feed_CategoriesDM;
 import com.saify.tech.ohhh.DataModel.Deep_and_Deep_CakeDM;
+import com.saify.tech.ohhh.Fragments.Deep_and_Deep_1_Fragment;
+import com.saify.tech.ohhh.Helper.Helper;
 import com.saify.tech.ohhh.R;
 import com.squareup.picasso.Picasso;
 
@@ -33,10 +38,14 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
     private Context context;
     private ArrayList<Data> arrayList;
     int row_index = 0;
+    Intent intent;
 
-    public Deep_and_Deep_Cake_Adapter(Context context, ArrayList<Data> arraylist) {
+    Deep_and_Deep_1_Fragment deep_and_deep_1_fragment;
+
+    public Deep_and_Deep_Cake_Adapter(Context context, ArrayList<Data> arraylist, Deep_and_Deep_1_Fragment deep) {
         this.context = context;
         this.arrayList =arraylist;
+        this.deep_and_deep_1_fragment  = deep;
     }
 
 
@@ -61,24 +70,23 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
 //              holder.cakeImg.setImageResource(deep_and_deep_cakeDM.getCake_img());
         holder.cakename.setText(data.getTitle_en());
 
+
         holder.linearLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 row_index = position;
+                deep_and_deep_1_fragment.setClickListeners(data.getId());
                 notifyDataSetChanged();
-//                if (position == 0) {
-//
-//                    holder.cakename.setTextColor(Color.parseColor("#FFFFFFFF"));
-//                    holder.cake_deep_and_deepRL.setBackgroundResource(R.drawable.rounded_corner_deep_deep_cake);
-//                } else if(position==1){
-//                    holder.cakename.setTextColor(Color.parseColor("#FFFFFFFF"));
-//                    holder.cake_deep_and_deepRL.setBackgroundResource(R.drawable.rounded_corner_deep_deep_cake);
-//                }
+
+
             }
         });
+
         if (row_index == position) {
             holder.cakename.setTextColor(Color.parseColor("#FFFFFFFF"));
-            holder.cake_deep_and_deepRL.setBackgroundResource(R.drawable.boarder_shape);
+            holder.cake_deep_and_deepRL.setBackgroundResource(R.drawable.rounded_corner_deep_deep_cake);
+
+
         }else {
             holder.cakename.setTextColor(Color.parseColor("#E67826"));
 
@@ -105,7 +113,7 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
             cakename = (TextView) itemView.findViewById(R.id.cake_name_deep_Txt);
             cakeImg = itemView.findViewById(R.id.cake_deep_Img);
             cake_deep_and_deepRL = itemView.findViewById(R.id.cake_deep_and_deepRL);
-            linearLL = itemView.findViewById(R.id.linearLL);
+            linearLL = itemView.findViewById(R.id.linearLLll);
         }
     }
 }

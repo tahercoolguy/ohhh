@@ -4,7 +4,9 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.icu.text.Transliterator;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -26,6 +28,7 @@ import com.saify.tech.ohhh.Activity.Cart_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.Adapter.Deep_and_Deep_Cake_Adapter;
 import com.saify.tech.ohhh.Adapter.Feed_Categories_Adapter;
+import com.saify.tech.ohhh.Adapter.Feed_Categories_Adapter11;
 import com.saify.tech.ohhh.Adapter.Offers_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.CatgoryListDM;
@@ -53,6 +56,7 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
 
     private View rootView;
     private Context context;
+    Intent intent;
 
     @BindView(R.id.progress_bar) ProgressBar progress_bar;
     @BindView(R.id.txt_error) TextView txt_error;
@@ -72,6 +76,10 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
 
     @BindView(R.id.back_dip_1RL)
     RelativeLayout back;
+
+    @BindView(R.id.subCategory)
+    TextView subCategory;
+
 
     @BindView(R.id.cart_dip_1)
     RelativeLayout cart;
@@ -95,6 +103,7 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     ProgressDialog progressDialog;
     Dialog progress;
     DialogUtil dialogUtil;
+    String Tittle;
 
     @Nullable
     @Override
@@ -112,11 +121,12 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.deep_and_deep_1_fragment_layout, container, false);
             ButterKnife.bind(this,rootView);
+            subCategory.setText(Tittle);
+
             idMapping();
 
 //            Subcaegry_2();
 
-            setClickListeners();
             setDetails();
         }
         return rootView;
@@ -163,13 +173,17 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
                     //                   progress.dismiss();
                     if(catgoryListDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
+                      String  CategoryID=catgoryListDM.getOutput().getData().get(0).getId();
+                        Tittle=catgoryListDM.getOutput().getData().get(0).getTitle_en();
 
-        Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, catgoryListDM.getOutput().getData());
-        LinearLayoutManager l = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-        dip_and_dip_cake_1_Rcv.setLayoutManager(l);
-        dip_and_dip_cake_1_Rcv.setAdapter(dm);
+          Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, catgoryListDM.getOutput().getData(),Deep_and_Deep_1_Fragment.this);
+          LinearLayoutManager l = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+          dip_and_dip_cake_1_Rcv.setLayoutManager(l);
+          dip_and_dip_cake_1_Rcv.setAdapter(dm);
 
 
+
+                        setClickListeners(CategoryID);
                     }else
                         Helper.showToast(getActivity(),catgoryListDM.getOutput().getMessage());
                 }
@@ -177,6 +191,7 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
                 @Override
                 public void failure(RetrofitError retrofitError) {
                     progress.dismiss();
+                    Log.e("error", retrofitError.toString());
 
                 }
             });
@@ -185,17 +200,40 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
 
     }
 
-    private void setClickListeners() {
-        ArrayList<Feed_CategoriesDM> feed_categoriesDMS = new ArrayList<>();
-        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_category_cake_1));
-        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_cake_2));
-        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_cake_3));
-        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_cake_4));
+   public void setClickListeners(String CategoryID) {
+//        ArrayList<Feed_CategoriesDM> feed_categoriesDMS = new ArrayList<>();
+//        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_category_cake_1));
+//        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_cake_2));
+//        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_cake_3));
+//        feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.sub_catogry_cake_4));
 
-        Feed_Categories_Adapter dm = new Feed_Categories_Adapter(context, feed_categoriesDMS);
+
+        if(connectionDetector.isConnectingToInternet())
+        {
+//            progress = dialogUtil.showProgressDialog(getActivity(),getString(R.string.please_wait));
+            appController.paServices.ShopsBycatId(CategoryID,new Callback<ShopsBycatIdDM>() {
+                @Override
+                public void success(ShopsBycatIdDM shopsBycatIdDM, Response response) {
+                    //                   progress.dismiss();
+                    if(shopsBycatIdDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+
+        Feed_Categories_Adapter11 dm = new Feed_Categories_Adapter11(context, shopsBycatIdDM.getOutput().getInfo());
         sub_category_1_Rcv.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         sub_category_1_Rcv.setAdapter(dm);
 
+                    }else
+                        Helper.showToast(getActivity(),getString(R.string.Api_data_not_found)); }
+
+                @Override
+                public void failure(RetrofitError retrofitError) {
+                    progress.dismiss();
+                    Log.e("error", retrofitError.toString());
+
+                }
+            });
+        }else
+            Helper.showToast(getActivity(),getString(R.string.no_internet_connection));
     }
 
     @Override

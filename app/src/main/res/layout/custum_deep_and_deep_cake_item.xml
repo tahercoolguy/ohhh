@@ -7,6 +7,7 @@
     android:layout_marginLeft="5dp"
     android:adjustViewBounds="true"
     android:orientation="vertical"
+    android:id="@+id/linearLLll"
     app:riv_corner_radius="12dp">
 
 
@@ -16,11 +17,10 @@
         android:layout_height="95dp"
         android:elevation="3dp"
         android:layout_gravity="center"
-          android:gravity="center"
-        android:background="@drawable/rounded_corner_deep_deep_cake">
+          android:gravity="center">
 
         <LinearLayout
-            android:id="@+id/linearLL"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"

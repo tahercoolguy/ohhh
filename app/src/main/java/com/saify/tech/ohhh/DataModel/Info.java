@@ -118,7 +118,6 @@ public class Info {
 
     private String title3;
 
-
     private String date;
     private String fname;
     private String gender;
@@ -129,7 +128,61 @@ public class Info {
     private String phone;
     private String secretcode;
     private String username;
+    
+    private String featured;
+    private String flat;
+    private String street;
+    private String block;
+    private String banner_image;
+    private String build_house;
 
+    public String getFeatured() {
+        return featured;
+    }
+
+    public void setFeatured(String featured) {
+        this.featured = featured;
+    }
+
+    public String getFlat() {
+        return flat;
+    }
+
+    public void setFlat(String flat) {
+        this.flat = flat;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getBlock() {
+        return block;
+    }
+
+    public void setBlock(String block) {
+        this.block = block;
+    }
+
+    public String getBanner_image() {
+        return banner_image;
+    }
+
+    public void setBanner_image(String banner_image) {
+        this.banner_image = banner_image;
+    }
+
+    public String getBuild_house() {
+        return build_house;
+    }
+
+    public void setBuild_house(String build_house) {
+        this.build_house = build_house;
+    }
 
     public String getDate() {
         return date;
