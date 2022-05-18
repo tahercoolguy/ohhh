@@ -136,6 +136,81 @@ public class Info {
     private String banner_image;
     private String build_house;
 
+
+    private String tilte_en;
+    private String flavour;
+    private String size;
+    private String user_id;
+    private String product_id;
+    private String shop_name;
+    private String discount;
+    private String  best;
+
+
+    public String getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(String discount) {
+        this.discount = discount;
+    }
+
+    public String getBest() {
+        return best;
+    }
+
+    public void setBest(String best) {
+        this.best = best;
+    }
+
+    public String getTilte_en() {
+        return tilte_en;
+    }
+
+    public void setTilte_en(String tilte_en) {
+        this.tilte_en = tilte_en;
+    }
+
+    public String getFlavour() {
+        return flavour;
+    }
+
+    public void setFlavour(String flavour) {
+        this.flavour = flavour;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    public String getProduct_id() {
+        return product_id;
+    }
+
+    public void setProduct_id(String product_id) {
+        this.product_id = product_id;
+    }
+
+    public String getShop_name() {
+        return shop_name;
+    }
+
+    public void setShop_name(String shop_name) {
+        this.shop_name = shop_name;
+    }
+
     public String getFeatured() {
         return featured;
     }

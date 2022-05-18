@@ -23,6 +23,7 @@ import com.saify.tech.ohhh.Activity.Edit_Profile_Activity;
 import com.saify.tech.ohhh.Activity.LoginActivity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.Activity.MyProfileActivity;
+import com.saify.tech.ohhh.Activity.MyWishlist;
 import com.saify.tech.ohhh.Activity.My_Order_Activity;
 import com.saify.tech.ohhh.Activity.Privacy_Policy_Activity;
 import com.saify.tech.ohhh.Activity.Refund_Policy_Activity;
@@ -136,6 +137,14 @@ public class Fragment_Account extends Fragment {
         startActivity(new Intent(context, MyProfileActivity.class));
 
     }
+
+
+    @OnClick(R.id.MyWishlistLL)
+    public void MyWishlist() {
+        startActivity(new Intent(context, MyWishlist.class));
+
+    }
+
 
 
     @OnClick(R.id.term_and_condition_LL)

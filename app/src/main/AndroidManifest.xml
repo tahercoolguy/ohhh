@@ -82,6 +82,7 @@
         <activity android:name=".Activity.Cart_Activity" />
         <activity android:name=".Activity.View_Order_Activity" />
         <activity android:name=".Activity.MyProfileActivity" />
+        <activity android:name=".Activity.MyWishlist" />
 
     </application>
 

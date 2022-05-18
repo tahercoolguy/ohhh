@@ -11,6 +11,7 @@ import com.saify.tech.ohhh.DataModel.ChangePasswordDM;
 import com.saify.tech.ohhh.DataModel.EventsDM;
 import com.saify.tech.ohhh.DataModel.GovernatesDM;
 import com.saify.tech.ohhh.DataModel.LoginDM;
+import com.saify.tech.ohhh.DataModel.MyWishlistDM;
 import com.saify.tech.ohhh.DataModel.MyprofileDM;
 import com.saify.tech.ohhh.DataModel.NewsDM;
 import com.saify.tech.ohhh.DataModel.ProductsBycatIdDM;
@@ -148,5 +149,11 @@ public interface PAServices {
                                 @Field("phone") String phone,
                                 @Field("email") String email,
                        Callback<UpdateProfileDM> updateProfileDMCallback);
+
+     //11
+      @FormUrlEncoded
+      @POST("/ohhh/MyWishlist")
+      public void MyWishlist(@Field("user_id") String user_id,
+                       Callback<MyWishlistDM> myWishlistDMCallback);
 
 }
