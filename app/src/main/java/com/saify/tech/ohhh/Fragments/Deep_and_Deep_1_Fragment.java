@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.icu.text.CaseMap;
 import android.icu.text.Transliterator;
 import android.os.Bundle;
 import android.util.Log;
@@ -103,7 +104,8 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     ProgressDialog progressDialog;
     Dialog progress;
     DialogUtil dialogUtil;
-    String Tittle;
+
+
 
     @Nullable
     @Override
@@ -121,7 +123,7 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.deep_and_deep_1_fragment_layout, container, false);
             ButterKnife.bind(this,rootView);
-            subCategory.setText(Tittle);
+//           subCategory.setText(Tittle);
 
             idMapping();
 
@@ -174,14 +176,14 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
                     if(catgoryListDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
                       String  CategoryID=catgoryListDM.getOutput().getData().get(0).getId();
-                        Tittle=catgoryListDM.getOutput().getData().get(0).getTitle_en();
+                      String  Tittle=catgoryListDM.getOutput().getData().get(0).getTitle_en();
 
           Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, catgoryListDM.getOutput().getData(),Deep_and_Deep_1_Fragment.this);
           LinearLayoutManager l = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
           dip_and_dip_cake_1_Rcv.setLayoutManager(l);
           dip_and_dip_cake_1_Rcv.setAdapter(dm);
 
-
+                        SetTittle(Tittle);
 
                         setClickListeners(CategoryID);
                     }else
@@ -234,6 +236,12 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
             });
         }else
             Helper.showToast(getActivity(),getString(R.string.no_internet_connection));
+    }
+
+
+    public void SetTittle(String Tittle)
+    {
+        subCategory.setText(Tittle);
     }
 
     @Override

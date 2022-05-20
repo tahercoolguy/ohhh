@@ -80,9 +80,7 @@ public class Adapter_MyWishlist extends RecyclerView.Adapter<Adapter_MyWishlist.
             super(itemView);
 
             text = (TextView) itemView.findViewById(R.id.text1);
-
             img  = (ImageView) itemView.findViewById(R.id.img1);
-
             heart = (RelativeLayout) itemView.findViewById(R.id.heart1);
 
 
