@@ -1,5 +1,7 @@
 package com.saify.tech.ohhh.Adapter;
 
+
+
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -66,13 +68,14 @@ public class Feed_Categories_Adapter11 extends RecyclerView.Adapter<Feed_Categor
     private void setDetails(Feed_Categories_Adapter11.ViewHolder viewHolder, int position) {
 
 
-       info111 data = arrayList.get(position);
+        info111 data = arrayList.get(position);
+
 
         Picasso.with(context).load(data.getImage()).into(viewHolder.feed_category_img);
+
 //        viewHolder.pricekwds.setText(data.get);
         viewHolder.pieces.setText(data.getShop_name_en());
 //        viewHolder.pastriess.setText(data.getShop_name_en());
-
 
 //
 //        holder.feed_cakeLinearLL.setOnClickListener(new View.OnClickListener() {

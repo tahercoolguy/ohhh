@@ -220,12 +220,19 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
                     if(shopsBycatIdDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
 
-        Feed_Categories_Adapter11 dm = new Feed_Categories_Adapter11(context, shopsBycatIdDM.getOutput().getInfo());
-        sub_category_1_Rcv.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
-        sub_category_1_Rcv.setAdapter(dm);
+                        if(CategoryID!=null){
+                            sub_category_1_Rcv.setVisibility(View.VISIBLE);
+                            Feed_Categories_Adapter11 dm = new Feed_Categories_Adapter11(context, shopsBycatIdDM.getOutput().getInfo());
+                            sub_category_1_Rcv.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+                            sub_category_1_Rcv.setAdapter(dm);
+                        }else{
+                            sub_category_1_Rcv.setVisibility(View.GONE);
+                        }
+                            }else
+                    {Helper.showToast(getActivity(),getString(R.string.Api_data_not_found));
+                          sub_category_1_Rcv.setVisibility(View.INVISIBLE);}
 
-                    }else
-                        Helper.showToast(getActivity(),getString(R.string.Api_data_not_found)); }
+                           }
 
                 @Override
                 public void failure(RetrofitError retrofitError) {

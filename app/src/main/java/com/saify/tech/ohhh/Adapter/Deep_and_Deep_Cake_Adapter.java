@@ -38,7 +38,7 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
     private Context context;
     private ArrayList<Data> arrayList;
     int row_index = 0;
-    Intent intent;
+
 
     Deep_and_Deep_1_Fragment deep_and_deep_1_fragment;
 

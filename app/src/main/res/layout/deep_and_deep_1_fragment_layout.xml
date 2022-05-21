@@ -219,6 +219,7 @@
                     android:id="@+id/dip_and_dip_cake_1_Rcv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:layout_marginTop="25dp"></androidx.recyclerview.widget.RecyclerView>
 
 
@@ -237,6 +238,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/sub_category_1_Rcv"
                     android:layout_width="match_parent"
+                    android:visibility="gone"
                     android:layout_height="wrap_content"
                     android:paddingBottom="100dp">
 
