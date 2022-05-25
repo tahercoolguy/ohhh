@@ -1,9 +1,11 @@
 package com.saify.tech.ohhh.Fragments;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -19,15 +21,24 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.saify.tech.ohhh.Activity.Cart_Activity;
+import com.saify.tech.ohhh.Activity.Edit_Profile_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
+import com.saify.tech.ohhh.Adapter.BestFromDesert_Adapter;
 import com.saify.tech.ohhh.Adapter.Featured_Shopss_Adapter;
 import com.saify.tech.ohhh.Adapter.Offers_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.BestDM;
+import com.saify.tech.ohhh.DataModel.OffersApiDM;
 import com.saify.tech.ohhh.DataModel.OffersDM;
 import com.saify.tech.ohhh.DataModel.ShopssDM;
+import com.saify.tech.ohhh.DataModel.UpdateProfileDM;
+import com.saify.tech.ohhh.Helper.DialogUtil;
+import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
+import com.saify.tech.ohhh.Utils.Helper;
 
 import java.util.ArrayList;
 
@@ -35,6 +46,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import it.sephiroth.android.library.widget.HListView;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class Fragment_Home_Screen extends Fragment {
 
@@ -81,7 +95,9 @@ public class Fragment_Home_Screen extends Fragment {
     AppController appController;
     ConnectionDetector connectionDetector;
     ProgressDialog progressDialog;
-
+    Dialog progress;
+    User user;
+    DialogUtil dialogUtil;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -136,52 +152,101 @@ public class Fragment_Home_Screen extends Fragment {
 
     private void Offers() {
 
-        ArrayList<OffersDM> offersDMS = new ArrayList<>();
-
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.ofer_cake_img_1));
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_2));
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_3));
-
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.ofer_cake_img_1));
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_2));
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_3));
-
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.ofer_cake_img_1));
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_2));
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_3));
-
-        Offers_Adapter dm = new Offers_Adapter(context, offersDMS);
-
-        LinearLayoutManager l
-                = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
-        offers_Rcvv.setLayoutManager(l);
-        offers_Rcvv.setAdapter(dm);
+//        ArrayList<OffersDM> offersDMS = new ArrayList<>();
+//
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.ofer_cake_img_1));
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_2));
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_3));
+//
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.ofer_cake_img_1));
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_2));
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_3));
+//
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.ofer_cake_img_1));
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_2));
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.offer_cake_img_3));
 
 
+        if (connectionDetector.isConnectingToInternet()) {
+            {
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+ //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
+
+                appController.paServices.Offers( new Callback<OffersApiDM>() {
+                    @Override
+                    public void success(OffersApiDM offersApiDM, Response response) {
+ //                       progress.dismiss();
+                        if (offersApiDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+                Offers_Adapter dm = new Offers_Adapter(context, offersApiDM.getOutput().getInfo());
+                LinearLayoutManager l = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+                offers_Rcvv.setLayoutManager(l);
+                offers_Rcvv.setAdapter(dm);
+
+                        } else
+
+                            Helper.showToast(getActivity(),offersApiDM.getOutput().getMessage() );
+                    }
+                    @Override
+                    public void failure(RetrofitError error) {
+                        Log.e("String", error.toString());
+                    }
+                });
+            }
+        } else
+            Helper.showToast(getActivity(), getString(R.string.no_internet_connection));
     }
+
+
 
     private void BestFromDesert() {
 
-        ArrayList<OffersDM> offersDMS = new ArrayList<>();
+//        ArrayList<OffersDM> offersDMS = new ArrayList<>();
+//
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desrt_cake_1));
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_2));
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_3));
+//
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desrt_cake_1));
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_2));
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_3));
+//
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desrt_cake_1));
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_2));
+//        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_3));
+//
 
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desrt_cake_1));
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_2));
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_3));
 
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desrt_cake_1));
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_2));
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_3));
 
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desrt_cake_1));
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_2));
-        offersDMS.add(new OffersDM( "Chocolate Cake",R.drawable.desert_cake_3));
 
-        Offers_Adapter dm = new Offers_Adapter(context, offersDMS);
+        if (connectionDetector.isConnectingToInternet()) {
+            {
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
-        LinearLayoutManager l
-                = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+                //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
+
+                appController.paServices.Best( new Callback<BestDM>() {
+                    @Override
+                    public void success(BestDM bestDM, Response response) {
+                        //                       progress.dismiss();
+                        if (bestDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+        BestFromDesert_Adapter dm = new BestFromDesert_Adapter(context, bestDM.getOutput().getInfo());
+        LinearLayoutManager l = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
         best_fom_desert_Rcvv.setLayoutManager(l);
         best_fom_desert_Rcvv.setAdapter(dm);
+                        } else
+
+                            Helper.showToast(getActivity(),bestDM.getOutput().getMessage() );
+                    }
+                    @Override
+                    public void failure(RetrofitError error) {
+                        Log.e("String", error.toString());
+                    }
+                });
+            }
+        } else
+            Helper.showToast(getActivity(), getString(R.string.no_internet_connection));
 
 
     }

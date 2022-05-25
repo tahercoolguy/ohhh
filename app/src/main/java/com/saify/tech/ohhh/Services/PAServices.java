@@ -6,6 +6,7 @@ package com.saify.tech.ohhh.Services;
 
 import com.saify.tech.ohhh.DataModel.AreaDM;
 import com.saify.tech.ohhh.DataModel.BannerDM;
+import com.saify.tech.ohhh.DataModel.BestDM;
 import com.saify.tech.ohhh.DataModel.CatgoryListDM;
 import com.saify.tech.ohhh.DataModel.ChangePasswordDM;
 import com.saify.tech.ohhh.DataModel.EventsDM;
@@ -14,6 +15,7 @@ import com.saify.tech.ohhh.DataModel.LoginDM;
 import com.saify.tech.ohhh.DataModel.MyWishlistDM;
 import com.saify.tech.ohhh.DataModel.MyprofileDM;
 import com.saify.tech.ohhh.DataModel.NewsDM;
+import com.saify.tech.ohhh.DataModel.OffersApiDM;
 import com.saify.tech.ohhh.DataModel.ProductsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.RestaurentDM;
 import com.saify.tech.ohhh.DataModel.ShopsBycatIdDM;
@@ -155,5 +157,14 @@ public interface PAServices {
       @POST("/ohhh/MyWishlist")
       public void MyWishlist(@Field("user_id") String user_id,
                        Callback<MyWishlistDM> myWishlistDMCallback);
+
+
+     //12
+     @GET("/ohhh/offers")
+     public void Offers(Callback<OffersApiDM> offersApiDMCallback);
+
+     //13
+     @GET("/ohhh/best")
+     public void Best(Callback<BestDM> offersApiDMCallback);
 
 }

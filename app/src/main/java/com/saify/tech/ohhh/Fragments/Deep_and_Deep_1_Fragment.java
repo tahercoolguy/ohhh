@@ -186,6 +186,7 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
                         SetTittle(Tittle);
 
                         setClickListeners(CategoryID);
+
                     }else
                         Helper.showToast(getActivity(),catgoryListDM.getOutput().getMessage());
                 }

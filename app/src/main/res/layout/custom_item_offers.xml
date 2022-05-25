@@ -72,6 +72,9 @@
                 android:layout_centerInParent="true"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/semi_bold"
+                android:maxLines="1"
+                android:gravity="center"
+                android:minLines="1"
                 android:text="Chocolate Cake"
                 android:textColor="@color/black"></TextView>
 

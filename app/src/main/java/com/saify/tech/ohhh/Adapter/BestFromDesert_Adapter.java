@@ -15,46 +15,47 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.saify.tech.ohhh.Activity.Food_Details_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.DataModel.Info;
-import com.saify.tech.ohhh.DataModel.OffersApiDM;
 import com.saify.tech.ohhh.DataModel.OffersDM;
-import com.saify.tech.ohhh.DataModel.ShopssDM;
-import com.saify.tech.ohhh.Fragments.Deep_and_Deep_1_Fragment;
-import com.saify.tech.ohhh.Fragments.Deep_and_Deep_2_Fragment;
-import com.saify.tech.ohhh.Fragments.Feed_Categories_Fragment;
 import com.saify.tech.ohhh.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class Offers_Adapter extends RecyclerView.Adapter<Offers_Adapter.Programming_AdapterViewHolder> {
+public class BestFromDesert_Adapter  extends RecyclerView.Adapter<BestFromDesert_Adapter.Programming_AdapterViewHolder>{
 
     private Context context;
     private ArrayList<Info> arrayList;
 
-    public Offers_Adapter(Context context, ArrayList<Info> arrayList) {
+    public BestFromDesert_Adapter(Context context, ArrayList<Info> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
     }
 
     @NonNull
     @Override
-    public Programming_AdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BestFromDesert_Adapter.Programming_AdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.custom_item_offers, parent, false);
-        return new Programming_AdapterViewHolder(view);
+        return new BestFromDesert_Adapter.Programming_AdapterViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BestFromDesert_Adapter.Programming_AdapterViewHolder holder, int position) {
 
         Info data = arrayList.get(position);
 
         holder.textView.setText(data.getTitle_en());
+
         holder.perText.setText(data.getDiscount());
- //       holder.img.setImageResource(data.getImage());
+       if(data.getDiscount()==null)
+        {
+            holder.perText.setText("null");
+        }
+        //       holder.img.setImageResource(data.getImage());
         if(arrayList.get(position).getImage()!=null && !data.getImage().equalsIgnoreCase("")) {
             Picasso.with(context).load(data.getImage()).into(holder.img);
         }
+
         holder.shop_cake_RL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,4 +88,5 @@ public class Offers_Adapter extends RecyclerView.Adapter<Offers_Adapter.Programm
 
         }
     }
+
 }
