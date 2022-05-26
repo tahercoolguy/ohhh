@@ -46,10 +46,10 @@ public class BestFromDesert_Adapter  extends RecyclerView.Adapter<BestFromDesert
 
         holder.textView.setText(data.getTitle_en());
 
-        holder.perText.setText(data.getDiscount());
+        holder.perText.setText(data.getDiscount() +" %");
        if(data.getDiscount()==null)
         {
-            holder.perText.setText("null");
+            holder.perText.setVisibility(View.GONE);
         }
         //       holder.img.setImageResource(data.getImage());
         if(arrayList.get(position).getImage()!=null && !data.getImage().equalsIgnoreCase("")) {

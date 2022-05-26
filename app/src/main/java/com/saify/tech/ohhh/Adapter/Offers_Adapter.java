@@ -50,7 +50,7 @@ public class Offers_Adapter extends RecyclerView.Adapter<Offers_Adapter.Programm
         Info data = arrayList.get(position);
 
         holder.textView.setText(data.getTitle_en());
-        holder.perText.setText(data.getDiscount());
+        holder.perText.setText(data.getDiscount() +" %");
  //       holder.img.setImageResource(data.getImage());
         if(arrayList.get(position).getImage()!=null && !data.getImage().equalsIgnoreCase("")) {
             Picasso.with(context).load(data.getImage()).into(holder.img);
