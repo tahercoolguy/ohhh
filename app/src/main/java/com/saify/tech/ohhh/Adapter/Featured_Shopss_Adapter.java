@@ -12,29 +12,27 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.saify.tech.ohhh.Activity.MainActivity;
+import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.ShopssDM;
 import com.saify.tech.ohhh.Fragments.Deep_and_Deep_1_Fragment;
 import com.saify.tech.ohhh.Fragments.Feed_Categories_Fragment;
 import com.saify.tech.ohhh.Fragments.Fragment_Home_Screen;
 import com.saify.tech.ohhh.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class Featured_Shopss_Adapter extends RecyclerView.Adapter<Featured_Shopss_Adapter.Programming_AdapterViewHolder> {
 
     private Context context;
-    private ArrayList<ShopssDM> shopssDMS;
+    private ArrayList<Info> arrayList;
 
-    public Featured_Shopss_Adapter(Context context, ArrayList<ShopssDM> shopssDMS) {
+    public Featured_Shopss_Adapter(Context context, ArrayList<Info> arrayList) {
         this.context = context;
-        this.shopssDMS = shopssDMS;
+        this.arrayList = arrayList;
     }
 
-    public Featured_Shopss_Adapter(ArrayList<ShopssDM> shopssDMS) {
-    }
 
-    public Featured_Shopss_Adapter(MainActivity context, ArrayList<ShopssDM> shopssDMS) {
-    }
 
     @NonNull
     @Override
@@ -47,18 +45,20 @@ public class Featured_Shopss_Adapter extends RecyclerView.Adapter<Featured_Shops
     @Override
     public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, int position) {
 
-        ShopssDM shopssDM = shopssDMS.get(position);
+        Info data= arrayList.get(position);
 
-        holder.ratingstar.setText(shopssDM.getRating_star());
-        holder.ratingcounting.setText(shopssDM.getRating_count());
-        holder.dip_and_dip.setText(shopssDM.getDip_and_dip());
-        holder.free_delivry.setText(shopssDM.getFree_delivery());
-        holder.minutes_time.setText(shopssDM.getDelivery_time());
+//        holder.ratingstar.setText(data.getRating_star());
+//        holder.ratingcounting.setText(shopssDM.getRating_count());
+//        holder.free_delivry.setText(shopssDM.getFree_delivery());
+//        holder.minutes_time.setText(shopssDM.getDelivery_time());
+//        holder.delivery_boy.setImageResource(R.drawable.ic_delivery_boy);
+//        holder.time_img.setImageResource(R.drawable.ic_time);
 
-
-        holder.delivery_boy.setImageResource(R.drawable.ic_delivery_boy);
-        holder.time_img.setImageResource(R.drawable.ic_time);
-        holder.cake.setImageResource(shopssDM.getCake_img());
+//        holder.img.setImageResource(data.getImage());
+        if(arrayList.get(position).getImage()!=null && !data.getImage().equalsIgnoreCase("")) {
+            Picasso.with(context).load(data.getImage()).into(holder.img);
+        }
+        holder.text1.setText(data.getShop_name_en());
 
 
         holder.shop_cake_RL.setOnClickListener(new View.OnClickListener() {
@@ -76,14 +76,14 @@ public class Featured_Shopss_Adapter extends RecyclerView.Adapter<Featured_Shops
 
     @Override
     public int getItemCount() {
-        return shopssDMS.size();
+        return arrayList.size();
     }
 
     public class Programming_AdapterViewHolder extends RecyclerView.ViewHolder {
 
-        TextView ratingstar,ratingcounting,dip_and_dip,free_delivry,minutes_time;
+        TextView text1;
 //        Button desert,kuwaiti;
-        ImageView star,delivery_boy,time_img,cake;
+        ImageView img;
 //        LinearLayout like;
 
         RelativeLayout shop_cake_RL;
@@ -91,17 +91,19 @@ public class Featured_Shopss_Adapter extends RecyclerView.Adapter<Featured_Shops
 
         public Programming_AdapterViewHolder(@NonNull View itemView) {
             super(itemView);
-            ratingstar = (TextView) itemView.findViewById(R.id.rating_starTxt);
-            ratingcounting = (TextView) itemView.findViewById(R.id.rating_count_Txt);
-            dip_and_dip = (TextView) itemView.findViewById(R.id.dip_and_dip_Txt);
-            free_delivry = (TextView) itemView.findViewById(R.id.free_delivery);
-            minutes_time = (TextView) itemView.findViewById(R.id.deliver_time);
+//            ratingstar = (TextView) itemView.findViewById(R.id.rating_starTxt);
+//            ratingcounting = (TextView) itemView.findViewById(R.id.rating_count_Txt);
+//            dip_and_dip = (TextView) itemView.findViewById(R.id.dip_and_dip_Txt);
+//            free_delivry = (TextView) itemView.findViewById(R.id.free_delivery);
+//            minutes_time = (TextView) itemView.findViewById(R.id.deliver_time);
+//
+//            star = (ImageView) itemView.findViewById(R.id.star);
+////            like = (LinearLayout) itemView.findViewById(R.id.like_LL);
+//            delivery_boy = (ImageView) itemView.findViewById(R.id.dlivery_Img);
+//            time_img = (ImageView) itemView.findViewById(R.id.timer_delivery);
 
-            star = (ImageView) itemView.findViewById(R.id.star);
-//            like = (LinearLayout) itemView.findViewById(R.id.like_LL);
-            delivery_boy = (ImageView) itemView.findViewById(R.id.dlivery_Img);
-            time_img = (ImageView) itemView.findViewById(R.id.timer_delivery);
-            cake = (ImageView) itemView.findViewById(R.id.cake_shop_img1);
+            img = (ImageView) itemView.findViewById(R.id.img1);
+            text1 = (TextView) itemView.findViewById(R.id.text1);
             shop_cake_RL=itemView.findViewById(R.id.shop_cake_RL);
 
 

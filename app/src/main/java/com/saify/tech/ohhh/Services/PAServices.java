@@ -10,6 +10,7 @@ import com.saify.tech.ohhh.DataModel.BestDM;
 import com.saify.tech.ohhh.DataModel.CatgoryListDM;
 import com.saify.tech.ohhh.DataModel.ChangePasswordDM;
 import com.saify.tech.ohhh.DataModel.EventsDM;
+import com.saify.tech.ohhh.DataModel.FShopsDM;
 import com.saify.tech.ohhh.DataModel.GovernatesDM;
 import com.saify.tech.ohhh.DataModel.LoginDM;
 import com.saify.tech.ohhh.DataModel.MyWishlistDM;
@@ -166,5 +167,9 @@ public interface PAServices {
      //13
      @GET("/ohhh/best")
      public void Best(Callback<BestDM> offersApiDMCallback);
+
+      //14
+     @GET("/ohhh/fshops")
+     public void FShops(Callback<FShopsDM> fShopsDMCallback);
 
 }

@@ -30,6 +30,7 @@ import com.saify.tech.ohhh.Adapter.Featured_Shopss_Adapter;
 import com.saify.tech.ohhh.Adapter.Offers_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.BestDM;
+import com.saify.tech.ohhh.DataModel.FShopsDM;
 import com.saify.tech.ohhh.DataModel.OffersApiDM;
 import com.saify.tech.ohhh.DataModel.OffersDM;
 import com.saify.tech.ohhh.DataModel.ShopssDM;
@@ -126,27 +127,54 @@ public class Fragment_Home_Screen extends Fragment {
 
     private void FeaturesShops() {
 
-        ArrayList<ShopssDM> shopssDMS = new ArrayList<>();
+//        ArrayList<ShopssDM> shopssDMS = new ArrayList<>();
+//
+//         shopssDMS.add(new ShopssDM("4.5","(25+)","McDonald’s","Free delivery","10-15 mins","",
+//                 "",R.drawable.ic_delivery_boy, R.drawable.ic_time,"",R.drawable.home_cake_1,R.drawable.home_cake_1));
+//
+//        shopssDMS.add(new ShopssDM("4.5","(25+)","McDonald’s","Free delivery","10-15 mins","",
+//                "",R.drawable.ic_delivery_boy, R.drawable.ic_time,"",R.drawable.home_cake_1,R.drawable.home_cake_2));
+//
+//        shopssDMS.add(new ShopssDM("4.5","(25+)","McDonald’s","Free delivery","10-15 mins","",
+//                "",R.drawable.ic_delivery_boy, R.drawable.ic_time,"",R.drawable.home_cake_1,R.drawable.home_cake_1));
+//
+//        shopssDMS.add(new ShopssDM("4.5","(25+)","McDonald’s","Free delivery","10-15 mins","",
+//                "",R.drawable.ic_delivery_boy, R.drawable.ic_time,"",R.drawable.home_cake_1,R.drawable.home_cake_2));
 
-         shopssDMS.add(new ShopssDM("4.5","(25+)","McDonald’s","Free delivery","10-15 mins","",
-                 "",R.drawable.ic_delivery_boy, R.drawable.ic_time,"",R.drawable.home_cake_1,R.drawable.home_cake_1));
+        if (connectionDetector.isConnectingToInternet()) {
+            {
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
-        shopssDMS.add(new ShopssDM("4.5","(25+)","McDonald’s","Free delivery","10-15 mins","",
-                "",R.drawable.ic_delivery_boy, R.drawable.ic_time,"",R.drawable.home_cake_1,R.drawable.home_cake_2));
+                //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
 
-        shopssDMS.add(new ShopssDM("4.5","(25+)","McDonald’s","Free delivery","10-15 mins","",
-                "",R.drawable.ic_delivery_boy, R.drawable.ic_time,"",R.drawable.home_cake_1,R.drawable.home_cake_1));
+                appController.paServices.FShops( new Callback<FShopsDM>() {
+                @Override
+                public void success(FShopsDM fShopsDM, Response response) {
+                        //                       progress.dismiss();
+               if (fShopsDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
-        shopssDMS.add(new ShopssDM("4.5","(25+)","McDonald’s","Free delivery","10-15 mins","",
-                "",R.drawable.ic_delivery_boy, R.drawable.ic_time,"",R.drawable.home_cake_1,R.drawable.home_cake_2));
 
-        Featured_Shopss_Adapter dm = new Featured_Shopss_Adapter(context, shopssDMS);
+
+        Featured_Shopss_Adapter dm = new Featured_Shopss_Adapter(context,fShopsDM.getOutput().getInfo());
 //        LinearLayoutManager l = new LinearLayoutManager.HORIZONTAL(context);
 
-        LinearLayoutManager l
-                = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager l = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
         featured_shops.setLayoutManager(l);
         featured_shops.setAdapter(dm);
+
+                        } else
+
+                            Helper.showToast(getActivity(),fShopsDM.getOutput().getMessage() );
+                    }
+                    @Override
+                    public void failure(RetrofitError error) {
+                        Log.e("String", error.toString());
+                    }
+                });
+            }
+        } else
+            Helper.showToast(getActivity(), getString(R.string.no_internet_connection));
+
 
     }
 
