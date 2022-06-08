@@ -19,6 +19,7 @@ import com.saify.tech.ohhh.DataModel.NewsDM;
 import com.saify.tech.ohhh.DataModel.OffersApiDM;
 import com.saify.tech.ohhh.DataModel.ProductsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.RestaurentDM;
+import com.saify.tech.ohhh.DataModel.ShopByIdDM;
 import com.saify.tech.ohhh.DataModel.ShopsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.ShopsDM;
 import com.saify.tech.ohhh.DataModel.SignUpDM;
@@ -171,5 +172,11 @@ public interface PAServices {
       //14
      @GET("/ohhh/fshops")
      public void FShops(Callback<FShopsDM> fShopsDMCallback);
+
+     //15
+    @FormUrlEncoded
+    @POST("/ohhh/Shop")
+    public void Shop(@Field("id") String id,
+                       Callback<ShopByIdDM> shopByIdDMCallback);
 
 }

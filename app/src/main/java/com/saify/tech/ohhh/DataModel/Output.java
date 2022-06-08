@@ -10,7 +10,10 @@ public class Output {
 
     private String message;
 
-//    private String info;
+    private ArrayList<Category> category;
+
+
+  //    private String info;
 
     private ArrayList<Info> info;
 
@@ -52,7 +55,11 @@ public class Output {
         this.message = message;
     }
 
+    public ArrayList<Category> getCategory() {
+        return category;
+    }
 
-
-
+    public void setCategory(ArrayList<Category> category) {
+        this.category = category;
+    }
 }

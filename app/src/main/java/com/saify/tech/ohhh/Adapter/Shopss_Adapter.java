@@ -2,6 +2,7 @@ package com.saify.tech.ohhh.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,7 +79,13 @@ public class Shopss_Adapter extends RecyclerView.Adapter<Shopss_Adapter.Programm
             @Override
             public void onClick(View view) {
 
-                ((MainActivity)context).addFragment(new Deep_and_Deep_1_Fragment(),false);
+                Deep_and_Deep_1_Fragment deep_and_deep_1_fragment=new Deep_and_Deep_1_Fragment();
+                Bundle bd = new Bundle();
+                bd.putString("id", info.getId());
+                deep_and_deep_1_fragment.setArguments(bd);
+                ((MainActivity)context).addFragment(deep_and_deep_1_fragment, false);
+
+//                ((MainActivity)context).addFragment(new Deep_and_Deep_1_Fragment(),false);
 
               }
         });

@@ -36,6 +36,7 @@ import com.saify.tech.ohhh.DataModel.CatgoryListDM;
 import com.saify.tech.ohhh.DataModel.Deep_and_Deep_CakeDM;
 import com.saify.tech.ohhh.DataModel.Feed_CategoriesDM;
 import com.saify.tech.ohhh.DataModel.OffersDM;
+import com.saify.tech.ohhh.DataModel.ShopByIdDM;
 import com.saify.tech.ohhh.DataModel.ShopsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.ShopsDM;
 import com.saify.tech.ohhh.Helper.DialogUtil;
@@ -57,8 +58,9 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
 
     private View rootView;
     private Context context;
-    Intent intent;
 
+
+       String id;
     @BindView(R.id.progress_bar) ProgressBar progress_bar;
     @BindView(R.id.txt_error) TextView txt_error;
 
@@ -103,7 +105,7 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     ConnectionDetector connectionDetector;
     ProgressDialog progressDialog;
     Dialog progress;
-    DialogUtil dialogUtil;
+
 
 
 
@@ -114,16 +116,21 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
         context = getActivity();
         appController = (AppController) getActivity().getApplicationContext();
 
+
         connectionDetector = new ConnectionDetector(getActivity());
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage(getResources().getString(R.string.please_wait));
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
         ((MainActivity) context).setTitle(getString(R.string.home));
+        Bundle bd=getArguments();
+        id = bd.getString("id");
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.deep_and_deep_1_fragment_layout, container, false);
             ButterKnife.bind(this,rootView);
 //           subCategory.setText(Tittle);
+
+
 
             idMapping();
 
@@ -169,26 +176,26 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
         if(connectionDetector.isConnectingToInternet())
         {
 //            progress = dialogUtil.showProgressDialog(getActivity(),getString(R.string.please_wait));
-            appController.paServices.CatgoryList(new Callback<CatgoryListDM>() {
+            appController.paServices.Shop(id,new Callback<ShopByIdDM>() {
                 @Override
-                public void success(CatgoryListDM catgoryListDM, Response response) {
+                public void success(ShopByIdDM shopByIdDM, Response response) {
                     //                   progress.dismiss();
-                    if(catgoryListDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+                    if(shopByIdDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
-                      String  CategoryID=catgoryListDM.getOutput().getData().get(0).getId();
-                      String  Tittle=catgoryListDM.getOutput().getData().get(0).getTitle_en();
+                      String  CategoryID=shopByIdDM.getOutput().getCategory().get(0).getCategory_id();
+                      String  Tittle=shopByIdDM.getOutput().getCategory().get(0).getCategory_name();
 
-          Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, catgoryListDM.getOutput().getData(),Deep_and_Deep_1_Fragment.this);
+          Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, shopByIdDM.getOutput().getCategory(),Deep_and_Deep_1_Fragment.this);
           LinearLayoutManager l = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
           dip_and_dip_cake_1_Rcv.setLayoutManager(l);
           dip_and_dip_cake_1_Rcv.setAdapter(dm);
 
-                        SetTittle(Tittle);
+                       SetTittle(Tittle);
 
                         setClickListeners(CategoryID);
 
                     }else
-                        Helper.showToast(getActivity(),catgoryListDM.getOutput().getMessage());
+                        Helper.showToast(getActivity(),shopByIdDM.getOutput().getMessage());
                 }
 
                 @Override

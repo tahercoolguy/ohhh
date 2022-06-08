@@ -1,6 +1,8 @@
 package com.saify.tech.ohhh.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +28,7 @@ public class Featured_Shopss_Adapter extends RecyclerView.Adapter<Featured_Shops
 
     private Context context;
     private ArrayList<Info> arrayList;
+    Intent intent;
 
     public Featured_Shopss_Adapter(Context context, ArrayList<Info> arrayList) {
         this.context = context;
@@ -64,6 +67,14 @@ public class Featured_Shopss_Adapter extends RecyclerView.Adapter<Featured_Shops
         holder.shop_cake_RL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                ((MainActivity)context).addFragment(new Deep_and_Deep_1_Fragment(), false);
+////                Intent intent=new Intent(context,Deep_and_Deep_1_Fragment.class);
+//                intent.putExtra("id",data.getId());
+//                context.startActivity(intent);
+//      Deep_and_Deep_1_Fragment deep_and_deep_1_fragment=new Deep_and_Deep_1_Fragment();
+//                Bundle bd = new Bundle();
+//                bd.putString("id", data.getId());
+//              deep_and_deep_1_fragment.setArguments(bd);
                 ((MainActivity)context).addFragment(new Deep_and_Deep_1_Fragment(), false);
 
             }

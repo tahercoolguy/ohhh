@@ -135,8 +135,6 @@ public class Info {
     private String block;
     private String banner_image;
     private String build_house;
-
-
     private String tilte_en;
     private String flavour;
     private String size;
@@ -145,6 +143,7 @@ public class Info {
     private String shop_name;
     private String discount;
     private String  best;
+
 
 
 

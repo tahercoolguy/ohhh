@@ -19,10 +19,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
+import com.saify.tech.ohhh.DataModel.Category;
 import com.saify.tech.ohhh.DataModel.Data;
 import com.saify.tech.ohhh.DataModel.Deep_and_Deep_CakeDM;
 import com.saify.tech.ohhh.DataModel.Feed_CategoriesDM;
 import com.saify.tech.ohhh.DataModel.Deep_and_Deep_CakeDM;
+import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.Fragments.Deep_and_Deep_1_Fragment;
 import com.saify.tech.ohhh.Helper.Helper;
 import com.saify.tech.ohhh.R;
@@ -36,13 +38,13 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
 
 
     private Context context;
-    private ArrayList<Data> arrayList;
+    private ArrayList<Category> arrayList;
     int row_index = 0;
 
 
     Deep_and_Deep_1_Fragment deep_and_deep_1_fragment;
 
-    public Deep_and_Deep_Cake_Adapter(Context context, ArrayList<Data> arraylist, Deep_and_Deep_1_Fragment deep) {
+    public Deep_and_Deep_Cake_Adapter(Context context, ArrayList<Category> arraylist, Deep_and_Deep_1_Fragment deep) {
         this.context = context;
         this.arrayList =arraylist;
         this.deep_and_deep_1_fragment  = deep;
@@ -60,23 +62,24 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
     @Override
     public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
-        Data data= arrayList.get(position);
-
-//        if(!Deep_and_Deep_CakeDM.getImage().equalsIgnoreCase(""))
+        Category data= arrayList.get(position);
+//
+//        if(!data..equalsIgnoreCase(""))
 //        {
-//            Picasso.with(context).load(Deep_and_Deep_CakeDM.getImage()).into(holder.cakeImg);
+//            Picasso.with(context).load(data.getImage()).into(holder.cakeImg);
 //        }
 
 //              holder.cakeImg.setImageResource(deep_and_deep_cakeDM.getCake_img());
-        holder.cakename.setText(data.getTitle_en());
+
+         holder.cakename.setText(data.getCategory_name());
 
 
         holder.linearLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 row_index = position;
-                deep_and_deep_1_fragment.setClickListeners(data.getId());
-                deep_and_deep_1_fragment.SetTittle(data.getTitle_en());
+                deep_and_deep_1_fragment.setClickListeners(data.getCategory_id());
+                deep_and_deep_1_fragment.SetTittle(data.getCategory_name());
 //                deep_and_deep_1_fragment.
                 notifyDataSetChanged();
 
