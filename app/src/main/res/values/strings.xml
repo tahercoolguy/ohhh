@@ -156,7 +156,17 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
     <string name="categories">Categories</string>
     <string name="suncategory">Subcategory</string>
     <string name="my_profile">My Profile</string>
-    <string name="Phone">Phone</string>
+    <string name="area">Area</string>
+    <string name="governate">Governate</string>
+    <string name="building_no">Building No.</string>
+    <string name="block">Block</string>
+    <string name="street">street</string>
+    <string name="floor_no">floor_no</string>
+    <string name="phone">Phone</string>
+    <string name="add_address">Add Address</string>
+
+
+
 
 
 </resources>

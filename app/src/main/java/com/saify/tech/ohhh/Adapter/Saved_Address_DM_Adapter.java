@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.saify.tech.ohhh.DataModel.HistoryDM;
+import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.SavedAddressDM;
 import com.saify.tech.ohhh.R;
 
@@ -19,11 +20,11 @@ import java.util.ArrayList;
 public class Saved_Address_DM_Adapter extends RecyclerView.Adapter<Saved_Address_DM_Adapter.Programming_AdapterViewHolder> {
 
     private Context context;
-    private ArrayList<SavedAddressDM> savedAddressDMS;
+    private ArrayList<Info> arrayList;
 
-    public Saved_Address_DM_Adapter(Context context, ArrayList<SavedAddressDM> savedAddressDMS) {
+    public Saved_Address_DM_Adapter(Context context, ArrayList<Info> arrayList) {
         this.context = context;
-        this.savedAddressDMS = savedAddressDMS;
+        this.arrayList = arrayList;
     }
 
 
@@ -38,15 +39,15 @@ public class Saved_Address_DM_Adapter extends RecyclerView.Adapter<Saved_Address
     @Override
     public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, int position) {
 
-        SavedAddressDM savedAddressDM = savedAddressDMS.get(position);
-        holder.address.setText(savedAddressDM.getAddress());
-        holder.home.setText(savedAddressDM.getHome());
-        holder.home_img.setImageResource(savedAddressDM.getHome_img());
+        Info data= arrayList.get(position);
+        holder.address.setText(data.getStreet()+","+data.getFloor_no()+","+data.getAreaname()+","+data.getGovernatesname());
+//        holder.home.setText(savedAddressDM.getHome());
+//        holder.home_img.setImageResource(savedAddressDM.getHome_img());
     }
 
     @Override
     public int getItemCount() {
-        return savedAddressDMS.size();
+        return arrayList.size();
     }
 
     public class Programming_AdapterViewHolder extends RecyclerView.ViewHolder{

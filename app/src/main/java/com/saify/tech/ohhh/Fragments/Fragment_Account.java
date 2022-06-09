@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,7 +17,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
- import com.saify.tech.ohhh.Activity.Change_Password_Activity;
+import com.saify.tech.ohhh.Activity.AddressList_Saved_Address_Activity;
+import com.saify.tech.ohhh.Activity.Change_Password_Activity;
 import com.saify.tech.ohhh.Activity.Edit_Profile_Activity;
 import com.saify.tech.ohhh.Activity.LoginActivity;
 import com.saify.tech.ohhh.Activity.MainActivity;
@@ -27,7 +27,6 @@ import com.saify.tech.ohhh.Activity.MyWishlist;
 import com.saify.tech.ohhh.Activity.My_Order_Activity;
 import com.saify.tech.ohhh.Activity.Privacy_Policy_Activity;
 import com.saify.tech.ohhh.Activity.Refund_Policy_Activity;
-import com.saify.tech.ohhh.Activity.Saved_Address_Activity;
 import com.saify.tech.ohhh.Activity.Term_And_Condition_Activity;
 import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.R;
@@ -115,7 +114,7 @@ public class Fragment_Account extends Fragment {
 
     @OnClick(R.id.saved_address_LL)
     public void Saved() {
-        startActivity(new Intent(context, Saved_Address_Activity.class));
+        startActivity(new Intent(context, AddressList_Saved_Address_Activity.class));
 
     }
 

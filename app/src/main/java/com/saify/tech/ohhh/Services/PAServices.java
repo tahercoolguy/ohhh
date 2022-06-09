@@ -4,6 +4,7 @@ package com.saify.tech.ohhh.Services;
 //import io.opencensus.stats.Stats;
 
 
+import com.saify.tech.ohhh.DataModel.AddressListDM;
 import com.saify.tech.ohhh.DataModel.AreaDM;
 import com.saify.tech.ohhh.DataModel.BannerDM;
 import com.saify.tech.ohhh.DataModel.BestDM;
@@ -19,6 +20,7 @@ import com.saify.tech.ohhh.DataModel.NewsDM;
 import com.saify.tech.ohhh.DataModel.OffersApiDM;
 import com.saify.tech.ohhh.DataModel.ProductsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.RestaurentDM;
+import com.saify.tech.ohhh.DataModel.SaveAddressDM;
 import com.saify.tech.ohhh.DataModel.ShopByIdDM;
 import com.saify.tech.ohhh.DataModel.ShopsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.ShopsDM;
@@ -178,5 +180,33 @@ public interface PAServices {
     @POST("/ohhh/Shop")
     public void Shop(@Field("id") String id,
                        Callback<ShopByIdDM> shopByIdDMCallback);
+
+     //16
+     @FormUrlEncoded
+     @POST("/ohhh/AddressList")
+     public void AddressList(@Field("user_id") String user_id,
+                       Callback<AddressListDM> addressListDMCallback);
+
+
+    //17
+     @FormUrlEncoded
+    @POST("/ohhh/SaveAddress")
+    public void SaveAddress(@Field("user_id") String user_id,
+                            @Field("name") String name,
+                            @Field("email") String email,
+                            @Field("countrycode") String countrycode,
+                            @Field("mobile_no") String mobile_no,
+                            @Field("area") String area,
+                            @Field("governate") String governate,
+                            @Field("building_no") String building_no,
+                            @Field("block") String block,
+                            @Field("street") String street,
+                            @Field("floor_no") String floor_no,
+                            @Field("lat") String lat,
+                            @Field("lan") String lan,
+                         Callback<SaveAddressDM> saveAddressDMCallback);
+
+
+
 
 }

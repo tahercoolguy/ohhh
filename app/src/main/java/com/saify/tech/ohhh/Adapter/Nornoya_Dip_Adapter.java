@@ -13,15 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.saify.tech.ohhh.Activity.Address_Activity;
-import com.saify.tech.ohhh.Activity.Cart_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
-import com.saify.tech.ohhh.Activity.Saved_Address_Activity;
-import com.saify.tech.ohhh.Activity.View_Order_Activity;
 import com.saify.tech.ohhh.DataModel.CartDM;
-import com.saify.tech.ohhh.DataModel.HistoryDM;
 import com.saify.tech.ohhh.DataModel.Nornoya_Dip_Dm;
-import com.saify.tech.ohhh.DataModel.OrderDM;
-import com.saify.tech.ohhh.DataModel.SavedAddressDM;
 import com.saify.tech.ohhh.R;
 
 import java.util.ArrayList;

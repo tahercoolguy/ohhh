@@ -71,7 +71,7 @@
         <activity android:name=".Activity.My_Order_Activity" />
         <activity android:name=".Activity.Change_Password_Activity" />
         <activity android:name=".Activity.Edit_Profile_Activity" />
-        <activity android:name=".Activity.Saved_Address_Activity" />
+        <activity android:name=".Activity.AddressList_Saved_Address_Activity" />
         <activity android:name=".Activity.Account_Activity" />
         <activity android:name=".Activity.Term_And_Condition_Activity" />
         <activity android:name=".Activity.Privacy_Policy_Activity" />
@@ -83,6 +83,7 @@
         <activity android:name=".Activity.View_Order_Activity" />
         <activity android:name=".Activity.MyProfileActivity" />
         <activity android:name=".Activity.MyWishlist" />
+        <activity android:name=".Activity.SaveAddressActivity" />
 
     </application>
 

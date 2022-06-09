@@ -5,8 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -97,7 +95,7 @@ public class Account_Activity extends AppCompatActivity implements Validator.Val
 
     @OnClick(R.id.saved_address_LL)
     public void Saved() {
-        startActivity(new Intent(Account_Activity.this, Saved_Address_Activity.class));
+        startActivity(new Intent(Account_Activity.this, AddressList_Saved_Address_Activity.class));
 
     }
 

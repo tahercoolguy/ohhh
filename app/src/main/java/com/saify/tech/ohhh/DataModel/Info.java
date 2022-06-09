@@ -144,10 +144,87 @@ public class Info {
     private String discount;
     private String  best;
 
+    private String area;
+    private String floor_no;
+    private String governate;
+    private String mobile_no;
+    private String building_no;
+    private String lan;
+    private String lat;
+    private String areaname;
+    private String governatesname;
 
+    public String getAreaname() {
+        return areaname;
+    }
 
+    public void setAreaname(String areaname) {
+        this.areaname = areaname;
+    }
 
+    public String getGovernatesname() {
+        return governatesname;
+    }
 
+    public void setGovernatesname(String governatesname) {
+        this.governatesname = governatesname;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getFloor_no() {
+        return floor_no;
+    }
+
+    public void setFloor_no(String floor_no) {
+        this.floor_no = floor_no;
+    }
+
+    public String getGovernate() {
+        return governate;
+    }
+
+    public void setGovernate(String governate) {
+        this.governate = governate;
+    }
+
+    public String getMobile_no() {
+        return mobile_no;
+    }
+
+    public void setMobile_no(String mobile_no) {
+        this.mobile_no = mobile_no;
+    }
+
+    public String getBuilding_no() {
+        return building_no;
+    }
+
+    public void setBuilding_no(String building_no) {
+        this.building_no = building_no;
+    }
+
+    public String getLan() {
+        return lan;
+    }
+
+    public void setLan(String lan) {
+        this.lan = lan;
+    }
+
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
 
     public String getDiscount() {
         return discount;
