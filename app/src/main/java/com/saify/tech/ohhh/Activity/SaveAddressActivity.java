@@ -4,21 +4,31 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.saify.tech.ohhh.Adapter.Adapter_MyWishlist;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.AreaDM;
+import com.saify.tech.ohhh.DataModel.GovernatesDM;
+import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.MyWishlistDM;
 import com.saify.tech.ohhh.DataModel.SaveAddressDM;
+import com.saify.tech.ohhh.Helper.BottomForAll;
 import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.Helper;
+import com.saify.tech.ohhh.Helper.ResponseListener;
 import com.saify.tech.ohhh.Helper.User;
+import com.saify.tech.ohhh.Models.DataChangeDM;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,6 +44,7 @@ public class SaveAddressActivity extends AppCompatActivity {
     AppController appController;
     ConnectionDetector connectionDetector;
     DialogUtil dialogUtil;
+    Dialog dialog;
     Dialog progress;
 
      @BindView(R.id.firstNameET)
@@ -72,6 +83,115 @@ public class SaveAddressActivity extends AppCompatActivity {
     @BindView(R.id.lanET)
     EditText lanET;
 
+    BottomForAll bottomForAll;
+    BottomForAllForArea bottomForAllForArea;
+      public String governateName;
+      public String governateId;
+     public String areaName;
+
+    ArrayList<DataChangeDM> arrayList = new ArrayList();
+
+    ArrayList<DataChangeDM> arrayList1= new ArrayList<>();
+    @OnClick(R.id.governateET)
+    public void governateET() {
+
+        if (connectionDetector.isConnectingToInternet()) {
+            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+            dialog = dialogUtil.showProgressDialog(SaveAddressActivity.this, getString(R.string.please_wait));
+            appController.paServices.Governates( new Callback<GovernatesDM>() {
+                @Override
+                public void success(GovernatesDM governatesDM, Response response) {
+                    dialog.dismiss();
+                    if (governatesDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+                        governateId=governatesDM.getOutput().getInfo().get(0).getId();
+                        for (Info obj : governatesDM.getOutput().getInfo())
+                        {
+                            DataChangeDM s=new DataChangeDM();
+                            s.setName(obj.getTitle_en());
+                            s.setGovernateId(obj.getId());
+                            arrayList.add(s);
+                         }
+                        bottomForAll = new BottomForAll();
+                        bottomForAll.arrayList =arrayList;
+
+                        bottomForAll.setResponseListener(new ResponseListener() {
+                            @Override
+                            public void response(Object object) {
+                      governateName = ((DataChangeDM)object).getName();
+                      governateId=((DataChangeDM)object).getGovernateId();
+                      governateET.setText(governateName);
+
+                            areaET();
+
+                            }
+                        });
+                        bottomForAll.show(getSupportFragmentManager(), "bottomSheetCountry");
+
+                    } else
+                        Helper.showToast(SaveAddressActivity.this, getString(R.string.Api_data_not_found));
+                }
+
+                @Override
+                public void failure(RetrofitError retrofitError) {
+                    Log.e("error", retrofitError.toString());
+                }
+            });
+        } else
+            Helper.showToast(SaveAddressActivity.this, getString(R.string.no_internet_connection));
+    }
+
+
+
+
+    @OnClick(R.id.areaET)
+    public void NewEt()
+    {
+        bottomForAllForArea = new BottomForAllForArea();
+        bottomForAllForArea.arrayList = arrayList1;
+        bottomForAllForArea.setResponseListener(new ResponseListener() {
+            @Override
+            public void response(Object object) {
+                areaName = ((DataChangeDM)object).getAreaName();
+                areaET.setText(areaName);
+
+            }
+        });
+        bottomForAllForArea.show(getSupportFragmentManager(), "bottomSheetCountry");
+    }
+    public void areaET() {
+
+        if (connectionDetector.isConnectingToInternet()) {
+            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+            dialog = dialogUtil.showProgressDialog(SaveAddressActivity.this, getString(R.string.please_wait));
+            appController.paServices.Area(governateId,new Callback<AreaDM>() {
+                @Override
+                public void success(AreaDM areaDM, Response response) {
+                    dialog.dismiss();
+                    if (areaDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+                        for (Info obj : areaDM.getOutput().getInfo())
+                        {
+                            DataChangeDM s=new DataChangeDM();
+                            s.setAreaName(obj.getTitle2());
+                            arrayList1.add(s);
+                        }
+
+
+
+                    } else
+                        Helper.showToast(SaveAddressActivity.this, getString(R.string.Api_data_not_found));
+                }
+
+                @Override
+                public void failure(RetrofitError retrofitError) {
+                    Log.e("error", retrofitError.toString());
+                }
+            });
+        } else
+            Helper.showToast(SaveAddressActivity.this, getString(R.string.no_internet_connection));
+    }
+
+
 
 
 
@@ -90,6 +210,7 @@ public class SaveAddressActivity extends AppCompatActivity {
         connectionDetector = new ConnectionDetector(SaveAddressActivity.this);
         dialogUtil = new DialogUtil();
         ButterKnife.bind(this);
+
 //        Binding();
 
     }

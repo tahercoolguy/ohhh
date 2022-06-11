@@ -128,7 +128,6 @@ public class Info {
     private String phone;
     private String secretcode;
     private String username;
-    
     private String featured;
     private String flat;
     private String street;
@@ -143,7 +142,6 @@ public class Info {
     private String shop_name;
     private String discount;
     private String  best;
-
     private String area;
     private String floor_no;
     private String governate;
@@ -153,6 +151,7 @@ public class Info {
     private String lat;
     private String areaname;
     private String governatesname;
+
 
     public String getAreaname() {
         return areaname;

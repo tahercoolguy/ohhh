@@ -108,7 +108,10 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
                                 if (loginDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 //                        Helper.shwToast(LoginActivity.this,customerRegisterDM.getMessage());
                                     user.setId(Integer.valueOf(loginDM.getOutput().getData().get(position).getId()));
-
+                                    user.setName(loginDM.getOutput().getData().get(position).getFname());
+                                    user.setEmail(loginDM.getOutput().getData().get(position).getEmail());
+                                    user.setMobileNumber(loginDM.getOutput().getData().get(position).getPhone());
+                                    user.setPassword(loginDM.getOutput().getData().get(position).getCountrycode());
                                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                     finish();
 

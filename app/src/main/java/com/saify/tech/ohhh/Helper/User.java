@@ -54,6 +54,14 @@ public class User {
         sp.edit().putString("name", name).apply();
     }
 
+    public String getCounteryCode() {
+        return sp.getString("counteryCode", null);
+    }
+
+    public void setCounteryCode(String counteryCode) {
+        sp.edit().putString("counteryCode", counteryCode).apply();
+    }
+
     public String getPassword() {
         return sp.getString("password", null);
     }
