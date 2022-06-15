@@ -60,7 +60,9 @@ public class BestFromDesert_Adapter  extends RecyclerView.Adapter<BestFromDesert
             @Override
             public void onClick(View view) {
 //                 ((MainActivity)context).addFragment(new Food_Details_Activity(), false);
-                ((MainActivity) context).startActivity(new Intent(context, Food_Details_Activity.class));
+                Intent intent=new Intent(context, Food_Details_Activity.class);
+                intent.putExtra("id",data.getId());
+                context.startActivity(intent);
             }
         });
 

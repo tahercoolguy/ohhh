@@ -1,5 +1,6 @@
 package com.saify.tech.ohhh.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -45,7 +46,7 @@ public class Offers_Adapter extends RecyclerView.Adapter<Offers_Adapter.Programm
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         Info data = arrayList.get(position);
 
@@ -59,7 +60,10 @@ public class Offers_Adapter extends RecyclerView.Adapter<Offers_Adapter.Programm
             @Override
             public void onClick(View view) {
 //                 ((MainActivity)context).addFragment(new Food_Details_Activity(), false);
-                ((MainActivity) context).startActivity(new Intent(context, Food_Details_Activity.class));
+
+                Intent intent=new Intent(context, Food_Details_Activity.class);
+                intent.putExtra("id",data.getId());
+                 context.startActivity(intent);
             }
         });
 

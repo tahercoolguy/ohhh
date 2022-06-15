@@ -151,7 +151,17 @@ public class Info {
     private String lat;
     private String areaname;
     private String governatesname;
+    private String shop_image;
 
+
+
+    public String getShop_image() {
+        return shop_image;
+    }
+
+    public void setShop_image(String shop_image) {
+        this.shop_image = shop_image;
+    }
 
     public String getAreaname() {
         return areaname;

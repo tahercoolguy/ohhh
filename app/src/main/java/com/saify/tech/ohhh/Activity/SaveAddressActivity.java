@@ -88,6 +88,8 @@ public class SaveAddressActivity extends AppCompatActivity {
       public String governateName;
       public String governateId;
      public String areaName;
+     Boolean isFirstTimeGovernate=true;
+    Boolean isFirstTimeArea=true;
 
     ArrayList<DataChangeDM> arrayList = new ArrayList();
 
@@ -95,36 +97,117 @@ public class SaveAddressActivity extends AppCompatActivity {
     @OnClick(R.id.governateET)
     public void governateET() {
 
+        if(isFirstTimeGovernate) {
+            isFirstTimeGovernate=false;
+            if (connectionDetector.isConnectingToInternet()) {
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+                dialog = dialogUtil.showProgressDialog(SaveAddressActivity.this, getString(R.string.please_wait));
+                appController.paServices.Governates(new Callback<GovernatesDM>() {
+                    @Override
+                    public void success(GovernatesDM governatesDM, Response response) {
+                        dialog.dismiss();
+                        if (governatesDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+                            governateId = governatesDM.getOutput().getInfo().get(0).getId();
+                            for (Info obj : governatesDM.getOutput().getInfo()) {
+                                DataChangeDM s = new DataChangeDM();
+                                s.setName(obj.getTitle_en());
+                                s.setGovernateId(obj.getId());
+                                arrayList.add(s);
+                            }
+                            bottomForAll = new BottomForAll();
+                            bottomForAll.arrayList = arrayList;
+
+                            bottomForAll.setResponseListener(new ResponseListener() {
+                                @Override
+                                public void response(Object object) {
+                                    governateName = ((DataChangeDM) object).getName();
+                                    governateId = ((DataChangeDM) object).getGovernateId();
+                                    governateET.setText(governateName);
+
+
+                                }
+                            });
+                            bottomForAll.show(getSupportFragmentManager(), "bottomSheetCountry");
+
+                        } else
+                            Helper.showToast(SaveAddressActivity.this, getString(R.string.Api_data_not_found));
+                    }
+
+                    @Override
+                    public void failure(RetrofitError retrofitError) {
+                        Log.e("error", retrofitError.toString());
+                    }
+                });
+            } else
+                Helper.showToast(SaveAddressActivity.this, getString(R.string.no_internet_connection));
+        }else
+        {
+            bottomForAll = new BottomForAll();
+            bottomForAll.arrayList = arrayList;
+
+            bottomForAll.setResponseListener(new ResponseListener() {
+                @Override
+                public void response(Object object) {
+                    governateName = ((DataChangeDM) object).getName();
+                    governateId = ((DataChangeDM) object).getGovernateId();
+                    governateET.setText(governateName);
+
+
+                }
+            });
+            bottomForAll.show(getSupportFragmentManager(), "bottomSheetCountry");
+        }
+    }
+
+
+
+
+//    @OnClick(R.id.areaET)
+//    public void NewEt()
+//    {
+//        bottomForAllForArea = new BottomForAllForArea();
+//        bottomForAllForArea.arrayList = arrayList1;
+//        bottomForAllForArea.setResponseListener(new ResponseListener() {
+//            @Override
+//            public void response(Object object) {
+//                areaName = ((DataChangeDM)object).getAreaName();
+//                areaET.setText(areaName);
+//
+//            }
+//        });
+//        bottomForAllForArea.show(getSupportFragmentManager(), "bottomSheetCountry");
+//    }
+    @OnClick(R.id.areaET)
+    public void areaET() {
+
+        arrayList1= new ArrayList<>();
         if (connectionDetector.isConnectingToInternet()) {
             String refreshedToken = FirebaseInstanceId.getInstance().getToken();
             dialog = dialogUtil.showProgressDialog(SaveAddressActivity.this, getString(R.string.please_wait));
-            appController.paServices.Governates( new Callback<GovernatesDM>() {
+            appController.paServices.Area(governateId,new Callback<AreaDM>() {
                 @Override
-                public void success(GovernatesDM governatesDM, Response response) {
+                public void success(AreaDM areaDM, Response response) {
                     dialog.dismiss();
-                    if (governatesDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
-                        governateId=governatesDM.getOutput().getInfo().get(0).getId();
-                        for (Info obj : governatesDM.getOutput().getInfo())
+                    if (areaDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+                        for (Info obj : areaDM.getOutput().getInfo())
                         {
                             DataChangeDM s=new DataChangeDM();
-                            s.setName(obj.getTitle_en());
-                            s.setGovernateId(obj.getId());
-                            arrayList.add(s);
-                         }
+                            s.setName(obj.getTitle2());
+                            arrayList1.add(s);
+                        }
+
+
                         bottomForAll = new BottomForAll();
-                        bottomForAll.arrayList =arrayList;
-
+                        bottomForAll.arrayList =arrayList1;
                         bottomForAll.setResponseListener(new ResponseListener() {
-                            @Override
-                            public void response(Object object) {
-                      governateName = ((DataChangeDM)object).getName();
-                      governateId=((DataChangeDM)object).getGovernateId();
-                      governateET.setText(governateName);
+            @Override
+            public void response(Object object) {
+                areaName = ((DataChangeDM)object).getName();
+                areaET.setText(areaName);
 
-                            areaET();
-
-                            }
-                        });
+            }
+        });
                         bottomForAll.show(getSupportFragmentManager(), "bottomSheetCountry");
 
                     } else
@@ -138,57 +221,7 @@ public class SaveAddressActivity extends AppCompatActivity {
             });
         } else
             Helper.showToast(SaveAddressActivity.this, getString(R.string.no_internet_connection));
-    }
 
-
-
-
-    @OnClick(R.id.areaET)
-    public void NewEt()
-    {
-        bottomForAllForArea = new BottomForAllForArea();
-        bottomForAllForArea.arrayList = arrayList1;
-        bottomForAllForArea.setResponseListener(new ResponseListener() {
-            @Override
-            public void response(Object object) {
-                areaName = ((DataChangeDM)object).getAreaName();
-                areaET.setText(areaName);
-
-            }
-        });
-        bottomForAllForArea.show(getSupportFragmentManager(), "bottomSheetCountry");
-    }
-    public void areaET() {
-
-        if (connectionDetector.isConnectingToInternet()) {
-            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-            dialog = dialogUtil.showProgressDialog(SaveAddressActivity.this, getString(R.string.please_wait));
-            appController.paServices.Area(governateId,new Callback<AreaDM>() {
-                @Override
-                public void success(AreaDM areaDM, Response response) {
-                    dialog.dismiss();
-                    if (areaDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
-
-                        for (Info obj : areaDM.getOutput().getInfo())
-                        {
-                            DataChangeDM s=new DataChangeDM();
-                            s.setAreaName(obj.getTitle2());
-                            arrayList1.add(s);
-                        }
-
-
-
-                    } else
-                        Helper.showToast(SaveAddressActivity.this, getString(R.string.Api_data_not_found));
-                }
-
-                @Override
-                public void failure(RetrofitError retrofitError) {
-                    Log.e("error", retrofitError.toString());
-                }
-            });
-        } else
-            Helper.showToast(SaveAddressActivity.this, getString(R.string.no_internet_connection));
     }
 
 

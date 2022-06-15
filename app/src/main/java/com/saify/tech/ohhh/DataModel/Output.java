@@ -12,6 +12,11 @@ public class Output {
 
     private ArrayList<Category> category;
 
+ //   private ArrayList<ImageList> images;
+    private String  favaorate;
+
+
+
 
   //    private String info;
 
@@ -61,5 +66,16 @@ public class Output {
 
     public void setCategory(ArrayList<Category> category) {
         this.category = category;
+    }
+
+
+
+
+    public String getFavaorate() {
+        return favaorate;
+    }
+
+    public void setFavaorate(String favaorate) {
+        this.favaorate = favaorate;
     }
 }

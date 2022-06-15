@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:id="@+id/linear1"
-    android:layout_margin="10dp">
+    android:layout_margin="20dp">
 
     <TextView
         android:id="@+id/areaTV"
@@ -19,13 +19,12 @@
         android:textSize="@dimen/text_size_normal"
         android:textStyle="normal" />
 
-    <CheckBox
-        android:id="@+id/checkbox1"
+    <ImageView
+        android:id="@+id/image_check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-         android:visibility="gone"
-        android:checked="true"
-        android:onClick="visible"/>
+        android:layout_gravity="center"
+        android:src="@drawable/ic_baseline_check_circle_24"/>
 
 
 

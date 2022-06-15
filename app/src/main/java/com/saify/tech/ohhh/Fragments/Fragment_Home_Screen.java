@@ -147,7 +147,7 @@ public class Fragment_Home_Screen extends Fragment {
 
                 //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
 
-                appController.paServices.FShops( new Callback<FShopsDM>() {
+                appController.paServices.FShops("7", new Callback<FShopsDM>() {
                 @Override
                 public void success(FShopsDM fShopsDM, Response response) {
                         //                       progress.dismiss();
@@ -201,7 +201,7 @@ public class Fragment_Home_Screen extends Fragment {
 
  //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
 
-                appController.paServices.Offers( new Callback<OffersApiDM>() {
+                appController.paServices.Offers("7", new Callback<OffersApiDM>() {
                     @Override
                     public void success(OffersApiDM offersApiDM, Response response) {
  //                       progress.dismiss();
@@ -254,7 +254,7 @@ public class Fragment_Home_Screen extends Fragment {
 
                 //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
 
-                appController.paServices.Best( new Callback<BestDM>() {
+                appController.paServices.Best("7", new Callback<BestDM>() {
                     @Override
                     public void success(BestDM bestDM, Response response) {
                         //                       progress.dismiss();

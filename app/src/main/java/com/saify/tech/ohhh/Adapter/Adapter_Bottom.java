@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -72,8 +73,15 @@ public class Adapter_Bottom extends BaseAdapter {
 //
 //              }
 //          });
-
 //        viewHolder.price.setText(data.getUnitPriceKWD());
+
+//        if (selected==arrayList.get(position)) {
+//            viewHolder.image.setVisibility(View.VISIBLE);
+//                 }
+//        else {
+//            viewHolder.image.setVisibility(View.INVISIBLE);
+//              }
+
 
     }
 
@@ -95,12 +103,13 @@ public class Adapter_Bottom extends BaseAdapter {
 
     private static class ViewHolder {
         private TextView Name;
-        private CheckBox checkBox;
-        private LinearLayout linearLayout;
+        private ImageView image;
 
 
         private ViewHolder(View view) {
             Name= view.findViewById(R.id.areaTV);
+           image= view.findViewById(R.id.image_check);
+
 //            linearLayout=view.findViewById(R.id.linear1);
 //            checkBox=view.findViewById(R.id.checkbox1);
 //            price = view.findViewById(R.id.prizeTV);

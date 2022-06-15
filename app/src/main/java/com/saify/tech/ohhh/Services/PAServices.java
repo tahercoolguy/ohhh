@@ -18,6 +18,7 @@ import com.saify.tech.ohhh.DataModel.MyWishlistDM;
 import com.saify.tech.ohhh.DataModel.MyprofileDM;
 import com.saify.tech.ohhh.DataModel.NewsDM;
 import com.saify.tech.ohhh.DataModel.OffersApiDM;
+import com.saify.tech.ohhh.DataModel.ProductsByIdDM;
 import com.saify.tech.ohhh.DataModel.ProductsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.RestaurentDM;
 import com.saify.tech.ohhh.DataModel.SaveAddressDM;
@@ -164,16 +165,22 @@ public interface PAServices {
 
 
      //12
-     @GET("/ohhh/offers")
-     public void Offers(Callback<OffersApiDM> offersApiDMCallback);
+     @FormUrlEncoded
+     @POST("/ohhh/offersbyAreaId")
+     public void Offers(@Field("area_id") String area_id,
+                       Callback<OffersApiDM> offersApiDMCallback);
 
      //13
-     @GET("/ohhh/best")
-     public void Best(Callback<BestDM> offersApiDMCallback);
+     @FormUrlEncoded
+     @POST("/ohhh/bestbyAreaId")
+     public void Best(@Field("area_id") String area_id,
+                      Callback<BestDM> offersApiDMCallback);
 
       //14
-     @GET("/ohhh/fshops")
-     public void FShops(Callback<FShopsDM> fShopsDMCallback);
+      @FormUrlEncoded
+     @POST("/ohhh/fshopsbyAreaId")
+     public void FShops(@Field("area_id") String area_id,
+                      Callback<FShopsDM> fShopsDMCallback);
 
      //15
     @FormUrlEncoded
@@ -205,6 +212,13 @@ public interface PAServices {
                             @Field("lat") String lat,
                             @Field("lan") String lan,
                          Callback<SaveAddressDM> saveAddressDMCallback);
+
+
+    //16
+     @FormUrlEncoded
+     @POST("/ohhh/productsById")
+     public void ProductsById(@Field("id") String id,
+                  Callback<ProductsByIdDM> shopByIdDMCallback);
 
 
 

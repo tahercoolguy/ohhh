@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -16,10 +17,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Adapter.Order_Info_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.OrderInfoDM;
+import com.saify.tech.ohhh.DataModel.ProductsByIdDM;
+import com.saify.tech.ohhh.DataModel.UpdateProfileDM;
 import com.saify.tech.ohhh.Fragments.Deep_and_Deep_2_Fragment;
 import com.saify.tech.ohhh.Fragments.Feed_Categories_Fragment;
 import com.saify.tech.ohhh.Fragments.Fragment_Home_Screen;
@@ -28,6 +32,8 @@ import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
+import com.saify.tech.ohhh.Utils.Helper;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -35,6 +41,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.MaybeOnSubscribe;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class Food_Details_Activity extends AppCompatActivity {
 
@@ -48,6 +57,7 @@ public class Food_Details_Activity extends AppCompatActivity {
     int count = 0;
 
     String strCounter;
+    String ID;
 
 
 
@@ -88,6 +98,15 @@ public class Food_Details_Activity extends AppCompatActivity {
 
     @BindView(R.id.minus_plus_Txt)
     TextView minus_plus_text;
+
+    @BindView(R.id.cake_name)
+    TextView cake_name;
+
+    @BindView(R.id.price_tv)
+    TextView price_tv;
+
+    @BindView(R.id.cake_img1)
+    ImageView cake_img1;
 
 
     @OnClick(R.id.minus_cake_Rl)
@@ -198,24 +217,27 @@ public class Food_Details_Activity extends AppCompatActivity {
         connectionDetector = new ConnectionDetector(getApplicationContext());
         user = new User(Food_Details_Activity.this);
         user = new User(this);
+
+        ID=getIntent().getStringExtra("id");
         idMappings();
+        Binding();
 
 
-        ArrayList<OrderInfoDM> orderInfoDMS = new ArrayList<>();
-
-        orderInfoDMS.add(new OrderInfoDM("Subtotal", "5.000 KWD"));
-        orderInfoDMS.add(new OrderInfoDM("Code Applied", "Mx3029"));
-        orderInfoDMS.add(new OrderInfoDM("Discount", "50%"));
-        orderInfoDMS.add(new OrderInfoDM("Delivery Charges", "3.000 KWD"));
-        orderInfoDMS.add(new OrderInfoDM("Total", "2.500 KWD"));
-
-
-//            HistoryRcv.setLayoutManager(new LinearLayoutManager(context));
-//            HistoryRcv.setAdapter(new HistoryDM_Adapter((context), historyDMS));
-
+//        ArrayList<OrderInfoDM> orderInfoDMS = new ArrayList<>();
 //
-        Order_Info_Adapter dm = new Order_Info_Adapter(Food_Details_Activity.this, orderInfoDMS);
-        LinearLayoutManager l = new LinearLayoutManager(this);
+//        orderInfoDMS.add(new OrderInfoDM("Subtotal", "5.000 KWD"));
+//        orderInfoDMS.add(new OrderInfoDM("Code Applied", "Mx3029"));
+//        orderInfoDMS.add(new OrderInfoDM("Discount", "50%"));
+//        orderInfoDMS.add(new OrderInfoDM("Delivery Charges", "3.000 KWD"));
+//        orderInfoDMS.add(new OrderInfoDM("Total", "2.500 KWD"));
+//
+//
+////            HistoryRcv.setLayoutManager(new LinearLayoutManager(context));
+////            HistoryRcv.setAdapter(new HistoryDM_Adapter((context), historyDMS));
+//
+////
+//        Order_Info_Adapter dm = new Order_Info_Adapter(Food_Details_Activity.this, orderInfoDMS);
+//        LinearLayoutManager l = new LinearLayoutManager(this);
 //        order_info_Rcvv.setLayoutManager(l);
 //        order_info_Rcvv.setAdapter(dm);
 
@@ -366,7 +388,51 @@ public class Food_Details_Activity extends AppCompatActivity {
 //                }
 //            }
 //        });
-}
+
+
+    public void Binding() {
+        if (connectionDetector.isConnectingToInternet()) {
+            {
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
+
+                appController.paServices.ProductsById(ID, new Callback<ProductsByIdDM>() {
+                    @Override
+                    public void success(ProductsByIdDM productsByIdDM, Response response) {
+                        progress.dismiss();
+                        if (productsByIdDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+                         cake_name.setText(productsByIdDM.getOutput().getInfo().get(0).getTitle_en());
+                          price_tv.setText(productsByIdDM.getOutput().getInfo().get(0).getPrice());
+                          if(!productsByIdDM.getOutput().getInfo().get(0).getImage().equalsIgnoreCase(""))
+                          {
+                            Picasso.with(context).load(productsByIdDM.getOutput().getInfo().get(0).getImage()).into(cake_img1);
+                          }
+
+
+//                            Helper.showToast(Food_Details_Activity.this, productsByIdDM.getOutput().getMessage());
+
+                        } else
+
+                            Helper.showToast(Food_Details_Activity.this,getString(R.string.Api_data_not_found));
+                    }
+
+                    @Override
+                    public void failure(RetrofitError error) {
+
+                        Log.e("String", error.toString());
+                    }
+                });
+            }
+        } else
+            Helper.showToast(Food_Details_Activity.this, getString(R.string.no_internet_connection));
+    }
+
+    }
+
+
+
 
 
 
