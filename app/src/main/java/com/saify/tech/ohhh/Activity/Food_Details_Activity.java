@@ -19,10 +19,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
+import com.saify.tech.ohhh.Adapter.Adapter_Food_Detail_Flavour;
+import com.saify.tech.ohhh.Adapter.Adapter_Food_Detail_Size;
 import com.saify.tech.ohhh.Adapter.Order_Info_Adapter;
+import com.saify.tech.ohhh.Adapter.Shopss_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.FlavoursDM;
 import com.saify.tech.ohhh.DataModel.OrderInfoDM;
 import com.saify.tech.ohhh.DataModel.ProductsByIdDM;
+import com.saify.tech.ohhh.DataModel.SizesDM;
 import com.saify.tech.ohhh.DataModel.UpdateProfileDM;
 import com.saify.tech.ohhh.Fragments.Deep_and_Deep_2_Fragment;
 import com.saify.tech.ohhh.Fragments.Feed_Categories_Fragment;
@@ -30,6 +35,7 @@ import com.saify.tech.ohhh.Fragments.Fragment_Home_Screen;
 import com.saify.tech.ohhh.Fragments.Fragment_Shops;
 import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.User;
+import com.saify.tech.ohhh.Models.Size;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
 import com.saify.tech.ohhh.Utils.Helper;
@@ -61,23 +67,14 @@ public class Food_Details_Activity extends AppCompatActivity {
 
 
 
-    @BindView(R.id.smalll_Img)
-    ImageView smalll_RL;
 
-    @BindView(R.id.medium_RL)
-    ImageView medium_RL;
+    @BindView(R.id.sizeRV)
+    RecyclerView sizeRV;
 
-    @BindView(R.id.large_RL)
-    ImageView large_RL;
 
-    @BindView(R.id.cheese_1RL)
-    ImageView cheese_1RL;
+    @BindView(R.id.flavourRV)
+    RecyclerView flavourRV;
 
-    @BindView(R.id.mayonese_2Rl)
-    ImageView mayonese_2Rl;
-
-    @BindView(R.id.extra_chocklate_3Rl)
-    ImageView extra_chocklate_3Rl;
 
     @BindView(R.id.add_to_cart_Btn)
     TextView add_to_cart_Btn;
@@ -147,50 +144,50 @@ public class Food_Details_Activity extends AppCompatActivity {
 
         startActivity(new Intent(Food_Details_Activity.this, Cart_Activity.class));
     }
+//
+//    @OnClick(R.id.cheese_1RL)
+//    public void cheese() {
+//
+//        ifHome11 = true;
+//        cheese1();
+//    }
+//
+//    @OnClick(R.id.mayonese_2Rl)
+//    public void mayonese() {
+//
+//        ifHome21 = true;
+//        Mayonese1();
+//
+//    }
+//
+//    @OnClick(R.id.extra_chocklate_3Rl)
+//    public void chocklate() {
+//
+//        ifHome31 = true;
+//        ExtraChocklate1();
+//
+//    }
 
-    @OnClick(R.id.cheese_1RL)
-    public void cheese() {
-
-        ifHome11 = true;
-        cheese1();
-    }
-
-    @OnClick(R.id.mayonese_2Rl)
-    public void mayonese() {
-
-        ifHome21 = true;
-        Mayonese1();
-
-    }
-
-    @OnClick(R.id.extra_chocklate_3Rl)
-    public void chocklate() {
-
-        ifHome31 = true;
-        ExtraChocklate1();
-
-    }
-
-
-    @OnClick(R.id.smalll_Img)
-    public void Small() {
-
-        ifHome1 = true;
-        Home1();
-    }
-
-    @OnClick(R.id.medium_RL)
-    public void Medium() {
-        ifHome2 = true;
-        Home2();
-    }
-
-    @OnClick(R.id.large_RL)
-    public void Large() {
-
-        ifHome3 = true;
-        Home3();
-    }
+//
+//    @OnClick(R.id.smalll_Img)
+//    public void Small() {
+//
+//        ifHome1 = true;
+//        Home1();
+//    }
+//
+//    @OnClick(R.id.medium_RL)
+//    public void Medium() {
+//        ifHome2 = true;
+//        Home2();
+//    }
+//
+//    @OnClick(R.id.large_RL)
+//    public void Large() {
+//
+//        ifHome3 = true;
+//        Home3();
+//    }
 
 
 //    @NotEmpty
@@ -218,10 +215,11 @@ public class Food_Details_Activity extends AppCompatActivity {
         user = new User(Food_Details_Activity.this);
         user = new User(this);
 
-        ID=getIntent().getStringExtra("id");
+        ID = getIntent().getStringExtra("id");
         idMappings();
         Binding();
-
+        size();
+        flavour();
 
 //        ArrayList<OrderInfoDM> orderInfoDMS = new ArrayList<>();
 //
@@ -249,88 +247,88 @@ public class Food_Details_Activity extends AppCompatActivity {
     boolean ifHome21 = false;
     boolean ifHome31 = false;
 
-    public void cheese1() {
-
-        if (ifHome11) {
-
-            cheese_1RL.setBackground(getDrawable(R.drawable.ic_freee));
-            mayonese_2Rl.setBackground(getDrawable(R.drawable.ic_unfree));
-            extra_chocklate_3Rl.setBackground(getDrawable(R.drawable.ic_unfree));
-
-
-        }
-
-    }
-
-    public void Mayonese1() {
-
-        if (ifHome21) {
-
-            cheese_1RL.setBackground(getDrawable(R.drawable.ic_unfree));
-            mayonese_2Rl.setBackground(getDrawable(R.drawable.ic_freee));
-            extra_chocklate_3Rl.setBackground(getDrawable(R.drawable.ic_unfree));
-
-
-        }
-
-    }
-
-    public void ExtraChocklate1() {
-
-        if (ifHome31) {
-
-            cheese_1RL.setBackground(getDrawable(R.drawable.ic_unfree));
-            mayonese_2Rl.setBackground(getDrawable(R.drawable.ic_unfree));
-            extra_chocklate_3Rl.setBackground(getDrawable(R.drawable.ic_freee));
-
-
-        }
-
-    }
+//    public void cheese1() {
+//
+//        if (ifHome11) {
+//
+//            cheese_1RL.setBackground(getDrawable(R.drawable.ic_freee));
+//            mayonese_2Rl.setBackground(getDrawable(R.drawable.ic_unfree));
+//            extra_chocklate_3Rl.setBackground(getDrawable(R.drawable.ic_unfree));
+//
+//
+//        }
+//
+//    }
+//
+//    public void Mayonese1() {
+//
+//        if (ifHome21) {
+//
+//            cheese_1RL.setBackground(getDrawable(R.drawable.ic_unfree));
+//            mayonese_2Rl.setBackground(getDrawable(R.drawable.ic_freee));
+//            extra_chocklate_3Rl.setBackground(getDrawable(R.drawable.ic_unfree));
+//
+//
+//        }
+//
+//    }
+//
+//    public void ExtraChocklate1() {
+//
+//        if (ifHome31) {
+//
+//            cheese_1RL.setBackground(getDrawable(R.drawable.ic_unfree));
+//            mayonese_2Rl.setBackground(getDrawable(R.drawable.ic_unfree));
+//            extra_chocklate_3Rl.setBackground(getDrawable(R.drawable.ic_freee));
+//
+//
+//        }
+//
+//    }
 
 
     boolean ifHome1 = false;
     boolean ifHome2 = false;
     boolean ifHome3 = false;
 
-    public void Home1() {
+//    public void Home1() {
+//
+//        if (ifHome1) {
+//
+//            smalll_RL.setBackground(getDrawable(R.drawable.ic_freee));
+//            medium_RL.setBackground(getDrawable(R.drawable.ic_unfree));
+//            large_RL.setBackground(getDrawable(R.drawable.ic_unfree));
+//
+//
+//        }
+//
+//    }
 
-        if (ifHome1) {
+//    public void Home2() {
+//
+//        if (ifHome2) {
+//
+//            smalll_RL.setBackground(getDrawable(R.drawable.ic_unfree));
+//            medium_RL.setBackground(getDrawable(R.drawable.ic_freee));
+//            large_RL.setBackground(getDrawable(R.drawable.ic_unfree));
+//
+//
+//        }
+//
+//    }
 
-            smalll_RL.setBackground(getDrawable(R.drawable.ic_freee));
-            medium_RL.setBackground(getDrawable(R.drawable.ic_unfree));
-            large_RL.setBackground(getDrawable(R.drawable.ic_unfree));
-
-
-        }
-
-    }
-
-    public void Home2() {
-
-        if (ifHome2) {
-
-            smalll_RL.setBackground(getDrawable(R.drawable.ic_unfree));
-            medium_RL.setBackground(getDrawable(R.drawable.ic_freee));
-            large_RL.setBackground(getDrawable(R.drawable.ic_unfree));
-
-
-        }
-
-    }
-
-    public void Home3() {
-
-        if (ifHome3) {
-
-            smalll_RL.setBackground(getDrawable(R.drawable.ic_unfree));
-            medium_RL.setBackground(getDrawable(R.drawable.ic_unfree));
-            large_RL.setBackground(getDrawable(R.drawable.ic_freee));
-
-
-        }
-
-    }
+//    public void Home3() {
+//
+//        if (ifHome3) {
+//
+//            smalll_RL.setBackground(getDrawable(R.drawable.ic_unfree));
+//            medium_RL.setBackground(getDrawable(R.drawable.ic_unfree));
+//            large_RL.setBackground(getDrawable(R.drawable.ic_freee));
+//
+//
+//        }
+//
+//    }
 
     @Override
     protected void onResume() {
@@ -395,23 +393,65 @@ public class Food_Details_Activity extends AppCompatActivity {
             {
                 String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
-                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
+//                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
 
                 appController.paServices.ProductsById(ID, new Callback<ProductsByIdDM>() {
                     @Override
                     public void success(ProductsByIdDM productsByIdDM, Response response) {
-                        progress.dismiss();
+//                        progress.dismiss();
                         if (productsByIdDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
-                         cake_name.setText(productsByIdDM.getOutput().getInfo().get(0).getTitle_en());
-                          price_tv.setText(productsByIdDM.getOutput().getInfo().get(0).getPrice());
-                          if(!productsByIdDM.getOutput().getInfo().get(0).getImage().equalsIgnoreCase(""))
-                          {
-                            Picasso.with(context).load(productsByIdDM.getOutput().getInfo().get(0).getImage()).into(cake_img1);
-                          }
+                            cake_name.setText(productsByIdDM.getOutput().getInfo().get(0).getTitle_en());
+                            price_tv.setText(productsByIdDM.getOutput().getInfo().get(0).getPrice());
+                            if (!productsByIdDM.getOutput().getInfo().get(0).getImage().equalsIgnoreCase("")) {
+                                Picasso.with(context).load(productsByIdDM.getOutput().getInfo().get(0).getImage()).into(cake_img1);
+                            }
 
 
 //                            Helper.showToast(Food_Details_Activity.this, productsByIdDM.getOutput().getMessage());
+
+                        } else
+
+                            Helper.showToast(Food_Details_Activity.this, getString(R.string.Api_data_not_found));
+                    }
+
+                    @Override
+                    public void failure(RetrofitError error) {
+
+                        Log.e("String", error.toString());
+                    }
+                });
+            }
+        } else
+            Helper.showToast(Food_Details_Activity.this, getString(R.string.no_internet_connection));
+    }
+
+    public void size()
+
+        {
+//    ArrayList<Size> shopssDMS = new ArrayList<>();
+//               shopssDMS.add(new Size("small","1000"));
+//              shopssDMS.add(new Size("medium","2000"));
+
+
+        if (connectionDetector.isConnectingToInternet()) {
+            {
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+//                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
+
+                appController.paServices.Size(ID, new Callback<SizesDM>() {
+                    @Override
+                    public void success(SizesDM sizesDM, Response response) {
+//                        progress.dismiss();
+                        if (sizesDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+//                            if (ID != null)
+                            {  Adapter_Food_Detail_Size dm = new Adapter_Food_Detail_Size(Food_Details_Activity.this, sizesDM.getOutput().getInfo());
+                            LinearLayoutManager l = new LinearLayoutManager(Food_Details_Activity.this);
+                            sizeRV.setLayoutManager(l);
+                            sizeRV.setAdapter(dm);  }
+
 
                         } else
 
@@ -427,9 +467,50 @@ public class Food_Details_Activity extends AppCompatActivity {
             }
         } else
             Helper.showToast(Food_Details_Activity.this, getString(R.string.no_internet_connection));
-    }
 
     }
+
+    public void flavour()
+    {
+
+//        ArrayList<Size> shopssDMS = new ArrayList<>();
+//        shopssDMS.add(new Size("small","1000"));
+
+        if (connectionDetector.isConnectingToInternet()) {
+            {
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+//                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
+
+                appController.paServices.Flavours(ID, new Callback<FlavoursDM>() {
+                    @Override
+                    public void success(FlavoursDM flavoursDM, Response response) {
+//                        progress.dismiss();
+                        if (flavoursDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+              Adapter_Food_Detail_Flavour dm = new Adapter_Food_Detail_Flavour (Food_Details_Activity.this, flavoursDM.getOutput().getInfo());
+              LinearLayoutManager l = new LinearLayoutManager(Food_Details_Activity.this);
+              flavourRV.setLayoutManager(l);
+              flavourRV.setAdapter(dm);
+
+                        } else
+
+                            Helper.showToast(Food_Details_Activity.this,getString(R.string.Api_data_not_found));
+                    }
+
+                    @Override
+                    public void failure(RetrofitError error) {
+
+                        Log.e("String", error.toString());
+                    }
+                });
+            }
+        } else
+            Helper.showToast(Food_Details_Activity.this, getString(R.string.no_internet_connection));
+
+    }
+
+}
 
 
 

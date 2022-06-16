@@ -75,12 +75,12 @@ public class Adapter_Bottom extends BaseAdapter {
 //          });
 //        viewHolder.price.setText(data.getUnitPriceKWD());
 
-//        if (selected==arrayList.get(position)) {
-//            viewHolder.image.setVisibility(View.VISIBLE);
-//                 }
-//        else {
-//            viewHolder.image.setVisibility(View.INVISIBLE);
-//              }
+        if (selected==data) {
+            viewHolder.image.setVisibility(View.VISIBLE);
+                 }
+        else {
+            viewHolder.image.setVisibility(View.INVISIBLE);
+              }
 
 
     }

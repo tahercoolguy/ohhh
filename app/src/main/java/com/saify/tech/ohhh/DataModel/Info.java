@@ -153,8 +153,6 @@ public class Info {
     private String governatesname;
     private String shop_image;
 
-
-
     public String getShop_image() {
         return shop_image;
     }

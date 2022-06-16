@@ -43,6 +43,8 @@ public class Saved_Address_DM_Adapter extends RecyclerView.Adapter<Saved_Address
         holder.address.setText(data.getStreet()+","+data.getFloor_no()+","+data.getAreaname()+","+data.getGovernatesname());
 //        holder.home.setText(savedAddressDM.getHome());
 //        holder.home_img.setImageResource(savedAddressDM.getHome_img());
+
+
     }
 
     @Override

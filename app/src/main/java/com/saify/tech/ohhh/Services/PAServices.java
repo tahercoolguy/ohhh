@@ -5,6 +5,7 @@ package com.saify.tech.ohhh.Services;
 
 
 import com.saify.tech.ohhh.DataModel.AddressListDM;
+import com.saify.tech.ohhh.DataModel.AddtoCartDM;
 import com.saify.tech.ohhh.DataModel.AreaDM;
 import com.saify.tech.ohhh.DataModel.BannerDM;
 import com.saify.tech.ohhh.DataModel.BestDM;
@@ -12,6 +13,7 @@ import com.saify.tech.ohhh.DataModel.CatgoryListDM;
 import com.saify.tech.ohhh.DataModel.ChangePasswordDM;
 import com.saify.tech.ohhh.DataModel.EventsDM;
 import com.saify.tech.ohhh.DataModel.FShopsDM;
+import com.saify.tech.ohhh.DataModel.FlavoursDM;
 import com.saify.tech.ohhh.DataModel.GovernatesDM;
 import com.saify.tech.ohhh.DataModel.LoginDM;
 import com.saify.tech.ohhh.DataModel.MyWishlistDM;
@@ -26,6 +28,7 @@ import com.saify.tech.ohhh.DataModel.ShopByIdDM;
 import com.saify.tech.ohhh.DataModel.ShopsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.ShopsDM;
 import com.saify.tech.ohhh.DataModel.SignUpDM;
+import com.saify.tech.ohhh.DataModel.SizesDM;
 import com.saify.tech.ohhh.DataModel.UpdateProfileDM;
 import com.saify.tech.ohhh.DataModel.VideoDM;
 
@@ -219,6 +222,34 @@ public interface PAServices {
      @POST("/ohhh/productsById")
      public void ProductsById(@Field("id") String id,
                   Callback<ProductsByIdDM> shopByIdDMCallback);
+
+
+    //17
+    @FormUrlEncoded
+    @POST("/ohhh/Sizes")
+    public void Size(@Field("product_id") String product_id,
+                          Callback<SizesDM> sizesDMCallbacks);
+
+    //18
+    @FormUrlEncoded
+    @POST("/ohhh/Flavours")
+    public void Flavours(@Field("product_id") String product_id,
+                        Callback<FlavoursDM> flavoursDMCallback);
+
+    //19
+    @FormUrlEncoded
+    @POST("/ohhh/AddtoCart")
+    public void AddtoCart(@Field("user_id") String user_id,
+                          @Field("product_id") String product_id,
+                          @Field("shop_id") String shop_id,
+                          @Field("quantity") String quantity,
+                          @Field("comments") String comments,
+                          @Field("size_id") String size_id,
+                          @Field("flavour_id") String flavour_id,
+
+                          Callback<AddtoCartDM> addtoCartDMCallback);
+
+
 
 
 
