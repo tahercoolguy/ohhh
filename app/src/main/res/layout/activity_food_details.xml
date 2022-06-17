@@ -160,10 +160,8 @@
                     android:textStyle="bold"></TextView>
 
                 <RelativeLayout
-                    android:id="@+id/minus_cake_Rl"
+                    android:id="@+id/minus_img"
                     android:layout_width="25dp"
-
-
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:background="@drawable/rounded_corner_border_primary_colour_plus_minus"
@@ -179,16 +177,15 @@
                 </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/minus_plus_Txt"
+                    android:text="1"
+                    android:id="@+id/quantity_txt"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:fontFamily="@font/semi_bold"
-
                     android:gravity="center"
-                    android:text="1"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="bold">
@@ -196,7 +193,7 @@
                 </TextView>
 
                 <RelativeLayout
-                    android:id="@+id/plus_cake_RL"
+                    android:id="@+id/plus_img"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"

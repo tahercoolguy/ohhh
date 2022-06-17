@@ -15,6 +15,10 @@ public class Output {
  //   private ArrayList<ImageList> images;
     private String  favaorate;
 
+    private String  sub_total;
+    private String after_discount;
+
+
 
 
 
@@ -68,14 +72,27 @@ public class Output {
         this.category = category;
     }
 
-
-
-
     public String getFavaorate() {
         return favaorate;
     }
 
     public void setFavaorate(String favaorate) {
         this.favaorate = favaorate;
+    }
+
+    public String getSub_total() {
+        return sub_total;
+    }
+
+    public void setSub_total(String sub_total) {
+        this.sub_total = sub_total;
+    }
+
+    public String getAfter_discount() {
+        return after_discount;
+    }
+
+    public void setAfter_discount(String after_discount) {
+        this.after_discount = after_discount;
     }
 }

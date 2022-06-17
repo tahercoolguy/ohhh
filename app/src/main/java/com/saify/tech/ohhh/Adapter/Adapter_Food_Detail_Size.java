@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.saify.tech.ohhh.Activity.Food_Details_Activity;
 import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.ShopsResult;
 import com.saify.tech.ohhh.Helper.User;
@@ -75,6 +76,14 @@ public class Adapter_Food_Detail_Size extends RecyclerView.Adapter<Adapter_Food_
         if(data!=null ) {
             viewHolder.size.setText(data.getSize());
             viewHolder.price.setText(data.getPrice());
+            viewHolder.radioButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ((Food_Details_Activity)context).Size_id = data.getId();
+                }
+            });
+
+
         } else  {
             viewHolder.radioButton.setVisibility(View.GONE);
             }

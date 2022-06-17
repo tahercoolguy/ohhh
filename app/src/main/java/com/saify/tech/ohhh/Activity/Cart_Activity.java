@@ -2,8 +2,11 @@
 package com.saify.tech.ohhh.Activity;
 
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -12,26 +15,41 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Adapter.Cart_Adapter;
 import com.saify.tech.ohhh.Adapter.Nornoya_Dip_Adapter;
 import com.saify.tech.ohhh.Adapter.Offers_Adapter;
+import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.CartDM;
+import com.saify.tech.ohhh.DataModel.MyCartDM;
 import com.saify.tech.ohhh.DataModel.Nornoya_Dip_Dm;
 import com.saify.tech.ohhh.DataModel.OffersDM;
+import com.saify.tech.ohhh.DataModel.ProductsByIdDM;
+import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
+import com.saify.tech.ohhh.Utils.ConnectionDetector;
+import com.saify.tech.ohhh.Utils.Helper;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class Cart_Activity extends AppCompatActivity {
 
 
+    AppController appController;
     private User user;
+    ConnectionDetector connectionDetector;
+    DialogUtil dialogUtil;
+
+
     @NotEmpty
     @BindView(R.id.back_cart)
     LinearLayout back;
@@ -78,6 +96,12 @@ public class Cart_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_cart);
         ButterKnife.bind(this);
         user = new User(this);
+        dialogUtil = new DialogUtil();
+        appController = (AppController) getApplicationContext();
+        connectionDetector = new ConnectionDetector(getApplicationContext());
+        user = new User(Cart_Activity.this);
+
+
 //        Nornoya();
 //        Dip_N_Dip();
         Nornoya_Dip_Adapt();
@@ -114,17 +138,42 @@ public class Cart_Activity extends AppCompatActivity {
 
 
     private void Nornoya_Dip_Adapt() {
-        ArrayList<Nornoya_Dip_Dm> nornoya_dip_dms = new ArrayList<>();
-        nornoya_dip_dms.add(new Nornoya_Dip_Dm("Nornoya", R.drawable.nornoya));
-        nornoya_dip_dms.add(new Nornoya_Dip_Dm("Dip N Dip", R.drawable.deep_small));
+//        ArrayList<Nornoya_Dip_Dm> nornoya_dip_dms = new ArrayList<>();
+//        nornoya_dip_dms.add(new Nornoya_Dip_Dm("Nornoya", R.drawable.nornoya));
+//        nornoya_dip_dms.add(new Nornoya_Dip_Dm("Dip N Dip", R.drawable.deep_small));
 
 
-        Nornoya_Dip_Adapter dm = new Nornoya_Dip_Adapter(this, nornoya_dip_dms);
+        if (connectionDetector.isConnectingToInternet()) {
+            {
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
-        LinearLayoutManager l
-                = new LinearLayoutManager(Cart_Activity.this, LinearLayoutManager.VERTICAL, false);
+//                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
+
+                appController.paServices.MyCart(String.valueOf(user.getId()), new Callback<MyCartDM>() {
+                    @Override
+                    public void success(MyCartDM myCartDM, Response response) {
+//                        progress.dismiss();
+                        if (myCartDM.getOutput().get(0).getSuccess().equalsIgnoreCase("1")) {
+
+        Nornoya_Dip_Adapter dm = new Nornoya_Dip_Adapter(Cart_Activity.this, myCartDM.getOutput());
+        LinearLayoutManager l = new LinearLayoutManager(Cart_Activity.this, LinearLayoutManager.VERTICAL, false);
         nornoya_deep_Rcvv.setLayoutManager(l);
         nornoya_deep_Rcvv.setAdapter(dm);
+
+                        } else
+
+                            Helper.showToast(Cart_Activity.this, getString(R.string.Api_data_not_found));
+                    }
+
+                    @Override
+                    public void failure(RetrofitError error) {
+
+                        Log.e("String", error.toString());
+                    }
+                });
+            }
+        } else
+            Helper.showToast(Cart_Activity.this, getString(R.string.no_internet_connection));
     }
 
 //    private void Dip_N_Dip() {

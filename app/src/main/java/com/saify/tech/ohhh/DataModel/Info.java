@@ -1,5 +1,7 @@
 package com.saify.tech.ohhh.DataModel;
 
+import java.util.ArrayList;
+
 public class Info {
 
     private String custom_link;
@@ -152,6 +154,15 @@ public class Info {
     private String areaname;
     private String governatesname;
     private String shop_image;
+    private String comments;
+    private String couponvalue;
+    private String title;
+//    private ArrayList<String> flavours;
+    private String finalvalue;
+    private String sub_total;
+    private String applied_coupon;
+
+
 
     public String getShop_image() {
         return shop_image;
@@ -960,11 +971,51 @@ public class Info {
     }
 
 
+    public String getComments() {
+        return comments;
+    }
 
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
 
+    public String getCouponvalue() {
+        return couponvalue;
+    }
 
+    public void setCouponvalue(String couponvalue) {
+        this.couponvalue = couponvalue;
+    }
 
+    public String getTitle() {
+        return title;
+    }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
+    public String getFinalvalue() {
+        return finalvalue;
+    }
 
+    public void setFinalvalue(String finalvalue) {
+        this.finalvalue = finalvalue;
+    }
+
+    public String getSub_total() {
+        return sub_total;
+    }
+
+    public void setSub_total(String sub_total) {
+        this.sub_total = sub_total;
+    }
+
+    public String getApplied_coupon() {
+        return applied_coupon;
+    }
+
+    public void setApplied_coupon(String applied_coupon) {
+        this.applied_coupon = applied_coupon;
+    }
 }

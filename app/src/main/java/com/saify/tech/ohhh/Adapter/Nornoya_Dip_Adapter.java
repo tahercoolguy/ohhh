@@ -15,7 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.saify.tech.ohhh.Activity.Address_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.DataModel.CartDM;
-import com.saify.tech.ohhh.DataModel.Nornoya_Dip_Dm;
+import com.saify.tech.ohhh.DataModel.Info;
+import com.saify.tech.ohhh.DataModel.Output;
 import com.saify.tech.ohhh.R;
 
 import java.util.ArrayList;
@@ -23,18 +24,14 @@ import java.util.ArrayList;
 public class Nornoya_Dip_Adapter extends RecyclerView.Adapter<Nornoya_Dip_Adapter.Programming_AdapterViewHolder> {
 
     private Context context;
-    private ArrayList<Nornoya_Dip_Dm> nornoya_dip_dms;
+    private ArrayList<Output> arrayList;
 
-    public Nornoya_Dip_Adapter(Context context, ArrayList<Nornoya_Dip_Dm> nornoya_dip_dms) {
+    public Nornoya_Dip_Adapter(Context context, ArrayList<Output> arrayList) {
         this.context = context;
-        this.nornoya_dip_dms = nornoya_dip_dms;
+        this.arrayList =arrayList;
     }
 
-    public Nornoya_Dip_Adapter(ArrayList<Nornoya_Dip_Dm> nornoya_dip_dms) {
-    }
 
-    public Nornoya_Dip_Adapter(MainActivity context, ArrayList<Nornoya_Dip_Dm> nornoya_dip_dms) {
-    }
 
     @NonNull
     @Override
@@ -47,10 +44,10 @@ public class Nornoya_Dip_Adapter extends RecyclerView.Adapter<Nornoya_Dip_Adapte
     @Override
     public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, int position) {
 
-        Nornoya_Dip_Dm nornoya_dip_dm = nornoya_dip_dms.get(position);
+        Output data =arrayList.get(position);
 
-        holder.nornoya.setText(nornoya_dip_dm.getNornoya_Txt());
-        holder.nornoya_Img.setImageResource(nornoya_dip_dm.getNornoya_img());
+//        holder.nornoya.setText(Output.getNornoya_Txt());
+//        holder.nornoya_Img.setImageResource(Output.getNornoya_img());
 
         holder.checkout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,10 +63,9 @@ public class Nornoya_Dip_Adapter extends RecyclerView.Adapter<Nornoya_Dip_Adapte
         cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "02","0", R.drawable.nornoya_2));
         cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "03","0", R.drawable.nornoya_3));
 
-        Cart_Adapter dm2 = new Cart_Adapter(context, cartDMS);
+        Cart_Adapter dm2 = new Cart_Adapter(context, data.getInfo());
 
-        LinearLayoutManager l2
-                = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager l2 = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
         holder.nornoya_sub_item.setLayoutManager(l2);
         holder.nornoya_sub_item.setAdapter(dm2);
 
@@ -77,7 +73,7 @@ public class Nornoya_Dip_Adapter extends RecyclerView.Adapter<Nornoya_Dip_Adapte
 
     @Override
     public int getItemCount() {
-        return nornoya_dip_dms.size();
+        return arrayList.size();
     }
 
     public class Programming_AdapterViewHolder extends RecyclerView.ViewHolder {

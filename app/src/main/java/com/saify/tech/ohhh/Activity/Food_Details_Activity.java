@@ -24,6 +24,7 @@ import com.saify.tech.ohhh.Adapter.Adapter_Food_Detail_Size;
 import com.saify.tech.ohhh.Adapter.Order_Info_Adapter;
 import com.saify.tech.ohhh.Adapter.Shopss_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.AddtoCartDM;
 import com.saify.tech.ohhh.DataModel.FlavoursDM;
 import com.saify.tech.ohhh.DataModel.OrderInfoDM;
 import com.saify.tech.ohhh.DataModel.ProductsByIdDM;
@@ -57,13 +58,14 @@ public class Food_Details_Activity extends AppCompatActivity {
 
     private User user;
     Context context;
-    Dialog progress;
+    Dialog dialog;
     ConnectionDetector connectionDetector;
     DialogUtil dialogUtil;
-    int count = 0;
 
-    String strCounter;
+
+
     String ID;
+    String ShopId;
 
 
 
@@ -85,16 +87,8 @@ public class Food_Details_Activity extends AppCompatActivity {
     @BindView(R.id.back_RL)
     RelativeLayout back;
 
-    @BindView(R.id.minus_cake_Rl)
-    RelativeLayout minus;
-
-
-    @BindView(R.id.plus_cake_RL)
-    RelativeLayout plus;
-
-
-    @BindView(R.id.minus_plus_Txt)
-    TextView minus_plus_text;
+    @BindView(R.id.quantity_txt)
+    TextView quantity_txt;
 
     @BindView(R.id.cake_name)
     TextView cake_name;
@@ -105,23 +99,27 @@ public class Food_Details_Activity extends AppCompatActivity {
     @BindView(R.id.cake_img1)
     ImageView cake_img1;
 
+int quantity=1;
 
-    @OnClick(R.id.minus_cake_Rl)
-    public void Minus() {
-
-        if (count > 0)
-            count--;
-        strCounter = Integer.toString(count);
-        minus_plus_text.setText(strCounter);
+    @OnClick(R.id.minus_img)
+    public void minusClicked()
+    {
+        quantity = quantity-1;
+        if(quantity!=0)
+        {
+            quantity_txt.setText(String.valueOf(quantity));
+        }
 
     }
 
-    @OnClick(R.id.plus_cake_RL)
-    public void Plus() {
 
-        count++;
-        strCounter = Integer.toString(count);
-        minus_plus_text.setText(strCounter);
+    @OnClick(R.id.plus_img)
+    public void plusClicked()
+    {
+        quantity = quantity+1;
+
+        quantity_txt.setText(String.valueOf(quantity));
+
 
     }
 
@@ -139,10 +137,45 @@ public class Food_Details_Activity extends AppCompatActivity {
         startActivity(new Intent(Food_Details_Activity.this, Cart_Activity.class));
     }
 
+    public String Size_id="";
+    public String Flavour_id="";
+
+
+
     @OnClick(R.id.add_to_cart_Btn)
     public void cart() {
 
-        startActivity(new Intent(Food_Details_Activity.this, Cart_Activity.class));
+
+        if (connectionDetector.isConnectingToInternet()) {
+            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+            if (Size_id.equalsIgnoreCase("")) {
+                Helper.showToast(Food_Details_Activity.this, "Kindly select Size..");
+            }  if (Flavour_id.equalsIgnoreCase("")) {
+                Helper.showToast(Food_Details_Activity.this, "Kindly select Flavour..");
+            } else {
+                dialog = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
+                appController.paServices.AddtoCart(String.valueOf(user.getId()), ID, ShopId, String.valueOf(quantity), "best", Size_id, Flavour_id, new Callback<AddtoCartDM>() {
+                    @Override
+                    public void success(AddtoCartDM addtoCartDM, Response response) {
+                        dialog.dismiss();
+                        if (addtoCartDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+                             startActivity(new Intent(Food_Details_Activity.this, Cart_Activity.class));
+
+                            Helper.showToast(Food_Details_Activity.this, addtoCartDM.getOutput().getMessage());
+
+                        } else
+                            Helper.showToast(Food_Details_Activity.this,addtoCartDM.getOutput().getMessage());
+                    }
+                    @Override
+                    public void failure(RetrofitError retrofitError) {
+                        Log.e("error", retrofitError.toString());
+                    }
+                });
+            }
+        }
+        else
+            Helper.showToast(Food_Details_Activity.this, getString(R.string.no_internet_connection));
     }
 //
 //    @OnClick(R.id.cheese_1RL)
@@ -401,6 +434,7 @@ public class Food_Details_Activity extends AppCompatActivity {
 //                        progress.dismiss();
                         if (productsByIdDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
+                            ShopId=productsByIdDM.getOutput().getInfo().get(0).getShop_id();
                             cake_name.setText(productsByIdDM.getOutput().getInfo().get(0).getTitle_en());
                             price_tv.setText(productsByIdDM.getOutput().getInfo().get(0).getPrice());
                             if (!productsByIdDM.getOutput().getInfo().get(0).getImage().equalsIgnoreCase("")) {
@@ -446,11 +480,11 @@ public class Food_Details_Activity extends AppCompatActivity {
 //                        progress.dismiss();
                         if (sizesDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
-//                            if (ID != null)
-                            {  Adapter_Food_Detail_Size dm = new Adapter_Food_Detail_Size(Food_Details_Activity.this, sizesDM.getOutput().getInfo());
+
+                            Adapter_Food_Detail_Size dm = new Adapter_Food_Detail_Size(Food_Details_Activity.this, sizesDM.getOutput().getInfo());
                             LinearLayoutManager l = new LinearLayoutManager(Food_Details_Activity.this);
                             sizeRV.setLayoutManager(l);
-                            sizeRV.setAdapter(dm);  }
+                            sizeRV.setAdapter(dm);
 
 
                         } else

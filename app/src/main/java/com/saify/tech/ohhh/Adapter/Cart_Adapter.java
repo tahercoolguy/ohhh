@@ -13,26 +13,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.DataModel.CartDM;
+import com.saify.tech.ohhh.DataModel.Info;
+import com.saify.tech.ohhh.DataModel.Output;
 import com.saify.tech.ohhh.DataModel.ShopssDM;
 import com.saify.tech.ohhh.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class Cart_Adapter extends RecyclerView.Adapter<Cart_Adapter.Programming_AdapterViewHolder> {
 
     private Context context;
-    private ArrayList<CartDM> cartDMS;
+    private ArrayList<Info> arrayList;
 
 
-    public Cart_Adapter(Context context, ArrayList<CartDM> cartDMS) {
+    public Cart_Adapter(Context context, ArrayList<Info> arrayList) {
         this.context = context;
-        this.cartDMS = cartDMS;
+        this.arrayList = arrayList;
     }
 
-    public Cart_Adapter(ArrayList<CartDM> cartDMS) {
+    public Cart_Adapter(ArrayList<Info> arrayList) {
     }
 
-    public Cart_Adapter(MainActivity context, ArrayList<CartDM> cartDMS) {
+    public Cart_Adapter(MainActivity context, ArrayList<Info> arrayList) {
     }
 
     @NonNull
@@ -46,14 +49,15 @@ public class Cart_Adapter extends RecyclerView.Adapter<Cart_Adapter.Programming_
     @Override
     public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, int position) {
 
-        CartDM cartDM = cartDMS.get(position);
-
-        holder.pastri.setText(cartDM.getPastries());
-        holder.extra.setText(cartDM.getExtra_meyonese());
-        holder.count0.setText(cartDM.getItem_count());
-        holder.kd.setText(cartDM.getKwd());
-        holder.pastryimg.setImageResource(cartDM.getPastry_img());
-        holder.minus_plus_Txt.setText(cartDM.getText());
+        Info data = arrayList.get(position);
+        if(!data.getTitle().equalsIgnoreCase("")){
+        holder.heading.setText(data.getTitle());}
+//        holder.extra.setText(data.getExtra_meyonese());
+//        holder.count0.setText(data.getItem_count());
+        holder.price.setText(data.getPrice());
+        if(!data.getImage().equalsIgnoreCase("")){
+        Picasso.with(context).load(data.getImage()).into(holder.img);}
+        holder.minus_plus_Txt.setText(data.getQuantity());
 
 
         holder.minus_cake_Rl.setOnClickListener(new View.OnClickListener() {
@@ -80,23 +84,23 @@ public class Cart_Adapter extends RecyclerView.Adapter<Cart_Adapter.Programming_
 
     @Override
     public int getItemCount() {
-        return cartDMS.size();
+        return arrayList.size();
     }
 
     public class Programming_AdapterViewHolder extends RecyclerView.ViewHolder {
 
-        TextView pastri, extra, count0, kd, minus_plus_Txt;
-        ImageView pastryimg;
+        TextView heading, price, count0, minus_plus_Txt;
+        ImageView img;
         RelativeLayout minus_cake_Rl, plus_cake_RL;
         int count = 0;
 
         public Programming_AdapterViewHolder(@NonNull View itemView) {
             super(itemView);
-            pastri = (TextView) itemView.findViewById(R.id.pastries_txt);
-            extra = (TextView) itemView.findViewById(R.id.extra_mayonese);
-            count0 = (TextView) itemView.findViewById(R.id.minus_plus_Txt);
-            kd = (TextView) itemView.findViewById(R.id.price_Kwd_Txt);
-            pastryimg = (ImageView) itemView.findViewById(R.id.pastries_Img);
+            heading = (TextView) itemView.findViewById(R.id.heading_txt);
+//            extra = (TextView) itemView.findViewById(R.id.extra_mayonese);
+//            count0 = (TextView) itemView.findViewById(R.id.minus_plus_Txt);
+            price= (TextView) itemView.findViewById(R.id.price_Kwd_Txt);
+            img = (ImageView) itemView.findViewById(R.id.img_11);
             minus_cake_Rl = (RelativeLayout) itemView.findViewById(R.id.minus_cake_Rl);
             plus_cake_RL = (RelativeLayout) itemView.findViewById(R.id.plus_cake_RL);
             minus_plus_Txt = (TextView) itemView.findViewById(R.id.minus_plus_Txt);

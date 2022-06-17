@@ -16,6 +16,7 @@ import com.saify.tech.ohhh.DataModel.FShopsDM;
 import com.saify.tech.ohhh.DataModel.FlavoursDM;
 import com.saify.tech.ohhh.DataModel.GovernatesDM;
 import com.saify.tech.ohhh.DataModel.LoginDM;
+import com.saify.tech.ohhh.DataModel.MyCartDM;
 import com.saify.tech.ohhh.DataModel.MyWishlistDM;
 import com.saify.tech.ohhh.DataModel.MyprofileDM;
 import com.saify.tech.ohhh.DataModel.NewsDM;
@@ -246,10 +247,13 @@ public interface PAServices {
                           @Field("comments") String comments,
                           @Field("size_id") String size_id,
                           @Field("flavour_id") String flavour_id,
-
                           Callback<AddtoCartDM> addtoCartDMCallback);
 
-
+    //20
+    @FormUrlEncoded
+    @POST("/ohhh/MyCart")
+    public void MyCart(@Field("user_id") String user_id,
+                         Callback<MyCartDM> myCartDMCallback);
 
 
 
