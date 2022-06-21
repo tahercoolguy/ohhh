@@ -4,6 +4,7 @@ package com.saify.tech.ohhh.Services;
 //import io.opencensus.stats.Stats;
 
 
+import com.saify.tech.ohhh.DataModel.AddQuantityDM;
 import com.saify.tech.ohhh.DataModel.AddressListDM;
 import com.saify.tech.ohhh.DataModel.AddtoCartDM;
 import com.saify.tech.ohhh.DataModel.AreaDM;
@@ -23,6 +24,7 @@ import com.saify.tech.ohhh.DataModel.NewsDM;
 import com.saify.tech.ohhh.DataModel.OffersApiDM;
 import com.saify.tech.ohhh.DataModel.ProductsByIdDM;
 import com.saify.tech.ohhh.DataModel.ProductsBycatIdDM;
+import com.saify.tech.ohhh.DataModel.RemoveCartDM;
 import com.saify.tech.ohhh.DataModel.RestaurentDM;
 import com.saify.tech.ohhh.DataModel.SaveAddressDM;
 import com.saify.tech.ohhh.DataModel.ShopByIdDM;
@@ -254,6 +256,25 @@ public interface PAServices {
     @POST("/ohhh/MyCart")
     public void MyCart(@Field("user_id") String user_id,
                          Callback<MyCartDM> myCartDMCallback);
+
+
+    //21
+    @FormUrlEncoded
+    @POST("/ohhh/AddQuantity")
+    public void AddQuantity(@Field("user_id") String user_id,
+                            @Field("product_id") String product_id,
+                            @Field("cart_id") String cart_id,
+                            @Field("type") String type,
+                            Callback<AddQuantityDM> addQuantityDMCallbackk);
+
+
+   //22
+   @FormUrlEncoded
+   @POST("/ohhh/RemoveCart")
+    public void RemoveCart(@Field("user_id") String user_id,
+                         @Field("product_id") String product_id,
+                         @Field("cart_id") String cart_id,
+                         Callback<RemoveCartDM> addQuantityDMCallbackk);
 
 
 

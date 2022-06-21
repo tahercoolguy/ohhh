@@ -40,7 +40,7 @@ public class Saved_Address_DM_Adapter extends RecyclerView.Adapter<Saved_Address
     public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, int position) {
 
         Info data= arrayList.get(position);
-        holder.address.setText(data.getStreet()+","+data.getFloor_no()+","+data.getAreaname()+","+data.getGovernatesname());
+        holder.address.setText(data.getGovernate()+","+data.getArea()+","+data.getBlock()+","+data.getStreet()+","+data.getBuilding_no()+","+data.getFloor_no()+","+data.getGovernatesname()+","+data.getAreaname());
 //        holder.home.setText(savedAddressDM.getHome());
 //        holder.home_img.setImageResource(savedAddressDM.getHome_img());
 

@@ -37,7 +37,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/semi_bold"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="5"
                 android:text="Pastries"
                 android:textColor="@color/black"

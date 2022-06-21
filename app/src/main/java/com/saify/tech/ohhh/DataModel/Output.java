@@ -14,11 +14,8 @@ public class Output {
 
  //   private ArrayList<ImageList> images;
     private String  favaorate;
-
     private String  sub_total;
     private String after_discount;
-
-
 
 
 

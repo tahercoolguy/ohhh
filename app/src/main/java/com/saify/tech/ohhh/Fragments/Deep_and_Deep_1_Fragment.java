@@ -181,18 +181,20 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
                 public void success(ShopByIdDM shopByIdDM, Response response) {
                     //                   progress.dismiss();
                     if(shopByIdDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+                        if(shopByIdDM.getOutput().getCategory()!=null) {
+                            String CategoryID = shopByIdDM.getOutput().getCategory().get(0).getCategory_id();
+                            String Tittle = shopByIdDM.getOutput().getCategory().get(0).getCategory_name();
 
-                      String  CategoryID=shopByIdDM.getOutput().getCategory().get(0).getCategory_id();
-                      String  Tittle=shopByIdDM.getOutput().getCategory().get(0).getCategory_name();
+                            Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, shopByIdDM.getOutput().getCategory(), Deep_and_Deep_1_Fragment.this);
+                            LinearLayoutManager l = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+                            dip_and_dip_cake_1_Rcv.setLayoutManager(l);
+                            dip_and_dip_cake_1_Rcv.setAdapter(dm);
 
-          Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, shopByIdDM.getOutput().getCategory(),Deep_and_Deep_1_Fragment.this);
-          LinearLayoutManager l = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-          dip_and_dip_cake_1_Rcv.setLayoutManager(l);
-          dip_and_dip_cake_1_Rcv.setAdapter(dm);
 
-                       SetTittle(Tittle);
+                            SetTittle(Tittle);
 
-                        setClickListeners(CategoryID);
+                            setClickListeners(CategoryID);
+                        }
 
                     }else
                         Helper.showToast(getActivity(),shopByIdDM.getOutput().getMessage());
