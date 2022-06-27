@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.saify.tech.ohhh.Activity.Address_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
+import com.saify.tech.ohhh.Activity.Payment_Activity;
 import com.saify.tech.ohhh.DataModel.CartDM;
 import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.Output;
@@ -53,7 +54,10 @@ public class Nornoya_Dip_Adapter extends RecyclerView.Adapter<Nornoya_Dip_Adapte
             @Override
             public void onClick(View view) {
 
-                context.startActivity(new Intent(context, Address_Activity.class));
+                Intent intent=new Intent(context, Address_Activity.class);
+                intent.putExtra("Shop_id", data.getInfo().get(0).getShop_id());
+                context.startActivity(intent);
+
 
             }
         });

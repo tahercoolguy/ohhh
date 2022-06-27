@@ -22,9 +22,11 @@ import com.saify.tech.ohhh.DataModel.MyWishlistDM;
 import com.saify.tech.ohhh.DataModel.MyprofileDM;
 import com.saify.tech.ohhh.DataModel.NewsDM;
 import com.saify.tech.ohhh.DataModel.OffersApiDM;
+import com.saify.tech.ohhh.DataModel.OrderNowDM;
 import com.saify.tech.ohhh.DataModel.ProductsByIdDM;
 import com.saify.tech.ohhh.DataModel.ProductsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.RemoveCartDM;
+import com.saify.tech.ohhh.DataModel.RemoveWishlistDM;
 import com.saify.tech.ohhh.DataModel.RestaurentDM;
 import com.saify.tech.ohhh.DataModel.SaveAddressDM;
 import com.saify.tech.ohhh.DataModel.ShopByIdDM;
@@ -276,7 +278,34 @@ public interface PAServices {
                          @Field("cart_id") String cart_id,
                          Callback<RemoveCartDM> addQuantityDMCallbackk);
 
+   //23
+   @FormUrlEncoded
+   @POST("/ohhh/AddtoWishlist")
+   public void AddtoWishlist(@Field("user_id") String user_id,
+                        @Field("product_id") String product_id,
+                        @Field("shop_id") String shop_id,
+                        Callback<AddtoCartDM> addtoCartDMCallback);
+
+   //24
+    @FormUrlEncoded
+    @POST("/ohhh/RemoveWishlist")
+    public void RemoveWishlist(@Field("user_id") String user_id,
+                        @Field("product_id") String product_id,
+                        @Field("shop_id") String shop_id,
+                        Callback<RemoveWishlistDM> removeWishlistDMCallback);
 
 
+   //25
+   @FormUrlEncoded
+   @POST("/ohhh/OrderNow")
+   public void OrderNow(@Field("user_id") String user_id,
+                        @Field("shop_id") String shop_id,
+                        @Field("shipping_address") String shipping_address,
+                        @Field("paymentMethod") String paymentMethod,
+                        Callback<OrderNowDM> orderNowDMCallback);
+
+
+
+    
 
 }

@@ -48,6 +48,7 @@ public class Cart_Activity extends AppCompatActivity {
     private User user;
     ConnectionDetector connectionDetector;
     DialogUtil dialogUtil;
+    String ShopID;
 
 
     @NotEmpty
@@ -154,7 +155,7 @@ public class Cart_Activity extends AppCompatActivity {
                     public void success(MyCartDM myCartDM, Response response) {
 //                        progress.dismiss();
                         if (myCartDM.getOutput().get(0).getSuccess().equalsIgnoreCase("1")) {
-
+                          ShopID = myCartDM.getOutput().get(0).getInfo().get(0).getShop_id();
         Nornoya_Dip_Adapter dm = new Nornoya_Dip_Adapter(Cart_Activity.this, myCartDM.getOutput());
         LinearLayoutManager l = new LinearLayoutManager(Cart_Activity.this, LinearLayoutManager.VERTICAL, false);
         nornoya_deep_Rcvv.setLayoutManager(l);

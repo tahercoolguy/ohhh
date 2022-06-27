@@ -6,11 +6,16 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:background="@color/white"
-
-    android:orientation="vertical"
+    android:paddingBottom="10dp"
     tools:context=".Activity.Payment_Activity">
-
-
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -363,19 +368,102 @@
         android:orientation="vertical">
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/order_info_Rcv"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/subtotal_a_Txt"
+                android:layout_width="wrap_content"
+                android:layout_weight="6"
+                android:layout_height="wrap_content"
+                android:text="Subtotal"></TextView>
+
+            <TextView
+                android:id="@+id/price_b_Txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5.000 KWD"></TextView>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
 
-            android:layout_marginHorizontal="20dp"
+                android:layout_width="wrap_content"
+                android:layout_weight="6"
+                android:layout_height="wrap_content"
+                android:text="Code Applied"></TextView>
+
+            <TextView
+                android:id="@+id/CodeApplied"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mx3039"></TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_weight="6"
+                android:layout_height="wrap_content"
+                android:text="Discount"></TextView>
+
+            <TextView
+                android:id="@+id/Discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="50%"></TextView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_weight="6"
+                android:layout_height="wrap_content"
+                android:text="Delivery Charges"></TextView>
+
+            <TextView
+                android:id="@+id/DeliveryCharge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3.000 KWD"></TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp"
@@ -416,6 +504,6 @@
         android:text="@string/place_order"
         android:textColor="@color/white"
          ></TextView>
-
-
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>
 </LinearLayout>

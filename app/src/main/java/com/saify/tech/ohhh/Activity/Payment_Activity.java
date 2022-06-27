@@ -5,6 +5,7 @@ package com.saify.tech.ohhh.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -16,23 +17,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Adapter.Order_Info_Adapter;
 import com.saify.tech.ohhh.Adapter.Saved_Address_DM_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.MyCartDM;
 import com.saify.tech.ohhh.DataModel.OrderInfoDM;
+import com.saify.tech.ohhh.DataModel.OrderNowDM;
 import com.saify.tech.ohhh.DataModel.SavedAddressDM;
 import com.saify.tech.ohhh.Fragments.Fragment_Home_Screen;
 import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
+import com.saify.tech.ohhh.Utils.Helper;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class Payment_Activity extends AppCompatActivity {
 
@@ -42,11 +50,11 @@ public class Payment_Activity extends AppCompatActivity {
     Dialog progress;
     ConnectionDetector connectionDetector;
     DialogUtil dialogUtil;
+    String Shipping_AddressID;
+    String Shop_id;
 
 
-    @NotEmpty
-    @BindView(R.id.order_info_Rcv)
-    RecyclerView order_info_Rcvv;
+
 
     @NotEmpty
     @BindView(R.id.back_LL)
@@ -71,7 +79,7 @@ public class Payment_Activity extends AppCompatActivity {
 
     @OnClick(R.id.place_order)
     public void PlaceOrder() {
-
+      Binding();
       startActivity(new Intent(Payment_Activity.this,Thank_You_Activity.class));
 
     }
@@ -124,28 +132,31 @@ public class Payment_Activity extends AppCompatActivity {
         connectionDetector = new ConnectionDetector(getApplicationContext());
         user = new User(Payment_Activity.this);
         user = new User(this);
+        Shipping_AddressID=getIntent().getStringExtra("AddressId");
+        Shop_id=getIntent().getStringExtra("shop__id");
+
         idMappings();
         Cashh();
         Visa();
 
-
-        ArrayList<OrderInfoDM> orderInfoDMS = new ArrayList<>();
-
-        orderInfoDMS.add(new OrderInfoDM("Subtotal", "5.000 KWD"));
-        orderInfoDMS.add(new OrderInfoDM("Code Applied", "Mx3029"));
-        orderInfoDMS.add(new OrderInfoDM("Discount", "50%"));
-        orderInfoDMS.add(new OrderInfoDM("Delivery Charges", "3.000 KWD"));
-//        orderInfoDMS.add(new OrderInfoDM("Total", "2.500 KWD"));
-
-
-//            HistoryRcv.setLayoutManager(new LinearLayoutManager(context));
-//            HistoryRcv.setAdapter(new HistoryDM_Adapter((context), historyDMS));
-
 //
-        Order_Info_Adapter dm = new Order_Info_Adapter(Payment_Activity.this, orderInfoDMS);
-        LinearLayoutManager l = new LinearLayoutManager(this);
-        order_info_Rcvv.setLayoutManager(l);
-        order_info_Rcvv.setAdapter(dm);
+//        ArrayList<OrderInfoDM> orderInfoDMS = new ArrayList<>();
+//
+//        orderInfoDMS.add(new OrderInfoDM("Subtotal", "5.000 KWD"));
+//        orderInfoDMS.add(new OrderInfoDM("Code Applied", "Mx3029"));
+//        orderInfoDMS.add(new OrderInfoDM("Discount", "50%"));
+//        orderInfoDMS.add(new OrderInfoDM("Delivery Charges", "3.000 KWD"));
+////        orderInfoDMS.add(new OrderInfoDM("Total", "2.500 KWD"));
+//
+//
+////            HistoryRcv.setLayoutManager(new LinearLayoutManager(context));
+////            HistoryRcv.setAdapter(new HistoryDM_Adapter((context), historyDMS));
+//
+////
+//        Order_Info_Adapter dm = new Order_Info_Adapter(Payment_Activity.this, orderInfoDMS);
+//        LinearLayoutManager l = new LinearLayoutManager(this);
+//        order_info_Rcvv.setLayoutManager(l);
+//        order_info_Rcvv.setAdapter(dm);
 
 
     }
@@ -234,6 +245,40 @@ public class Payment_Activity extends AppCompatActivity {
 //                }
 //            }
 //        });
+
+    public void Binding()
+    {
+        if (connectionDetector.isConnectingToInternet()) {
+            {
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+//                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
+
+                appController.paServices.OrderNow(String.valueOf(user.getId()),Shop_id,Shipping_AddressID,"COD", new Callback<OrderNowDM>() {
+                    @Override
+                    public void success(OrderNowDM orderNowDM, Response response) {
+//                        progress.dismiss();
+                        if (orderNowDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+                            Helper.showToast(Payment_Activity.this, orderNowDM.getOutput().getData());
+
+                        } else
+
+                            Helper.showToast(Payment_Activity.this, getString(R.string.Api_data_not_found));
+                    }
+
+                @Override
+                public void failure(RetrofitError error) {
+
+                Log.e("String", error.toString());
+            }
+            });
+        }
+    } else
+            Helper.showToast(Payment_Activity.this, getString(R.string.no_internet_connection));
+
+    }
+
 }
 
 

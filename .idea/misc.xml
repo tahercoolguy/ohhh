@@ -1,5 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable-v24/button_rectangle_primary_color_selector.xml" value="0.175" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable-v24/button_rounded_primary_color_selector.xml" value="0.175" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable-v24/rounded_corner_border_primary_colour.xml" value="0.175" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable-v24/rounded_corner_border_primary_colour_plus_minus.xml" value="0.175" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable-v24/rounded_corner_border_primary_colour_selected_plus_minus.xml" value="0.175" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable-v24/rounded_corner_deep_deep_cake.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable-v24/rounded_corner_edit_text_colour.xml" value="0.175" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable-v24/rounded_corner_gradient_bg.xml" value="0.175" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable/button_rounded_white.xml" value="0.175" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable/ic_baseline_check_circle_24.xml" value="0.17314814814814813" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable/ic_chat.xml" value="0.17314814814814813" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable/ic_circle_address_orange.xml" value="0.17314814814814813" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable/ic_circle_brown_unselected.xml" value="0.17314814814814813" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable/ic_circle_minus.xml" value="0.17314814814814813" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable/ic_circlr_orangeborder.xml" value="0.17314814814814813" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable/ic_delivery_boy.xml" value="0.1962962962962963" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable/ic_heart_white.xml" value="0.18518518518518517" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable/ic_herrrt.xml" value="0.175" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable/rounded_corner_deep_and_deep_white.xml" value="0.175" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/drawable/rounded_corner_deep_deep_white.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/account_fragment_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_account.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_address.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_address_list_saved_address.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_cart.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_change_password.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_edit_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_food_details.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_my_order.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_my_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_my_wishlist.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_payment.xml" value="0.18652849740932642" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_save_address.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_save_or_add_address.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_saved_address.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/activity_sign_up.xml" value="0.21" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/address_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/bottom_for_all.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/categories_fragment_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/custom_item_featured_shops.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/custom_item_for_bottom_sheet_list_with_image.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/custom_item_mywishlist.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/custom_item_nornoya_dip_and_dip_cart.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/custom_item_offers.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/custom_item_order_info.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/custom_item_shops.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/custum_deep_and_deep_cake_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/custum_feed_category_item.xml" value="0.18" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/custum_item_cart.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/custum_saved_addres.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/deep_and_deep_1_fragment_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/food_detail_flavours_item.xml" value="1.4" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/food_detail_size_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/home_fragment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/home_screen_fragment_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/ongoing_my_order_fragment_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/restaurent_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/shops_fragment_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sony/AndroidStudioProjects/ohhh/app/src/main/res/layout/size_food_detail_item.xml" value="0.20416666666666666" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

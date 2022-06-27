@@ -2,33 +2,57 @@ package com.saify.tech.ohhh.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.saify.tech.ohhh.Activity.Food_Details_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
+import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.OffersDM;
+import com.saify.tech.ohhh.DataModel.RemoveCartDM;
+import com.saify.tech.ohhh.DataModel.RemoveWishlistDM;
+import com.saify.tech.ohhh.Helper.DialogUtil;
+import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
+import com.saify.tech.ohhh.Utils.ConnectionDetector;
+import com.saify.tech.ohhh.Utils.Helper;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class BestFromDesert_Adapter  extends RecyclerView.Adapter<BestFromDesert_Adapter.Programming_AdapterViewHolder>{
 
     private Context context;
     private ArrayList<Info> arrayList;
 
+    AppController appController;
+    private User user;
+    ConnectionDetector connectionDetector;
+    DialogUtil dialogUtil;
+
     public BestFromDesert_Adapter(Context context, ArrayList<Info> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
+        dialogUtil = new DialogUtil();
+        user=new User(context);
+        appController = (AppController) context.getApplicationContext();
+        connectionDetector = new ConnectionDetector(context);
+
     }
 
     @NonNull
@@ -66,6 +90,44 @@ public class BestFromDesert_Adapter  extends RecyclerView.Adapter<BestFromDesert
             }
         });
 
+//        holder.likeImgAddToCart.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                if (connectionDetector.isConnectingToInternet()) {
+//                    {
+//                        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+//
+////                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
+//
+//                        appController.paServices.RemoveWishlist(String.valueOf(user.getId()),product_id,shop_id, new Callback<RemoveWishlistDM>() {
+//                            @Override
+//                            public void success(RemoveWishlistDM removeWishlistDM, Response response) {
+////                        progress.dismiss();
+//                                if (removeWishlistDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+//
+//                                    holder.dislikeImgRemoveCart.setVisibility(View.VISIBLE);
+//                                    Helper.showToast(context,removeWishlistDM.getOutput().getMessage());
+//
+//                                } else
+//                                    Helper.showToast(context, "item does not Remove From Wishlist");
+//                            }
+//
+//                            @Override
+//                            public void failure(RetrofitError error) {
+//
+//                                Log.e("String", error.toString());
+//                            }
+//                        });
+//                    }
+//                } else
+//                    Helper.showToast(context, String.valueOf(R.string.no_internet_connection));
+//            }
+//        });
+
+
+
+
 
     }
 
@@ -79,6 +141,8 @@ public class BestFromDesert_Adapter  extends RecyclerView.Adapter<BestFromDesert
         TextView textView,perText;
         ImageView img;
         RelativeLayout shop_cake_RL;
+        LinearLayout likeImgAddToCart,dislikeImgRemoveCart;
+
 
 
         public Programming_AdapterViewHolder(@NonNull View itemView) {
@@ -87,6 +151,9 @@ public class BestFromDesert_Adapter  extends RecyclerView.Adapter<BestFromDesert
             img = (ImageView) itemView.findViewById(R.id.offer_chocklate_img_1);
             shop_cake_RL = itemView.findViewById(R.id.shop_cake_RL);
             perText = (TextView) itemView.findViewById(R.id.offer_10_percent);
+            likeImgAddToCart=(LinearLayout)itemView.findViewById(R.id.like_LL);
+            dislikeImgRemoveCart=(LinearLayout)itemView.findViewById(R.id.dislike_LL);
+
 
         }
     }

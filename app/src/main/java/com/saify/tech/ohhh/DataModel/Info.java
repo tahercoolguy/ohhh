@@ -161,8 +161,187 @@ public class Info {
     private String finalvalue;
     private String sub_total;
     private String applied_coupon;
+    private String sale_id;
+    private String transactioncharges;
+    private String payment_status;
+    private String product_price;
+    private String delivary_datetime;
+    private String product_name;
+    private String buyer;
+    private String payment_timestamp;
+    private String order_status;
+    private String payment_type;
+    private String guest_id;
+    private String shipping;
+    private String sale_code;
+    private String viewed;
+    private String product_qty;
+    private String shipping_address;
+    private String grand_total;
+    private String updated_date;
+    private String gateway_responce;
+    private String delivery_status;
 
 
+    public String getSale_id() {
+        return sale_id;
+    }
+
+    public void setSale_id(String sale_id) {
+        this.sale_id = sale_id;
+    }
+
+    public String getTransactioncharges() {
+        return transactioncharges;
+    }
+
+    public void setTransactioncharges(String transactioncharges) {
+        this.transactioncharges = transactioncharges;
+    }
+
+    public String getPayment_status() {
+        return payment_status;
+    }
+
+    public void setPayment_status(String payment_status) {
+        this.payment_status = payment_status;
+    }
+
+    public String getProduct_price() {
+        return product_price;
+    }
+
+    public void setProduct_price(String product_price) {
+        this.product_price = product_price;
+    }
+
+    public String getDelivary_datetime() {
+        return delivary_datetime;
+    }
+
+    public void setDelivary_datetime(String delivary_datetime) {
+        this.delivary_datetime = delivary_datetime;
+    }
+
+    public String getProduct_name() {
+        return product_name;
+    }
+
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
+    }
+
+    public String getBuyer() {
+        return buyer;
+    }
+
+    public void setBuyer(String buyer) {
+        this.buyer = buyer;
+    }
+
+    public String getPayment_timestamp() {
+        return payment_timestamp;
+    }
+
+    public void setPayment_timestamp(String payment_timestamp) {
+        this.payment_timestamp = payment_timestamp;
+    }
+
+    public String getOrder_status() {
+        return order_status;
+    }
+
+    public void setOrder_status(String order_status) {
+        this.order_status = order_status;
+    }
+
+    public String getPayment_type() {
+        return payment_type;
+    }
+
+    public void setPayment_type(String payment_type) {
+        this.payment_type = payment_type;
+    }
+
+    public String getGuest_id() {
+        return guest_id;
+    }
+
+    public void setGuest_id(String guest_id) {
+        this.guest_id = guest_id;
+    }
+
+    public String getShipping() {
+        return shipping;
+    }
+
+    public void setShipping(String shipping) {
+        this.shipping = shipping;
+    }
+
+    public String getSale_code() {
+        return sale_code;
+    }
+
+    public void setSale_code(String sale_code) {
+        this.sale_code = sale_code;
+    }
+
+    public String getViewed() {
+        return viewed;
+    }
+
+    public void setViewed(String viewed) {
+        this.viewed = viewed;
+    }
+
+    public String getProduct_qty() {
+        return product_qty;
+    }
+
+    public void setProduct_qty(String product_qty) {
+        this.product_qty = product_qty;
+    }
+
+    public String getShipping_address() {
+        return shipping_address;
+    }
+
+    public void setShipping_address(String shipping_address) {
+        this.shipping_address = shipping_address;
+    }
+
+    public String getGrand_total() {
+        return grand_total;
+    }
+
+    public void setGrand_total(String grand_total) {
+        this.grand_total = grand_total;
+    }
+
+    public String getUpdated_date() {
+        return updated_date;
+    }
+
+    public void setUpdated_date(String updated_date) {
+        this.updated_date = updated_date;
+    }
+
+    public String getGateway_responce() {
+        return gateway_responce;
+    }
+
+    public void setGateway_responce(String gateway_responce) {
+        this.gateway_responce = gateway_responce;
+    }
+
+    public String getDelivery_status() {
+        return delivery_status;
+    }
+
+    public void setDelivery_status(String delivery_status) {
+        this.delivery_status = delivery_status;
+    }
 
     public String getShop_image() {
         return shop_image;

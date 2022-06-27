@@ -260,9 +260,9 @@ public class Fragment_Home_Screen extends Fragment {
                         //                       progress.dismiss();
                         if (bestDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
            BestFromDesert_Adapter dm = new BestFromDesert_Adapter(context, bestDM.getOutput().getInfo());
-          LinearLayoutManager l = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
-          best_fom_desert_Rcvv.setLayoutManager(l);
-          best_fom_desert_Rcvv.setAdapter(dm);
+           LinearLayoutManager l = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+           best_fom_desert_Rcvv.setLayoutManager(l);
+           best_fom_desert_Rcvv.setAdapter(dm);
                         } else
 
                             Helper.showToast(getActivity(),bestDM.getOutput().getMessage() );

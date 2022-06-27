@@ -39,6 +39,7 @@ public class AddressList_Saved_Address_Activity extends AppCompatActivity {
     ConnectionDetector connectionDetector;
     DialogUtil dialogUtil;
 
+
     @NotEmpty
     @BindView(R.id.saved_address_Rcv)
     RecyclerView saved_address_Rcvv;
@@ -133,6 +134,8 @@ public class AddressList_Saved_Address_Activity extends AppCompatActivity {
                 public void success(AddressListDM addressListDM, Response response) {
                     progress.dismiss();
                     if (addressListDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+
 
                         Saved_Address_DM_Adapter dm = new Saved_Address_DM_Adapter(AddressList_Saved_Address_Activity.this, addressListDM.getOutput().getInfo());
                         LinearLayoutManager l = new LinearLayoutManager(AddressList_Saved_Address_Activity.this);

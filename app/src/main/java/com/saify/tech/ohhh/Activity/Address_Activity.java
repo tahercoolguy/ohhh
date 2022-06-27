@@ -46,6 +46,8 @@ public class Address_Activity extends AppCompatActivity {
     Dialog progress;
     ConnectionDetector connectionDetector;
     DialogUtil dialogUtil;
+    String AddressId;
+    String ShopId;
 
 
     @NotEmpty
@@ -81,7 +83,10 @@ public class Address_Activity extends AppCompatActivity {
 
     @OnClick(R.id.proceed_to_payment_Btn)
     public void ProceedToPayment() {
-        startActivity(new Intent(Address_Activity.this, Payment_Activity.class));
+        Intent intent=new Intent(Address_Activity.this, Payment_Activity.class);
+        intent.putExtra("AddressId", AddressId);
+        intent.putExtra("shop__id", ShopId);
+        startActivity(intent);
 
     }
 
@@ -102,6 +107,7 @@ public class Address_Activity extends AppCompatActivity {
         connectionDetector = new ConnectionDetector(getApplicationContext());
         user = new User(Address_Activity.this);
         user = new User(this);
+        ShopId= getIntent().getStringExtra("Shop_id");
         idMappings();
 
 
@@ -135,6 +141,8 @@ public class Address_Activity extends AppCompatActivity {
                 public void success(AddressListDM addressListDM, Response response) {
                     progress.dismiss();
                     if (addressListDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+                        AddressId= addressListDM.getOutput().getInfo().get(0).getId();
 
                         Adapter_Address dm = new Adapter_Address(Address_Activity.this, addressListDM.getOutput().getInfo());
                         LinearLayoutManager l = new LinearLayoutManager(Address_Activity.this);
