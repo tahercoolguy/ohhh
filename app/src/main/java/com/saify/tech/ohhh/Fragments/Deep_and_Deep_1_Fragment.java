@@ -35,6 +35,7 @@ import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.CatgoryListDM;
 import com.saify.tech.ohhh.DataModel.Deep_and_Deep_CakeDM;
 import com.saify.tech.ohhh.DataModel.Feed_CategoriesDM;
+import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.OffersDM;
 import com.saify.tech.ohhh.DataModel.ShopByIdDM;
 import com.saify.tech.ohhh.DataModel.ShopsBycatIdDM;
@@ -60,7 +61,7 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     private Context context;
 
 
-       String id;
+
     @BindView(R.id.progress_bar) ProgressBar progress_bar;
     @BindView(R.id.txt_error) TextView txt_error;
 
@@ -105,6 +106,7 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     ConnectionDetector connectionDetector;
     ProgressDialog progressDialog;
     Dialog progress;
+    String ID;
 
 
 
@@ -123,11 +125,19 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
         ((MainActivity) context).setTitle(getString(R.string.home));
-        Bundle bd=getArguments();
-        id = bd.getString("id");
+
+
+
+
+
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.deep_and_deep_1_fragment_layout, container, false);
             ButterKnife.bind(this,rootView);
+
+            Bundle bd=getArguments();
+            ID= bd.getString("id");
+
+
 //           subCategory.setText(Tittle);
 
 
@@ -176,7 +186,7 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
         if(connectionDetector.isConnectingToInternet())
         {
 //            progress = dialogUtil.showProgressDialog(getActivity(),getString(R.string.please_wait));
-            appController.paServices.Shop(id,new Callback<ShopByIdDM>() {
+            appController.paServices.Shop(ID,new Callback<ShopByIdDM>() {
                 @Override
                 public void success(ShopByIdDM shopByIdDM, Response response) {
                     //                   progress.dismiss();

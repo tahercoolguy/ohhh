@@ -88,6 +88,8 @@ public class My_Order_Activity extends AppCompatActivity implements Validator.Va
         vpAdapter.addFragment(new History_My_Order_Fragment(), getString(R.string.history));
         ViewPager.setAdapter(vpAdapter);
 
+
+
     }
 
     @Override

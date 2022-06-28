@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.Activity.View_Order_Activity;
 import com.saify.tech.ohhh.DataModel.HistoryDM;
+import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.OrderDM;
 import com.saify.tech.ohhh.R;
 
@@ -23,17 +24,17 @@ import java.util.ArrayList;
 public class OrderDM_Adapter extends RecyclerView.Adapter<OrderDM_Adapter.Programming_AdapterViewHolder> {
 
     private Context context;
-    private ArrayList<OrderDM> orderDMS;
+    private ArrayList<Info> arrayList;
 
-    public OrderDM_Adapter(Context context, ArrayList<OrderDM> orderDMS) {
+    public OrderDM_Adapter(Context context, ArrayList<Info> arrayList) {
         this.context = context;
-        this.orderDMS = orderDMS;
+        this.arrayList = arrayList;
     }
 
-    public OrderDM_Adapter(ArrayList<OrderDM> orderDMS) {
+    public OrderDM_Adapter(ArrayList<Info> arrayList) {
     }
 
-    public OrderDM_Adapter(MainActivity context, ArrayList<HistoryDM> historyDMS) {
+    public OrderDM_Adapter(MainActivity context, ArrayList<Info> arrayList) {
     }
 
     @NonNull
@@ -47,12 +48,12 @@ public class OrderDM_Adapter extends RecyclerView.Adapter<OrderDM_Adapter.Progra
     @Override
     public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, int position) {
 
-        OrderDM orderDM = orderDMS.get(position);
+       Info data = arrayList.get(position);
 
-        holder.Pastriess.setText(orderDM.getPastries());
-        holder.product_ids.setText(orderDM.getProduct_id());
-        holder.pricekwds.setText(orderDM.getPricekwd());
-        holder.count_products.setText(orderDM.getCount_product());
+        holder.Pastriess.setText(data.getProduct_name());
+//        holder.product_ids.setText(data.getProduct_id());
+        holder.pricekwds.setText(data.getProduct_price());
+        holder.count_products.setText(data.getProduct_qty());
         holder.pastri_imgs.setImageResource(R.drawable.pastries_1);
 
         holder.order_cancel_btn.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +77,7 @@ public class OrderDM_Adapter extends RecyclerView.Adapter<OrderDM_Adapter.Progra
 
     @Override
     public int getItemCount() {
-        return orderDMS.size();
+        return arrayList.size();
     }
 
     public class Programming_AdapterViewHolder extends RecyclerView.ViewHolder {

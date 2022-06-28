@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -18,17 +19,20 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.Adapter.HistoryDM_Adapter;
 import com.saify.tech.ohhh.Adapter.OrderDM_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.HistoryDM;
+import com.saify.tech.ohhh.DataModel.MyOrderDM;
 import com.saify.tech.ohhh.DataModel.OrderDM;
 import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
+import com.saify.tech.ohhh.Utils.Helper;
 import com.saify.tech.ohhh.Utils.RecyclerViewAdapter;
 
 import java.util.ArrayList;
@@ -37,6 +41,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import it.sephiroth.android.library.widget.HListView;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
 public class History_My_Order_Fragment extends Fragment {
@@ -65,6 +72,7 @@ public class History_My_Order_Fragment extends Fragment {
     AppController appController;
     ConnectionDetector connectionDetector;
     ProgressDialog progressDialog;
+    User user;
 
     @Nullable
     @Override
@@ -82,30 +90,60 @@ public class History_My_Order_Fragment extends Fragment {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.history_my_order_fragment_layout, container, false);
             ButterKnife.bind(this, rootView);
+            user=new User(getActivity());
             idMapping();
 
             setClickListeners();
             setDetails();
 
-
-            ArrayList<HistoryDM> historyDMS = new ArrayList<>();
-
-            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_1,"29 Jan, 12:30"));
-            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_2,"29 Jan, 12:30"));
-            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_3,"29 Jan, 12:30"));
-
-            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_1,"29 Jan, 12:30"));
-            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_2,"29 Jan, 12:30"));
-            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_3,"29 Jan, 12:30"));
+//
+//            ArrayList<HistoryDM> historyDMS = new ArrayList<>();
+//
+//            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_1,"29 Jan, 12:30"));
+//            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_2,"29 Jan, 12:30"));
+//            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_3,"29 Jan, 12:30"));
+//
+//            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_1,"29 Jan, 12:30"));
+//            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_2,"29 Jan, 12:30"));
+//            historyDMS.add(new HistoryDM("Pastries","#162432","10,000KWD","03 Items",R.drawable.pastries_3,"29 Jan, 12:30"));
 
 //            HistoryRcv.setLayoutManager(new LinearLayoutManager(context));
 //            HistoryRcv.setAdapter(new HistoryDM_Adapter((context), historyDMS));
 
+
+            if (connectionDetector.isConnectingToInternet()) {
+                {
+                    String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+//                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
+
+                    appController.paServices.MyOrder(String.valueOf(user.getId()), new Callback<MyOrderDM>() {
+                        @Override
+                        public void success(MyOrderDM myOrderDM, Response response) {
+//                        progress.dismiss();
+                            if (myOrderDM.getOutput().get(0).getSuccess().equalsIgnoreCase("1")) {
+
+
 //
-            HistoryDM_Adapter dm = new HistoryDM_Adapter(context,historyDMS);
+            HistoryDM_Adapter dm = new HistoryDM_Adapter(context,myOrderDM.getOutput().get(0).getInfo());
             LinearLayoutManager l = new LinearLayoutManager(context);
             history_Rcvv.setLayoutManager(l);
             history_Rcvv.setAdapter(dm);
+
+                            } else
+
+                                Helper.showToast(context, getString(R.string.Api_data_not_found));
+                        }
+
+                        @Override
+                        public void failure(RetrofitError error) {
+
+                            Log.e("String", error.toString());
+                        }
+                    });
+                }
+            } else
+                Helper.showToast(context, getString(R.string.no_internet_connection));
 
 
 

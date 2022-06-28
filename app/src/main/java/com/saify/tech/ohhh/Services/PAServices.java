@@ -18,6 +18,7 @@ import com.saify.tech.ohhh.DataModel.FlavoursDM;
 import com.saify.tech.ohhh.DataModel.GovernatesDM;
 import com.saify.tech.ohhh.DataModel.LoginDM;
 import com.saify.tech.ohhh.DataModel.MyCartDM;
+import com.saify.tech.ohhh.DataModel.MyOrderDM;
 import com.saify.tech.ohhh.DataModel.MyWishlistDM;
 import com.saify.tech.ohhh.DataModel.MyprofileDM;
 import com.saify.tech.ohhh.DataModel.NewsDM;
@@ -304,7 +305,11 @@ public interface PAServices {
                         @Field("paymentMethod") String paymentMethod,
                         Callback<OrderNowDM> orderNowDMCallback);
 
-
+   //25
+    @FormUrlEncoded
+    @POST("/ohhh/MyOrder")
+    public void MyOrder(@Field("user_id") String user_id,
+                         Callback<MyOrderDM> myOrderDMCallback);
 
     
 

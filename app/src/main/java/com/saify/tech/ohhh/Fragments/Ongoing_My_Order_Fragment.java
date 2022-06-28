@@ -3,6 +3,7 @@ package com.saify.tech.ohhh.Fragments;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -17,21 +18,30 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Activity.MainActivity;
+import com.saify.tech.ohhh.Activity.Payment_Activity;
 import com.saify.tech.ohhh.Adapter.HistoryDM_Adapter;
 import com.saify.tech.ohhh.Adapter.OrderDM_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.HistoryDM;
+import com.saify.tech.ohhh.DataModel.MyOrderDM;
 import com.saify.tech.ohhh.DataModel.OrderDM;
+import com.saify.tech.ohhh.DataModel.OrderNowDM;
+import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
+import com.saify.tech.ohhh.Utils.Helper;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import it.sephiroth.android.library.widget.HListView;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
 public class Ongoing_My_Order_Fragment extends Fragment {
@@ -55,6 +65,7 @@ public class Ongoing_My_Order_Fragment extends Fragment {
     AppController appController;
     ConnectionDetector connectionDetector;
     ProgressDialog progressDialog;
+    User user;
 
     @Nullable
     @Override
@@ -72,33 +83,64 @@ public class Ongoing_My_Order_Fragment extends Fragment {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.ongoing_my_order_fragment_layout, container, false);
             ButterKnife.bind(this, rootView);
+            user=new User(getActivity());
             idMapping();
 
             setClickListeners();
             setDetails();
 
-
-            ArrayList<OrderDM> orderDMS = new ArrayList<>();
-
-            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
-            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
-            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
-            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
-            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
-            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
-            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
-            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
-            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
-            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+//
+//            ArrayList<OrderDM> orderDMS = new ArrayList<>();
+//
+//            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+//            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+//            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+//            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+//            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+//            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+//            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+//            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+//            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
+//            orderDMS.add(new OrderDM("Pastries", "#372378", "10000Kwd", "03 items", R.drawable.pastries_1));
 
 //            OngoingRcv.setLayoutManager(new LinearLayoutManager((MainActivity) context));
 //            OngoingRcv.setAdapter(new OrderDM_Adapter(((MainActivity) context), orderDMS));
 
 
-              OrderDM_Adapter dm = new OrderDM_Adapter(context,orderDMS);
-              LinearLayoutManager l = new LinearLayoutManager(context);
-              ongoingRcv.setLayoutManager(l);
-              ongoingRcv.setAdapter(dm);
+            if (connectionDetector.isConnectingToInternet()) {
+                {
+                    String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+//                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
+
+                    appController.paServices.MyOrder(String.valueOf(user.getId()), new Callback<MyOrderDM>() {
+                        @Override
+                        public void success(MyOrderDM myOrderDM, Response response) {
+//                        progress.dismiss();
+                            if (myOrderDM.getOutput().get(0).getSuccess().equalsIgnoreCase("1")) {
+
+
+
+                       OrderDM_Adapter dm = new OrderDM_Adapter(context,myOrderDM.getOutput().get(0).getInfo());
+                       LinearLayoutManager l = new LinearLayoutManager(context);
+                       ongoingRcv.setLayoutManager(l);
+                       ongoingRcv.setAdapter(dm);
+
+
+                            } else
+
+                                Helper.showToast(context, getString(R.string.Api_data_not_found));
+                        }
+
+                        @Override
+                        public void failure(RetrofitError error) {
+
+                            Log.e("String", error.toString());
+                        }
+                    });
+                }
+            } else
+                Helper.showToast(context, getString(R.string.no_internet_connection));
 
         }
         return rootView;

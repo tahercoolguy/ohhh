@@ -67,15 +67,15 @@ public class Featured_Shopss_Adapter extends RecyclerView.Adapter<Featured_Shops
         holder.shop_cake_RL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                ((MainActivity)context).addFragment(new Deep_and_Deep_1_Fragment(), false);
-////                Intent intent=new Intent(context,Deep_and_Deep_1_Fragment.class);
+
+//                Intent intent=new Intent(context,Deep_and_Deep_1_Fragment.class);
 //                intent.putExtra("id",data.getId());
 //                context.startActivity(intent);
-//      Deep_and_Deep_1_Fragment deep_and_deep_1_fragment=new Deep_and_Deep_1_Fragment();
-//                Bundle bd = new Bundle();
-//                bd.putString("id", data.getId());
-//              deep_and_deep_1_fragment.setArguments(bd);
-                ((MainActivity)context).addFragment(new Deep_and_Deep_1_Fragment(), false);
+              Deep_and_Deep_1_Fragment deep_and_deep_1_fragment=new Deep_and_Deep_1_Fragment();
+                Bundle bd = new Bundle();
+                bd.putString("id", data.getId());
+               deep_and_deep_1_fragment.setArguments(bd);
+                ((MainActivity)context).addFragment(deep_and_deep_1_fragment, false);
 
             }
         });
