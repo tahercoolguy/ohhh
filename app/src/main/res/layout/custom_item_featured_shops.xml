@@ -20,14 +20,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/img1"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/shop_cake_img">
+                android:src="@drawable/shop_cake_img"
+                app:riv_corner_radius="20dp">
 
-            </ImageView>
+            </com.makeramen.roundedimageview.RoundedImageView>
 
             <LinearLayout
                 android:id="@+id/like_LL"
@@ -49,50 +50,44 @@
 
             </LinearLayout>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="80dp"
-                android:layout_height="28dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="10dp"
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="34dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rounded_corner_white_rating_bg"
                 android:gravity="center"
-                android:orientation="horizontal"
-                app:cardCornerRadius="25dp">
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/rating_starTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="2dp"
                     android:fontFamily="@font/semi_bold"
-
-                    android:gravity="center"
                     android:text="4.5"
                     android:textColor="@color/black"
                     android:textSize="12dp"
-                    android:textStyle="bold"></TextView>
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/star"
-                    android:layout_width="13dp"
-                    android:layout_height="13dp"
-                    android:layout_marginLeft="28dp"
-                    android:layout_marginTop="6dp"
+                    android:layout_width="20dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="25dp"
                     android:src="@drawable/ic_rating_star"></ImageView>
 
                 <TextView
                     android:id="@+id/rating_count_Txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:layout_marginLeft="45dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="50dp"
                     android:text="(25+)"
+                    android:textColor="@color/black"
                     android:textSize="12dp"></TextView>
 
-            </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
 
         </RelativeLayout>
 

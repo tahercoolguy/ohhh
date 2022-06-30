@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.makeramen.roundedimageview.RoundedTransformationBuilder;
 import com.saify.tech.ohhh.Activity.Food_Details_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.Controller.AppController;
@@ -27,7 +28,9 @@ import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
 import com.saify.tech.ohhh.Utils.Helper;
+import com.saify.tech.ohhh.Utils.RoundedCornersTransform;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 
 import java.util.ArrayList;
 
@@ -77,6 +80,7 @@ public class BestFromDesert_Adapter  extends RecyclerView.Adapter<BestFromDesert
         }
         //       holder.img.setImageResource(data.getImage());
         if(arrayList.get(position).getImage()!=null && !data.getImage().equalsIgnoreCase("")) {
+
             Picasso.with(context).load(data.getImage()).into(holder.img);
         }
 

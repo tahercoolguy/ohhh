@@ -39,6 +39,7 @@ public class Data {
     private String priority;
 
 
+
     public String getTitle_ar() {
         return title_ar;
     }

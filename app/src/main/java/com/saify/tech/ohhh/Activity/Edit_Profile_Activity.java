@@ -92,6 +92,7 @@ public class Edit_Profile_Activity extends AppCompatActivity implements Validato
         user = new User(Edit_Profile_Activity.this);
         validator = new Validator(this);
         validator.setValidationListener(this);
+        setDetails();
 
     }
 
@@ -165,6 +166,16 @@ public void Binding()
     }
 }
 
+
+
+    private void setDetails() {
+        full_name_ET.setText(user.getName());
+        email_ET.setText(user.getEmail());
+//        mobileET.setText(user.getMobileNumber());
+
+//           AreaID=user.getAreaID();
+
+    }
 
 
 }

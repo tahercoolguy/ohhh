@@ -29,6 +29,7 @@ import com.saify.tech.ohhh.Activity.Privacy_Policy_Activity;
 import com.saify.tech.ohhh.Activity.Refund_Policy_Activity;
 import com.saify.tech.ohhh.Activity.Term_And_Condition_Activity;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
 
@@ -50,6 +51,7 @@ public class Fragment_Account extends Fragment {
     AppController appController;
     ConnectionDetector connectionDetector;
     ProgressDialog progressDialog;
+    User  user;
 
 
     @NotEmpty
@@ -57,7 +59,7 @@ public class Fragment_Account extends Fragment {
     ImageView Edit_Name;
 
     @NotEmpty
-    @BindView(R.id.user_nameTxt)
+    @BindView(R.id.user_name_text)
     TextView User_Name;
 
     @NotEmpty
@@ -182,6 +184,7 @@ public class Fragment_Account extends Fragment {
 
     }
 
+    String myname;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -195,9 +198,14 @@ public class Fragment_Account extends Fragment {
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
         ((MainActivity) context).setTitle(getString(R.string.home));
+
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.account_fragment_layout, container, false);
             ButterKnife.bind(this,rootView);
+            user=new User(getActivity());
+
+             myname= user.getName();
+            User_Name.setText(myname);
             idMapping();
 
             setClickListeners();

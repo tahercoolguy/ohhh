@@ -3,6 +3,7 @@ package com.saify.tech.ohhh.Fragments;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -17,18 +18,25 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.Adapter.Feed_Categories_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.CatgoryListDM;
 import com.saify.tech.ohhh.DataModel.Feed_CategoriesDM;
+import com.saify.tech.ohhh.DataModel.ProductsbyAreaIdDM;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
+import com.saify.tech.ohhh.Utils.Helper;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import it.sephiroth.android.library.widget.HListView;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class Category_Fragment extends Fragment {
 
@@ -71,30 +79,52 @@ public class Category_Fragment extends Fragment {
             setClickListeners();
  //           setDetails();
 
-
-            ArrayList<Feed_CategoriesDM> feed_categoriesDMS = new ArrayList<>();
-
-            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_1));
-            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_2));
-            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_3));
-            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_4));
-            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_5));
-            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_6));
-            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_7));
-            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_8));
-            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_9));
-
-
+//
+//            ArrayList<Feed_CategoriesDM> feed_categoriesDMS = new ArrayList<>();
+//
+//            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_1));
+//            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_2));
+//            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_3));
+//            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_4));
+//            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_5));
+//            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_6));
+//            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_7));
+//            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_8));
+//            feed_categoriesDMS.add(new Feed_CategoriesDM("Assortment of pieces","Pasties","10.000 KD",R.drawable.feed_cake_9));
 
 
 
-            Feed_Categories_Adapter dm = new Feed_Categories_Adapter(context, feed_categoriesDMS);
+            if (connectionDetector.isConnectingToInternet()) {
+                {
+                    String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+                    //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
+
+                    appController.paServices.CatgoryList( new Callback<CatgoryListDM>() {
+                        @Override
+                        public void success(CatgoryListDM catgoryListDM, Response response) {
+                            //                       progress.dismiss();
+                            if (catgoryListDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+
+            Feed_Categories_Adapter dm = new Feed_Categories_Adapter(context, catgoryListDM.getOutput().getData());
 //        LinearLayoutManager l = new LinearLayoutManager.HORIZONTAL(context);
 
             categories.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
 
             categories.setAdapter(dm);
 
+                            } else
+                                Helper.showToast(getActivity(),catgoryListDM.getOutput().getMessage() );
+                        }
+                        @Override
+                        public void failure(RetrofitError error) {
+                            Log.e("String", error.toString());
+                        }
+                    });
+                }
+            } else
+                Helper.showToast(getActivity(), getString(R.string.no_internet_connection));
         }
         return rootView;
     }

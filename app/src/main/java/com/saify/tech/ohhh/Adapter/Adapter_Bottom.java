@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class Adapter_Bottom extends BaseAdapter {
 
     private Context context;
-    private ArrayList<DataChangeDM> arrayList;
+    public ArrayList<DataChangeDM> arrayList;
     private DataChangeDM selected;
     private int position;
     User user;

@@ -54,6 +54,14 @@ public class User {
         sp.edit().putString("name", name).apply();
     }
 
+    public String getAreaId() {
+        return sp.getString("areaid", null);
+    }
+
+    public void setAreaId(String areaid) {
+        sp.edit().putString("areaid",areaid).apply();
+    }
+
     public String getCounteryCode() {
         return sp.getString("counteryCode", null);
     }

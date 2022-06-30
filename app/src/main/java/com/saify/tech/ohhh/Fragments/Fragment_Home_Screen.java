@@ -25,18 +25,25 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.saify.tech.ohhh.Activity.Cart_Activity;
 import com.saify.tech.ohhh.Activity.Edit_Profile_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
+import com.saify.tech.ohhh.Activity.SaveAddressActivity;
 import com.saify.tech.ohhh.Adapter.BestFromDesert_Adapter;
 import com.saify.tech.ohhh.Adapter.Featured_Shopss_Adapter;
 import com.saify.tech.ohhh.Adapter.Offers_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.AllAreaDM;
 import com.saify.tech.ohhh.DataModel.BestDM;
 import com.saify.tech.ohhh.DataModel.FShopsDM;
+import com.saify.tech.ohhh.DataModel.GovernatesDM;
+import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.OffersApiDM;
 import com.saify.tech.ohhh.DataModel.OffersDM;
 import com.saify.tech.ohhh.DataModel.ShopssDM;
 import com.saify.tech.ohhh.DataModel.UpdateProfileDM;
+import com.saify.tech.ohhh.Helper.BottomForAll;
 import com.saify.tech.ohhh.Helper.DialogUtil;
+import com.saify.tech.ohhh.Helper.ResponseListener;
 import com.saify.tech.ohhh.Helper.User;
+import com.saify.tech.ohhh.Models.DataChangeDM;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
 import com.saify.tech.ohhh.Utils.Helper;
@@ -55,6 +62,11 @@ public class Fragment_Home_Screen extends Fragment {
 
     private View rootView;
     private Context context;
+    BottomForAll bottomForAll;
+    Dialog dialog;
+    String AreaName;
+    String AreaID;
+
 
 //    @BindView(R.id.progress_bar) ProgressBar progress_bar;
 //    @BindView(R.id.txt_error) TextView txt_error;
@@ -74,6 +86,63 @@ public class Fragment_Home_Screen extends Fragment {
 
     @BindView(R.id.cart_Rl)
     RelativeLayout Cart;
+
+    @BindView(R.id.AreaName)
+    TextView Area_NameTextView;
+
+    ArrayList<DataChangeDM> arrayList = new ArrayList();
+
+    ArrayList<DataChangeDM> arrayList1= new ArrayList<>();
+    @OnClick(R.id.Deliver)
+    public void Deliver(){
+
+
+            if (connectionDetector.isConnectingToInternet()) {
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+                dialog = dialogUtil.showProgressDialog(context, getString(R.string.please_wait));
+                appController.paServices.AllArea(new Callback<AllAreaDM>() {
+                    @Override
+                    public void success(AllAreaDM allAreaDM, Response response) {
+                        dialog.dismiss();
+                        if (allAreaDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+                            for (Info obj : allAreaDM.getOutput().getInfo()) {
+                                DataChangeDM s = new DataChangeDM();
+                                s.setName(obj.getTitle_en());
+                                s.setGovernateId(obj.getId());
+                                arrayList.add(s);
+                            }
+                            bottomForAll = new BottomForAll();
+                            bottomForAll.arrayList = arrayList;
+
+                            bottomForAll.setResponseListener(new ResponseListener() {
+                                @Override
+                                public void response(Object object) {
+                                    AreaName = ((DataChangeDM) object).getName();
+                                    AreaID = ((DataChangeDM) object).getGovernateId();
+                                    user.setAreaId(AreaID);
+                                    Area_NameTextView.setText(AreaName);
+
+                                    FeaturesShops();
+                                    Offers();
+                                    BestFromDesert();
+                                }
+                            });
+                            bottomForAll.show(getActivity().getSupportFragmentManager(), "bottomSheetCountry");
+
+                        } else
+                           Helper.showToast(context, getString(R.string.Api_data_not_found));
+                    }
+
+                    @Override
+                    public void failure(RetrofitError retrofitError) {
+                        Log.e("error", retrofitError.toString());
+                    }
+                });
+            } else
+                Helper.showToast(context, getString(R.string.no_internet_connection));
+
+            }
 
 
     @OnClick(R.id.cart_Rl)
@@ -96,8 +165,9 @@ public class Fragment_Home_Screen extends Fragment {
     AppController appController;
     ConnectionDetector connectionDetector;
     ProgressDialog progressDialog;
-    Dialog progress;
+
     User user;
+
     DialogUtil dialogUtil;
     @Nullable
     @Override
@@ -106,18 +176,52 @@ public class Fragment_Home_Screen extends Fragment {
         context = getActivity();
         appController = (AppController) getActivity().getApplicationContext();
 
+        dialogUtil = new DialogUtil();
         connectionDetector = new ConnectionDetector(getActivity());
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage(getResources().getString(R.string.please_wait));
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
         ((MainActivity) context).setTitle(getString(R.string.home));
+
+
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.home_screen_fragment_layout, container, false);
             ButterKnife.bind(this,rootView);
-             FeaturesShops();
-             Offers();
-             BestFromDesert();
+            user=new User(getActivity());
+
+            if (connectionDetector.isConnectingToInternet()) {
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+                dialog = dialogUtil.showProgressDialog(context, getString(R.string.please_wait));
+                appController.paServices.AllArea(new Callback<AllAreaDM>() {
+                    @Override
+                    public void success(AllAreaDM allAreaDM, Response response) {
+                        dialog.dismiss();
+                        if (allAreaDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+
+                            AreaName = allAreaDM.getOutput().getInfo().get(0).getTitle_en();
+                            AreaID = allAreaDM.getOutput().getInfo().get(0).getId();
+                            user.setAreaId(AreaID);
+                            Area_NameTextView.setText(AreaName);
+
+                            FeaturesShops();
+                            Offers();
+                            BestFromDesert();
+
+                        } else
+                            Helper.showToast(context, getString(R.string.Api_data_not_found));
+                    }
+
+                    @Override
+                    public void failure(RetrofitError retrofitError) {
+                        Log.e("error", retrofitError.toString());
+                    }
+                });
+            } else
+                Helper.showToast(context, getString(R.string.no_internet_connection));
+
+
 //            setDetails();
 
 
@@ -147,7 +251,7 @@ public class Fragment_Home_Screen extends Fragment {
 
                 //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
 
-                appController.paServices.FShops("7", new Callback<FShopsDM>() {
+                appController.paServices.FShops(AreaID, new Callback<FShopsDM>() {
                 @Override
                 public void success(FShopsDM fShopsDM, Response response) {
                         //                       progress.dismiss();
@@ -162,9 +266,10 @@ public class Fragment_Home_Screen extends Fragment {
         featured_shops.setLayoutManager(l);
         featured_shops.setAdapter(dm);
 
-                        } else
-
-                            Helper.showToast(getActivity(),fShopsDM.getOutput().getMessage() );
+                        }
+//               else
+//
+//                            Helper.showToast(getActivity(),fShopsDM.getOutput().getMessage() );
                     }
                     @Override
                     public void failure(RetrofitError error) {
@@ -201,7 +306,7 @@ public class Fragment_Home_Screen extends Fragment {
 
  //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
 
-                appController.paServices.Offers("7", new Callback<OffersApiDM>() {
+                appController.paServices.Offers(AreaID, new Callback<OffersApiDM>() {
                     @Override
                     public void success(OffersApiDM offersApiDM, Response response) {
  //                       progress.dismiss();
@@ -212,9 +317,10 @@ public class Fragment_Home_Screen extends Fragment {
                 offers_Rcvv.setLayoutManager(l);
                 offers_Rcvv.setAdapter(dm);
 
-                        } else
-
-                            Helper.showToast(getActivity(),offersApiDM.getOutput().getMessage() );
+                        }
+//                        else
+//
+//                            Helper.showToast(getActivity(),offersApiDM.getOutput().getMessage() );
                     }
                     @Override
                     public void failure(RetrofitError error) {
@@ -254,7 +360,7 @@ public class Fragment_Home_Screen extends Fragment {
 
                 //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
 
-                appController.paServices.Best("7", new Callback<BestDM>() {
+                appController.paServices.Best(AreaID, new Callback<BestDM>() {
                     @Override
                     public void success(BestDM bestDM, Response response) {
                         //                       progress.dismiss();
@@ -263,9 +369,10 @@ public class Fragment_Home_Screen extends Fragment {
            LinearLayoutManager l = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
            best_fom_desert_Rcvv.setLayoutManager(l);
            best_fom_desert_Rcvv.setAdapter(dm);
-                        } else
-
-                            Helper.showToast(getActivity(),bestDM.getOutput().getMessage() );
+                        }
+//                        else
+//
+//                            Helper.showToast(getActivity(),bestDM.getOutput().getMessage() );
                     }
                     @Override
                     public void failure(RetrofitError error) {

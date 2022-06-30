@@ -37,7 +37,7 @@ public class BottomForAll extends BottomSheetDialogFragment implements View.OnCl
     private boolean isTopScroll = false;
     private DataChangeDM selected;
     public ArrayList<DataChangeDM> arrayList=new ArrayList();
-    private Adapter_Bottom adapter;
+    public Adapter_Bottom adapter;
 
     public boolean isSort=false;
 
@@ -131,7 +131,7 @@ public class BottomForAll extends BottomSheetDialogFragment implements View.OnCl
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //               selected = adapter.searchResults.get(i);
+                selected = adapter.arrayList.get(i);
                 adapter.setSelected(selected);
                 adapter.setPosition(i);
                 adapter.notifyDataSetChanged();

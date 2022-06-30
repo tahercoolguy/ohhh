@@ -12,7 +12,7 @@ import android.util.Base64;
 import android.util.Log;
 
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.saify.tech.ohhh.Models.User;
+import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
 
 import java.security.MessageDigest;
@@ -74,10 +74,11 @@ public class SplashScreen extends AppCompatActivity {
 //                    finish();
 //                }
 
+                String id= String.valueOf(user.getId());
 
-                if(user.getId() == 0){
+                if(id.equalsIgnoreCase("0")){
 
-                    startActivity(new Intent(SplashScreen.this,MainActivity.class));
+                    startActivity(new Intent(SplashScreen.this,LoginActivity.class));
 
                 }
                 else{

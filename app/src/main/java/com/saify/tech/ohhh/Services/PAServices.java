@@ -7,6 +7,7 @@ package com.saify.tech.ohhh.Services;
 import com.saify.tech.ohhh.DataModel.AddQuantityDM;
 import com.saify.tech.ohhh.DataModel.AddressListDM;
 import com.saify.tech.ohhh.DataModel.AddtoCartDM;
+import com.saify.tech.ohhh.DataModel.AllAreaDM;
 import com.saify.tech.ohhh.DataModel.AreaDM;
 import com.saify.tech.ohhh.DataModel.BannerDM;
 import com.saify.tech.ohhh.DataModel.BestDM;
@@ -26,6 +27,7 @@ import com.saify.tech.ohhh.DataModel.OffersApiDM;
 import com.saify.tech.ohhh.DataModel.OrderNowDM;
 import com.saify.tech.ohhh.DataModel.ProductsByIdDM;
 import com.saify.tech.ohhh.DataModel.ProductsBycatIdDM;
+import com.saify.tech.ohhh.DataModel.ProductsbyAreaIdDM;
 import com.saify.tech.ohhh.DataModel.RemoveCartDM;
 import com.saify.tech.ohhh.DataModel.RemoveWishlistDM;
 import com.saify.tech.ohhh.DataModel.RestaurentDM;
@@ -35,6 +37,7 @@ import com.saify.tech.ohhh.DataModel.ShopsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.ShopsDM;
 import com.saify.tech.ohhh.DataModel.SignUpDM;
 import com.saify.tech.ohhh.DataModel.SizesDM;
+import com.saify.tech.ohhh.DataModel.TermsConditionDM;
 import com.saify.tech.ohhh.DataModel.UpdateProfileDM;
 import com.saify.tech.ohhh.DataModel.VideoDM;
 
@@ -305,11 +308,26 @@ public interface PAServices {
                         @Field("paymentMethod") String paymentMethod,
                         Callback<OrderNowDM> orderNowDMCallback);
 
-   //25
+   //26
     @FormUrlEncoded
     @POST("/ohhh/MyOrder")
     public void MyOrder(@Field("user_id") String user_id,
                          Callback<MyOrderDM> myOrderDMCallback);
+
+    //27
+     @GET("/ohhh/allArea")
+     public void AllArea(Callback<AllAreaDM> allAreaDMCallback);
+
+    //28
+    @FormUrlEncoded
+    @POST("/ohhh/productsbyAreaId")
+    public void productsbyAreaId(@Field("area_id") String area_id,
+                     Callback<ProductsbyAreaIdDM> productsbyAreaIdDMCallback);
+
+
+     //29
+    @GET("/ohhh/termsCondition")
+    public void TermsCondition(Callback<TermsConditionDM> termsConditionDMCallback);
 
     
 

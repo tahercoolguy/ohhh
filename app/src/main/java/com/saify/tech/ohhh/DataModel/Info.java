@@ -181,7 +181,34 @@ public class Info {
     private String updated_date;
     private String gateway_responce;
     private String delivery_status;
+    private String description_en;
+    private String type;
+    private String description_ar;
 
+
+    public String getDescription_en() {
+        return description_en;
+    }
+
+    public void setDescription_en(String description_en) {
+        this.description_en = description_en;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getDescription_ar() {
+        return description_ar;
+    }
+
+    public void setDescription_ar(String description_ar) {
+        this.description_ar = description_ar;
+    }
 
     public String getSale_id() {
         return sale_id;
