@@ -10,6 +10,8 @@ public class Output {
 
     private String message;
 
+
+
     private ArrayList<Category> category;
 
  //   private ArrayList<ImageList> images;

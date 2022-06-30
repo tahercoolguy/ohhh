@@ -25,6 +25,7 @@ import com.saify.tech.ohhh.DataModel.MyprofileDM;
 import com.saify.tech.ohhh.DataModel.NewsDM;
 import com.saify.tech.ohhh.DataModel.OffersApiDM;
 import com.saify.tech.ohhh.DataModel.OrderNowDM;
+import com.saify.tech.ohhh.DataModel.PrivacyPolicyDM;
 import com.saify.tech.ohhh.DataModel.ProductsByIdDM;
 import com.saify.tech.ohhh.DataModel.ProductsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.ProductsbyAreaIdDM;
@@ -329,6 +330,14 @@ public interface PAServices {
     @GET("/ohhh/termsCondition")
     public void TermsCondition(Callback<TermsConditionDM> termsConditionDMCallback);
 
-    
+
+    //30
+    @GET("/ohhh/privacyPolicy")
+    public void privacyPolicy(Callback<PrivacyPolicyDM> privacyPolicyDMCallback);
+
+
+    //30
+    @GET("/ohhh/refundPolicy")
+    public void refundPolicy(Callback<PrivacyPolicyDM> privacyPolicyDMCallback);
 
 }

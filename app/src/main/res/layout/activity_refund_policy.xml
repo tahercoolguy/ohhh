@@ -69,12 +69,12 @@
 
 
     <TextView
+        android:id="@+id/refundPolicy"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:text="@string/termss"
         android:textSize="@dimen/text_size_normal"></TextView>
 
 </LinearLayout>

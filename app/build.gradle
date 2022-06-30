@@ -120,7 +120,8 @@ dependencies {
     implementation 'com.github.aabhasr1:OtpView:v1.1.2'
 
     implementation'com.makeramen:roundedimageview:2.3.0'
-
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }
 apply plugin: 'com.google.gms.google-services'
 com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true

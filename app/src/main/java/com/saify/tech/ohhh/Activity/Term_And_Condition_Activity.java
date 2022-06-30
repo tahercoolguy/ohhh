@@ -2,23 +2,41 @@
 package com.saify.tech.ohhh.Activity;
 
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
+import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.TermsConditionDM;
+import com.saify.tech.ohhh.Helper.DialogUtil;
+import com.saify.tech.ohhh.Helper.Helper;
 import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
+import com.saify.tech.ohhh.Utils.ConnectionDetector;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class Term_And_Condition_Activity extends AppCompatActivity{
+
+    AppController appController;
+    ConnectionDetector connectionDetector;
+    Dialog progress;
+    DialogUtil dialogUtil;
 
 
     private User user;
@@ -32,6 +50,9 @@ public class Term_And_Condition_Activity extends AppCompatActivity{
                 finish();
     }
 
+    @BindView(R.id.termsAndCondition)
+    TextView termsAndCondition;
+
 
 
     @Override
@@ -40,8 +61,14 @@ public class Term_And_Condition_Activity extends AppCompatActivity{
         setContentView(R.layout.activity_term_and_condition);
         ButterKnife.bind(this);
         user = new User(this);
+        appController = (AppController)  getApplicationContext();
+        connectionDetector = new ConnectionDetector(Term_And_Condition_Activity.this);
+        user = new User(Term_And_Condition_Activity.this);
+        dialogUtil = new DialogUtil();
+        TermCondition();
 
         idMappings();
+
 
     }
 
@@ -72,7 +99,42 @@ public class Term_And_Condition_Activity extends AppCompatActivity{
 //                }
 //            }
 //        });
+
+
+    public void TermCondition () {
+        if (connectionDetector.isConnectingToInternet()) {
+            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+            progress = dialogUtil.showProgressDialog(Term_And_Condition_Activity.this, getString(R.string.please_wait));
+            appController.paServices.TermsCondition(new Callback<TermsConditionDM>() {
+                @Override
+
+                public void success(TermsConditionDM termsConditionDM, Response response) {
+                    progress.dismiss();
+                    if (termsConditionDM.getOutput().getSuccess().equalsIgnoreCase("1"))
+
+                        termsAndCondition.setText(Html.fromHtml(termsConditionDM.getOutput().getInfo().get(0).getDescription_en(), Html.FROM_HTML_MODE_COMPACT));
+
+                        //termAndCondition.setText(dataTerm.getItem().getDescription());
+
+                    else
+                        Helper.showToast(Term_And_Condition_Activity.this,getString(R.string.Api_data_not_found));
+                }
+
+                @Override
+                public void failure(RetrofitError retrofitError) {
+                    progress.dismiss();
+                    Log.e("error", retrofitError.toString());
+
+                }
+            });
+        } else
+            Helper.showToast(Term_And_Condition_Activity.this, getString(R.string.no_internet_connection));
+
     }
+
+
+
+}
 
 
 
