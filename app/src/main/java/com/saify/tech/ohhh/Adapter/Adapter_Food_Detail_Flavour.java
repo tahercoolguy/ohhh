@@ -77,7 +77,7 @@ public class Adapter_Food_Detail_Flavour extends RecyclerView.Adapter<Adapter_Fo
             viewHolder.radioButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    ((Food_Details_Activity)context).Flavour_id =data.getId();
+//                    ((Food_Details_Activity)context).Flavour_id =data.getId();
                 }
             });
 

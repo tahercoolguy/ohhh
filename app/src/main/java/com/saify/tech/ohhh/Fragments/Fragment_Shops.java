@@ -64,6 +64,9 @@ public class Fragment_Shops extends Fragment {
     @BindView(R.id.cart_LL)
     RelativeLayout cart;
 
+    String BannerImg;
+    String ShopImg;
+
 
 
 
@@ -141,6 +144,8 @@ public class Fragment_Shops extends Fragment {
  //                   progress.dismiss();
                     if(shopsDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
+                    ShopImg=    shopsDM.getOutput().getInfo().get(0).getImage();
+                     BannerImg=   shopsDM.getOutput().getInfo().get(0).getBanner_image();
 
 
 

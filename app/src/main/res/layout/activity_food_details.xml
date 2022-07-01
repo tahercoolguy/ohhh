@@ -215,48 +215,17 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
                 android:textColor="@color/black"
-
                 android:layout_marginRight="15dp"
-                android:text="@string/cake_details"
                 android:textSize="16dp">
 
             </TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/semi_bold"
-
-                android:text="@string/size"
-                android:textColor="@color/black"
-                android:textSize="18dp"></TextView>
-
-
-           <androidx.recyclerview.widget.RecyclerView
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:id="@+id/sizeRV"
-               android:layout_margin="15dp"></androidx.recyclerview.widget.RecyclerView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/semi_bold"
-
-                android:text="@string/options"
-                android:textColor="@color/black"
-                android:textSize="18dp"></TextView>
 
 
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/flavourRV"
+                android:id="@+id/your_choiceRV"
                 android:layout_margin="15dp"></androidx.recyclerview.widget.RecyclerView>
 
 

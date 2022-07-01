@@ -44,6 +44,7 @@ import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.Helper;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -84,6 +85,12 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     @BindView(R.id.subCategory)
     TextView subCategory;
 
+    @BindView(R.id.shopImg1)
+    ImageView shopImg1;
+
+    @BindView(R.id.bannerImg1)
+    ImageView bannerImg1;
+
 
     @BindView(R.id.cart_dip_1)
     RelativeLayout cart;
@@ -107,6 +114,8 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     ProgressDialog progressDialog;
     Dialog progress;
     String ID;
+    String ShopIMg;
+    String BannerImg;
 
 
 
@@ -136,6 +145,10 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
 
             Bundle bd=getArguments();
             ID= bd.getString("id");
+//            ShopIMg=bd.getString("ShopImg");
+//            BannerImg=bd.getString("BannerImg");
+//            shopImg1.setImageResource(ShopIMg);
+
 
 
 //           subCategory.setText(Tittle);
@@ -194,6 +207,8 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
                         if(shopByIdDM.getOutput().getCategory()!=null) {
                             String CategoryID = shopByIdDM.getOutput().getCategory().get(0).getCategory_id();
                             String Tittle = shopByIdDM.getOutput().getCategory().get(0).getCategory_name();
+                            Picasso.with(context).load(shopByIdDM.getOutput().getInfo().get(0).getBanner_image()).into(bannerImg1);
+                            Picasso.with(context).load(shopByIdDM.getOutput().getInfo().get(0).getImage()).into(shopImg1);
 
                             Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, shopByIdDM.getOutput().getCategory(), Deep_and_Deep_1_Fragment.this);
                             LinearLayoutManager l = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
@@ -249,7 +264,8 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
                             sub_category_1_Rcv.setVisibility(View.GONE);
                         }
                             }else
-                    {Helper.showToast(getActivity(),getString(R.string.Api_data_not_found));
+                    {
+                        Helper.showToast(getActivity(),getString(R.string.Api_data_not_found));
                           sub_category_1_Rcv.setVisibility(View.INVISIBLE);}
 
                            }

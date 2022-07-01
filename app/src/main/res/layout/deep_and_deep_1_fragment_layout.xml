@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
 
     android:layout_height="match_parent"
@@ -82,13 +83,14 @@
                     android:layout_marginTop="10dp">
 
 
-                    <ImageView
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/bannerImg1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/dip_and_deep_cake_1">
+                        app:riv_corner_radius="30dp"
+                        android:scaleType="fitXY">
 
-                    </ImageView>
+                    </com.makeramen.roundedimageview.RoundedImageView>
 
                     <ImageView
                         android:layout_width="110dp"
@@ -99,14 +101,16 @@
 
                     </ImageView>
 
-                    <ImageView
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/shopImg1"
                         android:layout_width="110dp"
                         android:layout_height="110dp"
+                        app:riv_corner_radius="60dp"
+                        android:scaleType="fitXY"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="90dp"
-                        android:src="@drawable/deep_and_deep">
+                        android:layout_marginTop="90dp">
 
-                    </ImageView>
+                    </com.makeramen.roundedimageview.RoundedImageView>
 
 
                 </RelativeLayout>

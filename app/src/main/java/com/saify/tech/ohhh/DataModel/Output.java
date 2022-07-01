@@ -11,6 +11,8 @@ public class Output {
     private String message;
 
 
+    private ArrayList<Addons> addons;
+
 
     private ArrayList<Category> category;
 
@@ -95,5 +97,13 @@ public class Output {
 
     public void setAfter_discount(String after_discount) {
         this.after_discount = after_discount;
+    }
+
+    public ArrayList<Addons> getAddons() {
+        return addons;
+    }
+
+    public void setAddons(ArrayList<Addons> addons) {
+        this.addons = addons;
     }
 }

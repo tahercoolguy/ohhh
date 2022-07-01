@@ -65,6 +65,7 @@ public class Shopss_Adapter extends RecyclerView.Adapter<Shopss_Adapter.Programm
         }
 
 
+
 //        holder.ratingstar.setText(Info.getRating_star());
 //        holder.ratingcounting.setText(Info.getRating_count());
 
@@ -82,6 +83,7 @@ public class Shopss_Adapter extends RecyclerView.Adapter<Shopss_Adapter.Programm
                 Deep_and_Deep_1_Fragment deep_and_deep_1_fragment=new Deep_and_Deep_1_Fragment();
                 Bundle bd = new Bundle();
                 bd.putString("id", info.getId());
+
                 deep_and_deep_1_fragment.setArguments(bd);
                 ((MainActivity)context).addFragment(deep_and_deep_1_fragment, false);
 

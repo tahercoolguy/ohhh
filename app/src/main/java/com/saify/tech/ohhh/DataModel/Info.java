@@ -186,6 +186,7 @@ public class Info {
     private String description_ar;
 
 
+
     public String getDescription_en() {
         return description_en;
     }

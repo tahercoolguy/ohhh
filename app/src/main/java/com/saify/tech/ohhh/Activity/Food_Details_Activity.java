@@ -6,48 +6,39 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.mobsandgeeks.saripaar.annotation.NotEmpty;
-import com.saify.tech.ohhh.Adapter.Adapter_Food_Detail_Flavour;
-import com.saify.tech.ohhh.Adapter.Adapter_Food_Detail_Size;
-import com.saify.tech.ohhh.Adapter.Order_Info_Adapter;
-import com.saify.tech.ohhh.Adapter.Shopss_Adapter;
+import com.saify.tech.ohhh.Adapter.Adapter_Food_Detail_Your_Choice;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.Addons;
 import com.saify.tech.ohhh.DataModel.AddtoCartDM;
-import com.saify.tech.ohhh.DataModel.FlavoursDM;
-import com.saify.tech.ohhh.DataModel.OrderInfoDM;
 import com.saify.tech.ohhh.DataModel.ProductsByIdDM;
-import com.saify.tech.ohhh.DataModel.SizesDM;
-import com.saify.tech.ohhh.DataModel.UpdateProfileDM;
-import com.saify.tech.ohhh.Fragments.Deep_and_Deep_2_Fragment;
-import com.saify.tech.ohhh.Fragments.Feed_Categories_Fragment;
-import com.saify.tech.ohhh.Fragments.Fragment_Home_Screen;
-import com.saify.tech.ohhh.Fragments.Fragment_Shops;
 import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.User;
-import com.saify.tech.ohhh.Models.Size;
+import com.saify.tech.ohhh.Models.ParentChildDataModel;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
 import com.saify.tech.ohhh.Utils.Helper;
 import com.squareup.picasso.Picasso;
 
+import org.jdom2.Parent;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.reactivex.MaybeOnSubscribe;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -70,12 +61,12 @@ public class Food_Details_Activity extends AppCompatActivity {
 
 
 
-    @BindView(R.id.sizeRV)
-    RecyclerView sizeRV;
+    @BindView(R.id.your_choiceRV)
+    RecyclerView your_choiceRV;
 
-
-    @BindView(R.id.flavourRV)
-    RecyclerView flavourRV;
+//
+//    @BindView(R.id.flavourRV)
+//    RecyclerView flavourRV;
 
 
     @BindView(R.id.add_to_cart_Btn)
@@ -92,6 +83,10 @@ public class Food_Details_Activity extends AppCompatActivity {
 
     @BindView(R.id.cake_name)
     TextView cake_name;
+
+    @BindView(R.id.cake_Description_Txt)
+    TextView cake_Description_Txt;
+
 
     @BindView(R.id.price_tv)
     TextView price_tv;
@@ -136,46 +131,98 @@ int quantity=1;
 
         startActivity(new Intent(Food_Details_Activity.this, Cart_Activity.class));
     }
+//
+//    public String Size_id="";
+//    public String Flavour_id="";
 
-    public String Size_id="";
-    public String Flavour_id="";
+    public boolean checkminimun(int mininumValue , ArrayList<ParentChildDataModel> parentChildDataModels,String parent_id,String ParentName)
+    {
+        int count=0;
+        for (ParentChildDataModel par: parentChildDataModels
+             ) {
+            if(par.getParent().equalsIgnoreCase(parent_id))
+                count = count +1;
+        }
+
+        if(mininumValue<count)
+        {
+            Toast.makeText(context, "Kinldy Select Atleast"+mininumValue+ ParentName, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
+
+    public boolean checkmax(int maxValue , ArrayList<ParentChildDataModel> parentChildDataModels,String parent_id,String ParentName)
+    {
+        int count=0;
+        for (ParentChildDataModel par: parentChildDataModels
+        ) {
+            if(par.getParent().equalsIgnoreCase(parent_id))
+                count = count +1;
+        }
+
+        if(maxValue>count) {
+            Toast.makeText(context, "You can select Max" + maxValue + ParentName, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
+    }
+
+  public   ArrayList<ParentChildDataModel> parentChildDataModels=new ArrayList<>();
+
+    public boolean checker()
+    {
+        boolean checkerMain=true;
+
+        for (Addons addons:temp
+             ) {
+            checkerMain = checkminimun(addons.getOption_minimum(),parentChildDataModels,addons.getId(),addons.getOption_group_name());
+            checkerMain = checkmax(Integer.parseInt(addons.getOption_maximum()),parentChildDataModels,addons.getId(),addons.getOption_group_name());
+            if(!checkerMain)
+                break;
+        }
 
 
+        return checkerMain;
+    }
+    
 
     @OnClick(R.id.add_to_cart_Btn)
     public void cart() {
 
 
-        if (connectionDetector.isConnectingToInternet()) {
-            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-
-            if (Size_id.equalsIgnoreCase("")) {
-                Helper.showToast(Food_Details_Activity.this, "Kindly select Size..");
-            }  if (Flavour_id.equalsIgnoreCase("")) {
-                Helper.showToast(Food_Details_Activity.this, "Kindly select Flavour..");
-            } else {
+        if (checker()) {
+            if (connectionDetector.isConnectingToInternet()) {
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+//
+//            if (Size_id.equalsIgnoreCase("")) {
+//                Helper.showToast(Food_Details_Activity.this, "Kindly select Size..");
+//            }  if (Flavour_id.equalsIgnoreCase("")) {
+//                Helper.showToast(Food_Details_Activity.this, "Kindly select Flavour..");
+//            } else {
                 dialog = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
-                appController.paServices.AddtoCart(String.valueOf(user.getId()), ID, ShopId, String.valueOf(quantity), "best", Size_id, Flavour_id, new Callback<AddtoCartDM>() {
-                    @Override
-                    public void success(AddtoCartDM addtoCartDM, Response response) {
-                        dialog.dismiss();
-                        if (addtoCartDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
-                             startActivity(new Intent(Food_Details_Activity.this, Cart_Activity.class));
-
-                            Helper.showToast(Food_Details_Activity.this, addtoCartDM.getOutput().getMessage());
-
-                        } else
-                            Helper.showToast(Food_Details_Activity.this,addtoCartDM.getOutput().getMessage());
-                    }
-                    @Override
-                    public void failure(RetrofitError retrofitError) {
-                        Log.e("error", retrofitError.toString());
-                    }
-                });
-            }
+//                appController.paServices.AddtoCart(String.valueOf(user.getId()), ID, ShopId, String.valueOf(quantity), "best", Size_id, Flavour_id, new Callback<AddtoCartDM>() {
+//                    @Override
+//                    public void success(AddtoCartDM addtoCartDM, Response response) {
+//                        dialog.dismiss();
+//                        if (addtoCartDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+//
+//                             startActivity(new Intent(Food_Details_Activity.this, Cart_Activity.class));
+//
+//                            Helper.showToast(Food_Details_Activity.this, addtoCartDM.getOutput().getMessage());
+//
+//                        } else
+//                            Helper.showToast(Food_Details_Activity.this,addtoCartDM.getOutput().getMessage());
+//                    }
+//                    @Override
+//                    public void failure(RetrofitError retrofitError) {
+//                        Log.e("error", retrofitError.toString());
+//                    }
+//                });
+            } else
+                Helper.showToast(Food_Details_Activity.this, getString(R.string.no_internet_connection));
         }
-        else
-            Helper.showToast(Food_Details_Activity.this, getString(R.string.no_internet_connection));
     }
 //
 //    @OnClick(R.id.cheese_1RL)
@@ -251,8 +298,8 @@ int quantity=1;
         ID = getIntent().getStringExtra("id");
         idMappings();
         Binding();
-        size();
-        flavour();
+//       size();
+//        flavour();
 
 //        ArrayList<OrderInfoDM> orderInfoDMS = new ArrayList<>();
 //
@@ -420,7 +467,8 @@ int quantity=1;
 //            }
 //        });
 
-
+public ArrayList<Addons> temp;
+    
     public void Binding() {
         if (connectionDetector.isConnectingToInternet()) {
             {
@@ -432,16 +480,24 @@ int quantity=1;
                     @Override
                     public void success(ProductsByIdDM productsByIdDM, Response response) {
 //                        progress.dismiss();
+                        temp=productsByIdDM.getOutput().getAddons();
                         if (productsByIdDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
                             ShopId=productsByIdDM.getOutput().getInfo().get(0).getShop_id();
                             cake_name.setText(productsByIdDM.getOutput().getInfo().get(0).getTitle_en());
                             price_tv.setText(productsByIdDM.getOutput().getInfo().get(0).getPrice());
+                            cake_Description_Txt.setText(Html.fromHtml(productsByIdDM.getOutput().getInfo().get(0).getContent_en(), Html.FROM_HTML_MODE_COMPACT));
+
                             if (!productsByIdDM.getOutput().getInfo().get(0).getImage().equalsIgnoreCase("")) {
                                 Picasso.with(context).load(productsByIdDM.getOutput().getInfo().get(0).getImage()).into(cake_img1);
                             }
 
+                            Adapter_Food_Detail_Your_Choice dm = new Adapter_Food_Detail_Your_Choice(Food_Details_Activity.this, productsByIdDM.getOutput().getAddons());
+                            LinearLayoutManager l = new LinearLayoutManager(Food_Details_Activity.this);
+                            your_choiceRV.setLayoutManager(l);
+                            your_choiceRV.setAdapter(dm);
 
+//
 //                            Helper.showToast(Food_Details_Activity.this, productsByIdDM.getOutput().getMessage());
 
                         } else
@@ -460,89 +516,89 @@ int quantity=1;
             Helper.showToast(Food_Details_Activity.this, getString(R.string.no_internet_connection));
     }
 
-    public void size()
-
-        {
-//    ArrayList<Size> shopssDMS = new ArrayList<>();
-//               shopssDMS.add(new Size("small","1000"));
-//              shopssDMS.add(new Size("medium","2000"));
-
-
-        if (connectionDetector.isConnectingToInternet()) {
-            {
-                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-
-//                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
-
-                appController.paServices.Size(ID, new Callback<SizesDM>() {
-                    @Override
-                    public void success(SizesDM sizesDM, Response response) {
-//                        progress.dismiss();
-                        if (sizesDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
-
-
-                            Adapter_Food_Detail_Size dm = new Adapter_Food_Detail_Size(Food_Details_Activity.this, sizesDM.getOutput().getInfo());
-                            LinearLayoutManager l = new LinearLayoutManager(Food_Details_Activity.this);
-                            sizeRV.setLayoutManager(l);
-                            sizeRV.setAdapter(dm);
-
-
-                        } else
-
-                            Helper.showToast(Food_Details_Activity.this,getString(R.string.Api_data_not_found));
-                    }
-
-                    @Override
-                    public void failure(RetrofitError error) {
-
-                        Log.e("String", error.toString());
-                    }
-                });
-            }
-        } else
-            Helper.showToast(Food_Details_Activity.this, getString(R.string.no_internet_connection));
-
-    }
-
-    public void flavour()
-    {
-
-//        ArrayList<Size> shopssDMS = new ArrayList<>();
-//        shopssDMS.add(new Size("small","1000"));
-
-        if (connectionDetector.isConnectingToInternet()) {
-            {
-                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-
-//                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
-
-                appController.paServices.Flavours(ID, new Callback<FlavoursDM>() {
-                    @Override
-                    public void success(FlavoursDM flavoursDM, Response response) {
-//                        progress.dismiss();
-                        if (flavoursDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
-
-              Adapter_Food_Detail_Flavour dm = new Adapter_Food_Detail_Flavour (Food_Details_Activity.this, flavoursDM.getOutput().getInfo());
-              LinearLayoutManager l = new LinearLayoutManager(Food_Details_Activity.this);
-              flavourRV.setLayoutManager(l);
-              flavourRV.setAdapter(dm);
-
-                        } else
-
-                            Helper.showToast(Food_Details_Activity.this,getString(R.string.Api_data_not_found));
-                    }
-
-                    @Override
-                    public void failure(RetrofitError error) {
-
-                        Log.e("String", error.toString());
-                    }
-                });
-            }
-        } else
-            Helper.showToast(Food_Details_Activity.this, getString(R.string.no_internet_connection));
-
-    }
+//    public void size()
+//
+//        {
+////    ArrayList<Size> shopssDMS = new ArrayList<>();
+////               shopssDMS.add(new Size("small","1000"));
+////              shopssDMS.add(new Size("medium","2000"));
+//
+//
+//        if (connectionDetector.isConnectingToInternet()) {
+//            {
+//                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+//
+////                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
+//
+//                appController.paServices.Size(ID, new Callback<SizesDM>() {
+//                    @Override
+//                    public void success(SizesDM sizesDM, Response response) {
+////                        progress.dismiss();
+//                        if (sizesDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+//
+//
+//                            Adapter_Food_Detail_Size_flavour dm = new Adapter_Food_Detail_Size_flavour(Food_Details_Activity.this, sizesDM.getOutput().getInfo());
+//                            LinearLayoutManager l = new LinearLayoutManager(Food_Details_Activity.this);
+//                            sizeRV.setLayoutManager(l);
+//                            sizeRV.setAdapter(dm);
+//
+//
+//                        } else
+//
+//                            Helper.showToast(Food_Details_Activity.this,getString(R.string.Api_data_not_found));
+//                    }
+//
+//                    @Override
+//                    public void failure(RetrofitError error) {
+//
+//                        Log.e("String", error.toString());
+//                    }
+//                });
+//            }
+//        } else
+//            Helper.showToast(Food_Details_Activity.this, getString(R.string.no_internet_connection));
+//
+//    }
+//
+//    public void flavour()
+//    {
+//
+////        ArrayList<Size> shopssDMS = new ArrayList<>();
+////        shopssDMS.add(new Size("small","1000"));
+//
+//        if (connectionDetector.isConnectingToInternet()) {
+//            {
+//                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+//
+////                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
+//
+//                appController.paServices.Flavours(ID, new Callback<FlavoursDM>() {
+//                    @Override
+//                    public void success(FlavoursDM flavoursDM, Response response) {
+////                        progress.dismiss();
+//                        if (flavoursDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+//
+//              Adapter_Food_Detail_Flavour dm = new Adapter_Food_Detail_Flavour (Food_Details_Activity.this, flavoursDM.getOutput().getInfo());
+//              LinearLayoutManager l = new LinearLayoutManager(Food_Details_Activity.this);
+//              flavourRV.setLayoutManager(l);
+//              flavourRV.setAdapter(dm);
+//
+//                        } else
+//
+//                            Helper.showToast(Food_Details_Activity.this,getString(R.string.Api_data_not_found));
+//                    }
+//
+//                    @Override
+//                    public void failure(RetrofitError error) {
+//
+//                        Log.e("String", error.toString());
+//                    }
+//                });
+//            }
+//        } else
+//            Helper.showToast(Food_Details_Activity.this, getString(R.string.no_internet_connection));
+//
+//    }
 
 }
 
