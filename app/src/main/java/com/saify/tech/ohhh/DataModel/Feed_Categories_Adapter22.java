@@ -68,8 +68,8 @@ public class Feed_Categories_Adapter22 extends RecyclerView.Adapter<Feed_Categor
 
 
         Items data = arrayList.get(position);
-
-        if (data.getImage()!=null) {
+       if(data!=null){
+        if (!data.getImage().equalsIgnoreCase("") && data.getImage()!=null) {
             Picasso.with(context).load(data.getImage()).into(viewHolder.feed_category_img);
         }
             viewHolder.pricekwds.setText(data.getPrice());
@@ -87,7 +87,7 @@ public class Feed_Categories_Adapter22 extends RecyclerView.Adapter<Feed_Categor
     }
         });
 
-    }
+    }}
 
     public static class ViewHolder   extends RecyclerView.ViewHolder{
         RoundedImageView feed_category_img;

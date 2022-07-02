@@ -503,11 +503,12 @@ public ArrayList<Addons> temp;
                                 Picasso.with(context).load(productsByIdDM.getOutput().getInfo().get(0).getImage()).into(cake_img1);
                             }
 
-                            Adapter_Food_Detail_Your_Choice dm = new Adapter_Food_Detail_Your_Choice(Food_Details_Activity.this, productsByIdDM.getOutput().getAddons());
-                            LinearLayoutManager l = new LinearLayoutManager(Food_Details_Activity.this);
-                            your_choiceRV.setLayoutManager(l);
-                            your_choiceRV.setAdapter(dm);
-
+                            if(productsByIdDM.getOutput().getAddons()!=null) {
+                                Adapter_Food_Detail_Your_Choice dm = new Adapter_Food_Detail_Your_Choice(Food_Details_Activity.this, productsByIdDM.getOutput().getAddons());
+                                LinearLayoutManager l = new LinearLayoutManager(Food_Details_Activity.this);
+                                your_choiceRV.setLayoutManager(l);
+                                your_choiceRV.setAdapter(dm);
+                            }
 //
 //                            Helper.showToast(Food_Details_Activity.this, productsByIdDM.getOutput().getMessage());
 

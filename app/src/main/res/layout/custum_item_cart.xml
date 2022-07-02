@@ -74,8 +74,7 @@
 
                 android:layout_gravity="center"
                 android:layout_marginLeft="30dp"
-                android:gravity="center"
-                android:text="Extra Mayonese">
+                android:gravity="center">
 
             </TextView>
         </LinearLayout>

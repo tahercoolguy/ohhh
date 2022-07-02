@@ -56,8 +56,9 @@ public class Feed_Categories_Adapter extends RecyclerView.Adapter<Feed_Categorie
 //        holder.feed_category_img.setImageResource(feed_categoriesDM.getPastri_img());
 //        holder.pricekwds.setText(feed_categoriesDM.getPricekwd());
 //        holder.pieces.setText(feed_categoriesDM.getPieces());
-        holder.pastriess.setText(feed_categoriesDM.getTitle_en());
-
+        if(feed_categoriesDM.getTitle_en()!=null) {
+            holder.pastriess.setText(feed_categoriesDM.getTitle_en());
+        }
 
 
         holder.feed_cakeLinearLL.setOnClickListener(new View.OnClickListener() {
@@ -84,7 +85,7 @@ public class Feed_Categories_Adapter extends RecyclerView.Adapter<Feed_Categorie
 
         public Programming_AdapterViewHolder(@NonNull View itemView) {
             super(itemView);
-            pastriess = (TextView) itemView.findViewById(R.id.pastries_txt);
+            pastriess = (TextView) itemView.findViewById(R.id.text111);
             pricekwds = (TextView) itemView.findViewById(R.id.price_kwd_Txt);
              pieces = (TextView) itemView.findViewById(R.id.pieces_Txt);
             feed_category_img=itemView.findViewById(R.id.feed_category_img);

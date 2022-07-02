@@ -68,17 +68,16 @@ public class Adapter_Food_Detail_Your_Choice extends RecyclerView.Adapter<Adapte
 //        Picasso.with(context).load(arrayList.get(position).getAttachment()[0]).into(viewHolder.companyIcon);
 
         Addons data=arrayList.get(position);
-
-
-            viewHolder.yourChoice.setText(data.getOption_group_name());
+       if ( arrayList.get(position)!=null)
+    viewHolder.yourChoice.setText(data.getOption_group_name());
 //        viewHolder.price.setText(data.getPrice());
-        if(data.getItems()!=null) {
-            Adapter_Food_Detail_Size_flavour dm = new Adapter_Food_Detail_Size_flavour(context, data.getItems());
-            LinearLayoutManager l = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-            viewHolder.SizeAndFlaverRecyclerView.setLayoutManager(l);
-            viewHolder.SizeAndFlaverRecyclerView.setAdapter(dm);
-        }
+    if ( data.getItems() != null) {
+        Adapter_Food_Detail_Size_flavour dm = new Adapter_Food_Detail_Size_flavour(context, data.getItems());
+        LinearLayoutManager l = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+        viewHolder.SizeAndFlaverRecyclerView.setLayoutManager(l);
+        viewHolder.SizeAndFlaverRecyclerView.setAdapter(dm);
 
+}
     }
 
     public Addons getSelected() {
