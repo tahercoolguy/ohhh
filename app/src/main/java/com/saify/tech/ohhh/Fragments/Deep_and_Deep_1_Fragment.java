@@ -40,6 +40,7 @@ import com.saify.tech.ohhh.DataModel.OffersDM;
 import com.saify.tech.ohhh.DataModel.ShopByIdDM;
 import com.saify.tech.ohhh.DataModel.ShopsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.ShopsDM;
+import com.saify.tech.ohhh.DataModel.SubCategorylistByCatIdForShopDM;
 import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.Helper;
 import com.saify.tech.ohhh.R;
@@ -82,8 +83,7 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     @BindView(R.id.back_dip_1RL)
     RelativeLayout back;
 
-    @BindView(R.id.subCategory)
-    TextView subCategory;
+
 
     @BindView(R.id.shopImg1)
     ImageView shopImg1;
@@ -113,10 +113,11 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     ConnectionDetector connectionDetector;
     ProgressDialog progressDialog;
     Dialog progress;
+    DialogUtil dialogUtil;
     String ID;
     String ShopIMg;
     String BannerImg;
-
+    Dialog dialog;
 
 
 
@@ -142,7 +143,9 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.deep_and_deep_1_fragment_layout, container, false);
             ButterKnife.bind(this,rootView);
+            dialogUtil=new DialogUtil();
 
+            progress =new Dialog(getActivity());
             Bundle bd=getArguments();
             ID= bd.getString("id");
 //            ShopIMg=bd.getString("ShopImg");
@@ -216,9 +219,10 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
                             dip_and_dip_cake_1_Rcv.setAdapter(dm);
 
 
-                            SetTittle(Tittle);
 
-                            setClickListeners(CategoryID);
+//                            SetTittle(Tittle);
+
+                        setClickListeners(CategoryID);
                         }
 
                     }else
@@ -247,18 +251,19 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
 
         if(connectionDetector.isConnectingToInternet())
         {
-//            progress = dialogUtil.showProgressDialog(getActivity(),getString(R.string.please_wait));
-            appController.paServices.ShopsBycatId(CategoryID,new Callback<ShopsBycatIdDM>() {
+
+            progress = dialogUtil.showProgressDialog(getActivity(),getString(R.string.please_wait));
+            appController.paServices.SubCategorylistByCatIdForShop(CategoryID,ID,new Callback<SubCategorylistByCatIdForShopDM>() {
                 @Override
-                public void success(ShopsBycatIdDM shopsBycatIdDM, Response response) {
-                    //                   progress.dismiss();
-                    if(shopsBycatIdDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+                public void success(SubCategorylistByCatIdForShopDM subCategorylistByCatIdForShopDM, Response response) {
+                    progress.dismiss();
+                    if(subCategorylistByCatIdForShopDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
-
+ //                      subCategory.setText(subCategorylistByCatIdForShopDM.getOutput().getData().get(0).getTitle_en());
                         if(CategoryID!=null){
                             sub_category_1_Rcv.setVisibility(View.VISIBLE);
-                            Feed_Categories_Adapter11 dm = new Feed_Categories_Adapter11(context, shopsBycatIdDM.getOutput().getInfo());
-                            sub_category_1_Rcv.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+                            Feed_Categories_Adapter11 dm = new Feed_Categories_Adapter11(context, subCategorylistByCatIdForShopDM.getOutput().getData());
+                            sub_category_1_Rcv.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
                             sub_category_1_Rcv.setAdapter(dm);
                         }else{
                             sub_category_1_Rcv.setVisibility(View.GONE);
@@ -282,10 +287,10 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     }
 
 
-    public void SetTittle(String Tittle)
-    {
-        subCategory.setText(Tittle);
-    }
+//    public void SetTittle(String Tittle)
+//    {
+//        subCategory.setText(Tittle);
+//    }
 
     @Override
     public void onResume() {

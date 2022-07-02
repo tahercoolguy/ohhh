@@ -79,7 +79,7 @@ public class Deep_and_Deep_Cake_Adapter extends RecyclerView.Adapter<Deep_and_De
             public void onClick(View view) {
                 row_index = position;
                 deep_and_deep_1_fragment.setClickListeners(data.getCategory_id());
-                deep_and_deep_1_fragment.SetTittle(data.getCategory_name());
+//                deep_and_deep_1_fragment.SetTittle(data.getCategory_name());
 //                deep_and_deep_1_fragment.
                 notifyDataSetChanged();
 

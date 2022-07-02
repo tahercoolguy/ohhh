@@ -1,5 +1,7 @@
 package com.saify.tech.ohhh.DataModel;
 
+import java.util.ArrayList;
+
 public class Data {
 
     private String date;
@@ -39,6 +41,25 @@ public class Data {
     private String priority;
 
 
+    private String category_id;
+
+    private ArrayList<Items> items;
+
+    public String getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(String category_id) {
+        this.category_id = category_id;
+    }
+
+    public ArrayList<Items> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Items> items) {
+        this.items = items;
+    }
 
     public String getTitle_ar() {
         return title_ar;

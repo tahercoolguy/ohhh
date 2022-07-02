@@ -37,7 +37,6 @@
                         android:id="@+id/back_dip_1RL"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
                         android:layout_alignParentStart="true"
                         android:background="@drawable/my_shadow_back_button">
 
@@ -227,17 +226,7 @@
                     android:layout_marginTop="25dp"></androidx.recyclerview.widget.RecyclerView>
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                     android:id="@+id/subCategory"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/semi_bold"
-                    android:text="@string/suncategory"
-                    android:textColor="@color/black"
-                    android:textSize="18dp"></TextView>
+
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/sub_category_1_Rcv"

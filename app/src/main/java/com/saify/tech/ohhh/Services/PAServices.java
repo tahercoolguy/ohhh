@@ -38,6 +38,7 @@ import com.saify.tech.ohhh.DataModel.ShopsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.ShopsDM;
 import com.saify.tech.ohhh.DataModel.SignUpDM;
 import com.saify.tech.ohhh.DataModel.SizesDM;
+import com.saify.tech.ohhh.DataModel.SubCategorylistByCatIdForShopDM;
 import com.saify.tech.ohhh.DataModel.TermsConditionDM;
 import com.saify.tech.ohhh.DataModel.UpdateProfileDM;
 import com.saify.tech.ohhh.DataModel.VideoDM;
@@ -254,8 +255,7 @@ public interface PAServices {
                           @Field("shop_id") String shop_id,
                           @Field("quantity") String quantity,
                           @Field("comments") String comments,
-                          @Field("size_id") String size_id,
-                          @Field("flavour_id") String flavour_id,
+                          @Field("addons") String addons,
                           Callback<AddtoCartDM> addtoCartDMCallback);
 
     //20
@@ -336,8 +336,17 @@ public interface PAServices {
     public void privacyPolicy(Callback<PrivacyPolicyDM> privacyPolicyDMCallback);
 
 
-    //30
+    //31
     @GET("/ohhh/refundPolicy")
     public void refundPolicy(Callback<PrivacyPolicyDM> privacyPolicyDMCallback);
+
+
+     //32
+     @FormUrlEncoded
+     @POST("/ohhh/subCategorylistByCatIdForShop")
+     public void SubCategorylistByCatIdForShop(@Field("cat_id") String cat_id,
+                                               @Field("shop_id") String shop_id,
+                                               Callback<SubCategorylistByCatIdForShopDM> subCategorylistByCatIdForShopDMCallback);
+
 
 }

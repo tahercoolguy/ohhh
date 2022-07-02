@@ -79,12 +79,12 @@ public class Cart_Adapter extends RecyclerView.Adapter<Cart_Adapter.Programming_
     public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         Info data = arrayList.get(position);
-        if(!data.getTitle().equalsIgnoreCase("")){
-        holder.heading.setText(data.getTitle());}
+        if(data.getTitle()!=null && !data.getTitle().equalsIgnoreCase("")){
+            holder.heading.setText(data.getTitle());}
 //        holder.extra.setText(data.getExtra_meyonese());
 //        holder.count0.setText(data.getItem_count());
         holder.price.setText(data.getPrice());
-        if(!data.getImage().equalsIgnoreCase("")){
+        if(data.getImage()!=null && !data.getImage().equalsIgnoreCase("")){
         Picasso.with(context).load(data.getImage()).into(holder.img);}
         holder.minus_plus_Txt.setText(data.getQuantity());
         product_id=data.getProduct_id();

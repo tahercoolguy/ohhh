@@ -14,10 +14,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.saify.tech.ohhh.Activity.Food_Details_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
+import com.saify.tech.ohhh.DataModel.Data;
+import com.saify.tech.ohhh.DataModel.Feed_Categories_Adapter22;
 import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.info111;
 import com.saify.tech.ohhh.Helper.User;
@@ -29,11 +32,11 @@ import java.util.ArrayList;
 public class Feed_Categories_Adapter11 extends RecyclerView.Adapter<Feed_Categories_Adapter11.ViewHolder> {
 
     private Context context;
-    private ArrayList<info111> arrayList;
+    private ArrayList<Data> arrayList;
     User user;
 
 
-    public Feed_Categories_Adapter11(Context context, ArrayList<info111> arrayList) {
+    public Feed_Categories_Adapter11(Context context, ArrayList<Data> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
         user=new User(context);
@@ -44,7 +47,7 @@ public class Feed_Categories_Adapter11 extends RecyclerView.Adapter<Feed_Categor
     @NonNull
     @Override
     public Feed_Categories_Adapter11.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        v = LayoutInflater.from(parent.getContext()).inflate(R.layout.custum_feed_category_item, parent, false);
+        v = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_item_for_title, parent, false);
         // set the view's size, margins, paddings and layout parameters
         Feed_Categories_Adapter11.ViewHolder vh = new Feed_Categories_Adapter11.ViewHolder(v);
         return vh;
@@ -71,43 +74,49 @@ public class Feed_Categories_Adapter11 extends RecyclerView.Adapter<Feed_Categor
     private void setDetails(Feed_Categories_Adapter11.ViewHolder viewHolder, int position) {
 
 
-        info111 data = arrayList.get(position);
+        Data data = arrayList.get(position);
 
 
-        Picasso.with(context).load(data.getImage()).into(viewHolder.feed_category_img);
-
+//         Picasso.with(context).load(data.getItems().get(0).getImage()).into(viewHolder.feed_category_img);
+       if(data!=null) {
 //        viewHolder.pricekwds.setText(data.get);
-        viewHolder.pieces.setText(data.getShop_name_en());
+           viewHolder.text.setText(data.getTitle_en());
 //        viewHolder.pastriess.setText(data.getShop_name_en());
 
+           Feed_Categories_Adapter22 dm2 = new Feed_Categories_Adapter22(context, data.getItems());
+           viewHolder.sub_category_2_Rcv.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+           viewHolder.sub_category_2_Rcv.setAdapter(dm2);
+       }
 //
-        viewHolder.feed_cakeLinearLL.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+//        viewHolder.feed_cakeLinearLL.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
 
-                Intent intent=new Intent(context, Food_Details_Activity.class);
-                intent.putExtra("id",data.getId());
-                context.startActivity(intent);
-            }
-        });
+//                Intent intent=new Intent(context, Food_Details_Activity.class);
+//                intent.putExtra("id",data.getId());
+//                context.startActivity(intent);
+//
+//    }
+//        });
     }
 
 
     public static class ViewHolder   extends RecyclerView.ViewHolder{
-        RoundedImageView feed_category_img;
-        TextView pastriess;
-        TextView pricekwds;
-        TextView pieces;
-        LinearLayout feed_cakeLinearLL;
+//        RoundedImageView feed_category_img;
+
+        TextView text;
+        RecyclerView sub_category_2_Rcv;
+//        LinearLayout feed_cakeLinearLL;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            pastriess = (TextView) itemView.findViewById(R.id.pastries_txt);
-            pricekwds = (TextView) itemView.findViewById(R.id.price_kwd_Txt);
-            pieces = (TextView) itemView.findViewById(R.id.pieces_Txt);
-            feed_category_img=itemView.findViewById(R.id.feed_category_img);
-            feed_cakeLinearLL=itemView.findViewById(R.id.feed_cakeLinearLL);
+//            pastriess = (TextView) itemView.findViewById(R.id.pastries_txt);
+//            pricekwds = (TextView) itemView.findViewById(R.id.price_kwd_Txt);
+            text = (TextView) itemView.findViewById(R.id.subCategoryTitle);
+            sub_category_2_Rcv=itemView.findViewById(R.id.sub_category_2_Rcv);
+//            feed_category_img=itemView.findViewById(R.id.feed_category_img);
+//            feed_cakeLinearLL=itemView.findViewById(R.id.feed_cakeLinearLL);
         }
     }
 }

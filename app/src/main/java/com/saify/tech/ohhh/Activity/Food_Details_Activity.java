@@ -144,9 +144,9 @@ int quantity=1;
                 count = count +1;
         }
 
-        if(mininumValue<count)
+        if(mininumValue < count)
         {
-            Toast.makeText(context, "Kinldy Select Atleast"+mininumValue+ ParentName, Toast.LENGTH_SHORT).show();
+            Toast.makeText(Food_Details_Activity.this, "Kinldy Select Atleast"+mininumValue+ ParentName, Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -161,8 +161,8 @@ int quantity=1;
                 count = count +1;
         }
 
-        if(maxValue>count) {
-            Toast.makeText(context, "You can select Max" + maxValue + ParentName, Toast.LENGTH_SHORT).show();
+        if(maxValue > count) {
+            Toast.makeText(Food_Details_Activity.this, "You can select Max" + maxValue + ParentName, Toast.LENGTH_SHORT).show();
             return false;
         }
 
@@ -201,25 +201,36 @@ int quantity=1;
 //            }  if (Flavour_id.equalsIgnoreCase("")) {
 //                Helper.showToast(Food_Details_Activity.this, "Kindly select Flavour..");
 //            } else {
+                String addons="";
+                int count = 0;
+                for (ParentChildDataModel parent:parentChildDataModels
+                     ) {
+                    if(count == 0)
+                        addons = parent.getChild();
+                    else
+                        addons = addons +"," +parent.getChild();
+
+                    count++;
+                }
                 dialog = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
-//                appController.paServices.AddtoCart(String.valueOf(user.getId()), ID, ShopId, String.valueOf(quantity), "best", Size_id, Flavour_id, new Callback<AddtoCartDM>() {
-//                    @Override
-//                    public void success(AddtoCartDM addtoCartDM, Response response) {
-//                        dialog.dismiss();
-//                        if (addtoCartDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
-//
-//                             startActivity(new Intent(Food_Details_Activity.this, Cart_Activity.class));
-//
-//                            Helper.showToast(Food_Details_Activity.this, addtoCartDM.getOutput().getMessage());
-//
-//                        } else
-//                            Helper.showToast(Food_Details_Activity.this,addtoCartDM.getOutput().getMessage());
-//                    }
-//                    @Override
-//                    public void failure(RetrofitError retrofitError) {
-//                        Log.e("error", retrofitError.toString());
-//                    }
-//                });
+                appController.paServices.AddtoCart(String.valueOf(user.getId()), ID, ShopId, String.valueOf(quantity), "best", addons, new Callback<AddtoCartDM>() {
+                    @Override
+                    public void success(AddtoCartDM addtoCartDM, Response response) {
+                        dialog.dismiss();
+                        if (addtoCartDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+                             startActivity(new Intent(Food_Details_Activity.this, Cart_Activity.class));
+
+                            Helper.showToast(Food_Details_Activity.this, addtoCartDM.getOutput().getMessage());
+
+                        } else
+                            Helper.showToast(Food_Details_Activity.this,addtoCartDM.getOutput().getMessage());
+                    }
+                    @Override
+                    public void failure(RetrofitError retrofitError) {
+                        Log.e("error", retrofitError.toString());
+                    }
+                });
             } else
                 Helper.showToast(Food_Details_Activity.this, getString(R.string.no_internet_connection));
         }
