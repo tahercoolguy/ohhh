@@ -485,12 +485,12 @@ public ArrayList<Addons> temp;
             {
                 String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
-//                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
+                dialog = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
 
                 appController.paServices.ProductsById(ID, new Callback<ProductsByIdDM>() {
                     @Override
                     public void success(ProductsByIdDM productsByIdDM, Response response) {
-//                        progress.dismiss();
+                      dialog.dismiss();
                         temp=productsByIdDM.getOutput().getAddons();
                         if (productsByIdDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
@@ -519,7 +519,7 @@ public ArrayList<Addons> temp;
 
                     @Override
                     public void failure(RetrofitError error) {
-
+                           dialog.dismiss();
                         Log.e("String", error.toString());
                     }
                 });

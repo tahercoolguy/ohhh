@@ -249,12 +249,12 @@ public class Fragment_Home_Screen extends Fragment {
             {
                 String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
-                //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
+//                             dialog = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
 
                 appController.paServices.FShops(AreaID, new Callback<FShopsDM>() {
                 @Override
                 public void success(FShopsDM fShopsDM, Response response) {
-                        //                       progress.dismiss();
+//                    dialog .dismiss();
                if (fShopsDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
 
@@ -273,7 +273,9 @@ public class Fragment_Home_Screen extends Fragment {
                     }
                     @Override
                     public void failure(RetrofitError error) {
-                        Log.e("String", error.toString());
+
+                    dialog.dismiss();
+                    Log.e("String", error.toString());
                     }
                 });
             }
@@ -304,12 +306,12 @@ public class Fragment_Home_Screen extends Fragment {
             {
                 String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
- //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
+//                dialog = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
 
                 appController.paServices.Offers(AreaID, new Callback<OffersApiDM>() {
                     @Override
                     public void success(OffersApiDM offersApiDM, Response response) {
- //                       progress.dismiss();
+//                        dialog.dismiss();
                         if (offersApiDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
                 Offers_Adapter dm = new Offers_Adapter(context, offersApiDM.getOutput().getInfo());
@@ -324,6 +326,7 @@ public class Fragment_Home_Screen extends Fragment {
                     }
                     @Override
                     public void failure(RetrofitError error) {
+ //                       dialog.dismiss();
                         Log.e("String", error.toString());
                     }
                 });
@@ -358,12 +361,12 @@ public class Fragment_Home_Screen extends Fragment {
             {
                 String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
-                //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
+ //                              dialog= dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
 
                 appController.paServices.Best(AreaID, new Callback<BestDM>() {
                     @Override
                     public void success(BestDM bestDM, Response response) {
-                        //                       progress.dismiss();
+ //                                           dialog.dismiss();
                         if (bestDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
            BestFromDesert_Adapter dm = new BestFromDesert_Adapter(context, bestDM.getOutput().getInfo());
            LinearLayoutManager l = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
@@ -376,6 +379,8 @@ public class Fragment_Home_Screen extends Fragment {
                     }
                     @Override
                     public void failure(RetrofitError error) {
+
+
                         Log.e("String", error.toString());
                     }
                 });
