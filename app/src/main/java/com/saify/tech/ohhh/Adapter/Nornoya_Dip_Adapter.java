@@ -1,5 +1,6 @@
 package com.saify.tech.ohhh.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -56,16 +57,19 @@ public class Nornoya_Dip_Adapter extends RecyclerView.Adapter<Nornoya_Dip_Adapte
 
                 Intent intent=new Intent(context, Address_Activity.class);
                 intent.putExtra("Shop_id", data.getInfo().get(0).getShop_id());
+                intent.putExtra("Sub_total", data.getSub_total());
+                intent.putExtra("Applied_coupon", data.getInfo().get(0).getApplied_coupon());
                 context.startActivity(intent);
+                ((Activity)context).finish();
 
 
             }
         });
-
-        ArrayList<CartDM> cartDMS = new ArrayList<>();
-        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "01","0", R.drawable.nornoya_1));
-        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "02","0", R.drawable.nornoya_2));
-        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "03","0", R.drawable.nornoya_3));
+//
+//        ArrayList<CartDM> cartDMS = new ArrayList<>();
+//        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "01","0", R.drawable.nornoya_1));
+//        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "02","0", R.drawable.nornoya_2));
+//        cartDMS.add(new CartDM("Pastries", "Extra Mayonese", "10.000 KWD", "03","0", R.drawable.nornoya_3));
 
         Cart_Adapter dm2 = new Cart_Adapter(context, data.getInfo());
 

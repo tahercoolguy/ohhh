@@ -87,7 +87,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:riv_corner_radius="30dp"
-                        android:scaleType="fitXY">
+                        android:scaleType="centerCrop">
 
                     </com.makeramen.roundedimageview.RoundedImageView>
 
@@ -104,10 +104,10 @@
                         android:id="@+id/shopImg1"
                         android:layout_width="110dp"
                         android:layout_height="110dp"
-                        app:riv_corner_radius="60dp"
-                        android:scaleType="fitXY"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="90dp">
+                        android:layout_marginTop="90dp"
+                        android:scaleType="centerCrop"
+                        app:riv_corner_radius="60dp">
 
                     </com.makeramen.roundedimageview.RoundedImageView>
 
@@ -222,7 +222,6 @@
                     android:id="@+id/dip_and_dip_cake_1_Rcv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:layout_marginTop="25dp"></androidx.recyclerview.widget.RecyclerView>
 
 

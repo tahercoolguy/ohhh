@@ -24,9 +24,8 @@
                 android:id="@+id/cake_shop_img1111"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                app:riv_corner_radius="20dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/shop_cake_img">
+                android:scaleType="centerCrop"
+                app:riv_corner_radius="20dp">
 
             </com.makeramen.roundedimageview.RoundedImageView>
 

@@ -325,7 +325,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginBottom="5dp"
                 android:background="@android:color/transparent"
-                android:text="@string/code"
+
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_normal"></EditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -384,10 +384,11 @@
                 android:text="Subtotal"></TextView>
 
             <TextView
-                android:id="@+id/price_b_Txt"
+                android:id="@+id/subTotal_Txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="right"
                 android:text="5.000 KWD"></TextView>
 
         </LinearLayout>
@@ -411,6 +412,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="right"
                 android:text="Mx3039"></TextView>
 
         </LinearLayout>
@@ -433,8 +435,9 @@
                 android:id="@+id/Discount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="right"
                 android:layout_weight="1"
-                android:text="50%"></TextView>
+                android:text="0"></TextView>
         </LinearLayout>
 
 
@@ -457,7 +460,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="3.000 KWD"></TextView>
+                android:gravity="right"
+                android:text="0"></TextView>
 
         </LinearLayout>
 
@@ -478,10 +482,12 @@
                 android:textColor="@color/black"></TextView>
 
             <TextView
+                android:id="@+id/total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="2.500 KWD"
+                android:gravity="right"
                 android:fontFamily="@font/semi_bold"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"></TextView>

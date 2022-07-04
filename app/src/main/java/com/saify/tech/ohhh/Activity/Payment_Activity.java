@@ -52,6 +52,8 @@ public class Payment_Activity extends AppCompatActivity {
     DialogUtil dialogUtil;
     String Shipping_AddressID;
     String Shop_id;
+    String Sub_total;
+    String Applied_coupon;
 
 
 
@@ -75,13 +77,21 @@ public class Payment_Activity extends AppCompatActivity {
     @BindView(R.id.codeET)
     EditText code;
 
+    @BindView(R.id.subTotal_Txt)
+    TextView subTotal_Txt;
+
+    @BindView(R.id.CodeApplied)
+    TextView CodeAppliedTxt;
+
+    @BindView(R.id.total)
+    TextView totalTxt;
 
 
     @OnClick(R.id.place_order)
     public void PlaceOrder() {
       Binding();
       startActivity(new Intent(Payment_Activity.this,Thank_You_Activity.class));
-
+        finish();
     }
 
 
@@ -134,6 +144,12 @@ public class Payment_Activity extends AppCompatActivity {
         user = new User(this);
         Shipping_AddressID=getIntent().getStringExtra("AddressId");
         Shop_id=getIntent().getStringExtra("shop__id");
+        Sub_total=getIntent().getStringExtra("Sub_total");
+        Applied_coupon=getIntent().getStringExtra("Applied_coupon");
+
+        subTotal_Txt.setText(Sub_total);
+        CodeAppliedTxt.setText(Applied_coupon);
+        totalTxt.setText(Sub_total);
 
         idMappings();
         Cashh();
@@ -260,7 +276,10 @@ public class Payment_Activity extends AppCompatActivity {
 //                        progress.dismiss();
                         if (orderNowDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
+
+
                             Helper.showToast(Payment_Activity.this, orderNowDM.getOutput().getData());
+
 
                         } else
 

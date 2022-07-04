@@ -23,10 +23,10 @@
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/offer_chocklate_img_1"
-                android:layout_width="160dp"
-                android:scaleType="fitXY"
-                app:riv_corner_radius="20dp"
-                android:layout_height="195dp">
+                android:layout_width="match_parent"
+                android:layout_height="195dp"
+                android:scaleType="centerCrop"
+                app:riv_corner_radius="20dp">
 
             </com.makeramen.roundedimageview.RoundedImageView>
 

@@ -18,6 +18,7 @@
             android:layout_height="80dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/pastries_1"></ImageView>
 
         <LinearLayout

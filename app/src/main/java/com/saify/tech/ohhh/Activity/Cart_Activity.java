@@ -161,6 +161,7 @@ public class Cart_Activity extends AppCompatActivity {
         nornoya_deep_Rcvv.setLayoutManager(l);
         nornoya_deep_Rcvv.setAdapter(dm);
 
+
                         } else
 
                             Helper.showToast(Cart_Activity.this, getString(R.string.Api_data_not_found));
@@ -172,6 +173,7 @@ public class Cart_Activity extends AppCompatActivity {
                         Log.e("String", error.toString());
                     }
                 });
+
             }
         } else
             Helper.showToast(Cart_Activity.this, getString(R.string.no_internet_connection));

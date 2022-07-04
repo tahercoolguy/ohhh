@@ -48,6 +48,8 @@ public class Address_Activity extends AppCompatActivity {
     DialogUtil dialogUtil;
     String AddressId;
     String ShopId;
+    String Sub__total;
+    String Applied__coupon;
 
 
     @NotEmpty
@@ -86,7 +88,10 @@ public class Address_Activity extends AppCompatActivity {
         Intent intent=new Intent(Address_Activity.this, Payment_Activity.class);
         intent.putExtra("AddressId", AddressId);
         intent.putExtra("shop__id", ShopId);
+        intent.putExtra("Sub_total", Sub__total);
+        intent.putExtra("Applied_coupon", Applied__coupon);
         startActivity(intent);
+        finish();
 
     }
 
@@ -108,6 +113,10 @@ public class Address_Activity extends AppCompatActivity {
         user = new User(Address_Activity.this);
         user = new User(this);
         ShopId= getIntent().getStringExtra("Shop_id");
+        Sub__total= getIntent().getStringExtra("Sub_total");
+        Applied__coupon= getIntent().getStringExtra("Applied_coupon");
+
+
         idMappings();
 
 
@@ -148,6 +157,7 @@ public class Address_Activity extends AppCompatActivity {
                         LinearLayoutManager l = new LinearLayoutManager(Address_Activity.this);
                         recycleAddress.setLayoutManager(l);
                         recycleAddress.setAdapter(dm);
+
 
                     } else
                         Helper.showToast(Address_Activity.this, addressListDM.getOutput().getMessage());
