@@ -40,8 +40,146 @@ public class Data {
 
     private String priority;
 
+    private String prepare_mins;
 
+    private String quantity;
+    private String  prepare_hours;
+    private String discount;
+    private String best;
+    private String content_en;
+    private String shop_name;
+    private String shop_image;
+
+    private String shop_id;
+
+    private String approved;
+    private String content_ar;
     private String category_id;
+    private String sub_category_id;
+    private String price;
+    private String sub_sub_category_id;
+
+    private String prepare_days;
+
+    public String getPrepare_mins() {
+        return prepare_mins;
+    }
+
+    public void setPrepare_mins(String prepare_mins) {
+        this.prepare_mins = prepare_mins;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getPrepare_hours() {
+        return prepare_hours;
+    }
+
+    public void setPrepare_hours(String prepare_hours) {
+        this.prepare_hours = prepare_hours;
+    }
+
+    public String getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(String discount) {
+        this.discount = discount;
+    }
+
+    public String getBest() {
+        return best;
+    }
+
+    public void setBest(String best) {
+        this.best = best;
+    }
+
+    public String getContent_en() {
+        return content_en;
+    }
+
+    public void setContent_en(String content_en) {
+        this.content_en = content_en;
+    }
+
+    public String getShop_name() {
+        return shop_name;
+    }
+
+    public void setShop_name(String shop_name) {
+        this.shop_name = shop_name;
+    }
+
+    public String getShop_image() {
+        return shop_image;
+    }
+
+    public void setShop_image(String shop_image) {
+        this.shop_image = shop_image;
+    }
+
+    public String getShop_id() {
+        return shop_id;
+    }
+
+    public void setShop_id(String shop_id) {
+        this.shop_id = shop_id;
+    }
+
+    public String getApproved() {
+        return approved;
+    }
+
+    public void setApproved(String approved) {
+        this.approved = approved;
+    }
+
+    public String getContent_ar() {
+        return content_ar;
+    }
+
+    public void setContent_ar(String content_ar) {
+        this.content_ar = content_ar;
+    }
+
+    public String getSub_category_id() {
+        return sub_category_id;
+    }
+
+    public void setSub_category_id(String sub_category_id) {
+        this.sub_category_id = sub_category_id;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getSub_sub_category_id() {
+        return sub_sub_category_id;
+    }
+
+    public void setSub_sub_category_id(String sub_sub_category_id) {
+        this.sub_sub_category_id = sub_sub_category_id;
+    }
+
+    public String getPrepare_days() {
+        return prepare_days;
+    }
+
+    public void setPrepare_days(String prepare_days) {
+        this.prepare_days = prepare_days;
+    }
 
     private ArrayList<Items> items;
 

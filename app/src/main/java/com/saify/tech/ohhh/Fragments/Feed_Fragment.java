@@ -24,6 +24,7 @@ import com.saify.tech.ohhh.Adapter.Feed_Categories_Adapter;
 import com.saify.tech.ohhh.Adapter.Feed_Categories_Adapter111;
 import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.AllAreaDM;
+import com.saify.tech.ohhh.DataModel.AllProductsDM;
 import com.saify.tech.ohhh.DataModel.Feed_CategoriesDM;
 import com.saify.tech.ohhh.DataModel.OffersApiDM;
 import com.saify.tech.ohhh.DataModel.ProductsbyAreaIdDM;
@@ -109,13 +110,13 @@ public class Feed_Fragment extends Fragment {
 
                     //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
 
-                    appController.paServices.productsbyAreaId(AreaId, new Callback<ProductsbyAreaIdDM>() {
+                    appController.paServices.AllProducts( new Callback<AllProductsDM>() {
                         @Override
-                        public void success(ProductsbyAreaIdDM productsbyAreaIdDM, Response response) {
+                        public void success(AllProductsDM allProductsDM, Response response) {
                             //                       progress.dismiss();
-                            if (productsbyAreaIdDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+                            if (allProductsDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
-            Feed_Categories_Adapter111 dm = new Feed_Categories_Adapter111(context, productsbyAreaIdDM.getOutput().getInfo());
+            Feed_Categories_Adapter111 dm = new Feed_Categories_Adapter111(context, allProductsDM.getOutput().getData());
 //        LinearLayoutManager l = new LinearLayoutManager.HORIZONTAL(context);
 
             Feed.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
@@ -123,7 +124,7 @@ public class Feed_Fragment extends Fragment {
             Feed.setAdapter(dm);
 
                             } else
-                                Helper.showToast(getActivity(),productsbyAreaIdDM.getOutput().getMessage() );
+                                Helper.showToast(getActivity(),allProductsDM.getOutput().getMessage() );
                         }
                         @Override
                         public void failure(RetrofitError error) {

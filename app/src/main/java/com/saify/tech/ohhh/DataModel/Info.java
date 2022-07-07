@@ -184,8 +184,16 @@ public class Info {
     private String description_en;
     private String type;
     private String description_ar;
+    private String area_id;
 
 
+    public String getArea_id() {
+        return area_id;
+    }
+
+    public void setArea_id(String area_id) {
+        this.area_id = area_id;
+    }
 
     public String getDescription_en() {
         return description_en;

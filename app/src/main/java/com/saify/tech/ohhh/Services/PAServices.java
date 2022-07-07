@@ -8,6 +8,7 @@ import com.saify.tech.ohhh.DataModel.AddQuantityDM;
 import com.saify.tech.ohhh.DataModel.AddressListDM;
 import com.saify.tech.ohhh.DataModel.AddtoCartDM;
 import com.saify.tech.ohhh.DataModel.AllAreaDM;
+import com.saify.tech.ohhh.DataModel.AllProductsDM;
 import com.saify.tech.ohhh.DataModel.AreaDM;
 import com.saify.tech.ohhh.DataModel.BannerDM;
 import com.saify.tech.ohhh.DataModel.BestDM;
@@ -347,6 +348,11 @@ public interface PAServices {
      public void SubCategorylistByCatIdForShop(@Field("cat_id") String cat_id,
                                                @Field("shop_id") String shop_id,
                                                Callback<SubCategorylistByCatIdForShopDM> subCategorylistByCatIdForShopDMCallback);
+
+
+     //33
+      @GET("/ohhh/allProducts")
+     public void AllProducts(Callback<AllProductsDM> allProductsDMCallback);
 
 
 }
