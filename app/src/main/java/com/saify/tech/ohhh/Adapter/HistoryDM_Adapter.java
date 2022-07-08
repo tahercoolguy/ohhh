@@ -14,7 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.saify.tech.ohhh.DataModel.HistoryDM;
 import com.saify.tech.ohhh.DataModel.Info;
+import com.saify.tech.ohhh.DataModel.OutputMyOrder;
 import com.saify.tech.ohhh.R;
+import com.squareup.picasso.Picasso;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -27,9 +29,9 @@ import java.util.Locale;
 public class HistoryDM_Adapter extends RecyclerView.Adapter<HistoryDM_Adapter.Programming_AdapterViewHolder> {
 
     private Context context;
-    private ArrayList<Info> arrayList;
+    private ArrayList<OutputMyOrder> arrayList;
 
-    public HistoryDM_Adapter(Context context, ArrayList<Info> arrayList) {
+    public HistoryDM_Adapter(Context context, ArrayList<OutputMyOrder> arrayList) {
         this.context = context;
         this.arrayList= arrayList;
     }
@@ -47,28 +49,29 @@ public class HistoryDM_Adapter extends RecyclerView.Adapter<HistoryDM_Adapter.Pr
     @Override
     public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, int position) {
 
-        Info data = arrayList.get(position);
-        holder.Pastriess.setText(data.getProduct_name());
+        OutputMyOrder data = arrayList.get(position);
+        if(data.getInfo()!=null) {
+            holder.Pastriess.setText(data.getInfo().get(0).getProduct_name());
 //        holder.product_ids.setText(data.getProduct_id());
-        holder.pricekwds.setText(data.getProduct_price()+" "+"KWD");
-        holder.count_products.setText(data.getProduct_qty()+" "+"Items");
+            holder.pricekwds.setText(data.getInfo().get(0).getProduct_price() + " " + "KWD");
+            holder.count_products.setText(data.getInfo().get(0).getProduct_qty() + " " + "Items");
 //        holder.pastri_imgs.setImageResource(data.getPastri_img());
+            Picasso.with(context).load(data.getInfo().get(0).getImage()).into(holder.pastri_imgs);
 
-        SimpleDateFormat df= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date date = null; //YOUR DATE HERE
-        try {
-            date = df.parse(data.getDate());
-        } catch (ParseException e) {
-            e.printStackTrace();
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = null; //YOUR DATE HERE
+            try {
+                date = df.parse(data.getInfo().get(0).getDate());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            df.applyPattern("dd LLL, HH:mm");
+            String newDate = df.format(date);
+
+
+            holder.date.setText(newDate);
+
         }
-        df.applyPattern("dd LLL, HH:mm");
-        String newDate = df.format(date);
-
-
-        holder.date.setText(newDate);
-
-
-
 
     }
 

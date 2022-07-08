@@ -124,11 +124,12 @@ public class History_My_Order_Fragment extends Fragment {
                             if (myOrderDM.getOutput().get(0).getSuccess().equalsIgnoreCase("1")) {
 
 
-//
-            HistoryDM_Adapter dm = new HistoryDM_Adapter(context,myOrderDM.getOutput().get(0).getInfo());
-            LinearLayoutManager l = new LinearLayoutManager(context);
-            history_Rcvv.setLayoutManager(l);
-            history_Rcvv.setAdapter(dm);
+
+                      HistoryDM_Adapter dm = new HistoryDM_Adapter(context, myOrderDM.getOutput());
+                      LinearLayoutManager l = new LinearLayoutManager(context);
+                      history_Rcvv.setLayoutManager(l);
+                      history_Rcvv.setAdapter(dm);
+
 
                             } else
 

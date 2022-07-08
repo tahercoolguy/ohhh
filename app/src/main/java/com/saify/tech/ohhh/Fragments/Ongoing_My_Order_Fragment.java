@@ -121,11 +121,10 @@ public class Ongoing_My_Order_Fragment extends Fragment {
 
 
 
-                       OrderDM_Adapter dm = new OrderDM_Adapter(context,myOrderDM.getOutput().get(0).getInfo());
-                       LinearLayoutManager l = new LinearLayoutManager(context);
-                       ongoingRcv.setLayoutManager(l);
-                       ongoingRcv.setAdapter(dm);
-
+                               OrderDM_Adapter dm = new OrderDM_Adapter(context, myOrderDM.getOutput());
+                               LinearLayoutManager l = new LinearLayoutManager(context);
+                               ongoingRcv.setLayoutManager(l);
+                               ongoingRcv.setAdapter(dm);
 
                             } else
 

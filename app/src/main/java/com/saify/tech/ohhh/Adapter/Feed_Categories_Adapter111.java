@@ -57,7 +57,10 @@ public class Feed_Categories_Adapter111 extends RecyclerView.Adapter<Feed_Catego
         holder.feed_cakeLinearLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity)context).startActivity(new Intent(context, Food_Details_Activity.class));
+
+                Intent intent=new Intent(context, Food_Details_Activity.class);
+                intent.putExtra("id",feed_categoriesDM.getId());
+                context.startActivity(intent);
             }
         });
     }

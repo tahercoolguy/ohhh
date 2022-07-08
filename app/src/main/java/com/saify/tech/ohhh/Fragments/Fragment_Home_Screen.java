@@ -261,8 +261,7 @@ public class Fragment_Home_Screen extends Fragment {
 
         Featured_Shopss_Adapter dm = new Featured_Shopss_Adapter(context,fShopsDM.getOutput().getInfo());
 //        LinearLayoutManager l = new LinearLayoutManager.HORIZONTAL(context);
-
-        LinearLayoutManager l = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+                   LinearLayoutManager l = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
         featured_shops.setLayoutManager(l);
         featured_shops.setAdapter(dm);
 

@@ -146,7 +146,7 @@ int quantity=1;
 
         if(mininumValue < count)
         {
-            Toast.makeText(Food_Details_Activity.this, "Kinldy Select Atleast"+mininumValue+ ParentName, Toast.LENGTH_SHORT).show();
+            Toast.makeText(Food_Details_Activity.this, "Kinldy Select Atleast"+" "+mininumValue+" "+ ParentName, Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -162,7 +162,7 @@ int quantity=1;
         }
 
         if(maxValue > count) {
-            Toast.makeText(Food_Details_Activity.this, "You can select Max" + maxValue + ParentName, Toast.LENGTH_SHORT).show();
+            Toast.makeText(Food_Details_Activity.this, "You can select Max"+ " "+ maxValue +" "+ ParentName, Toast.LENGTH_SHORT).show();
             return false;
         }
 
@@ -175,6 +175,7 @@ int quantity=1;
     {
         boolean checkerMain=true;
 
+        if(temp!=null)
         for (Addons addons:temp
              ) {
             checkerMain = checkminimun(addons.getOption_minimum(),parentChildDataModels,addons.getId(),addons.getOption_group_name());

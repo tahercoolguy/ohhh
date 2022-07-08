@@ -11,10 +11,6 @@ public class Output {
     private String message;
 
 
-
-
-
-
     private ArrayList<Addons> addons;
 
 
@@ -25,11 +21,7 @@ public class Output {
     private String  sub_total;
     private String after_discount;
 
-
-
-
-
-  //    private String info;
+    //    private String info;
 
     private ArrayList<Info> info;
 

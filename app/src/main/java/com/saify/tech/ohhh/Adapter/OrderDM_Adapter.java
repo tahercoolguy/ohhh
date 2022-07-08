@@ -17,24 +17,27 @@ import com.saify.tech.ohhh.Activity.View_Order_Activity;
 import com.saify.tech.ohhh.DataModel.HistoryDM;
 import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.OrderDM;
+import com.saify.tech.ohhh.DataModel.Output;
+import com.saify.tech.ohhh.DataModel.OutputMyOrder;
 import com.saify.tech.ohhh.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class OrderDM_Adapter extends RecyclerView.Adapter<OrderDM_Adapter.Programming_AdapterViewHolder> {
 
     private Context context;
-    private ArrayList<Info> arrayList;
+    private ArrayList<OutputMyOrder> arrayList;
 
-    public OrderDM_Adapter(Context context, ArrayList<Info> arrayList) {
+    public OrderDM_Adapter(Context context, ArrayList<OutputMyOrder> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
     }
 
-    public OrderDM_Adapter(ArrayList<Info> arrayList) {
+    public OrderDM_Adapter(ArrayList<OutputMyOrder> arrayList) {
     }
 
-    public OrderDM_Adapter(MainActivity context, ArrayList<Info> arrayList) {
+    public OrderDM_Adapter(MainActivity context, ArrayList<OutputMyOrder> arrayList) {
     }
 
     @NonNull
@@ -48,14 +51,15 @@ public class OrderDM_Adapter extends RecyclerView.Adapter<OrderDM_Adapter.Progra
     @Override
     public void onBindViewHolder(@NonNull Programming_AdapterViewHolder holder, int position) {
 
-       Info data = arrayList.get(position);
-
-        holder.Pastriess.setText(data.getProduct_name());
+        OutputMyOrder data = arrayList.get(position);
+        if(data.getInfo()!=null) {
+            holder.Pastriess.setText(data.getInfo().get(0).getProduct_name());
 //        holder.product_ids.setText(data.getProduct_id());
-        holder.pricekwds.setText(data.getProduct_price());
-        holder.count_products.setText(data.getProduct_qty());
-        holder.pastri_imgs.setImageResource(R.drawable.pastries_1);
-
+            holder.pricekwds.setText(data.getInfo().get(0).getProduct_price());
+            holder.count_products.setText(data.getInfo().get(0).getProduct_qty());
+//        holder.pastri_imgs.setImageResource(R.drawable.pastries_1);
+            Picasso.with(context).load(data.getInfo().get(0).getImage()).into(holder.pastri_imgs);
+        }
         holder.order_cancel_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
