@@ -15,11 +15,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.saify.tech.ohhh.Activity.MainActivity;
+import com.saify.tech.ohhh.Adapter.Adapter_Sub_Categories;
+import com.saify.tech.ohhh.Adapter.Adapter_categories;
 import com.saify.tech.ohhh.Adapter.Feed_Categories_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.CatgoryListDM;
@@ -49,7 +52,10 @@ public class Category_Fragment extends Fragment {
 
 
     @BindView(R.id.categories_Rv)
-    RecyclerView categories;
+    RecyclerView categories_rv;
+
+    @BindView(R.id.categoryName)
+    TextView categoryNameTV;
 
 
 //    @BindView(R.id.layout_parent) LinearLayout layout_parent;
@@ -106,13 +112,16 @@ public class Category_Fragment extends Fragment {
                             //                       progress.dismiss();
                             if (catgoryListDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
+                             String  newName=catgoryListDM.getOutput().getData().get(0).getTitle_en();
+            Adapter_categories dm = new Adapter_categories(context, catgoryListDM.getOutput().getData(),Category_Fragment.this);
+//         LinearLayoutManager l = new LinearLayoutManager.HORIZONTAL(context);
 
-            Feed_Categories_Adapter dm = new Feed_Categories_Adapter(context, catgoryListDM.getOutput().getData());
-//        LinearLayoutManager l = new LinearLayoutManager.HORIZONTAL(context);
+            categories_rv.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
 
-            categories.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+            categories_rv.setAdapter(dm);
 
-            categories.setAdapter(dm);
+                             CategoryName(newName);
+
 
                             } else
                                 Helper.showToast(getActivity(),catgoryListDM.getOutput().getMessage() );
@@ -135,6 +144,53 @@ public class Category_Fragment extends Fragment {
     }
 
     private void setClickListeners() {
+
+    }
+
+    public void CategoryName(String name)
+    {
+        categoryNameTV.setText(name);
+        categoryNameTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                if (connectionDetector.isConnectingToInternet()) {
+                    {
+                        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+                        //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
+
+                        appController.paServices.CatgoryList( new Callback<CatgoryListDM>() {
+                            @Override
+                            public void success(CatgoryListDM catgoryListDM, Response response) {
+                                //                       progress.dismiss();
+                                if (catgoryListDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+
+                                    Adapter_Sub_Categories dm = new Adapter_Sub_Categories(context, catgoryListDM.getOutput().getData());
+//
+                                    categories_rv.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
+
+                                    categories_rv.setAdapter(dm);
+
+
+
+
+                                } else
+                                    Helper.showToast(getActivity(),catgoryListDM.getOutput().getMessage() );
+                            }
+                            @Override
+                            public void failure(RetrofitError error) {
+                                Log.e("String", error.toString());
+                            }
+                        });
+                    }
+                } else
+                    Helper.showToast(getActivity(), getString(R.string.no_internet_connection));
+
+            }
+        });
 
     }
 

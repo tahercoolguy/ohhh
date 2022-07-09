@@ -61,6 +61,17 @@ public class Data {
 
     private String prepare_days;
 
+    private ArrayList<Sub_category> sub_category;
+
+
+    public ArrayList<Sub_category> getSub_category() {
+        return sub_category;
+    }
+
+    public void setSub_category(ArrayList<Sub_category> sub_category) {
+        this.sub_category = sub_category;
+    }
+
     public String getPrepare_mins() {
         return prepare_mins;
     }

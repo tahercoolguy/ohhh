@@ -17,11 +17,19 @@
            android:id="@+id/categories_Rv"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:layout_marginBottom="100dp"
-
            android:layout_marginRight="10dp">
-
        </androidx.recyclerview.widget.RecyclerView>
+        <TextView
+            android:id="@+id/categoryName"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:text="@string/phone"
+            android:elevation="10dp"
+            android:background="@drawable/rectangle_black_border"></TextView>
+
 
 
     </LinearLayout>
