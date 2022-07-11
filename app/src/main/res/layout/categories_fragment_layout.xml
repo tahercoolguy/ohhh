@@ -32,6 +32,14 @@
 
 
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sub_category_item_Rcv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="50dp"/>
+
     </LinearLayout>
+
     <include layout="@layout/layout_error" />
  </RelativeLayout>

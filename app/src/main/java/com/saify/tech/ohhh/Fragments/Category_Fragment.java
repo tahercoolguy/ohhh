@@ -1,5 +1,6 @@
 package com.saify.tech.ohhh.Fragments;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -22,12 +23,16 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.Adapter.Adapter_Sub_Categories;
+import com.saify.tech.ohhh.Adapter.Adapter_Sub_Category_Items;
 import com.saify.tech.ohhh.Adapter.Adapter_categories;
 import com.saify.tech.ohhh.Adapter.Feed_Categories_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.CatgoryListDM;
 import com.saify.tech.ohhh.DataModel.Feed_CategoriesDM;
+import com.saify.tech.ohhh.DataModel.ProductsBysubcatIdDM;
 import com.saify.tech.ohhh.DataModel.ProductsbyAreaIdDM;
+import com.saify.tech.ohhh.Helper.DialogUtil;
+import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
 import com.saify.tech.ohhh.Utils.Helper;
@@ -54,6 +59,9 @@ public class Category_Fragment extends Fragment {
     @BindView(R.id.categories_Rv)
     RecyclerView categories_rv;
 
+    @BindView(R.id.sub_category_item_Rcv)
+    RecyclerView sub_category_item_Rcv;
+
     @BindView(R.id.categoryName)
     TextView categoryNameTV;
 
@@ -63,6 +71,9 @@ public class Category_Fragment extends Fragment {
     AppController appController;
     ConnectionDetector connectionDetector;
     ProgressDialog progressDialog;
+    private User user;
+    DialogUtil dialogUtil;
+    Dialog progress;
 
     @Nullable
     @Override
@@ -80,9 +91,10 @@ public class Category_Fragment extends Fragment {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.categories_fragment_layout, container, false);
             ButterKnife.bind(this,rootView);
+            dialogUtil = new DialogUtil();
             idMapping();
 
-            setClickListeners();
+
  //           setDetails();
 
 //
@@ -113,6 +125,7 @@ public class Category_Fragment extends Fragment {
                             if (catgoryListDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
                              String  newName=catgoryListDM.getOutput().getData().get(0).getTitle_en();
+
             Adapter_categories dm = new Adapter_categories(context, catgoryListDM.getOutput().getData(),Category_Fragment.this);
 //         LinearLayoutManager l = new LinearLayoutManager.HORIZONTAL(context);
 
@@ -121,6 +134,7 @@ public class Category_Fragment extends Fragment {
             categories_rv.setAdapter(dm);
 
                              CategoryName(newName);
+
 
 
                             } else
@@ -143,9 +157,6 @@ public class Category_Fragment extends Fragment {
 
     }
 
-    private void setClickListeners() {
-
-    }
 
     public void CategoryName(String name)
     {
@@ -166,13 +177,13 @@ public class Category_Fragment extends Fragment {
                             public void success(CatgoryListDM catgoryListDM, Response response) {
                                 //                       progress.dismiss();
                                 if (catgoryListDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
-
-
-                                    Adapter_Sub_Categories dm = new Adapter_Sub_Categories(context, catgoryListDM.getOutput().getData());
 //
-                                    categories_rv.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
+                                               Adapter_Sub_Categories dm = new Adapter_Sub_Categories(context, catgoryListDM.getOutput().getData(), Category_Fragment.this);
+//
+                                               categories_rv.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
 
-                                    categories_rv.setAdapter(dm);
+                                               categories_rv.setAdapter(dm);
+
 
 
 
@@ -193,6 +204,54 @@ public class Category_Fragment extends Fragment {
         });
 
     }
+
+
+
+    public void setClickListeners(String cat_id) {
+
+        if (connectionDetector.isConnectingToInternet()) {
+            {
+                String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+                progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
+
+                appController.paServices.ProductsBysubcatId(cat_id, new Callback<ProductsBysubcatIdDM>() {
+                    @Override
+                    public void success(ProductsBysubcatIdDM productsBysubcatIdDM, Response response) {
+                                            progress.dismiss();
+                        if (productsBysubcatIdDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+                            if(cat_id!=null){
+                            Adapter_Sub_Category_Items adapter_sub_category_items = new Adapter_Sub_Category_Items(getActivity(),productsBysubcatIdDM.getOutput().getInfo());
+
+                            sub_category_item_Rcv.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+
+                            sub_category_item_Rcv.setAdapter(adapter_sub_category_items);
+                        }else{
+                                sub_category_item_Rcv.setVisibility(View.GONE);
+                        }
+                    }
+                    else
+                    {
+                        Helper.showToast(getActivity(),getString(R.string.Api_data_not_found));
+                        sub_category_item_Rcv.setVisibility(View.INVISIBLE);}
+
+
+
+                    }
+                    @Override
+                    public void failure(RetrofitError error) {
+                        progress.dismiss();
+                        Log.e("String", error.toString());
+                    }
+                });
+            }
+        } else
+            Helper.showToast(context, getString(R.string.no_internet_connection));
+
+    }
+
+
 
     @Override
     public void onResume() {

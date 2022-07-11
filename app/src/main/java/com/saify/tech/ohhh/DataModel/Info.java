@@ -187,6 +187,8 @@ public class Info {
     private String area_id;
 
 
+
+
     public String getArea_id() {
         return area_id;
     }

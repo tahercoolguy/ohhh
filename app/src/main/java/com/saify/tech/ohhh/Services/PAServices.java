@@ -29,6 +29,7 @@ import com.saify.tech.ohhh.DataModel.OrderNowDM;
 import com.saify.tech.ohhh.DataModel.PrivacyPolicyDM;
 import com.saify.tech.ohhh.DataModel.ProductsByIdDM;
 import com.saify.tech.ohhh.DataModel.ProductsBycatIdDM;
+import com.saify.tech.ohhh.DataModel.ProductsBysubcatIdDM;
 import com.saify.tech.ohhh.DataModel.ProductsbyAreaIdDM;
 import com.saify.tech.ohhh.DataModel.RemoveCartDM;
 import com.saify.tech.ohhh.DataModel.RemoveWishlistDM;
@@ -353,6 +354,12 @@ public interface PAServices {
      //33
       @GET("/ohhh/allProducts")
      public void AllProducts(Callback<AllProductsDM> allProductsDMCallback);
+
+     //34
+     @FormUrlEncoded
+     @POST("/ohhh/ProductsBysubcatId")
+     public void ProductsBysubcatId(@Field("cat_id") String cat_id,
+                          Callback<ProductsBysubcatIdDM> productsBysubcatIdDMCallback);
 
 
 }
