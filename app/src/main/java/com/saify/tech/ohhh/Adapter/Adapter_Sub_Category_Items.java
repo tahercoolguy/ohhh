@@ -59,15 +59,15 @@ public class Adapter_Sub_Category_Items extends RecyclerView.Adapter<Adapter_Sub
         }
 
 
-//        holder.feed_cakeLinearLL.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                Intent intent=new Intent(context, Food_Details_Activity.class);
-//                intent.putExtra("id",feed_categoriesDM.getId());
-//                context.startActivity(intent);
-//            }
-//        });
+        holder.feed_cakeLinearLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(context, Food_Details_Activity.class);
+                intent.putExtra("id",feed_categoriesDM.getId());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
