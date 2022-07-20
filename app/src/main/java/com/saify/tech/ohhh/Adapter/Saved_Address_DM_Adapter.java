@@ -22,7 +22,8 @@ public class Saved_Address_DM_Adapter extends RecyclerView.Adapter<Saved_Address
     private Context context;
     private ArrayList<Info> arrayList;
 
-    public Saved_Address_DM_Adapter(Context context, ArrayList<Info> arrayList) {
+    public
+    Saved_Address_DM_Adapter(Context context, ArrayList<Info> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
     }

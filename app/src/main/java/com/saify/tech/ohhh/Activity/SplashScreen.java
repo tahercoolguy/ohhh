@@ -74,9 +74,9 @@ public class SplashScreen extends AppCompatActivity {
 //                    finish();
 //                }
 
-                String id= String.valueOf(user.getId());
 
-                if(id.equalsIgnoreCase("0")){
+
+                if(user.getId()==0){
 
                     startActivity(new Intent(SplashScreen.this,LoginActivity.class));
 

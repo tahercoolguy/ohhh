@@ -2,7 +2,7 @@
 package com.saify.tech.ohhh.Activity;
 
 
-import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import ozaydin.serkan.com.image_zoom_view.Dialog;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -49,6 +50,9 @@ public class Cart_Activity extends AppCompatActivity {
     ConnectionDetector connectionDetector;
     DialogUtil dialogUtil;
     String ShopID;
+    Dialog progress;
+    String user_id;
+
 
 
     @NotEmpty
@@ -148,9 +152,9 @@ public class Cart_Activity extends AppCompatActivity {
             {
                 String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
-//                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
-
-                appController.paServices.MyCart(String.valueOf(user.getId()), new Callback<MyCartDM>() {
+//                progress = dialogUtil.showProgressDialog(Cart_Activity.this, getString(R.string.please_wait));
+                    user_id =   String.valueOf(user.getId());
+                appController.paServices.MyCart(user_id, new Callback<MyCartDM>() {
                     @Override
                     public void success(MyCartDM myCartDM, Response response) {
 //                        progress.dismiss();
@@ -169,7 +173,7 @@ public class Cart_Activity extends AppCompatActivity {
 
                     @Override
                     public void failure(RetrofitError error) {
-
+//                        progress.dismiss();
                         Log.e("String", error.toString());
                     }
                 });

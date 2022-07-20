@@ -62,7 +62,7 @@ public class Category_Fragment extends Fragment {
     @BindView(R.id.sub_category_item_Rcv)
     RecyclerView sub_category_item_Rcv;
 
-    @BindView(R.id.categoryName)
+    @BindView(R.id.categoryNameTV)
     TextView categoryNameTV;
 
 
@@ -74,6 +74,7 @@ public class Category_Fragment extends Fragment {
     private User user;
     DialogUtil dialogUtil;
     Dialog progress;
+
 
     @Nullable
     @Override
@@ -112,39 +113,39 @@ public class Category_Fragment extends Fragment {
 
 
 
-            if (connectionDetector.isConnectingToInternet()) {
-                {
-                    String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+            if (connectionDetector.isConnectingToInternet()) {                    String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
-                    //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
+                //               progress = dialogUtil.showProgressDialog(getActivity(), getString(R.string.please_wait));
 
-                    appController.paServices.CatgoryList( new Callback<CatgoryListDM>() {
-                        @Override
-                        public void success(CatgoryListDM catgoryListDM, Response response) {
-                            //                       progress.dismiss();
-                            if (catgoryListDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+                appController.paServices.CatgoryList( new Callback<CatgoryListDM>() {
+                    @Override
+                    public void success(CatgoryListDM catgoryListDM, Response response) {
+                        //                       progress.dismiss();
+                        if (catgoryListDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
-                             String  newName=catgoryListDM.getOutput().getData().get(0).getTitle_en();
+//                            String  newName=catgoryListDM.getOutput().getData().get(0).getTitle_en();
 
-            Adapter_categories dm = new Adapter_categories(context, catgoryListDM.getOutput().getData(),Category_Fragment.this);
+                            Adapter_categories dm = new Adapter_categories(context, catgoryListDM.getOutput().getData(),Category_Fragment.this);
 //         LinearLayoutManager l = new LinearLayoutManager.HORIZONTAL(context);
 
-            categories_rv.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
+                            categories_rv.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
 
-            categories_rv.setAdapter(dm);
+                            categories_rv.setAdapter(dm);
 
-                             CategoryName(newName);
+ //                            CategoryName(newName);
 
 
 
-                            } else
-                                Helper.showToast(getActivity(),catgoryListDM.getOutput().getMessage() );
-                        }
-                        @Override
-                        public void failure(RetrofitError error) {
-                            Log.e("String", error.toString());
-                        }
-                    });
+                        } else
+                            Helper.showToast(getActivity(),catgoryListDM.getOutput().getMessage() );
+                    }
+                    @Override
+                    public void failure(RetrofitError error) {
+                        Log.e("String", error.toString());
+                    }
+                });
+
+                {
                 }
             } else
                 Helper.showToast(getActivity(), getString(R.string.no_internet_connection));
@@ -158,14 +159,14 @@ public class Category_Fragment extends Fragment {
     }
 
 
-    public void CategoryName(String name)
-    {
+    public void CategoryName(String name) {
+        categoryNameTV.setVisibility(View.VISIBLE);
         categoryNameTV.setText(name);
-        categoryNameTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    }
 
+      public void Subcategory()
 
+      {
                 if (connectionDetector.isConnectingToInternet()) {
                     {
                         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
@@ -177,6 +178,8 @@ public class Category_Fragment extends Fragment {
                             public void success(CatgoryListDM catgoryListDM, Response response) {
                                 //                       progress.dismiss();
                                 if (catgoryListDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+
 //
                                                Adapter_Sub_Categories dm = new Adapter_Sub_Categories(context, catgoryListDM.getOutput().getData(), Category_Fragment.this);
 //
@@ -201,9 +204,7 @@ public class Category_Fragment extends Fragment {
                     Helper.showToast(getActivity(), getString(R.string.no_internet_connection));
 
             }
-        });
 
-    }
 
 
 
@@ -221,20 +222,19 @@ public class Category_Fragment extends Fragment {
                                             progress.dismiss();
                         if (productsBysubcatIdDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
-                            if(cat_id!=null){
+                             if(cat_id!=null){
+
+                                 sub_category_item_Rcv.setVisibility(View.VISIBLE);
                             Adapter_Sub_Category_Items adapter_sub_category_items = new Adapter_Sub_Category_Items(getActivity(),productsBysubcatIdDM.getOutput().getInfo());
 
                             sub_category_item_Rcv.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
 
                             sub_category_item_Rcv.setAdapter(adapter_sub_category_items);
-                        }else{
-                                sub_category_item_Rcv.setVisibility(View.GONE);
-                        }
-                    }
-                    else
-                    {
-                        Helper.showToast(getActivity(),getString(R.string.Api_data_not_found));
-                        sub_category_item_Rcv.setVisibility(View.INVISIBLE);}
+                        }}
+                    else{
+                            sub_category_item_Rcv.setVisibility(View.GONE);
+                        Helper.showToast(getActivity(),getString(R.string.Api_data_not_found));}
+
 
 
 

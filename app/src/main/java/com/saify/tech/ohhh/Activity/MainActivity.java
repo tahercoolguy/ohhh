@@ -28,9 +28,11 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Adapter.Adapter_Menu;
+import com.saify.tech.ohhh.Fragments.Category_Fragment;
 import com.saify.tech.ohhh.Fragments.Deep_and_Deep_1_Fragment;
 import com.saify.tech.ohhh.Fragments.Deep_and_Deep_2_Fragment;
 import com.saify.tech.ohhh.Fragments.Feed_Categories_Fragment;
+import com.saify.tech.ohhh.Fragments.Feed_Fragment;
 import com.saify.tech.ohhh.Fragments.Fragment_Account;
 import com.saify.tech.ohhh.Fragments.Fragment_Default;
 import com.saify.tech.ohhh.Fragments.Fragment_Home_Screen;
@@ -96,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.Account_LL)
     LinearLayout home4;
 
+ Boolean isfeed=true;
+   Boolean feed=false;
 
     @NotEmpty
     @BindView(R.id.home_img)
@@ -122,21 +126,29 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+     Feed_Categories_Fragment feed_categories_fragment;
     @OnClick(R.id.Categories_Feed_LL)
     public void categories_LL() {
         ifHome2 = true;
         Home2();
 
-        addFragment(new Feed_Categories_Fragment(), false);
+        Intent intent= new Intent(MainActivity.this,MainActivity.class);
+        intent .putExtra("isfeed",isfeed);
+        startActivity(intent);
+        finish();
 
 
-    }
+
+
+
+        }
 
     @OnClick(R.id.Shops_LL)
     public void shops_LL() {
         ifHome3 = true;
         Home3();
         addFragment(new Fragment_Shops(), false);
+
 
 
     }
@@ -157,10 +169,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         context = ((MainActivity) context);
-
         user = new User(this);
 
-        addFragment(new Fragment_Home_Screen(), false);
+//        if(getIntent()!=null)
+        feed=getIntent().getBooleanExtra("isfeed",false);
+
+        if(feed)
+        {
+            addFragment(new Feed_Categories_Fragment(), false);
+            home.setBackground(getDrawable(R.drawable.ic___unselected1));
+            categories.setBackground(getDrawable(R.drawable.ic___selected2));
+            shop.setBackground(getDrawable(R.drawable.ic___unselected3));
+            account.setBackground(getDrawable(R.drawable.ic___unselected4));
+        }
+        else
+            addFragment(new Fragment_Home_Screen(), false);
+
     }
 
 

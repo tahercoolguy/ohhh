@@ -210,16 +210,17 @@
 
 
                 <TextView
+                    android:id="@+id/phoneNumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="50dp"
-                    android:text="+965 12345678"
                     android:textColor="@color/black">
 
                 </TextView>
 
                 <TextView
+                    android:id="@+id/addressTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -270,6 +271,7 @@ Al-Mubarak St, Kuwait City"
                         android:textColor="@color/black"></TextView>
 
                     <TextView
+                        android:id="@+id/subTotalTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -296,6 +298,7 @@ Al-Mubarak St, Kuwait City"
                         android:textColor="@color/black"></TextView>
 
                     <TextView
+                        android:id="@+id/codeTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -322,6 +325,7 @@ Al-Mubarak St, Kuwait City"
                         android:textColor="@color/black"></TextView>
 
                     <TextView
+                        android:id="@+id/discountTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -348,6 +352,7 @@ Al-Mubarak St, Kuwait City"
                         android:textColor="@color/black"></TextView>
 
                     <TextView
+                        android:id="@+id/deliveryChargesTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -403,145 +408,20 @@ Al-Mubarak St, Kuwait City"
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-
-                android:background="@drawable/my_shadow"
-                 >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="10dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="1X"
-                        android:textColor="@color/black"></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="19"
-                        android:text="Cake"
-                        android:textColor="@color/black"></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="25.000 KD"
-                        android:textColor="@color/black"></TextView>
+                android:background="@drawable/my_shadow">
 
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginRight="10dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="2X"
-                        android:textColor="@color/black"></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="16"
-                        android:text="Brownies "
-                        android:textColor="@color/black"></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="15.000 KD"
-                        android:textColor="@color/black"></TextView>
+               <androidx.recyclerview.widget.RecyclerView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/recycleview1"></androidx.recyclerview.widget.RecyclerView>
 
 
-                </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="80dp"
-                    android:layout_marginRight="10dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="2X"
-                        android:textColor="@color/black"></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="16"
-                        android:text="Brownies "
-                        android:textColor="@color/black"></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="15.000 KD"
-                        android:textColor="@color/black"></TextView>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="110dp"
-                    android:layout_marginRight="10dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="3X"
-                        android:textColor="@color/black"></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="12"
-                        android:text="Pastries"
-                        android:textColor="@color/black"></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="20.000 KD"
-                        android:textColor="@color/black"></TextView>
-
-
-                </LinearLayout>
 
 
             </RelativeLayout>

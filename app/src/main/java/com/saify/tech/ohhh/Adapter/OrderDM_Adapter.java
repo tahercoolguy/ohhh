@@ -71,7 +71,9 @@ public class OrderDM_Adapter extends RecyclerView.Adapter<OrderDM_Adapter.Progra
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(),View_Order_Activity.class);
-//                myIntent.putExtra("intVariableName", eventsList.get(position).getEvent_id());
+                if(data.getSale_code()!=null) {
+                    myIntent.putExtra("Sale_Code", data.getSale_code());
+                }
                 view.getContext().startActivity(myIntent);
                }
         });

@@ -69,7 +69,8 @@ public class Adapter_Sub_Categories  extends RecyclerView.Adapter<Adapter_Sub_Ca
              holder.LinearLL.setOnClickListener(new View.OnClickListener() {
                  @Override
                  public void onClick(View view) {
-                     category_fragment.setClickListeners(feed_categoriesDM.getId());
+                     if(feed_categoriesDM.getSub_category()!=null)
+                     category_fragment.setClickListeners(feed_categoriesDM.getSub_category().get(0).getId());
 
                  }
              });

@@ -20,13 +20,13 @@
            android:layout_marginRight="10dp">
        </androidx.recyclerview.widget.RecyclerView>
         <TextView
-            android:id="@+id/categoryName"
+            android:id="@+id/categoryNameTV"
             android:layout_width="wrap_content"
             android:textColor="@color/black"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:visibility="gone"
             android:layout_margin="10dp"
-            android:text="@string/phone"
             android:elevation="10dp"
             android:background="@drawable/rectangle_black_border"></TextView>
 
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:paddingBottom="50dp"/>
+            android:paddingBottom="100dp"/>
 
     </LinearLayout>
 

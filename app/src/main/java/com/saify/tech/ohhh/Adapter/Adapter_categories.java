@@ -58,6 +58,10 @@ public class Adapter_categories extends RecyclerView.Adapter<Adapter_categories.
 
 
                     category_fragment.CategoryName(feed_categoriesDM.getTitle_en());
+                    category_fragment.Subcategory();
+
+
+
 
             }
         });

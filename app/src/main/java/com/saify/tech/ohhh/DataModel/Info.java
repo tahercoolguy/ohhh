@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class Info {
 
+
+
     private String custom_link;
 
     private String saturday_end;
@@ -185,7 +187,43 @@ public class Info {
     private String type;
     private String description_ar;
     private String area_id;
+    private String original_price;
+    private String addons;
+    private String addon_price;
 
+    private ArrayList<Addons_res> addons_res;
+
+    public void setAddons_res(ArrayList<Addons_res> addons_res) {
+        this.addons_res = addons_res;
+    }
+
+    public ArrayList<Addons_res> getAddons_res() {
+        return addons_res;
+    }
+
+    public String getOriginal_price() {
+        return original_price;
+    }
+
+    public void setOriginal_price(String original_price) {
+        this.original_price = original_price;
+    }
+
+    public String getAddons() {
+        return addons;
+    }
+
+    public void setAddons(String addons) {
+        this.addons = addons;
+    }
+
+    public String getAddon_price() {
+        return addon_price;
+    }
+
+    public void setAddon_price(String addon_price) {
+        this.addon_price = addon_price;
+    }
 
 
 
@@ -1235,4 +1273,5 @@ public class Info {
     public void setApplied_coupon(String applied_coupon) {
         this.applied_coupon = applied_coupon;
     }
+
 }

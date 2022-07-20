@@ -21,6 +21,7 @@ import com.saify.tech.ohhh.DataModel.GovernatesDM;
 import com.saify.tech.ohhh.DataModel.LoginDM;
 import com.saify.tech.ohhh.DataModel.MyCartDM;
 import com.saify.tech.ohhh.DataModel.MyOrderDM;
+import com.saify.tech.ohhh.DataModel.MyOrderDetailDM;
 import com.saify.tech.ohhh.DataModel.MyWishlistDM;
 import com.saify.tech.ohhh.DataModel.MyprofileDM;
 import com.saify.tech.ohhh.DataModel.NewsDM;
@@ -360,6 +361,14 @@ public interface PAServices {
      @POST("/ohhh/ProductsBysubcatId")
      public void ProductsBysubcatId(@Field("cat_id") String cat_id,
                           Callback<ProductsBysubcatIdDM> productsBysubcatIdDMCallback);
+
+
+   //35
+    @FormUrlEncoded
+    @POST("/ohhh/MyOrderDetail")
+    public void MyOrderDetail(@Field("user_id") String user_id,
+                              @Field("sale_code") String sale_code,
+                                Callback<MyOrderDetailDM> myOrderDetailDMCallback);
 
 
 }
