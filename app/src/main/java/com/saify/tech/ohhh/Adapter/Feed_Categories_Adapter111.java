@@ -48,8 +48,8 @@ public class Feed_Categories_Adapter111 extends RecyclerView.Adapter<Feed_Catego
         Picasso.with(context).load(feed_categoriesDMS.get(position).getImage()).into(holder.feed_category_img);}
 
 //        holder.feed_category_img.setImageResource(feed_categoriesDM.getShop_image());
-        holder.pricekwds.setText(feed_categoriesDM.getPrice());
-        holder.pieces.setText(feed_categoriesDM.getQuantity());
+        holder.pricekwds.setText(feed_categoriesDM.getPrice()+" KD");
+//        holder.pieces.setText(feed_categoriesDM.getQuantity());
         holder.pastriess.setText(feed_categoriesDM.getTitle_en());
 
 
@@ -83,7 +83,7 @@ public class Feed_Categories_Adapter111 extends RecyclerView.Adapter<Feed_Catego
             super(itemView);
             pastriess = (TextView) itemView.findViewById(R.id.text111);
             pricekwds = (TextView) itemView.findViewById(R.id.price_kwd_Txt11);
-            pieces = (TextView) itemView.findViewById(R.id.quantity);
+//            pieces = (TextView) itemView.findViewById(R.id.quantity);
             feed_category_img=itemView.findViewById(R.id.feed_category_img);
             feed_cakeLinearLL=itemView.findViewById(R.id.feed_cakeLinearLL);
         }

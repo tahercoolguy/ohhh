@@ -16,7 +16,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-             android:orientation="vertical">
+             android:orientation="vertical"
+            android:paddingBottom="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -180,13 +181,12 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="154dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
 
                 android:layout_marginRight="20dp"
-                android:background="@drawable/my_shadow"
-                >
+                android:background="@drawable/my_shadow">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -225,9 +225,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="70dp"
-                    android:text="Al Nouf Tower, 11th Floor، Jaber
-Al-Mubarak St, Kuwait City Al Nouf Tower, 11th Floor، Jaber
-Al-Mubarak St, Kuwait City"
+                     android:paddingBottom="10dp"
                     android:textColor="@color/black"></TextView>
 
 
@@ -275,7 +273,7 @@ Al-Mubarak St, Kuwait City"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="5.000 KWD"
+
                         android:textColor="@color/black"></TextView>
 
 
@@ -302,7 +300,7 @@ Al-Mubarak St, Kuwait City"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Mx3029"
+
                         android:textColor="@color/black"></TextView>
 
 
@@ -329,7 +327,7 @@ Al-Mubarak St, Kuwait City"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="50%"
+
                         android:textColor="@color/black"></TextView>
 
 
@@ -356,7 +354,7 @@ Al-Mubarak St, Kuwait City"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="3.000 KWD"
+
                         android:textColor="@color/black"></TextView>
 
 
@@ -383,7 +381,6 @@ Al-Mubarak St, Kuwait City"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="2.500 KWD"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:fontFamily="@font/semi_bold"
@@ -412,6 +409,7 @@ Al-Mubarak St, Kuwait City"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
+
                 android:background="@drawable/my_shadow">
 
 
@@ -420,47 +418,43 @@ Al-Mubarak St, Kuwait City"
                    android:layout_height="wrap_content"
                    android:id="@+id/recycleview1"></androidx.recyclerview.widget.RecyclerView>
 
-
-
-
-
             </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/semi_bold"
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="30dp"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:fontFamily="@font/semi_bold"-->
 
-                android:text="@string/note"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                ></TextView>
+<!--                android:text="@string/note"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="18sp"-->
+<!--                ></TextView>-->
 
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="125dp"
-                android:layout_marginLeft="20dp"
-                  android:layout_marginTop="10dp"
-                android:layout_marginBottom="70dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/my_shadow"
-                >
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="125dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                  android:layout_marginTop="10dp"-->
+<!--                android:layout_marginBottom="70dp"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                android:background="@drawable/my_shadow"-->
+<!--                >-->
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:cursorVisible="true"
-                    android:lines="8"
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@null"-->
+<!--                    android:cursorVisible="true"-->
+<!--                    android:lines="8"-->
 
-                    >
+<!--                    >-->
 
-                </EditText>
+<!--                </EditText>-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

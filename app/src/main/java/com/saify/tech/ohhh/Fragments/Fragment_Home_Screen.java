@@ -156,7 +156,7 @@ public class Fragment_Home_Screen extends Fragment {
     @OnClick(R.id.view_all_Txt)
     public void ViewAll() {
 
-        ((MainActivity)context).addFragment(new Deep_and_Deep_1_Fragment(),false);
+        ((MainActivity)context).addFragment(new Fragment_Shops(),false);
 
     }
 
@@ -259,9 +259,9 @@ public class Fragment_Home_Screen extends Fragment {
 
 
 
-        Featured_Shopss_Adapter dm = new Featured_Shopss_Adapter(context,fShopsDM.getOutput().getInfo());
+           Featured_Shopss_Adapter dm = new Featured_Shopss_Adapter(context,fShopsDM.getOutput().getInfo());
 //        LinearLayoutManager l = new LinearLayoutManager.HORIZONTAL(context);
-                   LinearLayoutManager l = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+           LinearLayoutManager l = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
         featured_shops.setLayoutManager(l);
         featured_shops.setAdapter(dm);
 

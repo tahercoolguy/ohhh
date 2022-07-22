@@ -57,7 +57,7 @@ public class Nornoya_Dip_Adapter extends RecyclerView.Adapter<Nornoya_Dip_Adapte
 
                 Intent intent=new Intent(context, Address_Activity.class);
                 intent.putExtra("Shop_id", data.getInfo().get(0).getShop_id());
-                intent.putExtra("Sub_total", data.getSub_total());
+                intent.putExtra("Sub_total", data.getSub_total()+" KD");
                 intent.putExtra("Applied_coupon", data.getInfo().get(0).getApplied_coupon());
                 context.startActivity(intent);
                 ((Activity)context).finish();

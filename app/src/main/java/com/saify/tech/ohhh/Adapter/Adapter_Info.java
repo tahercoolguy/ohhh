@@ -64,7 +64,7 @@ public class Adapter_Info extends RecyclerView.Adapter<Adapter_Info .ViewHolder>
 //        Picasso.with(context).load(arrayList.get(position).getAttachment()[0]).into(viewHolder.companyIcon);
         Info data= arrayList.get(position);
         viewHolder.name.setText(data.getProduct_name());
-        viewHolder.price.setText(data.getProduct_price());
+        viewHolder.price.setText(data.getProduct_price()+" KD");
 
     }
 

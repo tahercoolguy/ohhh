@@ -88,6 +88,9 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     @BindView(R.id.shopImg1)
     ImageView shopImg1;
 
+    @BindView(R.id.shopName)
+    TextView shopName;
+
     @BindView(R.id.bannerImg1)
     ImageView bannerImg1;
 
@@ -210,8 +213,10 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
                         if(shopByIdDM.getOutput().getCategory()!=null) {
                             String CategoryID = shopByIdDM.getOutput().getCategory().get(0).getCategory_id();
                             String Tittle = shopByIdDM.getOutput().getCategory().get(0).getCategory_name();
+
                             Picasso.with(context).load(shopByIdDM.getOutput().getInfo().get(0).getBanner_image()).into(bannerImg1);
                             Picasso.with(context).load(shopByIdDM.getOutput().getInfo().get(0).getImage()).into(shopImg1);
+                            shopName.setText(shopByIdDM.getOutput().getInfo().get(0).getShop_name_en());
 
                             Deep_and_Deep_Cake_Adapter dm = new Deep_and_Deep_Cake_Adapter(context, shopByIdDM.getOutput().getCategory(), Deep_and_Deep_1_Fragment.this);
                             LinearLayoutManager l = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);

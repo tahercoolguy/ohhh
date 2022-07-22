@@ -69,7 +69,7 @@ public class Adapter_Address extends RecyclerView.Adapter<Adapter_Address.ViewHo
 //        viewHolder.status.setText(arrayList.get(position).getStatus());
 //        Picasso.with(context).load(arrayList.get(position).getAttachment()[0]).into(viewHolder.companyIcon);
         Info data= arrayList.get(position);
-        viewHolder.address.setText(data.getGovernate()+","+data.getArea()+","+data.getBlock()+","+data.getStreet()+","+data.getBuilding_no()+","+data.getFloor_no()+","+data.getGovernatesname()+","+data.getAreaname());
+        viewHolder.address.setText(data.getGovernate()+","+data.getArea()+","+data.getBlock()+","+data.getStreet()+","+data.getBuilding_no()+","+data.getFloor_no()+","+data.getGovernatesname());
 
     }
 

@@ -15,6 +15,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.saify.tech.ohhh.Adapter.Adapter_MyWishlist;
 import com.saify.tech.ohhh.Controller.AppController;
 import com.saify.tech.ohhh.DataModel.AreaDM;
+import com.saify.tech.ohhh.DataModel.EditAddressDM;
 import com.saify.tech.ohhh.DataModel.GovernatesDM;
 import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.MyWishlistDM;
@@ -46,8 +47,9 @@ public class SaveAddressActivity extends AppCompatActivity {
     DialogUtil dialogUtil;
     Dialog dialog;
     Dialog progress;
+    String Name,Email,CountryCode,mobile,Governate,Area,buildingNo,Block,Street,floor_no,AddressID;
 
-     @BindView(R.id.firstNameET)
+    @BindView(R.id.firstNameET)
       EditText full_name_ET;
 
      @BindView(R.id.emailET)
@@ -77,11 +79,11 @@ public class SaveAddressActivity extends AppCompatActivity {
     @BindView(R.id.floor_noET)
     EditText floor_noET;
 
-    @BindView(R.id.latET)
-    EditText latET;
+//    @BindView(R.id.latET)
+//    EditText latET;
 
-    @BindView(R.id.lanET)
-    EditText lanET;
+//    @BindView(R.id.lanET)
+//    EditText lanET;
 
     BottomForAll bottomForAll;
     BottomForAllForArea bottomForAllForArea;
@@ -230,7 +232,12 @@ public class SaveAddressActivity extends AppCompatActivity {
 
     @OnClick(R.id.saveTxtt)
     public void saveTxtt() {
-       Binding();
+       if(AddressID!=null)
+       {
+          EditAddress();
+       }else{
+        Binding();}
+
     }
 
 
@@ -244,6 +251,8 @@ public class SaveAddressActivity extends AppCompatActivity {
         dialogUtil = new DialogUtil();
         ButterKnife.bind(this);
 
+        setDetail();
+
 //        Binding();
 
     }
@@ -256,7 +265,7 @@ public class SaveAddressActivity extends AppCompatActivity {
                 String user_id= String.valueOf(user.getId());
                 appController.paServices.SaveAddress(user_id,full_name_ET.getText().toString(),emailET.getText().toString(),pinCodeTxt.getText().toString(),
                         mobileET.getText().toString(),areaET.getText().toString(),governateET.getText().toString(),building_no.getText().toString(),block.getText().toString(),
-                        streetET.getText().toString(),floor_noET.getText().toString(),latET.getText().toString(),lanET.getText().toString(), new Callback<SaveAddressDM>() {
+                        streetET.getText().toString(),floor_noET.getText().toString(),"12","12", new Callback<SaveAddressDM>() {
                     @Override
                     public void success(SaveAddressDM saveAddressDM, Response response) {
                         //                   progress.dismiss();
@@ -277,5 +286,65 @@ public class SaveAddressActivity extends AppCompatActivity {
             } else
                 Helper.showToast(SaveAddressActivity.this, getString(R.string.no_internet_connection));
             }
+
+
+
+    public void setDetail()
+    {
+        Name=getIntent().getStringExtra("name");
+             full_name_ET.setText(Name);
+        Email=getIntent().getStringExtra("email");
+        emailET.setText(Email);
+        CountryCode=getIntent().getStringExtra("code");
+        pinCodeTxt.setText(CountryCode);
+        mobile=getIntent().getStringExtra("mobileNo");
+        mobileET.setText(mobile);
+        Governate=getIntent().getStringExtra("governate");
+        areaET.setText(Governate);
+        Area=getIntent().getStringExtra("area");
+        governateET.setText(Area);
+        buildingNo=getIntent().getStringExtra("building");
+        building_no.setText(buildingNo);
+        Block=getIntent().getStringExtra("block");
+       block.setText(Block);
+        Street=getIntent().getStringExtra("street");
+        streetET.setText(Name);
+        floor_no=getIntent().getStringExtra("floor");
+        floor_noET.setText(Name);
+        AddressID=getIntent().getStringExtra("AddressId");
+    }
+
+    public void EditAddress() {
+
+        if (connectionDetector.isConnectingToInternet()) {
+//            progress = dialogUtil.showProgressDialog(getActivity(),getString(R.string.please_wait));
+            String user_id= String.valueOf(user.getId());
+            appController.paServices.EditAddress(user_id,full_name_ET.getText().toString(),emailET.getText().toString(),pinCodeTxt.getText().toString(),
+                    mobileET.getText().toString(),areaET.getText().toString(),governateET.getText().toString(),building_no.getText().toString(),block.getText().toString(),
+                    streetET.getText().toString(),floor_noET.getText().toString(),"12","12",AddressID, new Callback<EditAddressDM>() {
+                        @Override
+                        public void success(EditAddressDM editAddressDM, Response response) {
+                            //                   progress.dismiss();
+                            if (editAddressDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+                                Helper.showToast(SaveAddressActivity.this,editAddressDM.getOutput().getMessage());
+                            } else
+                                Helper.showToast(SaveAddressActivity.this, getString(R.string.Api_data_not_found));
+                        }
+
+                        @Override
+                        public void failure(RetrofitError retrofitError) {
+//                    progress.dismiss();
+
+                            Log.e("error", retrofitError.toString());
+
+                        }
+                    });
+        } else
+            Helper.showToast(SaveAddressActivity.this, getString(R.string.no_internet_connection));
+    }
+
+
+
+
 
 }

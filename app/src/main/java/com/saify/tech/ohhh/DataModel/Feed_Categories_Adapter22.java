@@ -72,9 +72,9 @@ public class Feed_Categories_Adapter22 extends RecyclerView.Adapter<Feed_Categor
         if (!data.getImage().equalsIgnoreCase("") && data.getImage()!=null) {
             Picasso.with(context).load(data.getImage()).into(viewHolder.feed_category_img);
         }
-            viewHolder.pricekwds.setText(data.getPrice());
+            viewHolder.pricekwds.setText(data.getPrice()+" KD");
             viewHolder.text.setText(data.getTitle_en());
-            viewHolder.quantity.setText(data.getQuantity());
+//            viewHolder.quantity.setText(data.getQuantity());
 
         viewHolder.feed_cakeLinearLL.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,7 +99,7 @@ public class Feed_Categories_Adapter22 extends RecyclerView.Adapter<Feed_Categor
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            quantity = (TextView) itemView.findViewById(R.id.quantity);
+//            quantity = (TextView) itemView.findViewById(R.id.quantity);
             pricekwds = (TextView) itemView.findViewById(R.id.price_kwd_Txt11);
             text = (TextView) itemView.findViewById(R.id.text111);
 //            sub_category_2_Rcv=itemView.findViewById(R.id.sub_category_2_Rcv);

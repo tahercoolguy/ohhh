@@ -55,7 +55,7 @@ public class OrderDM_Adapter extends RecyclerView.Adapter<OrderDM_Adapter.Progra
         if(data.getInfo()!=null) {
             holder.Pastriess.setText(data.getInfo().get(0).getProduct_name());
 //        holder.product_ids.setText(data.getProduct_id());
-            holder.pricekwds.setText(data.getInfo().get(0).getProduct_price());
+            holder.pricekwds.setText(data.getInfo().get(0).getProduct_price()+" KD");
             holder.count_products.setText(data.getInfo().get(0).getProduct_qty());
 //        holder.pastri_imgs.setImageResource(R.drawable.pastries_1);
             Picasso.with(context).load(data.getInfo().get(0).getImage()).into(holder.pastri_imgs);

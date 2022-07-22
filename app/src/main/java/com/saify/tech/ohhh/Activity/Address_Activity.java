@@ -52,6 +52,8 @@ public class Address_Activity extends AppCompatActivity {
     String Applied__coupon;
 
 
+
+
     @NotEmpty
     @BindView(R.id.back_saved_address)
     LinearLayout back;

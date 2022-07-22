@@ -16,16 +16,16 @@
         android:layout_marginTop="10dp"
         android:src="@drawable/ic_work_brief"></ImageView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/work"
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="45dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="@string/work"-->
 
-        android:textColor="@color/black">
+<!--        android:textColor="@color/black">-->
 
-    </TextView>
+<!--    </TextView>-->
 
     <TextView
         android:id="@+id/change_Btn"
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="40dp"
-        android:text="+965 12345678"
+        android:text="12345678"
         android:textColor="@color/black">
 
     </TextView>

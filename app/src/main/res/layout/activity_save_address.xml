@@ -645,7 +645,7 @@
                                 android:layout_marginLeft="30dp"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginRight="30dp"
-                                android:text="lat"></TextView>
+                                android:text="Direction"></TextView>
 
                             <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
@@ -671,7 +671,7 @@
 
 
                                 <EditText
-                                    android:id="@+id/latET"
+                                    android:id="@+id/directionET"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:background="@drawable/cutum_select_1"
@@ -684,49 +684,49 @@
                             </com.google.android.material.textfield.TextInputLayout>
 
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="30dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginRight="30dp"
-                                android:text="lan"></TextView>
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginLeft="30dp"-->
+<!--                                android:layout_marginTop="10dp"-->
+<!--                                android:layout_marginRight="30dp"-->
+<!--                                android:text="lan"></TextView>-->
 
-                            <com.google.android.material.textfield.TextInputLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="30dp"
-                                android:layout_marginRight="30dp"
-                                app:boxBackgroundColor="@color/whiteAlpha"
-                                app:boxCornerRadiusBottomEnd="10dp"
-                                app:boxCornerRadiusBottomStart="10dp"
-                                app:boxCornerRadiusTopEnd="10dp"
-                                app:boxCornerRadiusTopStart="10dp"
-                                app:boxStrokeColor="@color/colorPrimary"
-                                app:boxStrokeWidth="0.3dp">
+<!--                            <com.google.android.material.textfield.TextInputLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginLeft="30dp"-->
+<!--                                android:layout_marginRight="30dp"-->
+<!--                                app:boxBackgroundColor="@color/whiteAlpha"-->
+<!--                                app:boxCornerRadiusBottomEnd="10dp"-->
+<!--                                app:boxCornerRadiusBottomStart="10dp"-->
+<!--                                app:boxCornerRadiusTopEnd="10dp"-->
+<!--                                app:boxCornerRadiusTopStart="10dp"-->
+<!--                                app:boxStrokeColor="@color/colorPrimary"-->
+<!--                                app:boxStrokeWidth="0.3dp">-->
 
-                                <!--            <EditText-->
-                                <!--                android:id="@+id/firstNameET"-->
-                                <!--                android:layout_width="match_parent"-->
-                                <!--                android:layout_height="wrap_content"-->
-                                <!--                android:background="@null"-->
-                                <!--                android:textColor="@color/black"-->
+<!--                                &lt;!&ndash;            <EditText&ndash;&gt;-->
+<!--                                &lt;!&ndash;                android:id="@+id/firstNameET"&ndash;&gt;-->
+<!--                                &lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--                                &lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--                                &lt;!&ndash;                android:background="@null"&ndash;&gt;-->
+<!--                                &lt;!&ndash;                android:textColor="@color/black"&ndash;&gt;-->
 
-                                <!--                android:textSize="@dimen/text_size_normal"></EditText>-->
-
-
-                                <EditText
-                                    android:id="@+id/lanET"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/cutum_select_1"
-                                    android:lines="1"
-                                    android:padding="13dp">
-
-                                </EditText>
+<!--                                &lt;!&ndash;                android:textSize="@dimen/text_size_normal"></EditText>&ndash;&gt;-->
 
 
-                            </com.google.android.material.textfield.TextInputLayout>
+<!--                                <EditText-->
+<!--                                    android:id="@+id/lanET"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:background="@drawable/cutum_select_1"-->
+<!--                                    android:lines="1"-->
+<!--                                    android:padding="13dp">-->
+
+<!--                                </EditText>-->
+
+
+<!--                            </com.google.android.material.textfield.TextInputLayout>-->
 
 
                             <TextView

@@ -53,7 +53,7 @@ public class HistoryDM_Adapter extends RecyclerView.Adapter<HistoryDM_Adapter.Pr
         if(data.getInfo()!=null) {
             holder.Pastriess.setText(data.getInfo().get(0).getProduct_name());
 //        holder.product_ids.setText(data.getProduct_id());
-            holder.pricekwds.setText(data.getInfo().get(0).getProduct_price() + " " + "KWD");
+            holder.pricekwds.setText(data.getInfo().get(0).getProduct_price() + " " + "KD");
             holder.count_products.setText(data.getInfo().get(0).getProduct_qty() + " " + "Items");
 //        holder.pastri_imgs.setImageResource(data.getPastri_img());
             Picasso.with(context).load(data.getInfo().get(0).getImage()).into(holder.pastri_imgs);

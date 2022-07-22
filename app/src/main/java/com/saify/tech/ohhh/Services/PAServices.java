@@ -14,6 +14,7 @@ import com.saify.tech.ohhh.DataModel.BannerDM;
 import com.saify.tech.ohhh.DataModel.BestDM;
 import com.saify.tech.ohhh.DataModel.CatgoryListDM;
 import com.saify.tech.ohhh.DataModel.ChangePasswordDM;
+import com.saify.tech.ohhh.DataModel.EditAddressDM;
 import com.saify.tech.ohhh.DataModel.EventsDM;
 import com.saify.tech.ohhh.DataModel.FShopsDM;
 import com.saify.tech.ohhh.DataModel.FlavoursDM;
@@ -32,6 +33,7 @@ import com.saify.tech.ohhh.DataModel.ProductsByIdDM;
 import com.saify.tech.ohhh.DataModel.ProductsBycatIdDM;
 import com.saify.tech.ohhh.DataModel.ProductsBysubcatIdDM;
 import com.saify.tech.ohhh.DataModel.ProductsbyAreaIdDM;
+import com.saify.tech.ohhh.DataModel.RemoveAddressDM;
 import com.saify.tech.ohhh.DataModel.RemoveCartDM;
 import com.saify.tech.ohhh.DataModel.RemoveWishlistDM;
 import com.saify.tech.ohhh.DataModel.RestaurentDM;
@@ -369,6 +371,33 @@ public interface PAServices {
     public void MyOrderDetail(@Field("user_id") String user_id,
                               @Field("sale_code") String sale_code,
                                 Callback<MyOrderDetailDM> myOrderDetailDMCallback);
+
+    //36
+    @FormUrlEncoded
+    @POST("/ohhh/RemoveAddress")
+    public void RemoveAddress(@Field("user_id") String user_id,
+                              @Field("address_id") String address_id,
+                           Callback<RemoveAddressDM> removeAddressDMCallback);
+
+
+    //37
+    @FormUrlEncoded
+    @POST("/ohhh/EditAddress")
+    public void EditAddress(@Field("user_id") String user_id,
+                         @Field("name") String name,
+                         @Field("email") String email,
+                         @Field("countrycode") String countrycode,
+                         @Field("mobile_no") String mobile_no,
+                         @Field("area") String area,
+                         @Field("governate") String governate,
+                         @Field("building_no") String building_no,
+                         @Field("block") String block,
+                         @Field("street") String street,
+                         @Field("floor_no") String floor_no,
+                         @Field("lat") String lat,
+                         @Field("lan") String lan,
+                         @Field("address_id") String address_id,
+                          Callback<EditAddressDM> editAddressDMCallback);
 
 
 }
