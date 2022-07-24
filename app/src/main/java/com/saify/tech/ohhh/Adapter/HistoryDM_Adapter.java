@@ -1,6 +1,7 @@
 package com.saify.tech.ohhh.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.saify.tech.ohhh.Activity.Rate_Activity;
+import com.saify.tech.ohhh.Activity.View_Order_Activity;
 import com.saify.tech.ohhh.DataModel.HistoryDM;
 import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.OutputMyOrder;
@@ -70,8 +73,19 @@ public class HistoryDM_Adapter extends RecyclerView.Adapter<HistoryDM_Adapter.Pr
 
 
             holder.date.setText(newDate);
-
         }
+
+        holder.rate_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), Rate_Activity.class);
+                if(data.getSale_code()!=null) {
+                    myIntent.putExtra("Sale_Code", data.getSale_code());
+                }
+                view.getContext().startActivity(myIntent);
+            }
+        });
+
 
     }
 
@@ -86,7 +100,7 @@ public class HistoryDM_Adapter extends RecyclerView.Adapter<HistoryDM_Adapter.Pr
         TextView product_ids;
         TextView pricekwds;
         TextView count_products;
-        TextView date;
+        TextView date,rate_btn;
         ImageView pastri_imgs;
 
 
@@ -98,6 +112,7 @@ public class HistoryDM_Adapter extends RecyclerView.Adapter<HistoryDM_Adapter.Pr
             count_products = (TextView) itemView.findViewById(R.id.items_count_Txt);
             pastri_imgs = (ImageView) itemView.findViewById(R.id.pastries_Img);
             date = (TextView) itemView.findViewById(R.id.dtm_Txt);
+          rate_btn = (TextView) itemView.findViewById(R.id.Rate_Btn);
          }
     }
 }

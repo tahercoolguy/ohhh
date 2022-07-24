@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginLeft="20dp"
+android:layout_marginTop="10dp"
+
+android:layout_marginRight="20dp"
+android:background="@drawable/my_shadow">
+
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:src="@drawable/ic_work_brief"></ImageView>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/semi_bold"
+             android:layout_weight="1"
+            android:text="Mohammed"
+            android:textColor="@color/black">
+
+        </TextView>
+
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+
+            android:layout_weight="0.5"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_rating_star"></ImageView>
+
+        <TextView
+            android:id="@+id/rating_starTxt"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/semi_bold"
+            android:text="4.5"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/semi_bold"
+            android:layout_weight="1"
+            android:text="Mohammed"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/rate1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:paddingBottom="20dp"
+        android:src="@drawable/ic_rating_star"></TextView>
+
+</RelativeLayout>

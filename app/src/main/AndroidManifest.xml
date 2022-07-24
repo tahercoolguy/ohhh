@@ -84,6 +84,8 @@
         <activity android:name=".Activity.MyProfileActivity" />
         <activity android:name=".Activity.MyWishlist" />
         <activity android:name=".Activity.SaveAddressActivity" />
+        <activity android:name=".Activity.Rate_Activity"/>
+        <activity android:name=".Activity.Adv_Aome_Activity"/>
 
     </application>
 

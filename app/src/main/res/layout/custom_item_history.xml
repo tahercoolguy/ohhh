@@ -142,7 +142,7 @@
 
 
             <TextView
-                android:id="@+id/view_order_Btn"
+                android:id="@+id/Rate_Btn"
                 android:layout_width="290dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"

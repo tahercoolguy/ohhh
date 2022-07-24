@@ -1274,4 +1274,41 @@ public class Info {
         this.applied_coupon = applied_coupon;
     }
 
+
+    private String  rating;
+    private String  free_delivery;
+    private String prepartion_time;
+    private String  rating_count;
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public String getFree_delivery() {
+        return free_delivery;
+    }
+
+    public void setFree_delivery(String free_delivery) {
+        this.free_delivery = free_delivery;
+    }
+
+    public String getPrepartion_time() {
+        return prepartion_time;
+    }
+
+    public void setPrepartion_time(String prepartion_time) {
+        this.prepartion_time = prepartion_time;
+    }
+
+    public String getRating_count() {
+        return rating_count;
+    }
+
+    public void setRating_count(String rating_count) {
+        this.rating_count = rating_count;
+    }
 }

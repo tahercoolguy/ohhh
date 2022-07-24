@@ -21,11 +21,15 @@ public class Output {
     private String discount;
     private String code_applied;
 
+    private ArrayList<Adv> adv;
 
+    public ArrayList<Adv> getAdv() {
+        return adv;
+    }
 
-
-
-
+    public void setAdv(ArrayList<Adv> adv) {
+        this.adv = adv;
+    }
 
     private ArrayList<Category> category;
 

@@ -7,11 +7,14 @@ package com.saify.tech.ohhh.Services;
 import com.saify.tech.ohhh.DataModel.AddQuantityDM;
 import com.saify.tech.ohhh.DataModel.AddressListDM;
 import com.saify.tech.ohhh.DataModel.AddtoCartDM;
+import com.saify.tech.ohhh.DataModel.AddtoWishlistDM;
+import com.saify.tech.ohhh.DataModel.AdvHomeDM;
 import com.saify.tech.ohhh.DataModel.AllAreaDM;
 import com.saify.tech.ohhh.DataModel.AllProductsDM;
 import com.saify.tech.ohhh.DataModel.AreaDM;
 import com.saify.tech.ohhh.DataModel.BannerDM;
 import com.saify.tech.ohhh.DataModel.BestDM;
+import com.saify.tech.ohhh.DataModel.CancelOrderDM;
 import com.saify.tech.ohhh.DataModel.CatgoryListDM;
 import com.saify.tech.ohhh.DataModel.ChangePasswordDM;
 import com.saify.tech.ohhh.DataModel.EditAddressDM;
@@ -294,7 +297,7 @@ public interface PAServices {
    public void AddtoWishlist(@Field("user_id") String user_id,
                         @Field("product_id") String product_id,
                         @Field("shop_id") String shop_id,
-                        Callback<AddtoCartDM> addtoCartDMCallback);
+                        Callback<AddtoWishlistDM> addtoWishlistDMCallback);
 
    //24
     @FormUrlEncoded
@@ -398,6 +401,34 @@ public interface PAServices {
                          @Field("lan") String lan,
                          @Field("address_id") String address_id,
                           Callback<EditAddressDM> editAddressDMCallback);
+
+
+    //38
+    @FormUrlEncoded
+    @POST("/ohhh/CancelOrder")
+    public void CancelOrder(@Field("user_id") String user_id,
+                           @Field("sale_code") String sale_code,
+                           Callback<CancelOrderDM> cancelOrderDMCallback);
+
+   //39
+   @GET("/ohhh/advHome")
+   public void AdvHome(Callback<AdvHomeDM> advHomeDMCallback);
+
+
+
+ //23
+ @FormUrlEncoded
+ @POST("/ohhh/AddtoWishlist")
+ public void AddtoWishlistShop(@Field("user_id") String user_id,
+                               @Field("shop_id") String shop_id,
+                           Callback<AddtoWishlistDM> addtoWishlistDMCallback);
+
+ //24
+ @FormUrlEncoded
+ @POST("/ohhh/RemoveWishlist")
+ public void RemoveWishlistShop(@Field("user_id") String user_id,
+                            @Field("shop_id") String shop_id,
+                            Callback<RemoveWishlistDM> removeWishlistDMCallback);
 
 
 }

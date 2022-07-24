@@ -49,6 +49,26 @@
 
             </LinearLayout>
 
+
+            <LinearLayout
+                android:id="@+id/dislike_LL"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="255dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_rounded_white"
+                android:elevation="11dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/ic_heart_white"></ImageView>
+
+            </LinearLayout>
+
             <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="34dp"

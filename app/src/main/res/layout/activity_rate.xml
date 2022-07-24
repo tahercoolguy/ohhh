@@ -102,53 +102,48 @@
 
                 <ImageView
                     android:id="@+id/rate1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="40dp"
-                    android:paddingBottom="20dp"
-                    android:src="@drawable/ic_rating_star">
-                </ImageView>
+                    android:src="@drawable/ic_rating_star"></ImageView>
 
 
                 <ImageView
                     android:id="@+id/rate2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="40dp"
-                    android:paddingBottom="20dp"
-                    android:src="@drawable/ic_rating_star">
-                </ImageView>
+
+                    android:src="@drawable/ic_rating_star"></ImageView>
 
 
                 <ImageView
                     android:id="@+id/rate3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_marginLeft="70dp"
                     android:layout_marginTop="40dp"
-                    android:paddingBottom="20dp"
                     android:src="@drawable/ic_rating_star">
                 </ImageView>
 
                 <ImageView
                     android:id="@+id/rate4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_marginLeft="100dp"
                     android:layout_marginTop="40dp"
-                    android:paddingBottom="20dp"
-                    android:src="@drawable/ic_rating_star">
-                </ImageView>
+
+                    android:src="@drawable/ic_rating_star"></ImageView>
 
                 <ImageView
                     android:id="@+id/rate5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_marginLeft="130dp"
                     android:layout_marginTop="40dp"
-                    android:paddingBottom="20dp"
+
                     android:src="@drawable/ic_rating_star">
                 </ImageView>
 
@@ -198,9 +193,9 @@
                 android:id="@+id/done_Btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="60dp"
                 android:layout_marginTop="50dp"
-                android:layout_marginRight="50dp"
+                android:layout_marginRight="60dp"
                 android:background="@drawable/rounded_corner_primary_colour"
                 android:gravity="center"
                 android:padding="15dp"

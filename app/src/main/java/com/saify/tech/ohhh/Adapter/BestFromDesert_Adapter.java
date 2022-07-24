@@ -19,6 +19,7 @@ import com.makeramen.roundedimageview.RoundedTransformationBuilder;
 import com.saify.tech.ohhh.Activity.Food_Details_Activity;
 import com.saify.tech.ohhh.Activity.MainActivity;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.AddtoWishlistDM;
 import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.OffersDM;
 import com.saify.tech.ohhh.DataModel.RemoveCartDM;
@@ -94,40 +95,81 @@ public class BestFromDesert_Adapter  extends RecyclerView.Adapter<BestFromDesert
             }
         });
 
-//        holder.likeImgAddToCart.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                if (connectionDetector.isConnectingToInternet()) {
-//                    {
-//                        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-//
-////                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
-//
-//                        appController.paServices.RemoveWishlist(String.valueOf(user.getId()),product_id,shop_id, new Callback<RemoveWishlistDM>() {
-//                            @Override
-//                            public void success(RemoveWishlistDM removeWishlistDM, Response response) {
-////                        progress.dismiss();
-//                                if (removeWishlistDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
-//
-//                                    holder.dislikeImgRemoveCart.setVisibility(View.VISIBLE);
-//                                    Helper.showToast(context,removeWishlistDM.getOutput().getMessage());
-//
-//                                } else
-//                                    Helper.showToast(context, "item does not Remove From Wishlist");
-//                            }
-//
-//                            @Override
-//                            public void failure(RetrofitError error) {
-//
-//                                Log.e("String", error.toString());
-//                            }
-//                        });
-//                    }
-//                } else
-//                    Helper.showToast(context, String.valueOf(R.string.no_internet_connection));
-//            }
-//        });
+
+        holder.likeImgAddTowishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (connectionDetector.isConnectingToInternet()) {
+                    {
+                        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+//                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
+
+                        appController.paServices.AddtoWishlist(String.valueOf(user.getId()),data.getId(),data.getShop_id(), new Callback<AddtoWishlistDM>() {
+                            @Override
+                            public void success(AddtoWishlistDM addtoWishlistDM, Response response) {
+//                        progress.dismiss();
+                                if (addtoWishlistDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+                                    holder.dislikeImgRemovewishlist.setVisibility(View.VISIBLE);
+                                    holder.likeImgAddTowishlist.setVisibility(View.GONE);
+
+                                    Helper.showToast(context,addtoWishlistDM.getOutput().getMessage());
+
+                                } else
+                                    Helper.showToast(context, "item does not Add to Wishlist");
+                            }
+
+                            @Override
+                            public void failure(RetrofitError error) {
+
+                                Log.e("String", error.toString());
+                            }
+                        });
+                    }
+                } else
+                    Helper.showToast(context, String.valueOf(R.string.no_internet_connection));
+            }
+        });
+
+
+        holder.dislikeImgRemovewishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (connectionDetector.isConnectingToInternet()) {
+                    {
+                        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+//                progress = dialogUtil.showProgressDialog(Food_Details_Activity.this, getString(R.string.please_wait));
+
+                        appController.paServices.RemoveWishlist(String.valueOf(user.getId()),data.getId(),data.getShop_id(), new Callback<RemoveWishlistDM>() {
+                            @Override
+                            public void success(RemoveWishlistDM removeWishlistDM, Response response) {
+//                        progress.dismiss();
+                                if (removeWishlistDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
+
+                                    holder.dislikeImgRemovewishlist.setVisibility(View.GONE);
+                                    holder.likeImgAddTowishlist.setVisibility(View.VISIBLE);
+
+                                    Helper.showToast(context,removeWishlistDM.getOutput().getMessage());
+
+                                } else
+                                    Helper.showToast(context, "item does not Remove From Wishlist");
+                            }
+
+                            @Override
+                            public void failure(RetrofitError error) {
+
+                                Log.e("String", error.toString());
+                            }
+                        });
+                    }
+                } else
+                    Helper.showToast(context, String.valueOf(R.string.no_internet_connection));
+            }
+        });
 
 
 
@@ -145,7 +187,7 @@ public class BestFromDesert_Adapter  extends RecyclerView.Adapter<BestFromDesert
         TextView textView,perText;
         ImageView img;
         RelativeLayout shop_cake_RL;
-        LinearLayout likeImgAddToCart,dislikeImgRemoveCart;
+        LinearLayout likeImgAddTowishlist,dislikeImgRemovewishlist;
 
 
 
@@ -155,8 +197,8 @@ public class BestFromDesert_Adapter  extends RecyclerView.Adapter<BestFromDesert
             img = (ImageView) itemView.findViewById(R.id.offer_chocklate_img_1);
             shop_cake_RL = itemView.findViewById(R.id.shop_cake_RL);
             perText = (TextView) itemView.findViewById(R.id.offer_10_percent);
-            likeImgAddToCart=(LinearLayout)itemView.findViewById(R.id.like_LL);
-            dislikeImgRemoveCart=(LinearLayout)itemView.findViewById(R.id.dislike_LL);
+            likeImgAddTowishlist=(LinearLayout)itemView.findViewById(R.id.like_LL);
+            dislikeImgRemovewishlist=(LinearLayout)itemView.findViewById(R.id.dislike_LL);
 
 
         }
