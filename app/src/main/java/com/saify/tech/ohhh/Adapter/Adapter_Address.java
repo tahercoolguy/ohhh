@@ -1,6 +1,7 @@
 package com.saify.tech.ohhh.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.saify.tech.ohhh.Activity.SaveAddressActivity;
 import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.DataModel.ShopsResult;
 import com.saify.tech.ohhh.Helper.User;
@@ -71,6 +73,23 @@ public class Adapter_Address extends RecyclerView.Adapter<Adapter_Address.ViewHo
         Info data= arrayList.get(position);
         viewHolder.address.setText(data.getGovernate()+","+data.getArea()+","+data.getBlock()+","+data.getStreet()+","+data.getBuilding_no()+","+data.getFloor_no()+","+data.getGovernatesname());
 
+        viewHolder.change_Txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, SaveAddressActivity.class);
+                intent.putExtra("name", data.getName());
+                intent.putExtra("email", data.getEmail());
+                intent.putExtra("code", data.getCountrycode());
+                intent.putExtra("mobileNo", data.getMobile_no());
+                intent.putExtra("governate", data.getGovernate());
+                intent.putExtra("area", data.getArea());
+                intent.putExtra("building", data.getBuilding_no());
+                intent.putExtra("block", data.getBlock());
+                intent.putExtra("street", data.getStreet());
+                intent.putExtra("floor",data.getFloor_no());
+                intent.putExtra("AddressId",data.getId());
+                 context.startActivity(intent);            }
+        });
     }
 
     public Info getSelected() {
@@ -83,12 +102,13 @@ public class Adapter_Address extends RecyclerView.Adapter<Adapter_Address.ViewHo
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView address;
+        private TextView address,change_Txt;
 //        private ImageView companyIcon,img;
 
         public ViewHolder(View itemView) {
             super(itemView);
             address = (TextView) itemView.findViewById(R.id.address_text);
+            change_Txt = (TextView) itemView.findViewById(R.id.change_Txt);
 
             //
         }

@@ -2,27 +2,50 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+
+
+
+     <com.smarteist.autoimageslider.SliderView
+         android:id="@+id/slider"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         app:sliderAnimationDuration="600"
+         app:sliderAutoCycleDirection="back_and_forth"
+         app:sliderIndicatorAnimationDuration="600"
+         app:sliderIndicatorEnabled="true"
+         app:sliderIndicatorGravity="center_horizontal|bottom"
+         app:sliderIndicatorMargin="15dp"
+         app:sliderIndicatorOrientation="horizontal"
+         app:sliderIndicatorPadding="7dp"
+         app:sliderIndicatorRadius="3dp"
+         app:sliderIndicatorSelectedColor="@color/colorPrimary"
+         app:sliderIndicatorUnselectedColor="@color/greyDark"
+         app:sliderScrollTimeInSec="1" />
 
      <androidx.recyclerview.widget.RecyclerView
         android:layout_width="wrap_content"
+         android:visibility="gone"
         android:layout_height="wrap_content"
          android:id="@+id/recycleviewAdtHome"></androidx.recyclerview.widget.RecyclerView>
 
      <LinearLayout
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:gravity="right">
+         android:layout_width="wrap_content"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentEnd="true"
+          android:layout_marginBottom="15dp"
+         android:layout_height="wrap_content">
 
           <TextView
               android:id="@+id/Skip_Btn"
-              android:layout_width="match_parent"
+              android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_marginLeft="190dp"
-              android:layout_marginTop="650dp"
-              android:layout_marginRight="20dp"
-              android:background="@drawable/rounded_corner_primary_colour"
+                android:background="@drawable/rounded_corner_primary_colour"
               android:gravity="center"
+              android:paddingStart="40dp"
+              android:paddingEnd="40dp"
+              android:layout_marginEnd="10dp"
               android:padding="10dp"
               android:text="Skip"
               android:textColor="@color/white"></TextView>

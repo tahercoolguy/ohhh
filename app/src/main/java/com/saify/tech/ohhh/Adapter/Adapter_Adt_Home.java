@@ -14,6 +14,7 @@ import com.saify.tech.ohhh.DataModel.Adv;
 import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
+import com.smarteist.autoimageslider.SliderView;
 import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;

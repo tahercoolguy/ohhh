@@ -150,6 +150,7 @@
             android:background="@drawable/my_shadow">
 
             <ImageView
+                android:id="@+id/nowImg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -160,14 +161,50 @@
                  android:src="@drawable/ic_now_clock"></ImageView>
 
             <TextView
+                android:id="@+id/nowTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="60dp"
-                android:layout_centerInParent="true"
                 android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="60dp"
                 android:layout_marginTop="15dp"
                 android:text="@string/now"
                 android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold">
+
+            </TextView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/now_RL2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/my_shadow">
+
+            <ImageView
+                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_centerInParent="true"
+                 android:layout_alignParentStart="true"
+
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_now_clock_white"></ImageView>
+
+            <TextView
+                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/now"
+                android:textColor="@color/white"
                 android:textSize="17dp"
                 android:textStyle="bold">
 
@@ -204,6 +241,19 @@
                 android:textSize="17dp">
 
             </TextView>
+
+
+            <TextView
+                android:id="@+id/datetxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="50dp"></TextView>
         </RelativeLayout>
 
         <TextView

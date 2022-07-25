@@ -160,6 +160,9 @@ public class Cart_Activity extends AppCompatActivity {
 //                        progress.dismiss();
                         if (myCartDM.getOutput().get(0).getSuccess().equalsIgnoreCase("1")) {
                           ShopID = myCartDM.getOutput().get(0).getInfo().get(0).getShop_id();
+                          String shopImg,shopName;
+                          shopImg=myCartDM.getOutput().get(0).getInfo().get(0).getShop_image();
+                          shopName=myCartDM.getOutput().get(0).getInfo().get(0).getShop_name();
         Nornoya_Dip_Adapter dm = new Nornoya_Dip_Adapter(Cart_Activity.this, myCartDM.getOutput());
         LinearLayoutManager l = new LinearLayoutManager(Cart_Activity.this, LinearLayoutManager.VERTICAL, false);
         nornoya_deep_Rcvv.setLayoutManager(l);

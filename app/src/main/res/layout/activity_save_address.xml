@@ -130,6 +130,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="30dp"
+                                android:visibility="gone"
                                 android:layout_marginTop="20dp"
                                 android:layout_marginRight="30dp"
 
@@ -142,6 +143,7 @@
                                 android:layout_height="wrap_content"
 
                                 android:layout_marginLeft="30dp"
+                                android:visibility="gone"
                                 android:layout_marginRight="30dp"
                                 app:boxBackgroundColor="@color/whiteAlpha"
                                 app:boxCornerRadiusBottomEnd="10dp"
@@ -155,6 +157,7 @@
                                 <EditText
                                     android:id="@+id/firstNameET"
                                     android:layout_width="match_parent"
+
                                     android:layout_height="wrap_content"
                                     android:background="@drawable/cutum_select_1"
 
@@ -172,6 +175,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="30dp"
                                 android:layout_marginTop="10dp"
+                                android:visibility="gone"
                                 android:layout_marginRight="30dp"
 
                                 android:text="@string/email"></TextView>
@@ -180,6 +184,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="30dp"
+                                android:visibility="gone"
                                 android:layout_marginRight="30dp"
                                 app:boxBackgroundColor="@color/whiteAlpha"
                                 app:boxCornerRadiusBottomEnd="10dp"

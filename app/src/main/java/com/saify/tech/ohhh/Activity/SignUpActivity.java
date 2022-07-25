@@ -165,7 +165,6 @@ public class SignUpActivity extends AppCompatActivity implements Validator.Valid
 
                             user.setId(Integer.valueOf(signUpDM.getOutput().getData().get(0).getId()));
 
-
                             startActivity(new Intent(SignUpActivity.this, VerifyActivity.class));
 
                         } else

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--Image we will display is our slider view-->
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/myimage"
+                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                  app:riv_corner_radius="0dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="5dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:padding="10dp"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/rounded_corner_border_primary_colour"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text=" "
+        android:textColor="@color/white"
+
+        android:textSize="@dimen/text_size_title"
+        android:textStyle="bold"></TextView>
+
+
+</RelativeLayout>

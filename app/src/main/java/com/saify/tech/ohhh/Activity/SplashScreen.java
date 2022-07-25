@@ -78,11 +78,11 @@ public class SplashScreen extends AppCompatActivity {
 
                 if(user.getId()==0){
 
-                    startActivity(new Intent(SplashScreen.this,LoginActivity.class));
+                    startActivity(new Intent(SplashScreen.this,Adv_Aome_Activity.class));
 
                 }
                 else{
-                    startActivity(new Intent(SplashScreen.this,MainActivity.class));
+                    startActivity(new Intent(SplashScreen.this,Adv_Aome_Activity.class));
                 }
                 finish();
 //

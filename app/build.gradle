@@ -122,6 +122,14 @@ dependencies {
     implementation'com.makeramen:roundedimageview:2.3.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
+
+//image slider
+    implementation 'com.github.smarteist:autoimageslider:1.4.0'
+
+
+// sindledatetimepicker
+    implementation 'com.github.florent37:singledateandtimepicker:2.2.7'
+
 }
 apply plugin: 'com.google.gms.google-services'
 com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
