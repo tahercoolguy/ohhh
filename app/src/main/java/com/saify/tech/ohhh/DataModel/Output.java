@@ -10,7 +10,6 @@ public class Output {
 
     private String message;
 
-
     private ArrayList<Addons> addons;
 
     private ArrayList<Shipping> shipping;

@@ -43,7 +43,7 @@ public class Adapter_MyWishlist extends RecyclerView.Adapter<Adapter_MyWishlist.
         InfoMyWIshlist info= arrayList.get(position);
 
 
-        if(!info.getImage().equalsIgnoreCase(""))
+        if(info.getImage()!=null && !info.getImage().equalsIgnoreCase(""))
         {
             Picasso.with(context).load(info.getImage()).into(holder.img);
         }

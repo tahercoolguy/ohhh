@@ -4,6 +4,7 @@ package com.saify.tech.ohhh.Services;
 //import io.opencensus.stats.Stats;
 
 
+import com.saify.tech.ohhh.DataModel.AddProductRatingDM;
 import com.saify.tech.ohhh.DataModel.AddQuantityDM;
 import com.saify.tech.ohhh.DataModel.AddressListDM;
 import com.saify.tech.ohhh.DataModel.AddtoCartDM;
@@ -416,19 +417,35 @@ public interface PAServices {
 
 
 
- //23
+ //40
  @FormUrlEncoded
  @POST("/ohhh/AddtoWishlist")
  public void AddtoWishlistShop(@Field("user_id") String user_id,
                                @Field("shop_id") String shop_id,
                            Callback<AddtoWishlistDM> addtoWishlistDMCallback);
 
- //24
+ //41
  @FormUrlEncoded
  @POST("/ohhh/RemoveWishlist")
  public void RemoveWishlistShop(@Field("user_id") String user_id,
                             @Field("shop_id") String shop_id,
                             Callback<RemoveWishlistDM> removeWishlistDMCallback);
+
+   //41
+   @FormUrlEncoded
+  @POST("/ohhh/AddProductRating")
+  public void AddProductRating(@Field("user_id") String user_id,
+                                @Field("product_id") String product_id,
+                               @Field("product_rating") String product_rating,
+                              Callback<AddProductRatingDM> addProductRatingDMCallback);
+
+//  //42
+//  @FormUrlEncoded
+//  @POST("/ohhh/AddProductRating")
+//  public void AddProductRating(@Field("user_id") String user_id,
+//                              @Field("product_id") String product_id,
+//                              @Field("product_rating") String product_rating,
+//                              Callback<AddProductRatingDM> addProductRatingDMCallback);
 
 
 }
