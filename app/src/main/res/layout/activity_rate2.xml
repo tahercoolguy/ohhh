@@ -70,6 +70,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
+                android:layout_margin="10dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/recycleRate2"></androidx.recyclerview.widget.RecyclerView>
 
