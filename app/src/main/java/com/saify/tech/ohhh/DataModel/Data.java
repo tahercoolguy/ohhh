@@ -60,6 +60,51 @@ public class Data {
     private String sub_sub_category_id;
 
     private String prepare_days;
+    private String comments;
+    private String user_id;
+    private String product_id;
+    private String name;
+    private String product_rating;
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    public String getProduct_id() {
+        return product_id;
+    }
+
+    public void setProduct_id(String product_id) {
+        this.product_id = product_id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getProduct_rating() {
+        return product_rating;
+    }
+
+    public void setProduct_rating(String product_rating) {
+        this.product_rating = product_rating;
+    }
 
     private ArrayList<Sub_category> sub_category;
 

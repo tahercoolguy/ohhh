@@ -151,11 +151,8 @@ int quantity=1;
 
     @OnClick(R.id.see_review_Txt)
     public void see_review_Txt() {
-        Intent intent = new Intent(Food_Details_Activity.this, Payment_Activity.class);
-//        intent.putExtra("AddressId", AddressId);
-//        intent.putExtra("shop__id", ShopId);
-//        intent.putExtra("Sub_total", Sub__total);
-//        intent.putExtra("Applied_coupon", Applied__coupon);
+        Intent intent = new Intent(Food_Details_Activity.this, Rate2_Activity.class);
+         intent.putExtra("ProductId", ID);
         startActivity(intent);
     }
 

@@ -11,8 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
+import com.saify.tech.ohhh.Adapter.Adapter_Rate2;
 import com.saify.tech.ohhh.Adapter.Nornoya_Dip_Adapter;
 import com.saify.tech.ohhh.Controller.AppController;
+import com.saify.tech.ohhh.DataModel.AllProductRatingsByidsDM;
 import com.saify.tech.ohhh.DataModel.MyCartDM;
 import com.saify.tech.ohhh.Helper.DialogUtil;
 import com.saify.tech.ohhh.Helper.User;
@@ -32,6 +34,7 @@ public class Rate2_Activity extends AppCompatActivity {
     Dialog progress;
     DialogUtil dialogUtil;
     private User user;
+    String ProdtID;
 
 
     @NotEmpty
@@ -49,6 +52,9 @@ public class Rate2_Activity extends AppCompatActivity {
         connectionDetector = new ConnectionDetector(Rate2_Activity.this);
         user = new User(Rate2_Activity.this);
         dialogUtil = new DialogUtil();
+
+        ProdtID = getIntent().getStringExtra("ProductId");
+
         rateAPI();
     }
 
@@ -60,13 +66,13 @@ public class Rate2_Activity extends AppCompatActivity {
 
                 progress = dialogUtil.showProgressDialog(Rate2_Activity.this, getString(R.string.please_wait));
                 String user_id = String.valueOf(user.getId());
-                appController.paServices.MyCart(user_id, new Callback<MyCartDM>() {
+                appController.paServices.allProductRatingsByids(user_id,ProdtID, new Callback<AllProductRatingsByidsDM>() {
                     @Override
-                    public void success(MyCartDM myCartDM, Response response) {
-//                        progress.dismiss();
-                        if (myCartDM.getOutput().get(0).getSuccess().equalsIgnoreCase("1")) {
+                    public void success(AllProductRatingsByidsDM allProductRatingsByidsDM, Response response) {
+                        progress.dismiss();
+                        if (allProductRatingsByidsDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
-                            Nornoya_Dip_Adapter dm = new Nornoya_Dip_Adapter(Rate2_Activity.this, myCartDM.getOutput());
+                            Adapter_Rate2 dm = new Adapter_Rate2(Rate2_Activity.this, allProductRatingsByidsDM.getOutput().getData());
                             LinearLayoutManager l = new LinearLayoutManager(Rate2_Activity.this, LinearLayoutManager.VERTICAL, false);
                             recycleRate2.setLayoutManager(l);
                             recycleRate2.setAdapter(dm);

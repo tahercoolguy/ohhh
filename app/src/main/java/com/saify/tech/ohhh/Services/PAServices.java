@@ -11,6 +11,7 @@ import com.saify.tech.ohhh.DataModel.AddtoCartDM;
 import com.saify.tech.ohhh.DataModel.AddtoWishlistDM;
 import com.saify.tech.ohhh.DataModel.AdvHomeDM;
 import com.saify.tech.ohhh.DataModel.AllAreaDM;
+import com.saify.tech.ohhh.DataModel.AllProductRatingsByidsDM;
 import com.saify.tech.ohhh.DataModel.AllProductsDM;
 import com.saify.tech.ohhh.DataModel.AreaDM;
 import com.saify.tech.ohhh.DataModel.BannerDM;
@@ -439,13 +440,12 @@ public interface PAServices {
                                @Field("product_rating") String product_rating,
                               Callback<AddProductRatingDM> addProductRatingDMCallback);
 
-//  //42
-//  @FormUrlEncoded
-//  @POST("/ohhh/AddProductRating")
-//  public void AddProductRating(@Field("user_id") String user_id,
-//                              @Field("product_id") String product_id,
-//                              @Field("product_rating") String product_rating,
-//                              Callback<AddProductRatingDM> addProductRatingDMCallback);
+  //42
+  @FormUrlEncoded
+  @POST("/ohhh/allProductRatingsByids")
+  public void allProductRatingsByids(@Field("user_id") String user_id,
+                              @Field("product_id") String product_id,
+                                     Callback<AllProductRatingsByidsDM> allProductRatingsByidsDMCallback);
 
 
 }

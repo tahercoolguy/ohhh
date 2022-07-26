@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.saify.tech.ohhh.Activity.SaveAddressActivity;
+import com.saify.tech.ohhh.DataModel.Data;
 import com.saify.tech.ohhh.DataModel.Info;
 import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
@@ -23,14 +24,14 @@ public class Adapter_Rate2 extends RecyclerView.Adapter<Adapter_Rate2.ViewHolder
 
 
     private Context context;
-    private ArrayList<Info> arrayList;
+    private ArrayList<Data> arrayList;
     private Info selected;
     User user;
 
 
     int selectedPosition = 0;
 
-    public Adapter_Rate2(Context context, ArrayList<Info> arrayList) {
+    public Adapter_Rate2(Context context, ArrayList<Data> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
         user = new User(context);
@@ -68,11 +69,13 @@ public class Adapter_Rate2 extends RecyclerView.Adapter<Adapter_Rate2.ViewHolder
 //        viewHolder.companyName.setText(arrayList.get(position).getShop_name());
 //        viewHolder.status.setText(arrayList.get(position).getStatus());
 //        Picasso.with(context).load(arrayList.get(position).getAttachment()[0]).into(viewHolder.companyIcon);
-        Info data = arrayList.get(position);
-
-        viewHolder.m1.setText(data.getId());
-        viewHolder.m2.setText(data.getId());
-        viewHolder.rate1.setText(data.getId());
+        Data data = arrayList.get(position);
+        if(data.getName()!=null){
+        viewHolder.name.setText(data.getName());}
+        viewHolder.Datetime.setText(data.getCreated_date());
+        viewHolder.rating_starTxt.setText(data.getProduct_rating());
+        if(data.getComments()!=null){
+        viewHolder.comment.setText(data.getComments());}
 
 
     }
@@ -87,15 +90,15 @@ public class Adapter_Rate2 extends RecyclerView.Adapter<Adapter_Rate2.ViewHolder
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView m1, m2, rating_starTxt, rate1;
+        private TextView name,Datetime, rating_starTxt, comment;
         private ImageView star;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            m1 = (TextView) itemView.findViewById(R.id.m1);
-            m2 = (TextView) itemView.findViewById(R.id.m2);
+            name = (TextView) itemView.findViewById(R.id.nameTV);
+            Datetime= (TextView) itemView.findViewById(R.id.DateandTimeTV);
             rating_starTxt = (TextView) itemView.findViewById(R.id.rating_starTxt);
-            rate1 = (TextView) itemView.findViewById(R.id.rate1);
+            comment = (TextView) itemView.findViewById(R.id.CommentTV);
 
         }
     }
