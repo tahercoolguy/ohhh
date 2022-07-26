@@ -98,11 +98,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
+                android:weightSum="8"
                 android:layout_marginTop="15dp">
 
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
+                    android:layout_weight="0"
                     android:src="@drawable/ic_rating_star">
 
                 </ImageView>
@@ -114,7 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-
+                    android:layout_weight="0"
                     android:text="4.5"
                     android:textColor="@color/black">
 
@@ -125,14 +127,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:layout_weight="0.5"
                     android:text="(30+)"></TextView>
 
                 <TextView
                     android:id="@+id/see_review_Txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="3"
                     android:text="See Review"
+                    android:textColor="@color/colorPrimary"></TextView>
+                <TextView
+                    android:id="@+id/Add_review_Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="3"
+                    android:text="Add Review"
                     android:textColor="@color/colorPrimary"></TextView>
             </LinearLayout>
 
@@ -142,6 +154,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
+
                 android:layout_marginTop="20dp">
 
                 <TextView

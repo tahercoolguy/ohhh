@@ -57,6 +57,9 @@ public class Food_Details_Activity extends AppCompatActivity {
 
     String ID;
     String ShopId;
+    String rating;
+    String RatingCount;
+
 
 
 
@@ -84,6 +87,12 @@ public class Food_Details_Activity extends AppCompatActivity {
     @BindView(R.id.cake_name)
     TextView cake_name;
 
+    @BindView(R.id.rating_star_Txt)
+    TextView rating_star_Txt;
+
+    @BindView(R.id.rating_star_count_Txt)
+    TextView rating_star_count_Txt;
+
     @BindView(R.id.cake_Description_Txt)
     TextView cake_Description_Txt;
 
@@ -93,6 +102,8 @@ public class Food_Details_Activity extends AppCompatActivity {
 
     @BindView(R.id.cake_img1)
     ImageView cake_img1;
+
+
 
 int quantity=1;
 
@@ -124,6 +135,28 @@ int quantity=1;
 
         finish();
 
+    }
+
+    @OnClick(R.id.Add_review_Txt)
+    public void Add_review_Txt() {
+        Intent intent = new Intent(Food_Details_Activity.this, Rate_Activity.class);
+        intent.putExtra("ProductId", ID);
+        intent.putExtra("ProductRating", rating);
+
+        startActivity(intent);
+    }
+
+
+
+
+    @OnClick(R.id.see_review_Txt)
+    public void see_review_Txt() {
+        Intent intent = new Intent(Food_Details_Activity.this, Payment_Activity.class);
+//        intent.putExtra("AddressId", AddressId);
+//        intent.putExtra("shop__id", ShopId);
+//        intent.putExtra("Sub_total", Sub__total);
+//        intent.putExtra("Applied_coupon", Applied__coupon);
+        startActivity(intent);
     }
 
     @OnClick(R.id.cart_RL)
@@ -308,6 +341,16 @@ int quantity=1;
         user = new User(this);
 
         ID = getIntent().getStringExtra("id");
+        rating = getIntent().getStringExtra("Rating");
+        RatingCount = getIntent().getStringExtra("RatingCount");
+
+
+        rating_star_Txt.setText(rating);
+       rating_star_count_Txt.setText(RatingCount);
+
+
+
+
         idMappings();
         Binding();
 //       size();
@@ -497,7 +540,7 @@ public ArrayList<Addons> temp;
 
                             ShopId=productsByIdDM.getOutput().getInfo().get(0).getShop_id();
                             cake_name.setText(productsByIdDM.getOutput().getInfo().get(0).getTitle_en());
-                            price_tv.setText(productsByIdDM.getOutput().getInfo().get(0).getPrice());
+                            price_tv.setText(productsByIdDM.getOutput().getInfo().get(0).getPrice() +" KD");
                             cake_Description_Txt.setText(Html.fromHtml(productsByIdDM.getOutput().getInfo().get(0).getContent_en(), Html.FROM_HTML_MODE_COMPACT));
 
                             if (!productsByIdDM.getOutput().getInfo().get(0).getImage().equalsIgnoreCase("")) {

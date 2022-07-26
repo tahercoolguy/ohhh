@@ -86,7 +86,9 @@ public class Offers_Adapter extends RecyclerView.Adapter<Offers_Adapter.Programm
 
                 Intent intent=new Intent(context, Food_Details_Activity.class);
                 intent.putExtra("id",data.getId());
-                 context.startActivity(intent);
+                intent.putExtra("Rating",data.getRating());
+                intent.putExtra("RatingCount",data.getRating_count());
+                context.startActivity(intent);
             }
         });
 

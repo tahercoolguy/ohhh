@@ -91,6 +91,8 @@ public class BestFromDesert_Adapter  extends RecyclerView.Adapter<BestFromDesert
 //                 ((MainActivity)context).addFragment(new Food_Details_Activity(), false);
                 Intent intent=new Intent(context, Food_Details_Activity.class);
                 intent.putExtra("id",data.getId());
+                intent.putExtra("Rating",data.getRating());
+                intent.putExtra("RatingCount",data.getRating_count());
                 context.startActivity(intent);
             }
         });
