@@ -106,7 +106,7 @@
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="40dp"
-                    android:src="@drawable/ic_rating_star"></ImageView>
+                    android:src="@drawable/signs_copy"></ImageView>
 
 
                 <ImageView
@@ -116,7 +116,7 @@
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="40dp"
 
-                    android:src="@drawable/ic_rating_star"></ImageView>
+                    android:src="@drawable/signs_copy"></ImageView>
 
 
                 <ImageView
@@ -125,7 +125,7 @@
                     android:layout_height="20dp"
                     android:layout_marginLeft="70dp"
                     android:layout_marginTop="40dp"
-                    android:src="@drawable/ic_rating_star">
+                    android:src="@drawable/signs_copy">
                 </ImageView>
 
                 <ImageView
@@ -135,7 +135,7 @@
                     android:layout_marginLeft="100dp"
                     android:layout_marginTop="40dp"
 
-                    android:src="@drawable/ic_rating_star"></ImageView>
+                    android:src="@drawable/signs_copy"></ImageView>
 
                 <ImageView
                     android:id="@+id/rate5"
@@ -144,8 +144,7 @@
                     android:layout_marginLeft="130dp"
                     android:layout_marginTop="40dp"
 
-                    android:src="@drawable/ic_rating_star">
-                </ImageView>
+                    android:src="@drawable/signs_copy"></ImageView>
 
 <!--                <TextView-->
 <!--                    android:id="@+id/addressTV"-->
@@ -160,8 +159,8 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
 
@@ -175,27 +174,33 @@
             <!--                    android:layout_marginTop="10dp"-->
             <!--                    android:src="@drawable/ic_work_brief"></ImageView>-->
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:text="@string/write_your_review"
+                    android:layout_marginRight="10dp"
+                    android:maxLines="7"
+                    android:minLines="7"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="@string/write_your_review"
                     android:textColor="@color/black">
 
-                </TextView>
+                </EditText>
 
             </RelativeLayout>
 
 
 
             <TextView
-                android:id="@+id/done_Btn"
+                android:id="@+id/submit_Btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="60dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="60dp"
+
                 android:background="@drawable/rounded_corner_primary_colour"
                 android:gravity="center"
                 android:padding="15dp"

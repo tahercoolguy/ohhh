@@ -97,9 +97,10 @@ public class Shopss_Adapter extends RecyclerView.Adapter<Shopss_Adapter.Programm
         holder.delivery_boy.setImageResource(R.drawable.ic_delivery_boy);
         holder.time_img.setImageResource(R.drawable.ic_time);
         holder.free_delivry.setText(info.getFree_delivery());
-        holder.deliverTime.setText(info.getPrepartion_time());
-//        holder.rating.setText(info.getRating());
-//        holder.rating_Count.setText(info.getRating_count());
+        if(info.getPrepartion_time()!=null){
+        holder.deliverTime.setText(info.getPrepartion_time());}
+        holder.rating.setText(info.getRating());
+        holder.rating_Count.setText(info.getRating_count());
 
         holder.shop_cake_Rl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +109,12 @@ public class Shopss_Adapter extends RecyclerView.Adapter<Shopss_Adapter.Programm
                 Deep_and_Deep_1_Fragment deep_and_deep_1_fragment=new Deep_and_Deep_1_Fragment();
                 Bundle bd = new Bundle();
                 bd.putString("id", info.getId());
+                bd.putString("rating",info.getRating());
+                bd.putString("ratingCount",info.getRating_count());
+                bd.putString("free_delivery",info.getFree_delivery());
+
+                if(info.getPrepartion_time()!=null){
+                bd.putString("deliver_time",info.getPrepartion_time());}
 
                 deep_and_deep_1_fragment.setArguments(bd);
                 ((MainActivity)context).addFragment(deep_and_deep_1_fragment, false);
@@ -218,8 +225,8 @@ public class Shopss_Adapter extends RecyclerView.Adapter<Shopss_Adapter.Programm
             dip_and_dip = (TextView) itemView.findViewById(R.id.dip_and_dip_Txt);
             free_delivry = (TextView) itemView.findViewById(R.id.free_delivery);
             deliverTime = (TextView) itemView.findViewById(R.id.deliver_time);
-//            rating= (TextView) itemView.findViewById(R.id.rating_starTxt);
-//            rating_Count = (TextView) itemView.findViewById(R.id.rating_count_Txt);
+            rating= (TextView) itemView.findViewById(R.id.rating_starTxt);
+            rating_Count = (TextView) itemView.findViewById(R.id.rating_count_Txt);
 
             star = (ImageView) itemView.findViewById(R.id.star);
 //            like = (LinearLayout) itemView.findViewById(R.id.like_LL);

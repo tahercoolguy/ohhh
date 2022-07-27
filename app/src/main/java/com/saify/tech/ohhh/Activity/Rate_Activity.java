@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,6 +21,7 @@ import com.saify.tech.ohhh.R;
 import com.saify.tech.ohhh.Utils.ConnectionDetector;
 
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -37,26 +39,8 @@ public class Rate_Activity extends AppCompatActivity {
 
     String ProdtID,Prodtrating;
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rate);
-        ButterKnife.bind(this);
-        dialogUtil = new DialogUtil();
-        context = ((MainActivity) context);
-        appController = (AppController) getApplicationContext();
-        connectionDetector = new ConnectionDetector(getApplicationContext());
-        user = new User(Rate_Activity.this);
-        user = new User(this);
-
-        ProdtID = getIntent().getStringExtra("ProductId");
-        Prodtrating = getIntent().getStringExtra("ProductRating");
-
-        Binding();
-    }
-
-    public void Binding()
+    @OnClick(R.id.submit_Btn)
+    public void submit_Btn()
     {
         if (connectionDetector.isConnectingToInternet()) {
             String refreshedToken = FirebaseInstanceId.getInstance().getToken();
@@ -76,11 +60,35 @@ public class Rate_Activity extends AppCompatActivity {
                 @Override
                 public void failure(RetrofitError retrofitError) {
                     Log.e("error", retrofitError.toString());
-                  dialog.dismiss();
+                    dialog.dismiss();
 
                 }
             });
         } else
             Helper.showToast(Rate_Activity.this, getString(R.string.no_internet_connection));
+    }
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_rate);
+        ButterKnife.bind(this);
+        dialogUtil = new DialogUtil();
+        context = ((MainActivity) context);
+        appController = (AppController) getApplicationContext();
+        connectionDetector = new ConnectionDetector(getApplicationContext());
+        user = new User(Rate_Activity.this);
+        user = new User(this);
+
+        ProdtID = getIntent().getStringExtra("ProductId");
+        Prodtrating = getIntent().getStringExtra("ProductRating");
+
+//        Binding();
+    }
+
+    public void Binding()
+    {
+
     }
 }

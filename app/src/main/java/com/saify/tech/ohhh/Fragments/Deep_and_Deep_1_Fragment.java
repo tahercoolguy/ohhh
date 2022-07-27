@@ -91,6 +91,19 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     @BindView(R.id.shopName)
     TextView shopName;
 
+    @BindView(R.id.ratingTV)
+    TextView ratingTV;
+
+    @BindView(R.id.ratingCountTV)
+    TextView ratingCountTV;
+
+    @BindView(R.id.free_delivery)
+    TextView free_delivery;
+
+    @BindView(R.id.timeTV)
+    TextView timeTV;
+
+
     @BindView(R.id.bannerImg1)
     ImageView bannerImg1;
 
@@ -117,7 +130,7 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
     ProgressDialog progressDialog;
     Dialog progress;
     DialogUtil dialogUtil;
-    String ID;
+    String ID,rating,ratingCount,freeDelivery,preprationTime;
     String ShopIMg;
     String BannerImg;
     Dialog dialog;
@@ -151,6 +164,18 @@ public class Deep_and_Deep_1_Fragment extends Fragment {
             progress =new Dialog(getActivity());
             Bundle bd=getArguments();
             ID= bd.getString("id");
+            rating= bd.getString("rating");
+            ratingCount = bd.getString("ratingCount");
+            freeDelivery= bd.getString("free_delivery");
+            preprationTime= bd.getString("deliver_time");
+
+            ratingCountTV.setText(ratingCount);
+            ratingTV.setText(rating);
+            free_delivery.setText(freeDelivery);
+            timeTV.setText(preprationTime);
+
+
+
 //            ShopIMg=bd.getString("ShopImg");
 //            BannerImg=bd.getString("BannerImg");
 //            shopImg1.setImageResource(ShopIMg);

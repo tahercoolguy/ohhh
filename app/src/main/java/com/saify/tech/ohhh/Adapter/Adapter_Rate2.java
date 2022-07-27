@@ -18,7 +18,10 @@ import com.saify.tech.ohhh.Helper.User;
 import com.saify.tech.ohhh.R;
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Adapter_Rate2 extends RecyclerView.Adapter<Adapter_Rate2.ViewHolder> {
 
@@ -72,10 +75,22 @@ public class Adapter_Rate2 extends RecyclerView.Adapter<Adapter_Rate2.ViewHolder
         Data data = arrayList.get(position);
         if(data.getName()!=null){
         viewHolder.name.setText(data.getName());}
-        viewHolder.Datetime.setText(data.getCreated_date());
+//        viewHolder.Datetime.setText(data.getCreated_date());
         viewHolder.rating_starTxt.setText(data.getProduct_rating());
         if(data.getComments()!=null){
         viewHolder.comment.setText(data.getComments());}
+
+
+        SimpleDateFormat sf=new SimpleDateFormat("yyyy-MM-dd");
+        Date date = null;
+        try {
+            date = sf.parse(data.getCreated_date());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        sf.applyPattern("dd/MM/yyyy");
+        String newDate=sf.format(date);
+        viewHolder.Datetime.setText(newDate);
 
 
     }

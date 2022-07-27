@@ -49,7 +49,7 @@ public class View_Order_Activity extends AppCompatActivity {
     Dialog progress;
     ConnectionDetector connectionDetector;
     DialogUtil dialogUtil;
-    String SaleCode;
+    String SaleCode,DeliveryStatus;
     @NotEmpty
     @BindView(R.id.back_term_and_condition)
     LinearLayout back;
@@ -74,6 +74,33 @@ public class View_Order_Activity extends AppCompatActivity {
 
     @BindView(R.id.recycleview1)
     RecyclerView recyclerView1;
+
+    @BindView(R.id.line1)
+    LinearLayout line1;
+    @BindView(R.id.line2)
+    LinearLayout line2;
+    @BindView(R.id.line3)
+    LinearLayout line3;
+
+    @BindView(R.id.text1)
+    TextView text1;
+    @BindView(R.id.text2)
+    TextView text2;
+    @BindView(R.id.text3)
+    TextView text3;
+    @BindView(R.id.text4)
+    TextView text4;
+
+    @BindView(R.id.img1)
+    ImageView img1;
+    @BindView(R.id.img2)
+    ImageView img2;
+    @BindView(R.id.img3)
+    ImageView img3;
+    @BindView(R.id.img4)
+    ImageView img4;
+
+
 
 
 
@@ -139,6 +166,10 @@ public class View_Order_Activity extends AppCompatActivity {
                     progress.dismiss();
                     if (myOrderDetailDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 //                        termsAndCondition.setText(Html.fromHtml(termsConditionDM.getOutput().getInfo().get(0).getDescription_en(), Html.FROM_HTML_MODE_COMPACT));
+                    DeliveryStatus= myOrderDetailDM.getOutput().getDelivery_status();
+
+                                  condition();
+
                               if(myOrderDetailDM.getOutput().getSub_total()!=null){
                         subTotalTV.setText(myOrderDetailDM.getOutput().getSub_total());}
                         if(myOrderDetailDM.getOutput().getCode_applied()!=null){
@@ -185,6 +216,57 @@ public class View_Order_Activity extends AppCompatActivity {
 //                }
 //            }
 //        });
+
+    public void condition()
+    {
+        if(DeliveryStatus!=null) {
+            if (DeliveryStatus.equalsIgnoreCase("Order Placed")) {
+                img1.setImageResource(R.drawable.ic_acceptedddd);
+                img2.setImageResource(R.drawable.ic_pickeddd);
+                img3.setImageResource(R.drawable.ic_pickeddd);
+                img4.setImageResource(R.drawable.ic_pickeddd);
+
+                line1.setBackgroundResource(R.color.grey);
+                line2.setBackgroundResource(R.color.grey);
+                line3.setBackgroundResource(R.color.grey);
+            }
+            else if(DeliveryStatus == "Order Accepted By Shops") {
+                img1.setImageResource(R.drawable.ic_placeeeed);
+                img2.setImageResource(R.drawable.ic_acceptedddd);
+                img3.setImageResource(R.drawable.ic_pickeddd);
+                img4.setImageResource(R.drawable.ic_pickeddd);
+
+                line1.setBackgroundResource(R.color.colorPrimary);
+                line2.setBackgroundResource(R.color.grey);
+                line3.setBackgroundResource(R.color.grey);
+            }
+            else if(DeliveryStatus == "Order Picked")
+            {
+                img1.setImageResource(R.drawable.ic_placeeeed);
+                img2.setImageResource(R.drawable.ic_placeeeed);
+                img3.setImageResource(R.drawable.ic_acceptedddd);
+                img4.setImageResource(R.drawable.ic_pickeddd);
+
+                line1.setBackgroundResource(R.color.colorPrimary);
+                line2.setBackgroundResource(R.color.colorPrimary);
+                line3.setBackgroundResource(R.color.grey);
+            }
+            else if(DeliveryStatus == "Delivered")
+            {
+                img1.setImageResource(R.drawable.ic_placeeeed);
+                img2.setImageResource(R.drawable.ic_placeeeed);
+                img3.setImageResource(R.drawable.ic_placeeeed);
+                img4.setImageResource(R.drawable.ic_acceptedddd);
+
+                line1.setBackgroundResource(R.color.colorPrimary);
+                line2.setBackgroundResource(R.color.colorPrimary);
+                line3.setBackgroundResource(R.color.colorPrimary);
+            }
+
+        }
+
+    }
+
 }
 
 

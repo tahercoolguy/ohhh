@@ -1311,4 +1311,14 @@ public class Info {
     public void setRating_count(String rating_count) {
         this.rating_count = rating_count;
     }
+    private String favourite;
+
+
+    public String getFavourite() {
+        return favourite;
+    }
+
+    public void setFavourite(String favourite) {
+        this.favourite = favourite;
+    }
 }

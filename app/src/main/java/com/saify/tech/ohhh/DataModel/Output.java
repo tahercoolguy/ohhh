@@ -22,6 +22,8 @@ public class Output {
 
 
 
+
+
     private ArrayList<Adv> adv;
 
     public ArrayList<Adv> getAdv() {
@@ -181,8 +183,14 @@ public class Output {
         this.order_id = order_id;
     }
 
+    private String delivery_status;
 
 
+    public String getDelivery_status() {
+        return delivery_status;
+    }
 
-
+    public void setDelivery_status(String delivery_status) {
+        this.delivery_status = delivery_status;
+    }
 }
