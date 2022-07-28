@@ -6,11 +6,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -73,6 +78,12 @@ public class Fragment_Home_Screen extends Fragment {
 
     @BindView(R.id.featuredShopsRcv)
     RecyclerView featured_shops;
+
+
+    @BindView(R.id.listView)
+    ListView listView;
+
+    EditText search;
 
 
     @BindView(R.id.view_all_Txt)
@@ -187,6 +198,7 @@ public class Fragment_Home_Screen extends Fragment {
 
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.home_screen_fragment_layout, container, false);
+            search = rootView.findViewById(R.id.edt_search);
             ButterKnife.bind(this,rootView);
             user=new User(getActivity());
 
@@ -223,6 +235,7 @@ public class Fragment_Home_Screen extends Fragment {
 
 
 //            setDetails();
+            funSearch();
 
 
         }
@@ -314,7 +327,7 @@ public class Fragment_Home_Screen extends Fragment {
                         if (offersApiDM.getOutput().getSuccess().equalsIgnoreCase("1")) {
 
                 Offers_Adapter dm = new Offers_Adapter(context, offersApiDM.getOutput().getInfo());
-                LinearLayoutManager l = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+                LinearLayoutManager l = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
                 offers_Rcvv.setLayoutManager(l);
                 offers_Rcvv.setAdapter(dm);
 
@@ -389,6 +402,65 @@ public class Fragment_Home_Screen extends Fragment {
 
 
     }
+
+
+
+     public void funSearch()
+        {
+//            search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//                @Override
+//                public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+//                    if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+//
+//                        // Your piece of code on keyboard search click
+//                        if(connectionDetector.isConnectingToInternet())
+//                        {
+////                            ShowProgress();
+//                            appController.paServices.Restaurant_Search(search.getText().toString(),new Callback<RestaurentDM>() {
+//                                @Override
+//                                public void success(RestaurentDM restaurentDM, Response response) {
+// //                                   DismissProgress();
+//                                    if(restaurentDM.getStatus().equals("1")) {
+//                                        adapter = new Adapter_Restaurent_List(getActivity(), restaurentDM.getResult(),true);
+//                                        listView.setAdapter(adapter);
+//                                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                                            @Override
+//                                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                                                RestaurentDetails_Fragment restaurentDetails_fragment = new RestaurentDetails_Fragment();
+//                                                Bundle bd = new Bundle();
+//                                                bd.putParcelable("data", restaurentDM.getResult().get(i));
+//                                                restaurentDetails_fragment.setArguments(bd);
+//                                                ((MainActivity) getActivity()).addFragment(restaurentDetails_fragment, true);
+//                                            }
+//                                        });
+//                                    }else {
+//                                        ArrayList<RestaurentResult> restaurentResultArrayList=new ArrayList<>();
+//                                        adapter = new Adapter_Restaurent_List(getActivity(), restaurentResultArrayList,true);
+//                                        listView.setAdapter(adapter);
+//                                    }
+//                                }
+//                                @Override
+//                                public void failure(RetrofitError error) {
+//                                    DismissProgress();
+//
+//                                    ArrayList<RestaurentResult> restaurentResultArrayList=new ArrayList<>();
+//                                    adapter = new Adapter_Restaurent_List(getActivity(), restaurentResultArrayList,true);
+//                                    listView.setAdapter(adapter);
+//                                    Log.e("String", error.toString());
+//                                }
+//                            });
+//
+//                        } else
+//                            Helper.showToast(getActivity(), getString(R.string.no_internet_connection));
+//
+//
+//                        return true;
+//                    }
+//                    return false;
+//                }
+//            });
+
+           }
 
     @Override
     public void onResume() {

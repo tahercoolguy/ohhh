@@ -87,6 +87,7 @@
         <activity android:name=".Activity.Rate_Activity"/>
         <activity android:name=".Activity.Rate2_Activity"/>
         <activity android:name=".Activity.Adv_Aome_Activity"/>
+        <activity android:name=".Activity.Contect_Us_Activity"/>
 
     </application>
 

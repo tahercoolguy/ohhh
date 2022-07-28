@@ -11,11 +11,13 @@
     <string name="write_your_review">write your reviews</string>
     <string name="done">Done</string>
     <string name="back">Back</string>
+    <string name="Contect_us">Contect Us</string>
     <string name="are_you_sure_you_want_to_exit_the_app">Are you sure you want to exit the app?</string>
     <string name="gues">Continue as a guest</string>
     <string name="terms">Terms and condition</string>
 
     <string name="Name">Full Name</string>
+    <string name="comments">Comments</string>
     <string name="lastName">Last Name</string>
     <string name="Mobile">Mobile</string>
     <string name="confirm_password">Confirm Password</string>

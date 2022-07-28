@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.saify.tech.ohhh.Activity.AddressList_Saved_Address_Activity;
 import com.saify.tech.ohhh.Activity.Change_Password_Activity;
+import com.saify.tech.ohhh.Activity.Contect_Us_Activity;
 import com.saify.tech.ohhh.Activity.Edit_Profile_Activity;
 import com.saify.tech.ohhh.Activity.LoginActivity;
 import com.saify.tech.ohhh.Activity.MainActivity;
@@ -173,6 +174,7 @@ public class Fragment_Account extends Fragment {
 
     @OnClick(R.id.contact_us_LL)
     public void Contact_Us() {
+ //       startActivity(new Intent(context, Contect_Us_Activity.class));
 
     }
 

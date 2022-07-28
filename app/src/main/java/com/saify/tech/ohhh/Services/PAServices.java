@@ -19,6 +19,7 @@ import com.saify.tech.ohhh.DataModel.BestDM;
 import com.saify.tech.ohhh.DataModel.CancelOrderDM;
 import com.saify.tech.ohhh.DataModel.CatgoryListDM;
 import com.saify.tech.ohhh.DataModel.ChangePasswordDM;
+import com.saify.tech.ohhh.DataModel.ContactusDM;
 import com.saify.tech.ohhh.DataModel.EditAddressDM;
 import com.saify.tech.ohhh.DataModel.EventsDM;
 import com.saify.tech.ohhh.DataModel.FShopsDM;
@@ -447,5 +448,16 @@ public interface PAServices {
                               @Field("product_id") String product_id,
                                      Callback<AllProductRatingsByidsDM> allProductRatingsByidsDMCallback);
 
+
+ //43
+ @FormUrlEncoded
+ @POST("/ohhh/Contactus")
+ public void ContactUs(@Field("user_id") String user_id,
+                         @Field("fullname") String fullname,
+                         @Field("email") String email,
+                         @Field("countrycode") String countrycode,
+                         @Field("phone") String phone,
+                         @Field("comments") String comments,
+                        Callback<ContactusDM> contactusDMCallback);
 
 }
